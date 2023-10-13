@@ -1,0 +1,18 @@
+
+npm install -g yarn
+yarn init -y
+yarn add react react-dom
+yarn add webpack webpack-cli --dev
+yarn global add typescript
+yarn add ts-loader
+yarn run dev
+yarn run  watch
+yarn add -D style-loader css-loader
+
+npm install @headlessui/react @heroicons/react
+npm install tailwindcss@latest
+yarn add -D tailwindcss headlessui heroicons
+yarn add -D @types/react @types/react-dom @types/chrome
+yarn add -D webpack-merge
+yarn add  react-router-dom
+yarn add -D html-webpack-inject-plugin
