@@ -1,0 +1,31 @@
+@import '../assets/sass/main';
+
+
+%svg-shared {
+    width: 1.125rem;
+    height: 1.125rem;
+    display: block;
+    fill: none;
+    flex-shrink: 0;
+    stroke: $svg-color;
+    stroke-width: 1px;
+}
+
+.svg {
+    @extend %svg-shared;
+}
+
+.svg-large {
+    @extend %svg-shared;
+    stroke-width: 20px;
+}
+
+
+.svg-ligther {
+    stroke: $svg-color-lighter;
+    stroke-width: 0.4px;
+}
+
+.svg-fill {
+    fill: $svg-fill-color;
+}

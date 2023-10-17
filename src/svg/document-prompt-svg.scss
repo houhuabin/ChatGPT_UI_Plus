@@ -1,0 +1,9 @@
+@import '../assets/sass/main';
+@import './document-svg.scss';
+.document-prompt-text {
+    font-size: 8px;
+    font-size: "Courier New";
+    text-anchor: middle;
+    alignment-baseline: middle;
+    fill: $svg-color;
+}

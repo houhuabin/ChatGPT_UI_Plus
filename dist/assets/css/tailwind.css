@@ -2,8 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    height: 400px;
-    width: 400px;
-    background-color: rgb(102, 97, 20);
-}

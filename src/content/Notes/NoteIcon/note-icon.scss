@@ -1,0 +1,13 @@
+@import '../../../assets/sass/_main.scss';
+.note-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    flex-grow: 0;
+    width: 22px;
+    height: 18px;
+    margin-left: -3px;
+    margin-right: 4px;
+    position: relative;
+}

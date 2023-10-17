@@ -1,0 +1,18 @@
+.overlay {
+    pointer-events: auto;
+    position: relative;
+    z-index: 0;
+    display:block;
+    
+}
+
+.overlay-inner-container {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    
+  
+   
+}

@@ -14,9 +14,9 @@ module.exports = {
     entry: {
         popup: path.resolve("./src/popup/index.tsx"),
         options: path.resolve("./src/options/options.tsx"),
-        background: path.resolve("./src/background/background.ts"),
+        // background: path.resolve("./src/background/background.ts"),
         content: path.resolve("./src/content/index.tsx"),
-        dashbord: path.resolve("./src/dashbord/dashbord.tsx"),
+
         tab: path.resolve("./src/tab/index.tsx"),
     },
     module: {
@@ -42,8 +42,10 @@ module.exports = {
                 type: 'assets/images',
                 test: /\.(png|jpg|jpeg|gif|woff|woff2|tff|eot|svg)$/,
             },
-
-
+            {
+                test: /\.scss$/,
+                use: ['style-loader', 'css-loader', 'sass-loader'],
+            },
         ]
 
     },

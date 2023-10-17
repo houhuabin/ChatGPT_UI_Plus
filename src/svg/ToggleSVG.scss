@@ -1,0 +1,12 @@
+
+
+@import '../assets/sass/main';
+.ToggleSVG{
+    width: 0.75rem;
+    height: 0.75rem;
+    display: block;
+    fill: $svg-color;
+    flex-shrink: 0;
+    transition: transform 200ms ease-out 0s;
+   
+}

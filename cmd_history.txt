@@ -16,3 +16,6 @@ yarn add -D @types/react @types/react-dom @types/chrome
 yarn add -D webpack-merge
 yarn add  react-router-dom
 yarn add -D html-webpack-inject-plugin
+#yarn add -D file-loader
+yarn add -D node-sass
+yarn add -D sass-loader sass

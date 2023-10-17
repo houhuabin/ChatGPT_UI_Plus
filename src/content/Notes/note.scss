@@ -1,0 +1,28 @@
+@import '../../assets/sass/main';
+.note-container-div{
+    background-color: $background-color;
+}
+
+
+.note-div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 0.88rem;
+    min-height: 1.7rem;
+    padding: 2px 10px 2px 5px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    border-radius: 3px;
+    font-weight: 600;
+    
+    cursor: pointer;
+    background-color: $background-color;
+    color:$foreground-color;
+}
+
+.note-div:hover {
+    background: $hover-background-color;
+}
+
+
