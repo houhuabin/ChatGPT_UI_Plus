@@ -26,10 +26,10 @@ function init() {
 
 
     // mount Overlay to body
-    const overlayContainer = document.createElement('div');
-    document.body.appendChild(overlayContainer);
-    const overlayRoot = createRoot(overlayContainer);
-    overlayRoot.render(<Overlay />);
+    // const overlayContainer = document.createElement('div');
+    // document.body.appendChild(overlayContainer);
+    //const overlayRoot = createRoot(overlayContainer);
+    //overlayRoot.render(<Overlay />);
     //console.log("mount overlay=================")
 
 }

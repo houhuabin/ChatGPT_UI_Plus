@@ -1,0 +1,54 @@
+@import '../../../../assets/sass/main';
+
+
+.menu-item {
+    user-select: none;
+    transition: background 20ms ease-in 0s;
+    cursor: pointer;
+    width: calc(100% - 8px);
+    margin-left: 4px;
+    margin-right: 4px;
+    border-radius: 3px;
+    
+    display: flex;
+    align-items: center;
+    line-height: 120%; 
+    user-select: none;
+    min-height: 28px;
+    font-size: 14px;
+   
+}
+.menu-item:hover {
+    background: $hover-background-color;
+}
+
+
+.menu-item .icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    margin-right: 4px;
+}
+
+
+
+
+.menu-item .menu-text {
+    margin-left: 10px;
+    margin-right: 12px;
+    min-width: 0px;
+    flex: 1 1 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+}
+.menu-item .hotkey-container {
+    margin-left: auto;
+    margin-right: 12px;
+    min-width: 0px;
+    flex-shrink: 0;
+   
+}
+

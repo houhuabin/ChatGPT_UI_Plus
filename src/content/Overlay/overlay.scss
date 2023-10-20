@@ -1,8 +1,14 @@
+@import '../../assets/sass/main';
+
+
+
+
 .overlay {
     pointer-events: auto;
     position: relative;
-    z-index: 0;
+    z-index: 10000;
     display:block;
+    background-color:$ovelay-color-darker;
     
 }
 
@@ -11,8 +17,7 @@
     top: 0px;
     left: 0px;
     width: 100vw;
-    height: 100vh;
-    
+    height: 100vh;   
   
    
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import './menu.scss'
-import MenuBlock from '../MenuBlock/MenuBlock'
-import MenuItem from '../MenuItem/MenuItem'
+import MenuBlock from './MenuBlock/MenuBlock'
+import MenuItem from './MenuItem/MenuItem'
 
 
 export interface MenuBlockData {
@@ -13,9 +13,10 @@ export interface MenuBlockData {
 interface MenuProps {
     pointX: number;
     pointY: number;
+    noteID: string;
 }
 
-export default function Menu({ pointX, pointY }: MenuProps) {
+export default function Menu({ pointX, pointY, noteID }: MenuProps) {
 
     const menuStyle = {
         left: `${pointX}px`,
@@ -36,9 +37,9 @@ export default function Menu({ pointX, pointY }: MenuProps) {
 
     return (
         <div className="dialog-container menu" style={menuStyle}>
-            <MenuBlock menuBlockDatas={menuBlockDatas} />
+            <MenuBlock noteID={noteID} menuBlockDatas={menuBlockDatas} />
             <div className="menu-separator"></div>
-            <MenuBlock menuBlockDatas={menuBlockDatas2} />
+            <MenuBlock noteID={noteID} menuBlockDatas={menuBlockDatas2} />
         </div>
     )
 }

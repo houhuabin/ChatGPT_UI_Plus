@@ -1,12 +1,11 @@
 @import '../assets/sass/main';
 .document-svg {
-    width: 1.125rem;
-    height: 1.125rem;
+
     display: block;
     fill: none;
     flex-shrink: 0;
     stroke:$svg-color;
-    stroke-width:"0.5"；
+    stroke-width:0.5;
 }
 .svg-lighter-color{
     stroke: $svg-color-lighter;

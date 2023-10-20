@@ -1,0 +1,14 @@
+@import '../assets/sass/main';
+.left-bar-block{
+    background-color: $background-color;
+    // 圆角
+    border-radius: 2px; // 您可以根据需要调整这个值
+    padding-bottom: 5px;
+
+    // 边框
+    border: 0.5px solid $svg-color-lighter; // 假设您在SASS变量中有一个名为$border-color的颜色
+
+    // 阴影
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  // 这会产生一个向下偏移的轻微阴影
+    margin: 0.8px 0;
+}

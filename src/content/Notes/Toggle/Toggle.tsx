@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 import ToggleSVG from '../../../svg/ToggleSVG';
-import { ShareNoteData } from '../../Data/ShareNoteData';
+import { NoteData } from '../../redux/types/noteTypes';
 import "./toggle.scss";
-export default function Toggle({ noteData, handleToggle }: { noteData: ShareNoteData, handleToggle: (data: ShareNoteData) => void }) {
+import { useDispatch } from 'react-redux';
+import { toggleNote } from '../../redux/actions/noteActions';
+export default function Toggle({ noteData }: { noteData: NoteData }) {
 
     const rotateDegree = noteData.expand ? '0deg' : '-90deg';
-    const onToggle = () => {
-        const updatedData = { ...noteData, expand: !noteData.expand };
-        handleToggle(updatedData);
-    };
 
+
+    const dispatch = useDispatch();
+    const onToggle = () => {
+        dispatch(toggleNote(noteData.id));
+    };
 
     return (
         <div className='toggle-container' onClick={onToggle}>

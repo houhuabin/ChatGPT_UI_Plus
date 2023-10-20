@@ -1,25 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import './right-kebab.scss';
 
-import { shareOverlayData, setShareData, listeners } from '../../Data/ShareOverlayData';
+import { useDispatch } from 'react-redux';
+import { showMenus } from '../../redux/actions/overlayMenuActions';
 
 import KebabSVG from '../../../svg/KebabSVG';
-export default function RightKebab() {
+import { NoteData } from '../../redux/types/noteTypes';
+
+export default function RightKebab({ noteData }: { noteData: NoteData }) {
+
+    const dispatch = useDispatch();
+    const handleClick = (event) => {
+        dispatch(showMenus(event.clientX, event.clientY, noteData.id));
+    };
 
 
-
-    const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
-        // 获取鼠标的坐标
-        const x = event.clientX;
-        const y = event.clientY;
-
-        setShareData({
-            ...shareOverlayData,
-            showOverlay: !shareOverlayData.showOverlay, // 切换 showOverlay 的值
-            pointX: x,
-            pointY: y
-        });
-    }
     return (
         <div className='right-action'>
             <div className='kebab-button' onClick={handleClick}>

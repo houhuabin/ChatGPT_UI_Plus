@@ -1,25 +1,19 @@
 import React from 'react'
-import DocumentSVG from '../../../svg/DocumentSVG'
-import DocumentPromptSVG from '../../../svg/DocumentPromptSVG'
-import { ShareNoteData, DocumentType } from '../../Data/ShareNoteData'
+import NoteTypeSVG from '../../../svg/NoteTypeSVG'
+
+import { NoteData } from '../../redux/types/noteTypes'
+
 import './note-icon.scss'
-export default function NoteIcon({ noteData }: { noteData: ShareNoteData }) {
-    let SVGComponent;
+export default function NoteIcon({ noteData }: { noteData: NoteData }) {
 
-    switch (noteData.documentType) {
-        case DocumentType.Note:
-            SVGComponent = DocumentSVG;
-            break;
-        case DocumentType.Prompt:
-            SVGComponent = DocumentPromptSVG;
-            break;
 
-        default:
-            SVGComponent = DocumentSVG;
-    }
+
+
     return (
-        <div className='NoteIcon'>
-            <SVGComponent />
+        <div className='note-icon-container'>
+            <div className='note-icon'>
+                <NoteTypeSVG noteType={noteData.noteType} />
+            </div>
         </div>
     )
 }

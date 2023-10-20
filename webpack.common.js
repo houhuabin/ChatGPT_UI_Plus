@@ -46,6 +46,7 @@ module.exports = {
                 test: /\.scss$/,
                 use: ['style-loader', 'css-loader', 'sass-loader'],
             },
+
         ]
 
     },
@@ -81,7 +82,9 @@ module.exports = {
         extensions: ['.tsx', '.ts', '.js']
     },
     output: {
+        clean: true,
         filename: "[name].js"
+
     },
     optimization: {
         splitChunks: {
