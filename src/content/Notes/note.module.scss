@@ -1,10 +1,10 @@
 @import '../../assets/sass/main';
-.note-container-div{
+.container{
     background-color: $background-color;
 }
 
 
-.note-div {
+.note {
     display: flex;
     align-items: center;
     width: 100%;
@@ -21,8 +21,6 @@
     color:$text-color-daker;
 }
 
-.note-div:hover {
-    background: $hover-background-color;
-}
+
 
 

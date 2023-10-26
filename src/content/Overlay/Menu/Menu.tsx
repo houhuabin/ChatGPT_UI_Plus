@@ -1,7 +1,7 @@
 import React from 'react'
-import './menu.scss'
+import style from './menu.module.scss'
+
 import MenuBlock from './MenuBlock/MenuBlock'
-import MenuItem from './MenuItem/MenuItem'
 
 
 export interface MenuBlockData {
@@ -18,11 +18,11 @@ interface MenuProps {
 
 export default function Menu({ pointX, pointY, noteID }: MenuProps) {
 
-    const menuStyle = {
-        left: `${pointX}px`,
-        top: `${pointY}px`
-    };
-
+    /* const menuPosition = {
+         left: `${pointX}px`,
+         top: `${pointY}px`
+     };
+ */
     const menuBlockDatas: MenuBlockData[] = [
         { title: "Delete", id: 1 },
         { title: "New", id: 2, hotKey: "Ctrl+Shift+R" },
@@ -35,11 +35,26 @@ export default function Menu({ pointX, pointY, noteID }: MenuProps) {
         { title: "Add to favorites", id: 6, hotKey: "Ctrl+E" }
     ];
 
+
+    const menuHeight = 200;  // 这里你可以估算菜单的高度或者动态获取
+    let adjustedPointY = pointY;
+
+    if (pointY + menuHeight > window.innerHeight) {
+        adjustedPointY = pointY - menuHeight;
+    }
+
+    const menuPosition = {
+        left: `${pointX}px`,
+        top: `${adjustedPointY}px`
+    };
+
     return (
-        <div className="dialog-container menu" style={menuStyle}>
+
+        <div className={`${style.dialogContainer} ${style.menu}`} style={menuPosition}>
             <MenuBlock noteID={noteID} menuBlockDatas={menuBlockDatas} />
-            <div className="menu-separator"></div>
+            <div className={style.menuSeparator} ></div>
             <MenuBlock noteID={noteID} menuBlockDatas={menuBlockDatas2} />
         </div>
+
     )
 }

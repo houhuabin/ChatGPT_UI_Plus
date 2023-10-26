@@ -13,4 +13,5 @@ export interface NoteData {
     subNoteIDs: string[];
     noteType: NoteType;
     parentID: string;
+    liID?: string | null;  // 注意这里的 ? 
 }

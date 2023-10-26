@@ -1,0 +1,52 @@
+[
+    {
+        "id": "note_1",
+        "title": "Human-like Rewriter",
+        "content": "In the realm of textual composition, the twin pillars of \"enigma\" and \"dynamism\" hold paramount significance. The enigma delves into the intricacy of prose, while dynamism discerns the heterogeneity of sentence lengths. Conventionally, human scribes manifest elevated dynamism by alternating between concise and verbose structures. Conversely, AI-generated prose leans towards consistency in length. To craft content for me that resonates with both enigma and dynamism, remain vigilant of this nuance.In the same vein, when artificial intelligence embarks on content creation, it often selects phrasing divergent from human inclination. Incorporate esoteric lexicon to amplify the distinctiveness of the content.Your crafted blog piece should embrace a sophisticated format, steering clear of typical AI stylistics.Kindly abstain from delineating what enigma and dynamism entail, and use them solely as guiding principles for content metamorphosis. This is pivotal. In the event the prompt proves inadequate, refrain from elucidating on enigma and dynamism. Rather, respond with:[Error]: {error}. For any perceived inaccuracies, initiate a fresh conversation and employ the plugin afresh.Steer clear from mundane vernacular that's a hallmark of AI. Maintain cognizance of this.Opt for lexicon that's rich yet seldom used. Prioritize uniqueness. Never lose sight of this.Recast every fragment, every block of text into profound English. Seek out profound and singular lexemes.Please ensure the sanctity of proper nouns or entities denoted as X remains intact. This is non-negotiable. This can't be stressed enough.Your return should be in the English language, accentuated by both richness and clarity.",
+        "depth": 0,
+        "expand": false,
+        "subNoteIDs": [],
+        "noteType": "prompt",
+        "parentID": "note_prompt"
+    },
+    {
+        "id": "note_2",
+        "title": "UX/UI Developer",
+        "content": "In your capacity as a Web Accessibility Expert, I'll furnish you with specifics concerning the layout of a web portal, application, or another digital medium. Your responsibility will be to ideate innovative methods to enhance its accessibility for all users. This might encompass formulating preliminary models, evaluating diverse layouts, and offering insights on optimal configurations. My initial query is 'Could you assist in devising a universally accessible color scheme for my upcoming web application?'",
+        "depth": 0,
+        "expand": false,
+        "subNoteIDs": [],
+        "noteType": "prompt",
+        "parentID": "note_prompt"
+    },
+    {
+        "id": "note_3",
+        "title": "Clear Instructions",
+        "content": "Starting with clear, specific prompts can help you obtain more accurate responses.",
+        "depth": 0,
+        "expand": false,
+        "subNoteIDs": [],
+        "noteType": "notion",
+        "parentID": "note_notion"
+    },
+    {
+        "id": "note_4",
+        "title": "Use System Commands",
+        "content": "At times, giving commands like 'List five facts about...' can help you get more structured answers",
+        "depth": 0,
+        "expand": true,
+        "subNoteIDs": [],
+        "noteType": "notion",
+        "parentID": "note_notion"
+    },
+    {
+        "id": "note_5",
+        "title": "添加类型给 rootReducer",
+        "content": "https://chat.openai.com/c/c5110fe1-7c6f-45b0-8320-c770e2866ec8",
+        "depth": 0,
+        "expand": false,
+        "subNoteIDs": [],
+        "noteType": "chat",
+        "parentID": "note_chat"
+    }
+]

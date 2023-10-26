@@ -1,32 +1,35 @@
 import React from 'react'
-import Overlay from './Overlay/Overlay'
+import Overlay from './Overlay/Menu/MenuOverlay'
 import { useSelector } from 'react-redux'
 
 import { findNotesByRootName } from './redux/reducers/notesReducer'
 
-import LeftBarBlock from './LeftBarBlock2'
-import './app.scss'
-import Menu from './Overlay/Menu/Menu'
-import NewNote from './Overlay/NewNote/NewNote'
+import LeftBarBlock from './Block/LeftBarBlock2'
+import style from './app.module.scss'
+
+import NewNoteOverlay from './Overlay/NewNote/NewNoteOverlay'
+import MenuOverlay from './Overlay/Menu/MenuOverlay'
 
 export default function App() {
 
     const allNotesData = useSelector((state: any) => state.notes);
-    const promptRootNotes = findNotesByRootName(allNotesData, "prompt");
-    console.log(promptRootNotes.length + "  promptRootNotes length");
+    const promptRootNotes = findNotesByRootName(allNotesData, "note_prompt");
+    //console.log(promptRootNotes.length + "  promptRootNotes length");
 
-    const noteRootNotes = findNotesByRootName(allNotesData, "notion");
+    const noteRootNotes = findNotesByRootName(allNotesData, "note_notion");
 
-    const chatHistoryRootNotes = findNotesByRootName(allNotesData, "chat");
+    const chatHistoryRootNotes = findNotesByRootName(allNotesData, "note_chat");
 
     return (
-        <div className='left-bar' >
+        <div className={style.leftBar}>
             <LeftBarBlock rootNotes={promptRootNotes} allNotesData={allNotesData} title="prompt" />
 
             <LeftBarBlock rootNotes={noteRootNotes} allNotesData={allNotesData} title="notion" />
+
             <LeftBarBlock rootNotes={chatHistoryRootNotes} allNotesData={allNotesData} title="chat" />
-            <Overlay Component={Menu} componentName="Menu" />
-            <Overlay Component={NewNote} componentName="NewNote" />
+
+            <NewNoteOverlay />
+            <MenuOverlay />
         </div>
     )
 }

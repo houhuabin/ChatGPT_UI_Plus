@@ -1,13 +1,14 @@
 @import '../../../../assets/sass/main';
 
 
-.menu-item {
+.menuItem {
     user-select: none;
     transition: background 20ms ease-in 0s;
     cursor: pointer;
     width: calc(100% - 8px);
     margin-left: 4px;
-    margin-right: 4px;
+    margin-right: 2px;
+    padding-right: 6px;
     border-radius: 3px;
     
     display: flex;
@@ -18,12 +19,12 @@
     font-size: 14px;
    
 }
-.menu-item:hover {
+.menuItem:hover {
     background: $hover-background-color;
 }
 
 
-.menu-item .icon-wrapper {
+.iconContainer {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,7 +35,7 @@
 
 
 
-.menu-item .menu-text {
+.menuText {
     margin-left: 10px;
     margin-right: 12px;
     min-width: 0px;
@@ -42,11 +43,13 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    color:$text-color-daker;
     
 }
-.menu-item .hotkey-container {
+ .hotkeyContainer {
     margin-left: auto;
-    margin-right: 12px;
+    margin-right: 8px;
+  
     min-width: 0px;
     flex-shrink: 0;
    

@@ -14,7 +14,7 @@
     margin-right: 0px;    
 }
 
-.toggle-button {
+.button {
     user-select: none;
     transition: background 20ms ease-in 0s;
     cursor: pointer;
@@ -27,15 +27,15 @@
     border-radius: 3px;
 }
 
-.toggle-container:hover .toggle-button{
+.container:hover .button{
     background: $hover-background-color;
 }
 
 
-.toggle-container:hover .toggle-SVG {
+.container:hover .toggleSVG {
     fill: $hover-svg-color; /* Darken the color a bit on hover */
 }
-.toggle-container:focus .toggle-SVG {
+.container:focus .toggleSVG {
     fill: $hover-svg-color; /* Darken the color a bit on focus */
     outline: none; /* If you want to remove the default focus outline, but remember to provide another visual indication for accessibility */
 }

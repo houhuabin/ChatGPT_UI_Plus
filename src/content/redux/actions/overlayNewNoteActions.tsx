@@ -1,15 +1,24 @@
-import { SHOW_NEW_NOTE_OVERLAY as SHOW_NEW_NOTE_OVERLAY, HIDE_NEW_NOTE_OVERLAY } from '../types/overlayNewNoteTypes';
+import { NoteData } from '../types/noteTypes';
+import { SHOW_NEW_NOTE_OVERLAY, HIDE_NEW_EDIT_NOTE_OVERLAY, SHOW_EDIT_NOTE_OVERLAY } from '../types/overlayNewNoteTypes';
 
-export const showNewNoteDialog = (noteID: String) => {
+export const showNewNoteOverlay = (parentNoteID: string) => {
     return {
         type: SHOW_NEW_NOTE_OVERLAY,
-        payload: { noteID }
+        payload: { parentNoteID }
     }
 };
 
 
-export const hideOverlay = () => {
+export const showEditNoteOverlay = (parentNoteID: string, noteData: NoteData) => {
     return {
-        type: HIDE_NEW_NOTE_OVERLAY
+        type: SHOW_EDIT_NOTE_OVERLAY,
+        payload: { parentNoteID, noteData }
+    }
+};
+
+
+export const hideNewEditNoteOverlay = () => {
+    return {
+        type: HIDE_NEW_EDIT_NOTE_OVERLAY
     };
 };

@@ -8,10 +8,10 @@ const initialState: OverlayMenuData = {
     pointY: 0,
 };
 
-const overlayMenuReducer = (state = initialState, action: any) => {
+const overlayMenuReducer = (state: OverlayMenuData = initialState, action: any) => {
     switch (action.type) {
         case TOGGLE_MENU_OVERLAY:
-            console.log("toggle menu ovelay!!!!!!!!!!!!!!!!!!!");
+            //  console.log("toggle menu ovelay!!!!!!!!!!!!!!!!!!!");
             return {
                 ...state,
                 showOverlay: !state.showOverlay,

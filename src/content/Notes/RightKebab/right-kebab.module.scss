@@ -1,0 +1,37 @@
+@import '../../../assets/sass/main';
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    flex-grow: 0;
+    height: 100%;
+    padding-left: 3px;
+}
+.button {
+    user-select: none; 
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 3px;
+    margin-left: 4px;
+    @include activeContainertyles;
+}
+
+
+
+
+
+/* If you want to add any hover or focus effects, you can use pseudo-classes. Here's an example for hover: */
+/*
+.button:hover  {
+    fill: $hover-svg-color; 
+}
+.button:focus {
+    fill: $hover-svg-color; 
+    outline: none; 
+}
+*/
+/* Similarly, for focus effect (if the div gets focus due to being interactive): */
+
+

@@ -15,6 +15,7 @@ function findTodayElement() {
 }
 
 
+
 function findNewChatElement() {
 
     let targetDiv = document.querySelector('.mb-1.flex.flex-row.gap-2');

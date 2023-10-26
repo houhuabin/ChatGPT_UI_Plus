@@ -1,12 +1,13 @@
-@import '../dialog.scss';
+@import '../dialog.module.scss';
 @import '../../../assets/sass/main';
 
 .menu{
     width: 15rem;  
-    padding:8px 0;
+    padding:8px 12px 8px 8px;
+    //margin-right: 10px;
 }
 
-.menu-separator {
+.menuSeparator {
     height: 1px;
     background-color:$svg-color-lighter;
     margin: 5px 0;

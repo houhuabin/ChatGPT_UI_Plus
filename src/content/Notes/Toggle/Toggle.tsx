@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ToggleSVG from '../../../svg/ToggleSVG';
 import { NoteData } from '../../redux/types/noteTypes';
-import "./toggle.scss";
+import style from "./toggle.module.scss";
 import { useDispatch } from 'react-redux';
 import { toggleNote } from '../../redux/actions/noteActions';
 export default function Toggle({ noteData }: { noteData: NoteData }) {
@@ -15,8 +15,8 @@ export default function Toggle({ noteData }: { noteData: NoteData }) {
     };
 
     return (
-        <div className='toggle-container' onClick={onToggle}>
-            <div className='toggle-button'>
+        <div className={style.container} onClick={onToggle}>
+            <div className={style.button}>
                 <ToggleSVG rotateDegree={rotateDegree} />
             </div>
         </div>

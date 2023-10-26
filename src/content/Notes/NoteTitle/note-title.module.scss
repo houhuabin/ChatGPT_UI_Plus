@@ -1,0 +1,37 @@
+@import '../../../assets/sass/main';
+
+.container {
+    flex: 1 1 auto;
+    white-space: nowrap;
+    min-width: 0px;
+    overflow: hidden;
+    text-overflow: clip;
+    display: flex;
+    align-items: center;
+    &:hover {
+        background: $hover-background-color;
+    }
+   
+}
+.content {
+    display: none;  // 默认隐藏
+    position: absolute;  // 使用绝对定位
+    top: 100%;  // 位于.container的底部
+    left: 0;  // 从左边开始
+    width: 100%;  // 与.container相同的宽度
+    background-color: #f5f5f5;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .container:hover .content {
+    display: block;  // 当鼠标悬停在.container上时显示
+  }
+
+.title {
+  
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 2px;
+}

@@ -2,39 +2,83 @@ import Storage from './storage'
 import { NoteData } from '../redux/types/noteTypes'
 
 class GoogleLocalStorage implements Storage {
+    delete(id: string, notes: NoteData[]): void {
+
+        localStorage.removeItem(id);
+        //localStorage.clear();
+        // throw new Error('Method not implemented.');
+    }
+    clear() {
+
+        localStorage.clear();
+    }
+
+
+
     get(id: string): NoteData | null {
         const rawData = localStorage.getItem(id);
         return rawData ? JSON.parse(rawData) : null;
     }
 
-    add(data: NoteData): void {
+    addAllNotes(notesData: NoteData[]) {
+        notesData.map((data) => { localStorage.setItem(data.id, JSON.stringify(data)); });
+
+    }
+
+    add(data: NoteData, parentID: string): void {
+        // 1. Store the data directly into localStorage
         localStorage.setItem(data.id, JSON.stringify(data));
+        // 2. Fetch the parent node based on parentID from localStorage
+        const parentDataRaw = localStorage.getItem(parentID);
+        //console.log()
+        if (parentDataRaw) {
+            const parentData: NoteData = JSON.parse(parentDataRaw);
+
+            // 3. Update the parent's subNoteIDs to include the new child node's ID
+            parentData.subNoteIDs.push(data.id);
+
+            // 4. Store the updated parent node back into localStorage
+            localStorage.setItem(parentID, JSON.stringify(parentData));
+        } else {
+            //  console.error('Parent note not found in localStorage!   parentID:' + parentID);
+        }
+
     }
 
     getNotesFromLocalStorage = (): NoteData[] | null => {
-        const notesString = localStorage.getItem('notes');
-        if (notesString) {
-            return JSON.parse(notesString);
+        const notes: NoteData[] = [];
+
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+
+            if (key && key.startsWith('note_')) {
+                const noteString = localStorage.getItem(key);
+                if (noteString) {
+                    notes.push(JSON.parse(noteString));
+                }
+            }
         }
-        return null;
+
+        return notes.length > 0 ? notes : null;
     }
 
-    delete(id: string, notes: NoteData[]): void {
-        console.log("storage delete by id --------\n------ save all to local" + id);
-        // const store = useStore<RootState>();
-        // const notesState = store.getState().notes;
-        //const deleteNote = findNoteById(id);
-        // localStorage.removeItem(id);
-        const allNotesDataString = JSON.stringify(notes);
+    save(notes: NoteData[]): void {
+        notes.forEach(note => {
+            this.saveOneNote(note);
+        });
 
-        // 存储到localStorage
-        localStorage.setItem('notes', allNotesDataString);
 
+    }
+
+    saveOneNote(note: NoteData): void {
+        const noteDataString = JSON.stringify(note);
+        localStorage.setItem(`note_${note.id}`, noteDataString);
     }
 
 
     update(data: NoteData): void {
-        this.add(data);  // Reuse the add method since it will override the existing data
+        localStorage.setItem(data.id, JSON.stringify(data));
+        // this.add(data);  // Reuse the add method since it will override the existing data
     }
 
     getLocalStorageUsageInBytes() {

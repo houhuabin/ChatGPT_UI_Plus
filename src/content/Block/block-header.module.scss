@@ -1,6 +1,6 @@
 @import '../../assets/sass/main';
 
-.block-header-conatiner {
+.container {
     display: flex;
     align-items: center;
     width: 100%;
@@ -10,7 +10,7 @@
     margin-top: 6px;
     margin-bottom: 2px;
 }
-.block-header-title{
+.title{
     flex: 1 1 auto;
     white-space: nowrap;
     min-width: 0px;
@@ -23,16 +23,17 @@
 }
 
 
-.right-icon-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    flex-grow: 0;
-    height: 100%;
+.iconContainer {
+   
+   // background-color: aquamarine;
+    height: 1.2rem;
+    width: 1.2rem;
+    margin-right: 10px;
+    padding: 3px 3px;
+    @include activeContainertyles;
 }
 
-.right-icon {
+.icon {
     display: flex;
     align-items: center;
     opacity: 0;

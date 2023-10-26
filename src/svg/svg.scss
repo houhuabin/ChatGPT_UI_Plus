@@ -2,16 +2,25 @@
 
 
 %svg-shared {
-    width: 1.125rem;
-    height: 1.125rem;
+    
     display: block;
     fill: none;
     flex-shrink: 0;
     stroke: $svg-color;
     stroke-width: 1px;
+    &:hover {
+        //background-color: $hover-background-color; /* Darker red on hover */
+    }
 }
 
-.svg {
+
+.svg{
+    @extend %svg-shared;
+    width: 1.125rem;
+    height: 1.125rem;
+}
+
+.svg_sd_size {
     @extend %svg-shared;
 }
 

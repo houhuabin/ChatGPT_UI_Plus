@@ -3,7 +3,7 @@ import React from 'react'
 import DeleteSVG from '../../../../svg/DeleteSVG';
 import EditSVG from '../../../../svg/EditSVG';
 import { MenuBlockData } from '../Menu';
-import './menu-icon.scss';
+import style from './menu-icon.module.scss';
 import AddSVG from '../../../../svg/AddSVG';
 import DuplicateSVG from '../../../../svg/DuplicateSVG';
 import LikeSVG from '../../../../svg/LikeSVG';
@@ -37,7 +37,7 @@ export default function MenuIcon({ menuBlockData }: { menuBlockData: MenuBlockDa
             SVGComponent = DuplicateSVG;
     }
     return (
-        <div className='menu-icon'>
+        <div className={style.icon}>
             <SVGComponent />
         </div>
 

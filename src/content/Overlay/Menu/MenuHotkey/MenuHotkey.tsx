@@ -1,9 +1,9 @@
 import React from 'react'
-import './menu-hotkey.scss'
+import style from './menu-hotkey.module.scss'
 export default function MenuHotkey({ text }: { text: string }) {
     return (
 
-        <div className='hotkey-text'>{text}</div>
+        <div className={style.text}>{text}</div>
 
     )
 }

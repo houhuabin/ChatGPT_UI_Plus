@@ -609,10 +609,10 @@ const ERROR_NAME = 'FirebaseError';
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error#Custom_Error_Types
 class FirebaseError extends Error {
     constructor(
-    /** The error code for this error. */
-    code, message, 
-    /** Custom data for this error. */
-    customData) {
+        /** The error code for this error. */
+        code, message,
+        /** Custom data for this error. */
+        customData) {
         super(message);
         this.code = code;
         this.customData = customData;
@@ -1273,27 +1273,27 @@ function setUserLogHandler(logCallback, options) {
             instance.userLogHandler = (instance, level, ...args) => {
                 const message = args
                     .map(arg => {
-                    if (arg == null) {
-                        return null;
-                    }
-                    else if (typeof arg === 'string') {
-                        return arg;
-                    }
-                    else if (typeof arg === 'number' || typeof arg === 'boolean') {
-                        return arg.toString();
-                    }
-                    else if (arg instanceof Error) {
-                        return arg.message;
-                    }
-                    else {
-                        try {
-                            return JSON.stringify(arg);
-                        }
-                        catch (ignored) {
+                        if (arg == null) {
                             return null;
                         }
-                    }
-                })
+                        else if (typeof arg === 'string') {
+                            return arg;
+                        }
+                        else if (typeof arg === 'number' || typeof arg === 'boolean') {
+                            return arg.toString();
+                        }
+                        else if (arg instanceof Error) {
+                            return arg.message;
+                        }
+                        else {
+                            try {
+                                return JSON.stringify(arg);
+                            }
+                            catch (ignored) {
+                                return null;
+                            }
+                        }
+                    })
                     .filter(arg => arg)
                     .join(' ');
                 if (level >= (customLogLevel !== null && customLogLevel !== void 0 ? customLogLevel : instance.logLevel)) {
@@ -1357,13 +1357,13 @@ function promisifyRequest(request) {
     });
     promise
         .then((value) => {
-        // Since cursoring reuses the IDBRequest (*sigh*), we cache it for later retrieval
-        // (see wrapFunction).
-        if (value instanceof IDBCursor) {
-            cursorRequestMap.set(value, request);
-        }
-        // Catching to avoid "Uncaught Promise exceptions"
-    })
+            // Since cursoring reuses the IDBRequest (*sigh*), we cache it for later retrieval
+            // (see wrapFunction).
+            if (value instanceof IDBCursor) {
+                cursorRequestMap.set(value, request);
+            }
+            // Catching to avoid "Uncaught Promise exceptions"
+        })
         .catch(() => { });
     // This mapping exists in reverseTransformCache but doesn't doesn't exist in transformCache. This
     // is because we create many promises from a single IDBRequest.
@@ -1510,17 +1510,17 @@ function openDB(name, version, { blocked, upgrade, blocking, terminated } = {}) 
     }
     if (blocked) {
         request.addEventListener('blocked', (event) => blocked(
-        // Casting due to https://github.com/microsoft/TypeScript-DOM-lib-generator/pull/1405
-        event.oldVersion, event.newVersion, event));
+            // Casting due to https://github.com/microsoft/TypeScript-DOM-lib-generator/pull/1405
+            event.oldVersion, event.newVersion, event));
     }
     openPromise
         .then((db) => {
-        if (terminated)
-            db.addEventListener('close', () => terminated());
-        if (blocking) {
-            db.addEventListener('versionchange', (event) => blocking(event.oldVersion, event.newVersion, event));
-        }
-    })
+            if (terminated)
+                db.addEventListener('close', () => terminated());
+            if (blocking) {
+                db.addEventListener('versionchange', (event) => blocking(event.oldVersion, event.newVersion, event));
+            }
+        })
         .catch(() => { });
     return openPromise;
 }
@@ -1540,8 +1540,8 @@ function getMethod(target, prop) {
     const useIndex = prop !== targetFuncName;
     const isWrite = writeMethods.includes(targetFuncName);
     if (
-    // Bail if the target doesn't exist on the target. Eg, getAll isn't in Edge.
-    !(targetFuncName in (useIndex ? IDBIndex : IDBObjectStore).prototype) ||
+        // Bail if the target doesn't exist on the target. Eg, getAll isn't in Edge.
+        !(targetFuncName in (useIndex ? IDBIndex : IDBObjectStore).prototype) ||
         !(isWrite || readMethods.includes(targetFuncName))) {
         return;
     }
@@ -1598,14 +1598,14 @@ class PlatformLoggerServiceImpl {
         // version components.
         return providers
             .map(provider => {
-            if (isVersionServiceProvider(provider)) {
-                const service = provider.getImmediate();
-                return `${service.library}/${service.version}`;
-            }
-            else {
-                return null;
-            }
-        })
+                if (isVersionServiceProvider(provider)) {
+                    const service = provider.getImmediate();
+                    return `${service.library}/${service.version}`;
+                }
+                else {
+                    return null;
+                }
+            })
             .filter(logString => logString)
             .join(' ');
     }
@@ -1981,7 +1981,7 @@ function initializeApp(_options, rawConfig = {}) {
     const name = config.name;
     if (typeof name !== 'string' || !name) {
         throw ERROR_FACTORY.create("bad-app-name" /* AppError.BAD_APP_NAME */, {
-            appName: String(name)
+            appName: string(name)
         });
     }
     options || (options = getDefaultAppConfig());
@@ -2457,8 +2457,8 @@ class HeartbeatStorageImpl {
 function countBytes(heartbeatsCache) {
     // base64 has a restricted set of characters, all of which should be 1 byte.
     return base64urlEncodeWithoutPadding(
-    // heartbeatsCache wrapper properties
-    JSON.stringify({ version: 2, heartbeats: heartbeatsCache })).length;
+        // heartbeatsCache wrapper properties
+        JSON.stringify({ version: 2, heartbeats: heartbeatsCache })).length;
 }
 
 /**

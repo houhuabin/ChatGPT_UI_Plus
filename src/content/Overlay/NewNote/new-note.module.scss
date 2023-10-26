@@ -1,8 +1,8 @@
 @import '../../../assets/sass/main';
 
-
+@import '../dialog.module';
     
-.new-note-container{
+.newNoteContainer{
   
     position: fixed;
     top: 0px;
@@ -15,8 +15,7 @@
     align-items: center; /* 垂直居中 */
 
 }
-    
-.new-note{
+.newNote{
     width: 40rem;  
     min-height: 30rem;
     padding:8px 0;
@@ -24,9 +23,10 @@
     flex-direction: column; /* 使子元素竖直排列 */
     align-items: center; /* 水平居中 */
     justify-content: center; /* 垂直居中 */
+    background-color:$background-color
 }
 
-.new-note-title-container{
+.titleContainer{
     width: 30rem;  
     min-height: 1.5rem;
     margin-bottom: 10px;
@@ -36,31 +36,40 @@
     border-radius: 5px;
     padding: 3px;
 }
-.new-note-title{
-    flex-grow: 1;    
-   
+.titleInput{
+    flex-grow: 1;   
+    color:$text-color-daker;
+    border:none; 
+    box-shadow: none; 
+    outline: none; 
            /* 允许元素占用剩余的空间 */
    // border: 1px solid $input-border-color; 
     /* 添加一些与select元素的间距 */
 }
-.new-note-title-select{
+.documentTypeSelect{
     padding: 0px 30px 0px 5px;
     font-size:1rem;
      border:none;
      border-left: 1px dashed  $input-border-color;
      color:$text-color-daker;
 }
-.new-note-title-select:focus {
+.documentTypeSelect:focus {
     outline: none;
-    border-color: initial; /* 根据需要，可以移除或设置为特定的颜色 */
-    box-shadow: none; /* 有些浏览器可能为聚焦状态添加了阴影，也可以将其移除 */
+    border: none;
+    border-color: $svg-color;
+   // border-color: initial; /* 根据需要，可以移除或设置为特定的颜色 */
+    //box-shadow: none; /* 有些浏览器可能为聚焦状态添加了阴影，也可以将其移除 */
+
+  
 }
 
-.new-note-title:focus{
+.title:focus{
     border-color: $input-border-color; /* 设置获得焦点时的边框颜色也为蓝色 */
     outline: none; /* 移除浏览器默认的焦点轮廓 */
+    
+  
 }
-.new-note-title-icon{
+.title-icon{
 
         display: flex;
         align-items: center;
@@ -77,7 +86,7 @@
         border-left: 1px solid $input-border-color;
 }
 
-.new-note-content-container{
+.contentContainer{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -85,29 +94,37 @@
     border-radius: 5px;
     padding: 2px;
     border: 1px solid  $input-border-color; /* 设置正常状态的边框颜色为蓝色 */
+   
 }   
-.new-note-content{
+.content{
     
     min-height: 20rem;
     width:100%;
     height:100%;
-    
-    border: 1px solid  $input-border-color; /* 设置正常状态的边框颜色为蓝色 */
+    border:none;
+    //border: 1px solid  $input-border-color; /* 设置正常状态的边框颜色为蓝色 */
 }  
 
-.new-note-title-button-conatiner{
 
-    display: flex;
-    width: 100%;
-   
-   
-}
-.new-note-title-button{
+.button{
     margin-top: 10px;
     min-height: 1.7rem;
     min-width: 5rem;
-    justify-content: flex-end;
-    border: 2px solid  $input-border-color;
-    border-radius: 3px;
-    color:$text-color-daker;
+    @include buttonStyles;
+}
+
+
+.buttons{
+    display: flex;
+    width: 100%;
+    flex-direction:row;   
+    justify-content: flex-end; 
+    padding-right: 5rem;
+}
+.buttonConatinerLeft{
+   padding-right: 1rem;
+ 
+}
+.buttonConatinerRight{
+     //margin-right: 20px;
 }

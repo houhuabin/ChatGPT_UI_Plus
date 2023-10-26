@@ -5,10 +5,12 @@ import overlayNewNoteReducer from './reducers/overlayNewNoteReducer';
 
 
 
+
 const rootReducer = combineReducers({
     overlayMenu: overlayMenuReducer,
     overlayNewNote: overlayNewNoteReducer,
     notes: notesReducer,
+
 });
 
 const store = createStore(rootReducer);

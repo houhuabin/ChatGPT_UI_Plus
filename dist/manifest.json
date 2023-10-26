@@ -17,14 +17,8 @@
     "128": "assets/images/icon128.png"
   },
   "permissions": [
-    "tabs",
-    "bookmarks",
     "storage"
   ],
-  "chrome_url_overrides": {
-    "newtab": "tab.html"
-  },
-  "options_page": "options.html",
   "content_scripts": [
     {
       "matches": [
