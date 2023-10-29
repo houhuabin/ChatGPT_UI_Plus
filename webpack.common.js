@@ -5,6 +5,9 @@ const HtmlPlugin = require('html-webpack-plugin');
 const tailwindcss = require('tailwindcss');
 const autoprefixer = require('autoprefixer');
 
+const webpack = require('webpack');
+const dotenv = require('dotenv');
+
 const HtmlWebpackInjectPlugin = require('html-webpack-inject-plugin').default;
 
 
@@ -13,9 +16,12 @@ module.exports = {
 
     entry: {
         popup: path.resolve("./src/popup/index.tsx"),
+        auth: path.resolve("./src/popup/authIndex.tsx"),
+        plan: path.resolve("./src/popup/planIndex.tsx"),
         options: path.resolve("./src/options/options.tsx"),
         // background: path.resolve("./src/background/background.ts"),
         content: path.resolve("./src/content/index.tsx"),
+
 
         tab: path.resolve("./src/tab/index.tsx"),
     },
@@ -23,7 +29,7 @@ module.exports = {
         rules: [
             {
                 use: "ts-loader",
-                test: /\.tsx$/,
+                test: /\.tsx?$/, // 匹配.ts和.tsx文件
                 exclude: /node_modules/,
             },
             {
@@ -60,8 +66,13 @@ module.exports = {
 
             ],
         }),
+        new webpack.DefinePlugin({
+            'process.env': JSON.stringify(dotenv.config().parsed)
+        }),
         ...getHtmlPlugins([
             'popup',
+            'auth',
+            'plan',
             'options',
             'tab'
         ]),

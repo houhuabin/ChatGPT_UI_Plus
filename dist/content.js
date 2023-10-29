@@ -559,11 +559,20 @@ video {
 .z-10 {
   z-index: 10;
 }
-.m-2 {
-  margin: 0.5rem;
-}
 .mb-1 {
   margin-bottom: 0.25rem;
+}
+.mb-8 {
+  margin-bottom: 2rem;
+}
+.mt-12 {
+  margin-top: 3rem;
+}
+.mt-4 {
+  margin-top: 1rem;
+}
+.mt-8 {
+  margin-top: 2rem;
 }
 .block {
   display: block;
@@ -577,20 +586,26 @@ video {
 .hidden {
   display: none;
 }
-.h-9 {
-  height: 2.25rem;
-}
-.h-screen {
-  height: 100vh;
-}
 .h-4 {
   height: 1rem;
+}
+.h-6 {
+  height: 1.5rem;
+}
+.h-9 {
+  height: 2.25rem;
 }
 .max-h-5 {
   max-height: 1.25rem;
 }
 .w-4 {
   width: 1rem;
+}
+.w-6 {
+  width: 1.5rem;
+}
+.w-72 {
+  width: 18rem;
 }
 .flex-1 {
   flex: 1 1 0%;
@@ -607,8 +622,37 @@ video {
 .flex-row {
   flex-direction: row;
 }
+.flex-col {
+  flex-direction: column;
+}
+.items-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
 .gap-2 {
   gap: 0.5rem;
+}
+.gap-4 {
+  gap: 1rem;
+}
+.gap-8 {
+  gap: 2rem;
+}
+.space-y-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+}
+.divide-y > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-y-reverse: 0;
+  border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
+  border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
+}
+.divide-zinc-600 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 1;
+  border-color: rgb(82 82 91 / var(--tw-divide-opacity));
 }
 .overflow-hidden {
   overflow: hidden;
@@ -619,6 +663,20 @@ video {
 .break-all {
   word-break: break-all;
 }
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+.border {
+  border-width: 1px;
+}
+.border-pink-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(236 72 153 / var(--tw-border-opacity));
+}
+.bg-blue-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
+}
 .bg-gray-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
@@ -627,24 +685,60 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
 }
-.bg-indigo-500 {
+.bg-slate-600 {
   --tw-bg-opacity: 1;
-  background-color: rgb(99 102 241 / var(--tw-bg-opacity));
+  background-color: rgb(71 85 105 / var(--tw-bg-opacity));
+}
+.bg-slate-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(15 23 42 / var(--tw-bg-opacity));
+}
+.bg-teal-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 94 89 / var(--tw-bg-opacity));
+}
+.bg-zinc-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(24 24 27 / var(--tw-bg-opacity));
+}
+.bg-opacity-30 {
+  --tw-bg-opacity: 0.3;
+}
+.bg-gradient-to-tr {
+  background-image: linear-gradient(to top right, var(--tw-gradient-stops));
+}
+.from-teal-400 {
+  --tw-gradient-from: #2dd4bf var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(45 212 191 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+.to-blue-500 {
+  --tw-gradient-to: #3b82f6 var(--tw-gradient-to-position);
+}
+.bg-clip-text {
+  -webkit-background-clip: text;
+          background-clip: text;
 }
 .p-1 {
   padding: 0.25rem;
+}
+.p-4 {
+  padding: 1rem;
+}
+.p-6 {
+  padding: 1.5rem;
 }
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
 }
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 .pb-2 {
   padding-bottom: 0.5rem;
@@ -652,40 +746,94 @@ video {
 .pt-3 {
   padding-top: 0.75rem;
 }
+.text-center {
+  text-align: center;
+}
+.align-middle {
+  vertical-align: middle;
+}
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
 }
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
 }
+.font-bold {
+  font-weight: 700;
+}
+.font-extrabold {
+  font-weight: 800;
+}
+.font-light {
+  font-weight: 300;
+}
 .font-medium {
   font-weight: 500;
+}
+.font-semibold {
+  font-weight: 600;
+}
+.leading-6 {
+  line-height: 1.5rem;
 }
 .text-gray-500 {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
 }
+.text-gray-800 {
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
+}
 .text-green-500 {
   --tw-text-opacity: 1;
   color: rgb(34 197 94 / var(--tw-text-opacity));
+}
+.text-slate-300 {
+  --tw-text-opacity: 1;
+  color: rgb(203 213 225 / var(--tw-text-opacity));
+}
+.text-slate-500 {
+  --tw-text-opacity: 1;
+  color: rgb(100 116 139 / var(--tw-text-opacity));
+}
+.text-teal-300 {
+  --tw-text-opacity: 1;
+  color: rgb(94 234 212 / var(--tw-text-opacity));
+}
+.text-transparent {
+  color: transparent;
 }
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
-.text-gray-800 {
+.text-zinc-300 {
   --tw-text-opacity: 1;
-  color: rgb(31 41 55 / var(--tw-text-opacity));
+  color: rgb(212 212 216 / var(--tw-text-opacity));
 }
-.ring-black {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(0 0 0 / var(--tw-ring-opacity));
+.shadow-lg {
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.shadow-sm {
+  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 .filter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -703,9 +851,20 @@ video {
 .ease-out {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
+.hover\\:bg-blue-700:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(29 78 216 / var(--tw-bg-opacity));
+}
+.hover\\:text-slate-300:hover {
+  --tw-text-opacity: 1;
+  color: rgb(203 213 225 / var(--tw-text-opacity));
+}
 .hover\\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.hover\\:underline:hover {
+  text-decoration-line: underline;
 }
 @media (prefers-color-scheme: dark) {
 
@@ -714,8 +873,70 @@ video {
     color: rgb(209 213 219 / var(--tw-text-opacity));
   }
 }
+@media (min-width: 640px) {
 
-`, "",{"version":3,"sources":["webpack://./src/assets/css/tailwind.css"],"names":[],"mappings":"AAAA;;CAAc,CAAd;;;CAAc;;AAAd;;;EAAA,sBAAc,EAAd,MAAc;EAAd,eAAc,EAAd,MAAc;EAAd,mBAAc,EAAd,MAAc;EAAd,qBAAc,EAAd,MAAc;AAAA;;AAAd;;EAAA,gBAAc;AAAA;;AAAd;;;;;;;CAAc;;AAAd;EAAA,gBAAc,EAAd,MAAc;EAAd,8BAAc,EAAd,MAAc;EAAd,gBAAc,EAAd,MAAc;EAAd,cAAc;KAAd,WAAc,EAAd,MAAc;EAAd,4NAAc,EAAd,MAAc;EAAd,6BAAc,EAAd,MAAc;EAAd,+BAAc,EAAd,MAAc;AAAA;;AAAd;;;CAAc;;AAAd;EAAA,SAAc,EAAd,MAAc;EAAd,oBAAc,EAAd,MAAc;AAAA;;AAAd;;;;CAAc;;AAAd;EAAA,SAAc,EAAd,MAAc;EAAd,cAAc,EAAd,MAAc;EAAd,qBAAc,EAAd,MAAc;AAAA;;AAAd;;CAAc;;AAAd;EAAA,yCAAc;UAAd,iCAAc;AAAA;;AAAd;;CAAc;;AAAd;;;;;;EAAA,kBAAc;EAAd,oBAAc;AAAA;;AAAd;;CAAc;;AAAd;EAAA,cAAc;EAAd,wBAAc;AAAA;;AAAd;;CAAc;;AAAd;;EAAA,mBAAc;AAAA;;AAAd;;;CAAc;;AAAd;;;;EAAA,+GAAc,EAAd,MAAc;EAAd,cAAc,EAAd,MAAc;AAAA;;AAAd;;CAAc;;AAAd;EAAA,cAAc;AAAA;;AAAd;;CAAc;;AAAd;;EAAA,cAAc;EAAd,cAAc;EAAd,kBAAc;EAAd,wBAAc;AAAA;;AAAd;EAAA,eAAc;AAAA;;AAAd;EAAA,WAAc;AAAA;;AAAd;;;;CAAc;;AAAd;EAAA,cAAc,EAAd,MAAc;EAAd,qBAAc,EAAd,MAAc;EAAd,yBAAc,EAAd,MAAc;AAAA;;AAAd;;;;CAAc;;AAAd;;;;;EAAA,oBAAc,EAAd,MAAc;EAAd,8BAAc,EAAd,MAAc;EAAd,gCAAc,EAAd,MAAc;EAAd,eAAc,EAAd,MAAc;EAAd,oBAAc,EAAd,MAAc;EAAd,oBAAc,EAAd,MAAc;EAAd,cAAc,EAAd,MAAc;EAAd,SAAc,EAAd,MAAc;EAAd,UAAc,EAAd,MAAc;AAAA;;AAAd;;CAAc;;AAAd;;EAAA,oBAAc;AAAA;;AAAd;;;CAAc;;AAAd;;;;EAAA,0BAAc,EAAd,MAAc;EAAd,6BAAc,EAAd,MAAc;EAAd,sBAAc,EAAd,MAAc;AAAA;;AAAd;;CAAc;;AAAd;EAAA,aAAc;AAAA;;AAAd;;CAAc;;AAAd;EAAA,gBAAc;AAAA;;AAAd;;CAAc;;AAAd;EAAA,wBAAc;AAAA;;AAAd;;CAAc;;AAAd;;EAAA,YAAc;AAAA;;AAAd;;;CAAc;;AAAd;EAAA,6BAAc,EAAd,MAAc;EAAd,oBAAc,EAAd,MAAc;AAAA;;AAAd;;CAAc;;AAAd;EAAA,wBAAc;AAAA;;AAAd;;;CAAc;;AAAd;EAAA,0BAAc,EAAd,MAAc;EAAd,aAAc,EAAd,MAAc;AAAA;;AAAd;;CAAc;;AAAd;EAAA,kBAAc;AAAA;;AAAd;;CAAc;;AAAd;;;;;;;;;;;;;EAAA,SAAc;AAAA;;AAAd;EAAA,SAAc;EAAd,UAAc;AAAA;;AAAd;EAAA,UAAc;AAAA;;AAAd;;;EAAA,gBAAc;EAAd,SAAc;EAAd,UAAc;AAAA;;AAAd;;CAAc;AAAd;EAAA,UAAc;AAAA;;AAAd;;CAAc;;AAAd;EAAA,gBAAc;AAAA;;AAAd;;;CAAc;;AAAd;EAAA,UAAc,EAAd,MAAc;EAAd,cAAc,EAAd,MAAc;AAAA;;AAAd;;EAAA,UAAc,EAAd,MAAc;EAAd,cAAc,EAAd,MAAc;AAAA;;AAAd;;CAAc;;AAAd;;EAAA,eAAc;AAAA;;AAAd;;CAAc;AAAd;EAAA,eAAc;AAAA;;AAAd;;;;CAAc;;AAAd;;;;;;;;EAAA,cAAc,EAAd,MAAc;EAAd,sBAAc,EAAd,MAAc;AAAA;;AAAd;;CAAc;;AAAd;;EAAA,eAAc;EAAd,YAAc;AAAA;;AAAd,wEAAc;AAAd;EAAA,aAAc;AAAA;;AAAd;EAAA,wBAAc;EAAd,wBAAc;EAAd,mBAAc;EAAd,mBAAc;EAAd,cAAc;EAAd,cAAc;EAAd,cAAc;EAAd,eAAc;EAAd,eAAc;EAAd,aAAc;EAAd,aAAc;EAAd,kBAAc;EAAd,sCAAc;EAAd,8BAAc;EAAd,6BAAc;EAAd,4BAAc;EAAd,eAAc;EAAd,oBAAc;EAAd,sBAAc;EAAd,uBAAc;EAAd,wBAAc;EAAd,kBAAc;EAAd,2BAAc;EAAd,4BAAc;EAAd,sCAAc;EAAd,kCAAc;EAAd,2BAAc;EAAd,sBAAc;EAAd,8BAAc;EAAd,YAAc;EAAd,kBAAc;EAAd,gBAAc;EAAd,iBAAc;EAAd,kBAAc;EAAd,cAAc;EAAd,gBAAc;EAAd,aAAc;EAAd,mBAAc;EAAd,qBAAc;EAAd,2BAAc;EAAd,yBAAc;EAAd,0BAAc;EAAd,2BAAc;EAAd,uBAAc;EAAd,wBAAc;EAAd,yBAAc;EAAd;AAAc;;AAAd;EAAA,wBAAc;EAAd,wBAAc;EAAd,mBAAc;EAAd,mBAAc;EAAd,cAAc;EAAd,cAAc;EAAd,cAAc;EAAd,eAAc;EAAd,eAAc;EAAd,aAAc;EAAd,aAAc;EAAd,kBAAc;EAAd,sCAAc;EAAd,8BAAc;EAAd,6BAAc;EAAd,4BAAc;EAAd,eAAc;EAAd,oBAAc;EAAd,sBAAc;EAAd,uBAAc;EAAd,wBAAc;EAAd,kBAAc;EAAd,2BAAc;EAAd,4BAAc;EAAd,sCAAc;EAAd,kCAAc;EAAd,2BAAc;EAAd,sBAAc;EAAd,8BAAc;EAAd,YAAc;EAAd,kBAAc;EAAd,gBAAc;EAAd,iBAAc;EAAd,kBAAc;EAAd,cAAc;EAAd,gBAAc;EAAd,aAAc;EAAd,mBAAc;EAAd,qBAAc;EAAd,2BAAc;EAAd,yBAAc;EAAd,0BAAc;EAAd,2BAAc;EAAd,uBAAc;EAAd,wBAAc;EAAd,yBAAc;EAAd;AAAc;AACd;EAAA;AAAoB;AAApB;;EAAA;IAAA;EAAoB;AAAA;AAApB;;EAAA;IAAA;EAAoB;AAAA;AAApB;;EAAA;IAAA;EAAoB;AAAA;AAApB;;EAAA;IAAA;EAAoB;AAAA;AAApB;;EAAA;IAAA;EAAoB;AAAA;AACpB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA,qBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,iBAAmB;EAAnB;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA,iBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA,gKAAmB;EAAnB,wJAAmB;EAAnB,iLAAmB;EAAnB,wDAAmB;EAAnB;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAFnB;EAAA,oBAIA;EAJA;AAIA;AAJA;;EAAA;IAAA,oBAIA;IAJA;EAIA;AAAA","sourcesContent":["@tailwind base;\r\n@tailwind components;\r\n@tailwind utilities;\r\n\r\n"],"sourceRoot":""}]);
+  .sm\\:mt-16 {
+    margin-top: 4rem;
+  }
+
+  .sm\\:grid {
+    display: grid;
+  }
+
+  .sm\\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sm\\:gap-6 {
+    gap: 1.5rem;
+  }
+
+  .sm\\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0px * var(--tw-space-y-reverse));
+  }
+}
+@media (min-width: 768px) {
+
+  .md\\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .md\\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+}
+@media (min-width: 1024px) {
+
+  .lg\\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .lg\\:max-w-4xl {
+    max-width: 56rem;
+  }
+}
+@media (min-width: 1280px) {
+
+  .xl\\:mx-0 {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .xl\\:max-w-none {
+    max-width: none;
+  }
+
+  .xl\\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+`, "",{"version":3,"sources":["webpack://./src/assets/css/tailwind.css"],"names":[],"mappings":"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","sourcesContent":["@tailwind base;\r\n@tailwind components;\r\n@tailwind utilities;\r\n\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -791,7 +1012,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.gIZjmFc8U5DZpcOPm3xA {
   opacity: 0;
   pointer-events: none;
   transition: opacity 200ms ease-in 0s;
-}`, "",{"version":3,"sources":["webpack://./src/content/Block/block-header.module.scss","webpack://./src/assets/sass/_colors.scss","webpack://./src/assets/sass/_svgContainer.scss"],"names":[],"mappings":"AAEA;EACI,aAAA;EACA,mBAAA;EACA,WAAA;EACA,iBAAA;EACA,mBAAA;EACA,2BAAA;EACA,eAAA;EACA,kBAAA;AADJ;;AAGA;EACI,cAAA;EACA,mBAAA;EACA,cAAA;EACA,iBAAA;EACA,mBAAA;EACA,aAAA;EACA,mBAAA;EAEA,4BCFiB;ADCrB;;AAKA;EAGI,cAAA;EACA,aAAA;EACA,kBAAA;EACA,gBAAA;EEzBA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,kBAAA;EACA,6CAAA;AFsBJ;AEpBI;EACI,qCDTiB;ECUjB,6BDPW;AD6BnB;AEnBI;EACI,oCDbkB;ECclB,sBDbY;ECcZ,0CAAA;EACA,sBAAA;AFqBR;;AAPA;EACI,aAAA;EACA,mBAAA;EACA,UAAA;EACA,oBAAA;EACA,oCAAA;AAUJ","sourcesContent":["@import '../../assets/sass/main';\r\n\r\n.container {\r\n    display: flex;\r\n    align-items: center;\r\n    width: 100%;\r\n    font-size: 0.8rem;\r\n    min-height: 1.5 rem;\r\n    padding: 0px 0px 0px 0.3rem;\r\n    margin-top: 6px;\r\n    margin-bottom: 2px;\r\n}\r\n.title{\r\n    flex: 1 1 auto;\r\n    white-space: nowrap;\r\n    min-width: 0px;\r\n    overflow: visible;\r\n    text-overflow: clip;\r\n    display: flex;\r\n    align-items: center;\r\n     \r\n    color:$text-color-lighter;\r\n}\r\n\r\n\r\n.iconContainer {\r\n   \r\n   // background-color: aquamarine;\r\n    height: 1.2rem;\r\n    width: 1.2rem;\r\n    margin-right: 10px;\r\n    padding: 3px 3px;\r\n    @include activeContainertyles;\r\n}\r\n\r\n.icon {\r\n    display: flex;\r\n    align-items: center;\r\n    opacity: 0;\r\n    pointer-events: none;\r\n    transition: opacity 200ms ease-in 0s;\r\n}\r\n","\r\n\r\n$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color:rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);\r\n","\r\n@mixin activeContainertyles {\r\n   \r\n    //border: 2px solid $input-border-color;\r\n    //border-radius: 3px;\r\n    //color: $text-color-lighter;\r\n    display: flex;\r\n    justify-content: center;  // 水平居中\r\n    align-items: center;      // 垂直居中\r\n    border-radius: 3px;\r\n    transition: background-color 0.3s, color 0.3s;\r\n\r\n    &:hover {\r\n        background-color: $hover-background-color;  \r\n        color: $text-color-hover;  \r\n    }\r\n\r\n    &:active {\r\n        background-color: $active-background-color;  \r\n        color: $text-color-active;  \r\n        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);\r\n        transform: scale(0.97);\r\n    }\r\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/content/Block/block-header.module.scss","webpack://./src/assets/sass/_colors.scss","webpack://./src/assets/sass/_svgContainer.scss"],"names":[],"mappings":"AAEA;EACI,aAAA;EACA,mBAAA;EACA,WAAA;EACA,iBAAA;EACA,mBAAA;EACA,2BAAA;EACA,eAAA;EACA,kBAAA;AADJ;;AAGA;EACI,cAAA;EACA,mBAAA;EACA,cAAA;EACA,iBAAA;EACA,mBAAA;EACA,aAAA;EACA,mBAAA;EAEA,4BCHiB;ADErB;;AAKA;EAGI,cAAA;EACA,aAAA;EACA,kBAAA;EACA,gBAAA;EEzBA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,kBAAA;EACA,6CAAA;AFsBJ;AEpBI;EACI,qCDXiB;ECYjB,6BDTW;AD+BnB;AEnBI;EACI,oCDfkB;ECgBlB,sBDfY;ECgBZ,0CAAA;EACA,sBAAA;AFqBR;;AAPA;EACI,aAAA;EACA,mBAAA;EACA,UAAA;EACA,oBAAA;EACA,oCAAA;AAUJ","sourcesContent":["@import '../../assets/sass/main';\r\n\r\n.container {\r\n    display: flex;\r\n    align-items: center;\r\n    width: 100%;\r\n    font-size: 0.8rem;\r\n    min-height: 1.5 rem;\r\n    padding: 0px 0px 0px 0.3rem;\r\n    margin-top: 6px;\r\n    margin-bottom: 2px;\r\n}\r\n.title{\r\n    flex: 1 1 auto;\r\n    white-space: nowrap;\r\n    min-width: 0px;\r\n    overflow: visible;\r\n    text-overflow: clip;\r\n    display: flex;\r\n    align-items: center;\r\n     \r\n    color:$text-color-lighter;\r\n}\r\n\r\n\r\n.iconContainer {\r\n   \r\n   // background-color: aquamarine;\r\n    height: 1.2rem;\r\n    width: 1.2rem;\r\n    margin-right: 10px;\r\n    padding: 3px 3px;\r\n    @include activeContainertyles;\r\n}\r\n\r\n.icon {\r\n    display: flex;\r\n    align-items: center;\r\n    opacity: 0;\r\n    pointer-events: none;\r\n    transition: opacity 200ms ease-in 0s;\r\n}\r\n","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(25, 25, 29, 0.5);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);","\r\n@mixin activeContainertyles {\r\n   \r\n    //border: 2px solid $input-border-color;\r\n    //border-radius: 3px;\r\n    //color: $text-color-lighter;\r\n    display: flex;\r\n    justify-content: center;  // 水平居中\r\n    align-items: center;      // 垂直居中\r\n    border-radius: 3px;\r\n    transition: background-color 0.3s, color 0.3s;\r\n\r\n    &:hover {\r\n        background-color: $hover-background-color;  \r\n        color: $text-color-hover;  \r\n    }\r\n\r\n    &:active {\r\n        background-color: $active-background-color;  \r\n        color: $text-color-active;  \r\n        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);\r\n        transform: scale(0.97);\r\n    }\r\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"container": `gIZjmFc8U5DZpcOPm3xA`,
@@ -830,10 +1051,51 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.MpzAD2RZC0F0_zyultZW {
   border: 0.5px solid rgba(47, 53, 55, 0.3);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 0.8px 0;
-}`, "",{"version":3,"sources":["webpack://./src/content/Block/leftbar-block.module.scss"],"names":[],"mappings":"AACA;EACI,uBAAA;EAEA,kBAAA;EACA,mBAAA;EAGA,yCAAA;EAGA,wCAAA;EACA,eAAA;AALJ","sourcesContent":["@import '../../assets/sass/main';\r\n.leftBarBlock{\r\n    background-color: $background-color;\r\n    // 圆角\r\n    border-radius: 2px; // 您可以根据需要调整这个值\r\n    padding-bottom: 5px;\r\n\r\n    // 边框\r\n    border: 0.5px solid $svg-color-lighter; // 假设您在SASS变量中有一个名为$border-color的颜色\r\n\r\n    // 阴影\r\n    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  // 这会产生一个向下偏移的轻微阴影\r\n    margin: 0.8px 0;\r\n  \r\n}\r\n\r\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/content/Block/leftbar-block.module.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AACA;EACI,uBCFe;EDIf,kBAAA;EACA,mBAAA;EAGA,yCAAA;EAGA,wCAAA;EACA,eAAA;AALJ","sourcesContent":["@import '../../assets/sass/main';\r\n.leftBarBlock{\r\n    background-color: $background-color;\r\n    // 圆角\r\n    border-radius: 2px; // 您可以根据需要调整这个值\r\n    padding-bottom: 5px;\r\n\r\n    // 边框\r\n    border: 0.5px solid $svg-color-lighter; // 假设您在SASS变量中有一个名为$border-color的颜色\r\n\r\n    // 阴影\r\n    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  // 这会产生一个向下偏移的轻微阴影\r\n    margin: 0.8px 0;\r\n  \r\n}\r\n\r\n","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(25, 25, 29, 0.5);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"leftBarBlock": `MpzAD2RZC0F0_zyultZW`
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/content/Block/setting-block.module.scss":
+/*!**********************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/content/Block/setting-block.module.scss ***!
+  \**********************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/css-loader/dist/runtime/sourceMaps.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, `.DifmtXjgXY5gUrcyF4Yh {
+  background-color: white;
+  border-radius: 2px;
+  padding-bottom: 5px;
+  border: 0.5px solid rgba(47, 53, 55, 0.3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0.8px 0;
+}
+
+.zRUoUvylXeR9z6NPj50t {
+  margin: 4px 4px 0px 4px;
+}`, "",{"version":3,"sources":["webpack://./src/content/Block/leftbar-block.module.scss","webpack://./src/assets/sass/_colors.scss","webpack://./src/content/Block/setting-block.module.scss"],"names":[],"mappings":"AACA;EACI,uBCFe;EDIf,kBAAA;EACA,mBAAA;EAGA,yCAAA;EAGA,wCAAA;EACA,eAAA;AELJ;;AAJA;EACI,uBAAA;AAOJ","sourcesContent":["@import '../../assets/sass/main';\r\n.leftBarBlock{\r\n    background-color: $background-color;\r\n    // 圆角\r\n    border-radius: 2px; // 您可以根据需要调整这个值\r\n    padding-bottom: 5px;\r\n\r\n    // 边框\r\n    border: 0.5px solid $svg-color-lighter; // 假设您在SASS变量中有一个名为$border-color的颜色\r\n\r\n    // 阴影\r\n    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  // 这会产生一个向下偏移的轻微阴影\r\n    margin: 0.8px 0;\r\n  \r\n}\r\n\r\n","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(25, 25, 29, 0.5);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);","@import '../../assets/sass/main';\r\n@import './leftbar-block.module.scss';\r\n\r\n.userContainer {\r\n    margin: 4px 4px 0px 4px;\r\n\r\n}"],"sourceRoot":""}]);
+// Exports
+___CSS_LOADER_EXPORT___.locals = {
+	"leftBarBlock": `DifmtXjgXY5gUrcyF4Yh`,
+	"userContainer": `zRUoUvylXeR9z6NPj50t`
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -936,7 +1198,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.Dr0AP2_JpUeAbC8FAvxw {
   overflow: hidden;
   text-overflow: ellipsis;
   margin-left: 2px;
-}`, "",{"version":3,"sources":["webpack://./src/content/Notes/NoteTitle/note-title.module.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AAEA;EACI,cAAA;EACA,mBAAA;EACA,cAAA;EACA,gBAAA;EACA,mBAAA;EACA,aAAA;EACA,mBAAA;AADJ;AAEI;EACI,+BCPiB;ADOzB;;AAIA;EACI,aAAA;EACA,kBAAA;EACA,SAAA;EACA,OAAA;EACA,WAAA;EACA,yBAAA;EACA,aAAA;EACA,sBAAA;AADJ;;AAIE;EACE,cAAA;AADJ;;AAIA;EAEI,mBAAA;EACA,gBAAA;EACA,uBAAA;EACA,gBAAA;AAFJ","sourcesContent":["@import '../../../assets/sass/main';\r\n\r\n.container {\r\n    flex: 1 1 auto;\r\n    white-space: nowrap;\r\n    min-width: 0px;\r\n    overflow: hidden;\r\n    text-overflow: clip;\r\n    display: flex;\r\n    align-items: center;\r\n    &:hover {\r\n        background: $hover-background-color;\r\n    }\r\n   \r\n}\r\n.content {\r\n    display: none;  // 默认隐藏\r\n    position: absolute;  // 使用绝对定位\r\n    top: 100%;  // 位于.container的底部\r\n    left: 0;  // 从左边开始\r\n    width: 100%;  // 与.container相同的宽度\r\n    background-color: #f5f5f5;\r\n    padding: 10px;\r\n    box-sizing: border-box;\r\n  }\r\n  \r\n  .container:hover .content {\r\n    display: block;  // 当鼠标悬停在.container上时显示\r\n  }\r\n\r\n.title {\r\n  \r\n    white-space: nowrap;\r\n    overflow: hidden;\r\n    text-overflow: ellipsis;\r\n    margin-left: 2px;\r\n}","\r\n\r\n$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color:rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);\r\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/content/Notes/NoteTitle/note-title.module.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AAEA;EACI,cAAA;EACA,mBAAA;EACA,cAAA;EACA,gBAAA;EACA,mBAAA;EACA,aAAA;EACA,mBAAA;AADJ;AAEI;EACI,+BCTiB;ADSzB;;AAIA;EACI,aAAA;EACA,kBAAA;EACA,SAAA;EACA,OAAA;EACA,WAAA;EACA,yBAAA;EACA,aAAA;EACA,sBAAA;AADJ;;AAIE;EACE,cAAA;AADJ;;AAIA;EAEI,mBAAA;EACA,gBAAA;EACA,uBAAA;EACA,gBAAA;AAFJ","sourcesContent":["@import '../../../assets/sass/main';\r\n\r\n.container {\r\n    flex: 1 1 auto;\r\n    white-space: nowrap;\r\n    min-width: 0px;\r\n    overflow: hidden;\r\n    text-overflow: clip;\r\n    display: flex;\r\n    align-items: center;\r\n    &:hover {\r\n        background: $hover-background-color;\r\n    }\r\n   \r\n}\r\n.content {\r\n    display: none;  // 默认隐藏\r\n    position: absolute;  // 使用绝对定位\r\n    top: 100%;  // 位于.container的底部\r\n    left: 0;  // 从左边开始\r\n    width: 100%;  // 与.container相同的宽度\r\n    background-color: #f5f5f5;\r\n    padding: 10px;\r\n    box-sizing: border-box;\r\n  }\r\n  \r\n  .container:hover .content {\r\n    display: block;  // 当鼠标悬停在.container上时显示\r\n  }\r\n\r\n.title {\r\n  \r\n    white-space: nowrap;\r\n    overflow: hidden;\r\n    text-overflow: ellipsis;\r\n    margin-left: 2px;\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(25, 25, 29, 0.5);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"container": `Dr0AP2_JpUeAbC8FAvxw`,
@@ -1010,7 +1272,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.p7kBgBIWJNFP877jH1b1 {
     outline: none; 
 }
 */
-/* Similarly, for focus effect (if the div gets focus due to being interactive): */`, "",{"version":3,"sources":["webpack://./src/content/Notes/RightKebab/right-kebab.module.scss","webpack://./src/assets/sass/_svgContainer.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AAEA;EACI,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,cAAA;EACA,YAAA;EACA,YAAA;EACA,iBAAA;AADJ;;AAGA;EACI,iBAAA;EACA,cAAA;EACA,eAAA;EACA,kBAAA;EACA,gBAAA;ECVA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,kBAAA;EACA,6CAAA;ADWJ;ACTI;EACI,qCCTiB;EDUjB,6BCPW;AFkBnB;ACRI;EACI,oCCbkB;EDclB,sBCbY;EDcZ,0CAAA;EACA,sBAAA;ADUR;;AAPA,4GAAA;AACA;;;;;;;;CAAA;AASA,kFAAA","sourcesContent":["@import '../../../assets/sass/main';\r\n\r\n.container {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    flex-shrink: 0;\r\n    flex-grow: 0;\r\n    height: 100%;\r\n    padding-left: 3px;\r\n}\r\n.button {\r\n    user-select: none; \r\n    width: 1.25rem;\r\n    height: 1.25rem;\r\n    border-radius: 3px;\r\n    margin-left: 4px;\r\n    @include activeContainertyles;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n/* If you want to add any hover or focus effects, you can use pseudo-classes. Here's an example for hover: */\r\n/*\r\n.button:hover  {\r\n    fill: $hover-svg-color; \r\n}\r\n.button:focus {\r\n    fill: $hover-svg-color; \r\n    outline: none; \r\n}\r\n*/\r\n/* Similarly, for focus effect (if the div gets focus due to being interactive): */\r\n\r\n\r\n","\r\n@mixin activeContainertyles {\r\n   \r\n    //border: 2px solid $input-border-color;\r\n    //border-radius: 3px;\r\n    //color: $text-color-lighter;\r\n    display: flex;\r\n    justify-content: center;  // 水平居中\r\n    align-items: center;      // 垂直居中\r\n    border-radius: 3px;\r\n    transition: background-color 0.3s, color 0.3s;\r\n\r\n    &:hover {\r\n        background-color: $hover-background-color;  \r\n        color: $text-color-hover;  \r\n    }\r\n\r\n    &:active {\r\n        background-color: $active-background-color;  \r\n        color: $text-color-active;  \r\n        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);\r\n        transform: scale(0.97);\r\n    }\r\n}","\r\n\r\n$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color:rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);\r\n"],"sourceRoot":""}]);
+/* Similarly, for focus effect (if the div gets focus due to being interactive): */`, "",{"version":3,"sources":["webpack://./src/content/Notes/RightKebab/right-kebab.module.scss","webpack://./src/assets/sass/_svgContainer.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AAEA;EACI,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,cAAA;EACA,YAAA;EACA,YAAA;EACA,iBAAA;AADJ;;AAGA;EACI,iBAAA;EACA,cAAA;EACA,eAAA;EACA,kBAAA;EACA,gBAAA;ECVA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,kBAAA;EACA,6CAAA;ADWJ;ACTI;EACI,qCCXiB;EDYjB,6BCTW;AFoBnB;ACRI;EACI,oCCfkB;EDgBlB,sBCfY;EDgBZ,0CAAA;EACA,sBAAA;ADUR;;AAPA,4GAAA;AACA;;;;;;;;CAAA;AASA,kFAAA","sourcesContent":["@import '../../../assets/sass/main';\r\n\r\n.container {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    flex-shrink: 0;\r\n    flex-grow: 0;\r\n    height: 100%;\r\n    padding-left: 3px;\r\n}\r\n.button {\r\n    user-select: none; \r\n    width: 1.25rem;\r\n    height: 1.25rem;\r\n    border-radius: 3px;\r\n    margin-left: 4px;\r\n    @include activeContainertyles;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n/* If you want to add any hover or focus effects, you can use pseudo-classes. Here's an example for hover: */\r\n/*\r\n.button:hover  {\r\n    fill: $hover-svg-color; \r\n}\r\n.button:focus {\r\n    fill: $hover-svg-color; \r\n    outline: none; \r\n}\r\n*/\r\n/* Similarly, for focus effect (if the div gets focus due to being interactive): */\r\n\r\n\r\n","\r\n@mixin activeContainertyles {\r\n   \r\n    //border: 2px solid $input-border-color;\r\n    //border-radius: 3px;\r\n    //color: $text-color-lighter;\r\n    display: flex;\r\n    justify-content: center;  // 水平居中\r\n    align-items: center;      // 垂直居中\r\n    border-radius: 3px;\r\n    transition: background-color 0.3s, color 0.3s;\r\n\r\n    &:hover {\r\n        background-color: $hover-background-color;  \r\n        color: $text-color-hover;  \r\n    }\r\n\r\n    &:active {\r\n        background-color: $active-background-color;  \r\n        color: $text-color-active;  \r\n        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);\r\n        transform: scale(0.97);\r\n    }\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(25, 25, 29, 0.5);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"container": `p7kBgBIWJNFP877jH1b1`,
@@ -1077,7 +1339,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.B0zEGGR8zLYJP91Hc_PB {
 .xKJaDouyTs8hq7RapX_C:focus .MWLEIzY5uzrx4Yvm37fU {
   fill: rgba(25, 23, 17, 0.8); /* Darken the color a bit on focus */
   outline: none; /* If you want to remove the default focus outline, but remember to provide another visual indication for accessibility */
-}`, "",{"version":3,"sources":["webpack://./src/content/Notes/Toggle/toggle.module.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AAGA;EACI,cAAA;EACA,YAAA;EACA,kBAAA;EACA,6BAAA;EACA,cAAA;EACA,eAAA;EACA,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,iBAAA;AAFJ;;AAKA;EACI,iBAAA;EACA,sCAAA;EACA,eAAA;EACA,kBAAA;EACA,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,WAAA;EACA,YAAA;EACA,kBAAA;AAFJ;;AAKA;EACI,+BC1BqB;ADwBzB;;AAMA;EACI,2BC1Ba,ED0BW,oCAAA;AAH5B;;AAKA;EACI,2BC7Ba,ED6BW,oCAAA;EACxB,aAAA,EAAA,yHAAA;AAFJ","sourcesContent":["\r\n@import '../../../assets/sass/main';\r\n\r\n.toggle-container {\r\n    flex-shrink: 0;\r\n    flex-grow: 0;\r\n    border-radius: 3px;\r\n    color: rgba(47, 53, 55, 0.65);\r\n    width: 1.38rem;\r\n    height: 1.38rem;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    margin-right: 0px;    \r\n}\r\n\r\n.button {\r\n    user-select: none;\r\n    transition: background 20ms ease-in 0s;\r\n    cursor: pointer;\r\n    position: relative;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    width: 20px;\r\n    height: 20px;\r\n    border-radius: 3px;\r\n}\r\n\r\n.container:hover .button{\r\n    background: $hover-background-color;\r\n}\r\n\r\n\r\n.container:hover .toggleSVG {\r\n    fill: $hover-svg-color; /* Darken the color a bit on hover */\r\n}\r\n.container:focus .toggleSVG {\r\n    fill: $hover-svg-color; /* Darken the color a bit on focus */\r\n    outline: none; /* If you want to remove the default focus outline, but remember to provide another visual indication for accessibility */\r\n}","\r\n\r\n$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color:rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);\r\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/content/Notes/Toggle/toggle.module.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AAGA;EACI,cAAA;EACA,YAAA;EACA,kBAAA;EACA,6BAAA;EACA,cAAA;EACA,eAAA;EACA,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,iBAAA;AAFJ;;AAKA;EACI,iBAAA;EACA,sCAAA;EACA,eAAA;EACA,kBAAA;EACA,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,WAAA;EACA,YAAA;EACA,kBAAA;AAFJ;;AAKA;EACI,+BC5BqB;AD0BzB;;AAMA;EACI,2BC5Bc,ED4BU,oCAAA;AAH5B;;AAKA;EACI,2BC/Bc,ED+BU,oCAAA;EACxB,aAAA,EAAA,yHAAA;AAFJ","sourcesContent":["\r\n@import '../../../assets/sass/main';\r\n\r\n.toggle-container {\r\n    flex-shrink: 0;\r\n    flex-grow: 0;\r\n    border-radius: 3px;\r\n    color: rgba(47, 53, 55, 0.65);\r\n    width: 1.38rem;\r\n    height: 1.38rem;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    margin-right: 0px;    \r\n}\r\n\r\n.button {\r\n    user-select: none;\r\n    transition: background 20ms ease-in 0s;\r\n    cursor: pointer;\r\n    position: relative;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    width: 20px;\r\n    height: 20px;\r\n    border-radius: 3px;\r\n}\r\n\r\n.container:hover .button{\r\n    background: $hover-background-color;\r\n}\r\n\r\n\r\n.container:hover .toggleSVG {\r\n    fill: $hover-svg-color; /* Darken the color a bit on hover */\r\n}\r\n.container:focus .toggleSVG {\r\n    fill: $hover-svg-color; /* Darken the color a bit on focus */\r\n    outline: none; /* If you want to remove the default focus outline, but remember to provide another visual indication for accessibility */\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(25, 25, 29, 0.5);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"toggle-container": `B0zEGGR8zLYJP91Hc_PB`,
@@ -1126,7 +1388,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.ffEHfGGKQG8IZYpflM7K {
   font-weight: 400;
   cursor: pointer;
   color: rgba(47, 53, 55, 0.8);
-}`, "",{"version":3,"sources":["webpack://./src/content/Notes/note.module.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AACA;EACI,uBAAA;AAAJ;;AAIA;EACI,aAAA;EACA,mBAAA;EACA,WAAA;EACA,iBAAA;EACA,kBAAA;EACA,yBAAA;EACA,eAAA;EACA,kBAAA;EACA,kBAAA;EACA,gBAAA;EAEA,eAAA;EAEA,4BCHe;ADAnB","sourcesContent":["@import '../../assets/sass/main';\r\n.container{\r\n    background-color: $background-color;\r\n}\r\n\r\n\r\n.note {\r\n    display: flex;\r\n    align-items: center;\r\n    width: 100%;\r\n    font-size: 0.8rem;\r\n    min-height: 1.7rem;\r\n    padding: 2px 10px 2px 5px;\r\n    margin-top: 1px;\r\n    margin-bottom: 1px;\r\n    border-radius: 3px;\r\n    font-weight: 400;\r\n    \r\n    cursor: pointer;\r\n   \r\n    color:$text-color-daker;\r\n}\r\n\r\n\r\n\r\n\r\n","\r\n\r\n$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color:rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);\r\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/content/Notes/note.module.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AACA;EACI,uBCFe;ADEnB;;AAIA;EACI,aAAA;EACA,mBAAA;EACA,WAAA;EACA,iBAAA;EACA,kBAAA;EACA,yBAAA;EACA,eAAA;EACA,kBAAA;EACA,kBAAA;EACA,gBAAA;EAEA,eAAA;EAEA,4BCJe;ADCnB","sourcesContent":["@import '../../assets/sass/main';\r\n.container{\r\n    background-color: $background-color;\r\n}\r\n\r\n\r\n.note {\r\n    display: flex;\r\n    align-items: center;\r\n    width: 100%;\r\n    font-size: 0.8rem;\r\n    min-height: 1.7rem;\r\n    padding: 2px 10px 2px 5px;\r\n    margin-top: 1px;\r\n    margin-bottom: 1px;\r\n    border-radius: 3px;\r\n    font-weight: 400;\r\n    \r\n    cursor: pointer;\r\n   \r\n    color:$text-color-daker;\r\n}\r\n\r\n\r\n\r\n\r\n","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(25, 25, 29, 0.5);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"container": `ffEHfGGKQG8IZYpflM7K`,
@@ -1297,7 +1559,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.BdC4pWHamC6gl0WLRSDy {
   margin-right: 8px;
   min-width: 0px;
   flex-shrink: 0;
-}`, "",{"version":3,"sources":["webpack://./src/content/Overlay/Menu/MenuItem/menu-item.module.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AAGA;EACI,iBAAA;EACA,sCAAA;EACA,eAAA;EACA,uBAAA;EACA,gBAAA;EACA,iBAAA;EACA,kBAAA;EACA,kBAAA;EAEA,aAAA;EACA,mBAAA;EACA,iBAAA;EACA,iBAAA;EACA,gBAAA;EACA,eAAA;AAHJ;;AAMA;EACI,+BClBqB;ADezB;;AAOA;EACI,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,iBAAA;EACA,iBAAA;AAJJ;;AAUA;EACI,iBAAA;EACA,kBAAA;EACA,cAAA;EACA,cAAA;EACA,mBAAA;EACA,gBAAA;EACA,uBAAA;EACA,4BC5Be;ADqBnB;;AAUC;EACG,iBAAA;EACA,iBAAA;EAEA,cAAA;EACA,cAAA;AARJ","sourcesContent":["@import '../../../../assets/sass/main';\r\n\r\n\r\n.menuItem {\r\n    user-select: none;\r\n    transition: background 20ms ease-in 0s;\r\n    cursor: pointer;\r\n    width: calc(100% - 8px);\r\n    margin-left: 4px;\r\n    margin-right: 2px;\r\n    padding-right: 6px;\r\n    border-radius: 3px;\r\n    \r\n    display: flex;\r\n    align-items: center;\r\n    line-height: 120%; \r\n    user-select: none;\r\n    min-height: 28px;\r\n    font-size: 14px;\r\n   \r\n}\r\n.menuItem:hover {\r\n    background: $hover-background-color;\r\n}\r\n\r\n\r\n.iconContainer {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    margin-left: 10px;\r\n    margin-right: 4px;\r\n}\r\n\r\n\r\n\r\n\r\n.menuText {\r\n    margin-left: 10px;\r\n    margin-right: 12px;\r\n    min-width: 0px;\r\n    flex: 1 1 auto;\r\n    white-space: nowrap;\r\n    overflow: hidden;\r\n    text-overflow: ellipsis;\r\n    color:$text-color-daker;\r\n    \r\n}\r\n .hotkeyContainer {\r\n    margin-left: auto;\r\n    margin-right: 8px;\r\n  \r\n    min-width: 0px;\r\n    flex-shrink: 0;\r\n   \r\n}\r\n\r\n","\r\n\r\n$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color:rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);\r\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/content/Overlay/Menu/MenuItem/menu-item.module.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AAGA;EACI,iBAAA;EACA,sCAAA;EACA,eAAA;EACA,uBAAA;EACA,gBAAA;EACA,iBAAA;EACA,kBAAA;EACA,kBAAA;EAEA,aAAA;EACA,mBAAA;EACA,iBAAA;EACA,iBAAA;EACA,gBAAA;EACA,eAAA;AAHJ;;AAMA;EACI,+BCpBqB;ADiBzB;;AAOA;EACI,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,iBAAA;EACA,iBAAA;AAJJ;;AAUA;EACI,iBAAA;EACA,kBAAA;EACA,cAAA;EACA,cAAA;EACA,mBAAA;EACA,gBAAA;EACA,uBAAA;EACA,4BC7Be;ADsBnB;;AAUC;EACG,iBAAA;EACA,iBAAA;EAEA,cAAA;EACA,cAAA;AARJ","sourcesContent":["@import '../../../../assets/sass/main';\r\n\r\n\r\n.menuItem {\r\n    user-select: none;\r\n    transition: background 20ms ease-in 0s;\r\n    cursor: pointer;\r\n    width: calc(100% - 8px);\r\n    margin-left: 4px;\r\n    margin-right: 2px;\r\n    padding-right: 6px;\r\n    border-radius: 3px;\r\n    \r\n    display: flex;\r\n    align-items: center;\r\n    line-height: 120%; \r\n    user-select: none;\r\n    min-height: 28px;\r\n    font-size: 14px;\r\n   \r\n}\r\n.menuItem:hover {\r\n    background: $hover-background-color;\r\n}\r\n\r\n\r\n.iconContainer {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    margin-left: 10px;\r\n    margin-right: 4px;\r\n}\r\n\r\n\r\n\r\n\r\n.menuText {\r\n    margin-left: 10px;\r\n    margin-right: 12px;\r\n    min-width: 0px;\r\n    flex: 1 1 auto;\r\n    white-space: nowrap;\r\n    overflow: hidden;\r\n    text-overflow: ellipsis;\r\n    color:$text-color-daker;\r\n    \r\n}\r\n .hotkeyContainer {\r\n    margin-left: auto;\r\n    margin-right: 8px;\r\n  \r\n    min-width: 0px;\r\n    flex-shrink: 0;\r\n   \r\n}\r\n\r\n","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(25, 25, 29, 0.5);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"menuItem": `BdC4pWHamC6gl0WLRSDy`,
@@ -1329,7 +1591,38 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `.OJkhTwt0KC0U5h4At0HZ {
+___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
+.Gf6xmVVJTeYAJKrz0GvA {
+  pointer-events: auto;
+  position: relative;
+  z-index: 10000;
+  display: block;
+  background-color: rgb(47, 53, 55);
+}
+
+.oZ7Jal3rLL5P694YBqDA {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.jfzbT0hKrwq8FY94nS8J {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(47, 53, 55, 0.3);
+  display: flex;
+  justify-content: center;
+  /* 水平居中 */
+  align-items: center;
+  /* 垂直居中 */
+}
+
+.OJkhTwt0KC0U5h4At0HZ {
   border-radius: 4px;
   background: white;
   position: relative;
@@ -1347,9 +1640,12 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.OJkhTwt0KC0U5h4At0HZ {
   height: 1px;
   background-color: rgba(47, 53, 55, 0.3);
   margin: 5px 0;
-}`, "",{"version":3,"sources":["webpack://./src/content/Overlay/dialog.module.scss","webpack://./src/assets/sass/_colors.scss","webpack://./src/content/Overlay/Menu/menu.module.scss"],"names":[],"mappings":"AAGA;EACI,kBAAA;EAEA,iBCJe;EDKf,kBAAA;EACA,6BAAA;EACA,yHAAA;EAGA,gBAAA;AELJ;;AAJA;EACI,YAAA;EACA,yBAAA;AAOJ;;AAHA;EACI,WAAA;EACA,uCDCgB;ECAhB,aAAA;AAMJ","sourcesContent":["@import '../../assets/sass/main';\r\n\r\n\r\n.dialogContainer {\r\n    border-radius: 4px;\r\n\r\n    background: $background-color;\r\n    position: relative;\r\n    max-width: calc(100vw - 24px);\r\n    box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px, \r\n                rgba(15, 15, 15, 0.1) 0px 3px 6px, \r\n                rgba(15, 15, 15, 0.2) 0px 9px 24px;\r\n    overflow: hidden;\r\n    \r\n}\r\n","\r\n\r\n$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color:rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);\r\n","@import '../dialog.module.scss';\r\n@import '../../../assets/sass/main';\r\n\r\n.menu{\r\n    width: 15rem;  \r\n    padding:8px 12px 8px 8px;\r\n    //margin-right: 10px;\r\n}\r\n\r\n.menuSeparator {\r\n    height: 1px;\r\n    background-color:$svg-color-lighter;\r\n    margin: 5px 0;\r\n    \r\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/content/Overlay/Menu/menu.module.scss","webpack://./src/content/Overlay/overlay.module.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AAAA,gBAAgB;ACEhB;EACI,oBAAA;EACA,kBAAA;EACA,cAAA;EACA,cAAA;EACA,iCCckB;AFdtB;;ACIA;EACI,eAAA;EACA,QAAA;EACA,SAAA;EACA,YAAA;EACA,aAAA;ADDJ;;ACKA;EAEI,eAAA;EACA,QAAA;EACA,SAAA;EACA,YAAA;EACA,aAAA;EACA,uCCPW;EDQX,aAAA;EACA,uBAAA;EACA,SAAA;EACA,mBAAA;EACA,SAAA;ADHJ;;ACOA;EACI,kBAAA;EAEA,iBCvCe;EDwCf,kBAAA;EACA,6BAAA;EACA,yHAAA;EAGA,gBAAA;ADPJ;;AAnCA;EACI,YAAA;EACA,yBAAA;AAsCJ;;AAlCA;EACI,WAAA;EACA,uCEDgB;EFEhB,aAAA;AAqCJ","sourcesContent":["@import '../../../assets/sass/main';\r\n@import '../overlay.module.scss';\r\n\r\n.menu {\r\n    width: 15rem;\r\n    padding: 8px 12px 8px 8px;\r\n    //margin-right: 10px;\r\n}\r\n\r\n.menuSeparator {\r\n    height: 1px;\r\n    background-color: $svg-color-lighter;\r\n    margin: 5px 0;\r\n\r\n}","@import '../../assets/sass/main';\r\n\r\n.overlay {\r\n    pointer-events: auto;\r\n    position: relative;\r\n    z-index: 10000;\r\n    display: block;\r\n    background-color: $ovelay-color-darker;\r\n\r\n}\r\n\r\n.innerContainer {\r\n    position: fixed;\r\n    top: 0px;\r\n    left: 0px;\r\n    width: 100vw;\r\n    height: 100vh;\r\n\r\n}\r\n\r\n.innerCenterContainer {\r\n\r\n    position: fixed;\r\n    top: 0px;\r\n    left: 0px;\r\n    width: 100vw;\r\n    height: 100vh;\r\n    background-color: $ovelay-color;\r\n    display: flex;\r\n    justify-content: center;\r\n    /* 水平居中 */\r\n    align-items: center;\r\n    /* 垂直居中 */\r\n\r\n}\r\n\r\n.dialogContainer {\r\n    border-radius: 4px;\r\n\r\n    background: $background-color;\r\n    position: relative;\r\n    max-width: calc(100vw - 24px);\r\n    box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px,\r\n        rgba(15, 15, 15, 0.1) 0px 3px 6px,\r\n        rgba(15, 15, 15, 0.2) 0px 9px 24px;\r\n    overflow: hidden;\r\n\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(25, 25, 29, 0.5);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
+	"overlay": `Gf6xmVVJTeYAJKrz0GvA`,
+	"innerContainer": `oZ7Jal3rLL5P694YBqDA`,
+	"innerCenterContainer": `jfzbT0hKrwq8FY94nS8J`,
 	"dialogContainer": `OJkhTwt0KC0U5h4At0HZ`,
 	"menu": `s2Fy3_4ZE03LjFvuULSo`,
 	"menuSeparator": `BSOuJML1bPGyJfE_30XT`
@@ -1379,35 +1675,17 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
-.zMNrMIAOtbOrJ3i9T46s {
-  border-radius: 4px;
-  background: white;
-  position: relative;
-  max-width: calc(100vw - 24px);
-  box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 3px 6px, rgba(15, 15, 15, 0.2) 0px 9px 24px;
-  overflow: hidden;
-}
-
-.jKx78BrB3HsgLBsV69Ta {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(47, 53, 55, 0.3);
-  display: flex;
-  justify-content: center; /* 水平居中 */
-  align-items: center; /* 垂直居中 */
-}
-
 .RmYQYqpapt8cfkLZrSJh {
   width: 40rem;
   min-height: 30rem;
   padding: 8px 0;
   display: flex;
-  flex-direction: column; /* 使子元素竖直排列 */
-  align-items: center; /* 水平居中 */
-  justify-content: center; /* 垂直居中 */
+  flex-direction: column;
+  /* 使子元素竖直排列 */
+  align-items: center;
+  /* 水平居中 */
+  justify-content: center;
+  /* 垂直居中 */
   background-color: white;
 }
 
@@ -1416,7 +1694,8 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
   min-height: 1.5rem;
   margin-bottom: 10px;
   font-size: 1.5rem;
-  border: 1px solid rgba(47, 53, 55, 0.6); /* 设置正常状态的边框颜色为蓝色 */
+  border: 1px solid rgba(47, 53, 55, 0.6);
+  /* 设置正常状态的边框颜色为蓝色 */
   display: flex;
   border-radius: 5px;
   padding: 3px;
@@ -1447,8 +1726,10 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
 }
 
 .asY_cb9w3RXyzKte4etc:focus {
-  border-color: rgba(47, 53, 55, 0.6); /* 设置获得焦点时的边框颜色也为蓝色 */
-  outline: none; /* 移除浏览器默认的焦点轮廓 */
+  border-color: rgba(47, 53, 55, 0.6);
+  /* 设置获得焦点时的边框颜色也为蓝色 */
+  outline: none;
+  /* 移除浏览器默认的焦点轮廓 */
 }
 
 .hCtQSjTRvvKoCIgNTqsV {
@@ -1470,7 +1751,8 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
   width: 30rem;
   border-radius: 5px;
   padding: 2px;
-  border: 1px solid rgba(47, 53, 55, 0.6); /* 设置正常状态的边框颜色为蓝色 */
+  border: 1px solid rgba(47, 53, 55, 0.6);
+  /* 设置正常状态的边框颜色为蓝色 */
 }
 
 .lNRQTd1MtM2ZA_llTM3w {
@@ -1510,11 +1792,9 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
 
 .uyXAc9XIIrOrmlEtAX8x {
   padding-right: 1rem;
-}`, "",{"version":3,"sources":["webpack://./src/content/Overlay/NewNote/new-note.module.scss","webpack://./src/content/Overlay/dialog.module.scss","webpack://./src/assets/sass/_colors.scss","webpack://./src/assets/sass/_button.scss"],"names":[],"mappings":"AAAA,gBAAgB;ACGhB;EACI,kBAAA;EAEA,iBCJe;EDKf,kBAAA;EACA,6BAAA;EACA,yHAAA;EAGA,gBAAA;ADJJ;;AAJA;EAEI,eAAA;EACA,QAAA;EACA,SAAA;EACA,YAAA;EACA,aAAA;EACA,uCEUW;EFTX,aAAA;EACA,uBAAA,EAAA,SAAA;EACA,mBAAA,EAAA,SAAA;AAMJ;;AAHA;EACI,YAAA;EACA,iBAAA;EACA,cAAA;EACA,aAAA;EACA,sBAAA,EAAA,aAAA;EACA,mBAAA,EAAA,SAAA;EACA,uBAAA,EAAA,SAAA;EACA,uBEvBe;AF6BnB;;AAHA;EACI,YAAA;EACA,kBAAA;EACA,mBAAA;EACA,iBAAA;EACA,uCAAA,EAAA,mBAAA;EACA,aAAA;EACA,kBAAA;EACA,YAAA;AAMJ;;AAJA;EACI,YAAA;EACA,4BEvBe;EFwBf,YAAA;EACA,gBAAA;EACA,aAAA;EACO,gBAAA;EAEP,qBAAA;AAMJ;;AAJA;EACI,yBAAA;EACA,eAAA;EACC,YAAA;EACA,6CAAA;EACA,4BEpCc;AF2CnB;;AALA;EACI,aAAA;EACA,YAAA;EACA,mCE/CQ;AFuDZ;;AADA;EACI,mCE3CiB,EF2CkB,qBAAA;EACnC,aAAA,EAAA,iBAAA;AAIJ;;AAAA;EAEQ,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,cAAA;EACA,YAAA;EACA,iBAAA;EACA,kBAAA;EAEA,kBAAA;EAIA,4CAAA;AAFR;;AAKA;EACI,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,YAAA;EACA,kBAAA;EACA,YAAA;EACA,uCAAA,EAAA,mBAAA;AAFJ;;AAKA;EAEI,iBAAA;EACA,WAAA;EACA,YAAA;EACA,YAAA;AAHJ;;AAQA;EACI,gBAAA;EACA,kBAAA;EACA,eAAA;EG5GA,uCAAA;EACA,kBAAA;EACA,4BDciB;ECbjB,6CAAA;AHwGJ;AGtGI;EACI,qCDLiB;ECMjB,6BDHW;AF2GnB;AGrGI;EACI,oCDTkB;ECUlB,sBDTY;ECUZ,0CAAA;EACA,sBAAA;AHuGR;;AAJA;EACI,aAAA;EACA,WAAA;EACA,mBAAA;EACA,yBAAA;EACA,mBAAA;AAOJ;;AALA;EACG,mBAAA;AAQH","sourcesContent":["@import '../../../assets/sass/main';\r\n\r\n@import '../dialog.module';\r\n    \r\n.newNoteContainer{\r\n  \r\n    position: fixed;\r\n    top: 0px;\r\n    left: 0px;\r\n    width: 100vw;\r\n    height: 100vh;   \r\n    background-color: $ovelay-color;\r\n    display: flex;\r\n    justify-content: center; /* 水平居中 */\r\n    align-items: center; /* 垂直居中 */\r\n\r\n}\r\n.newNote{\r\n    width: 40rem;  \r\n    min-height: 30rem;\r\n    padding:8px 0;\r\n    display: flex;\r\n    flex-direction: column; /* 使子元素竖直排列 */\r\n    align-items: center; /* 水平居中 */\r\n    justify-content: center; /* 垂直居中 */\r\n    background-color:$background-color\r\n}\r\n\r\n.titleContainer{\r\n    width: 30rem;  \r\n    min-height: 1.5rem;\r\n    margin-bottom: 10px;\r\n    font-size: 1.5rem;\r\n    border: 1px solid  $input-border-color; /* 设置正常状态的边框颜色为蓝色 */\r\n    display: flex;\r\n    border-radius: 5px;\r\n    padding: 3px;\r\n}\r\n.titleInput{\r\n    flex-grow: 1;   \r\n    color:$text-color-daker;\r\n    border:none; \r\n    box-shadow: none; \r\n    outline: none; \r\n           /* 允许元素占用剩余的空间 */\r\n   // border: 1px solid $input-border-color; \r\n    /* 添加一些与select元素的间距 */\r\n}\r\n.documentTypeSelect{\r\n    padding: 0px 30px 0px 5px;\r\n    font-size:1rem;\r\n     border:none;\r\n     border-left: 1px dashed  $input-border-color;\r\n     color:$text-color-daker;\r\n}\r\n.documentTypeSelect:focus {\r\n    outline: none;\r\n    border: none;\r\n    border-color: $svg-color;\r\n   // border-color: initial; /* 根据需要，可以移除或设置为特定的颜色 */\r\n    //box-shadow: none; /* 有些浏览器可能为聚焦状态添加了阴影，也可以将其移除 */\r\n\r\n  \r\n}\r\n\r\n.title:focus{\r\n    border-color: $input-border-color; /* 设置获得焦点时的边框颜色也为蓝色 */\r\n    outline: none; /* 移除浏览器默认的焦点轮廓 */\r\n    \r\n  \r\n}\r\n.title-icon{\r\n\r\n        display: flex;\r\n        align-items: center;\r\n        justify-content: center;\r\n        flex-shrink: 0;\r\n        flex-grow: 0;\r\n        min-width: 1.7rem;\r\n        min-height: 1.5rem;\r\n       \r\n        position: relative;\r\n        \r\n       \r\n     \r\n        border-left: 1px solid $input-border-color;\r\n}\r\n\r\n.contentContainer{\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    width: 30rem; \r\n    border-radius: 5px;\r\n    padding: 2px;\r\n    border: 1px solid  $input-border-color; /* 设置正常状态的边框颜色为蓝色 */\r\n   \r\n}   \r\n.content{\r\n    \r\n    min-height: 20rem;\r\n    width:100%;\r\n    height:100%;\r\n    border:none;\r\n    //border: 1px solid  $input-border-color; /* 设置正常状态的边框颜色为蓝色 */\r\n}  \r\n\r\n\r\n.button{\r\n    margin-top: 10px;\r\n    min-height: 1.7rem;\r\n    min-width: 5rem;\r\n    @include buttonStyles;\r\n}\r\n\r\n\r\n.buttons{\r\n    display: flex;\r\n    width: 100%;\r\n    flex-direction:row;   \r\n    justify-content: flex-end; \r\n    padding-right: 5rem;\r\n}\r\n.buttonConatinerLeft{\r\n   padding-right: 1rem;\r\n \r\n}\r\n.buttonConatinerRight{\r\n     //margin-right: 20px;\r\n}","@import '../../assets/sass/main';\r\n\r\n\r\n.dialogContainer {\r\n    border-radius: 4px;\r\n\r\n    background: $background-color;\r\n    position: relative;\r\n    max-width: calc(100vw - 24px);\r\n    box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px, \r\n                rgba(15, 15, 15, 0.1) 0px 3px 6px, \r\n                rgba(15, 15, 15, 0.2) 0px 9px 24px;\r\n    overflow: hidden;\r\n    \r\n}\r\n","\r\n\r\n$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color:rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);\r\n","\r\n@mixin buttonStyles {\r\n   \r\n    border: 2px solid $input-border-color;\r\n    border-radius: 3px;\r\n    color: $text-color-lighter;\r\n    transition: background-color 0.3s, color 0.3s;\r\n\r\n    &:hover {\r\n        background-color: $hover-background-color;  \r\n        color: $text-color-hover;  \r\n    }\r\n\r\n    &:active {\r\n        background-color: $active-background-color;  \r\n        color: $text-color-active;  \r\n        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);\r\n        transform: scale(0.97);\r\n    }\r\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/content/Overlay/NewNote/new-note.module.scss","webpack://./src/assets/sass/_colors.scss","webpack://./src/assets/sass/_button.scss"],"names":[],"mappings":"AAAA,gBAAgB;AAEhB;EACI,YAAA;EACA,iBAAA;EACA,cAAA;EACA,aAAA;EACA,sBAAA;EACA,aAAA;EACA,mBAAA;EACA,SAAA;EACA,uBAAA;EACA,SAAA;EACA,uBCbe;ADanB;;AAGA;EACI,YAAA;EACA,kBAAA;EACA,mBAAA;EACA,iBAAA;EACA,uCAAA;EACA,mBAAA;EACA,aAAA;EACA,kBAAA;EACA,YAAA;AAAJ;;AAGA;EACI,YAAA;EACA,4BCde;EDef,YAAA;EACA,gBAAA;EACA,aAAA;EACA,gBAAA;EAEA,qBAAA;AADJ;;AAIA;EACI,yBAAA;EACA,eAAA;EACA,YAAA;EACA,6CAAA;EACA,4BC5Be;AD2BnB;;AAIA;EACI,aAAA;EACA,YAAA;EACA,mCCzCQ;ADwCZ;;AAQA;EACI,mCCpCiB;EDqCjB,qBAAA;EACA,aAAA;EACA,iBAAA;AALJ;;AAUA;EAEI,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,cAAA;EACA,YAAA;EACA,iBAAA;EACA,kBAAA;EAEA,kBAAA;EAIA,4CAAA;AAZJ;;AAeA;EACI,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,YAAA;EACA,kBAAA;EACA,YAAA;EACA,uCAAA;EACA,mBAAA;AAZJ;;AAgBA;EAEI,iBAAA;EACA,WAAA;EACA,YAAA;EACA,YAAA;AAdJ;;AAmBA;EACI,gBAAA;EACA,kBAAA;EACA,eAAA;EEzGA,uCAAA;EACA,kBAAA;EACA,4BDaiB;ECZjB,6CAAA;AF0FJ;AExFI;EACI,qCDPiB;ECQjB,6BDLW;AD+FnB;AEvFI;EACI,oCDXkB;ECYlB,sBDXY;ECYZ,0CAAA;EACA,sBAAA;AFyFR;;AAOA;EACI,aAAA;EACA,WAAA;EACA,mBAAA;EACA,yBAAA;EACA,mBAAA;AAJJ;;AAOA;EACI,mBAAA;AAJJ","sourcesContent":["@import '../../../assets/sass/main';\r\n\r\n.newNote {\r\n    width: 40rem;\r\n    min-height: 30rem;\r\n    padding: 8px 0;\r\n    display: flex;\r\n    flex-direction: column;\r\n    /* 使子元素竖直排列 */\r\n    align-items: center;\r\n    /* 水平居中 */\r\n    justify-content: center;\r\n    /* 垂直居中 */\r\n    background-color: $background-color\r\n}\r\n\r\n.titleContainer {\r\n    width: 30rem;\r\n    min-height: 1.5rem;\r\n    margin-bottom: 10px;\r\n    font-size: 1.5rem;\r\n    border: 1px solid $input-border-color;\r\n    /* 设置正常状态的边框颜色为蓝色 */\r\n    display: flex;\r\n    border-radius: 5px;\r\n    padding: 3px;\r\n}\r\n\r\n.titleInput {\r\n    flex-grow: 1;\r\n    color: $text-color-daker;\r\n    border: none;\r\n    box-shadow: none;\r\n    outline: none;\r\n    /* 允许元素占用剩余的空间 */\r\n    // border: 1px solid $input-border-color; \r\n    /* 添加一些与select元素的间距 */\r\n}\r\n\r\n.documentTypeSelect {\r\n    padding: 0px 30px 0px 5px;\r\n    font-size: 1rem;\r\n    border: none;\r\n    border-left: 1px dashed $input-border-color;\r\n    color: $text-color-daker;\r\n}\r\n\r\n.documentTypeSelect:focus {\r\n    outline: none;\r\n    border: none;\r\n    border-color: $svg-color;\r\n    // border-color: initial; /* 根据需要，可以移除或设置为特定的颜色 */\r\n    //box-shadow: none; /* 有些浏览器可能为聚焦状态添加了阴影，也可以将其移除 */\r\n\r\n\r\n}\r\n\r\n.title:focus {\r\n    border-color: $input-border-color;\r\n    /* 设置获得焦点时的边框颜色也为蓝色 */\r\n    outline: none;\r\n    /* 移除浏览器默认的焦点轮廓 */\r\n\r\n\r\n}\r\n\r\n.title-icon {\r\n\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    flex-shrink: 0;\r\n    flex-grow: 0;\r\n    min-width: 1.7rem;\r\n    min-height: 1.5rem;\r\n\r\n    position: relative;\r\n\r\n\r\n\r\n    border-left: 1px solid $input-border-color;\r\n}\r\n\r\n.contentContainer {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    width: 30rem;\r\n    border-radius: 5px;\r\n    padding: 2px;\r\n    border: 1px solid $input-border-color;\r\n    /* 设置正常状态的边框颜色为蓝色 */\r\n\r\n}\r\n\r\n.content {\r\n\r\n    min-height: 20rem;\r\n    width: 100%;\r\n    height: 100%;\r\n    border: none;\r\n    //border: 1px solid  $input-border-color; /* 设置正常状态的边框颜色为蓝色 */\r\n}\r\n\r\n\r\n.button {\r\n    margin-top: 10px;\r\n    min-height: 1.7rem;\r\n    min-width: 5rem;\r\n    @include buttonStyles;\r\n}\r\n\r\n\r\n.buttons {\r\n    display: flex;\r\n    width: 100%;\r\n    flex-direction: row;\r\n    justify-content: flex-end;\r\n    padding-right: 5rem;\r\n}\r\n\r\n.buttonConatinerLeft {\r\n    padding-right: 1rem;\r\n\r\n}\r\n\r\n.buttonConatinerRight {\r\n    //margin-right: 20px;\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(25, 25, 29, 0.5);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);","\r\n@mixin buttonStyles {\r\n   \r\n    border: 2px solid $input-border-color;\r\n    border-radius: 3px;\r\n    color: $text-color-lighter;\r\n    transition: background-color 0.3s, color 0.3s;\r\n\r\n    &:hover {\r\n        background-color: $hover-background-color;  \r\n        color: $text-color-hover;  \r\n    }\r\n\r\n    &:active {\r\n        background-color: $active-background-color;  \r\n        color: $text-color-active;  \r\n        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);\r\n        transform: scale(0.97);\r\n    }\r\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
-	"dialogContainer": `zMNrMIAOtbOrJ3i9T46s`,
-	"newNoteContainer": `jKx78BrB3HsgLBsV69Ta`,
 	"newNote": `RmYQYqpapt8cfkLZrSJh`,
 	"titleContainer": `p06hWXgUN7SEcSIQMN2I`,
 	"titleInput": `GaaRLJXvYQeVioRiO7FC`,
@@ -1551,7 +1831,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `.qRlBMOGQ7wS_Z2vapm_4 {
+___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
+.qRlBMOGQ7wS_Z2vapm_4 {
   pointer-events: auto;
   position: relative;
   z-index: 10000;
@@ -1565,11 +1846,36 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.qRlBMOGQ7wS_Z2vapm_4 {
   left: 0px;
   width: 100vw;
   height: 100vh;
-}`, "",{"version":3,"sources":["webpack://./src/content/Overlay/overlay.module.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AAKA;EACI,oBAAA;EACA,kBAAA;EACA,cAAA;EACA,cAAA;EACA,iCCYkB;ADhBtB;;AAQA;EACI,eAAA;EACA,QAAA;EACA,SAAA;EACA,YAAA;EACA,aAAA;AALJ","sourcesContent":["@import '../../assets/sass/main';\r\n\r\n\r\n\r\n\r\n.overlay {\r\n    pointer-events: auto;\r\n    position: relative;\r\n    z-index: 10000;\r\n    display:block;\r\n    background-color:$ovelay-color-darker;\r\n    \r\n}\r\n\r\n.innerContainer {\r\n    position: fixed;\r\n    top: 0px;\r\n    left: 0px;\r\n    width: 100vw;\r\n    height: 100vh;   \r\n      \r\n}\r\n","\r\n\r\n$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color:rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);\r\n"],"sourceRoot":""}]);
+}
+
+.XWiQNrJN5Wp71g3ya3zL {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(47, 53, 55, 0.3);
+  display: flex;
+  justify-content: center;
+  /* 水平居中 */
+  align-items: center;
+  /* 垂直居中 */
+}
+
+.mf55iyimLQ_shKoHgI93 {
+  border-radius: 4px;
+  background: white;
+  position: relative;
+  max-width: calc(100vw - 24px);
+  box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 3px 6px, rgba(15, 15, 15, 0.2) 0px 9px 24px;
+  overflow: hidden;
+}`, "",{"version":3,"sources":["webpack://./src/content/Overlay/overlay.module.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AAAA,gBAAgB;AAEhB;EACI,oBAAA;EACA,kBAAA;EACA,cAAA;EACA,cAAA;EACA,iCCckB;ADdtB;;AAIA;EACI,eAAA;EACA,QAAA;EACA,SAAA;EACA,YAAA;EACA,aAAA;AADJ;;AAKA;EAEI,eAAA;EACA,QAAA;EACA,SAAA;EACA,YAAA;EACA,aAAA;EACA,uCCPW;EDQX,aAAA;EACA,uBAAA;EACA,SAAA;EACA,mBAAA;EACA,SAAA;AAHJ;;AAOA;EACI,kBAAA;EAEA,iBCvCe;EDwCf,kBAAA;EACA,6BAAA;EACA,yHAAA;EAGA,gBAAA;AAPJ","sourcesContent":["@import '../../assets/sass/main';\r\n\r\n.overlay {\r\n    pointer-events: auto;\r\n    position: relative;\r\n    z-index: 10000;\r\n    display: block;\r\n    background-color: $ovelay-color-darker;\r\n\r\n}\r\n\r\n.innerContainer {\r\n    position: fixed;\r\n    top: 0px;\r\n    left: 0px;\r\n    width: 100vw;\r\n    height: 100vh;\r\n\r\n}\r\n\r\n.innerCenterContainer {\r\n\r\n    position: fixed;\r\n    top: 0px;\r\n    left: 0px;\r\n    width: 100vw;\r\n    height: 100vh;\r\n    background-color: $ovelay-color;\r\n    display: flex;\r\n    justify-content: center;\r\n    /* 水平居中 */\r\n    align-items: center;\r\n    /* 垂直居中 */\r\n\r\n}\r\n\r\n.dialogContainer {\r\n    border-radius: 4px;\r\n\r\n    background: $background-color;\r\n    position: relative;\r\n    max-width: calc(100vw - 24px);\r\n    box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px,\r\n        rgba(15, 15, 15, 0.1) 0px 3px 6px,\r\n        rgba(15, 15, 15, 0.2) 0px 9px 24px;\r\n    overflow: hidden;\r\n\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(25, 25, 29, 0.5);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"overlay": `qRlBMOGQ7wS_Z2vapm_4`,
-	"innerContainer": `zNnyAFl_SF_9CBB5_E_s`
+	"innerContainer": `zNnyAFl_SF_9CBB5_E_s`,
+	"innerCenterContainer": `XWiQNrJN5Wp71g3ya3zL`,
+	"dialogContainer": `mf55iyimLQ_shKoHgI93`
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1599,7 +1905,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.dy25DFmHxrdVmTmuGBBs {
   background-color: white;
   border-radius: 4px;
   padding: 2px;
-}`, "",{"version":3,"sources":["webpack://./src/content/app.module.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AAGA;EACI,uBCFe;EDGf,kBAAA;EACA,YAAA;AAFJ","sourcesContent":["\r\n@import '../assets/sass/main';\r\n\r\n.leftBar{\r\n    background-color: $background-color;\r\n    border-radius: 4px;\r\n    padding: 2px;\r\n     // 您可以根据需要调整这个值\r\n}","\r\n\r\n$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color:rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);\r\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/content/app.module.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AAGA;EACI,uBCJe;EDKf,kBAAA;EACA,YAAA;AAFJ","sourcesContent":["\r\n@import '../assets/sass/main';\r\n\r\n.leftBar{\r\n    background-color: $background-color;\r\n    border-radius: 4px;\r\n    padding: 2px;\r\n     // 您可以根据需要调整这个值\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(25, 25, 29, 0.5);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"leftBar": `dy25DFmHxrdVmTmuGBBs`
@@ -1634,7 +1940,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.KebabSVG {
   display: block;
   fill: rgba(47, 53, 55, 0.6);
   flex-shrink: 0;
-}`, "",{"version":3,"sources":["webpack://./src/svg/KebabSVG.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AACA;EACI,eAAA;EACA,YAAA;EACA,cAAA;EACA,2BCMQ;EDLR,cAAA;AAAJ","sourcesContent":["@import '../assets/sass/main';\r\n.KebabSVG {\r\n    width: 0.875rem;\r\n    height: 100%;\r\n    display: block;\r\n    fill: $svg-color;\r\n    flex-shrink: 0;\r\n}\r\n","\r\n\r\n$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color:rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);\r\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/svg/KebabSVG.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AACA;EACI,eAAA;EACA,YAAA;EACA,cAAA;EACA,2BCIQ;EDHR,cAAA;AAAJ","sourcesContent":["@import '../assets/sass/main';\r\n.KebabSVG {\r\n    width: 0.875rem;\r\n    height: 100%;\r\n    display: block;\r\n    fill: $svg-color;\r\n    flex-shrink: 0;\r\n}\r\n","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(25, 25, 29, 0.5);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1667,7 +1973,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.ToggleSVG {
   fill: rgba(47, 53, 55, 0.6);
   flex-shrink: 0;
   transition: transform 200ms ease-out 0s;
-}`, "",{"version":3,"sources":["webpack://./src/svg/ToggleSVG.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AAGA;EACI,cAAA;EACA,eAAA;EACA,cAAA;EACA,2BCIQ;EDHR,cAAA;EACA,uCAAA;AAFJ","sourcesContent":["\r\n\r\n@import '../assets/sass/main';\r\n.ToggleSVG{\r\n    width: 0.75rem;\r\n    height: 0.75rem;\r\n    display: block;\r\n    fill: $svg-color;\r\n    flex-shrink: 0;\r\n    transition: transform 200ms ease-out 0s;\r\n   \r\n}","\r\n\r\n$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color:rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);\r\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/svg/ToggleSVG.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AAGA;EACI,cAAA;EACA,eAAA;EACA,cAAA;EACA,2BCEQ;EDDR,cAAA;EACA,uCAAA;AAFJ","sourcesContent":["\r\n\r\n@import '../assets/sass/main';\r\n.ToggleSVG{\r\n    width: 0.75rem;\r\n    height: 0.75rem;\r\n    display: block;\r\n    fill: $svg-color;\r\n    flex-shrink: 0;\r\n    transition: transform 200ms ease-out 0s;\r\n   \r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(25, 25, 29, 0.5);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1711,7 +2017,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.document-svg {
   text-anchor: middle;
   alignment-baseline: middle;
   fill: rgba(47, 53, 55, 0.6);
-}`, "",{"version":3,"sources":["webpack://./src/svg/document-svg.scss","webpack://./src/assets/sass/_colors.scss","webpack://./src/svg/document-prompt-svg.scss"],"names":[],"mappings":"AACA;EAEI,cAAA;EACA,UAAA;EACA,cAAA;EACA,6BCKQ;EDJR,iBAAA;AEDJ;;AFGA;EACI,6BCEgB;ACFpB;;AARA;EACI,cAAA;EACA,wBAAA;EACA,mBAAA;EACA,0BAAA;EACA,2BDIQ;ACOZ","sourcesContent":["@import '../assets/sass/main';\r\n.document-svg {\r\n\r\n    display: block;\r\n    fill: none;\r\n    flex-shrink: 0;\r\n    stroke:$svg-color;\r\n    stroke-width:0.5;\r\n}\r\n.svg-lighter-color{\r\n    stroke: $svg-color-lighter;\r\n}","\r\n\r\n$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color:rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);\r\n","@import '../assets/sass/main';\r\n@import './document-svg.scss';\r\n.document-prompt-text {\r\n    font-size: 8px;\r\n    font-size: \"Courier New\";\r\n    text-anchor: middle;\r\n    alignment-baseline: middle;\r\n    fill: $svg-color;\r\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/svg/document-svg.scss","webpack://./src/assets/sass/_colors.scss","webpack://./src/svg/document-prompt-svg.scss"],"names":[],"mappings":"AACA;EAEI,cAAA;EACA,UAAA;EACA,cAAA;EACA,6BCGQ;EDFR,iBAAA;AEDJ;;AFGA;EACI,6BAAA;AEAJ;;AARA;EACI,cAAA;EACA,wBAAA;EACA,mBAAA;EACA,0BAAA;EACA,2BDEQ;ACSZ","sourcesContent":["@import '../assets/sass/main';\r\n.document-svg {\r\n\r\n    display: block;\r\n    fill: none;\r\n    flex-shrink: 0;\r\n    stroke:$svg-color;\r\n    stroke-width:0.5;\r\n}\r\n.svg-lighter-color{\r\n    stroke: $svg-color-lighter;\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(25, 25, 29, 0.5);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);","@import '../assets/sass/main';\r\n@import './document-svg.scss';\r\n.document-prompt-text {\r\n    font-size: 8px;\r\n    font-size: \"Courier New\";\r\n    text-anchor: middle;\r\n    alignment-baseline: middle;\r\n    fill: $svg-color;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1747,7 +2053,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.document-svg {
 
 .svg-lighter-color {
   stroke: rgba(47, 53, 55, 0.3);
-}`, "",{"version":3,"sources":["webpack://./src/svg/document-svg.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AACA;EAEI,cAAA;EACA,UAAA;EACA,cAAA;EACA,6BCKQ;EDJR,iBAAA;AADJ;;AAGA;EACI,6BCEgB;ADFpB","sourcesContent":["@import '../assets/sass/main';\r\n.document-svg {\r\n\r\n    display: block;\r\n    fill: none;\r\n    flex-shrink: 0;\r\n    stroke:$svg-color;\r\n    stroke-width:0.5;\r\n}\r\n.svg-lighter-color{\r\n    stroke: $svg-color-lighter;\r\n}","\r\n\r\n$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color:rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);\r\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/svg/document-svg.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AACA;EAEI,cAAA;EACA,UAAA;EACA,cAAA;EACA,6BCGQ;EDFR,iBAAA;AADJ;;AAGA;EACI,6BAAA;AAAJ","sourcesContent":["@import '../assets/sass/main';\r\n.document-svg {\r\n\r\n    display: block;\r\n    fill: none;\r\n    flex-shrink: 0;\r\n    stroke:$svg-color;\r\n    stroke-width:0.5;\r\n}\r\n.svg-lighter-color{\r\n    stroke: $svg-color-lighter;\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(25, 25, 29, 0.5);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1773,16 +2079,20 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `.svg-large, .svg_sd_size, .svg {
+___CSS_LOADER_EXPORT___.push([module.id, `.svg-large, .svg-small {
   display: block;
   fill: none;
   flex-shrink: 0;
   stroke: rgba(47, 53, 55, 0.6);
-  stroke-width: 1px;
 }
-.svg {
-  width: 1.125rem;
-  height: 1.125rem;
+.svg-popup {
+  stroke-width: 20px;
+  stroke: white;
+  fill: white;
+}
+
+.svg-small {
+  stroke-width: 1px;
 }
 
 .svg-large {
@@ -1791,12 +2101,15 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.svg-large, .svg_sd_size, .svg {
 
 .svg-ligther {
   stroke: rgba(47, 53, 55, 0.3);
-  stroke-width: 0.4px;
 }
 
-.svg-fill {
+.svg-fill-lighter {
+  fill: rgba(25, 25, 29, 0.5);
+}
+
+.svg-fill-darker {
   fill: rgb(25, 25, 29);
-}`, "",{"version":3,"sources":["webpack://./src/svg/svg.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AAGA;EAEI,cAAA;EACA,UAAA;EACA,cAAA;EACA,6BCGQ;EDFR,iBAAA;AAHJ;AAUA;EAEI,eAAA;EACA,gBAAA;AATJ;;AAgBA;EAEI,kBAAA;AAdJ;;AAkBA;EACI,6BCrBgB;EDsBhB,mBAAA;AAfJ;;AAkBA;EACI,qBCxBa;ADSjB","sourcesContent":["@import '../assets/sass/main';\r\n\r\n\r\n%svg-shared {\r\n    \r\n    display: block;\r\n    fill: none;\r\n    flex-shrink: 0;\r\n    stroke: $svg-color;\r\n    stroke-width: 1px;\r\n    &:hover {\r\n        //background-color: $hover-background-color; /* Darker red on hover */\r\n    }\r\n}\r\n\r\n\r\n.svg{\r\n    @extend %svg-shared;\r\n    width: 1.125rem;\r\n    height: 1.125rem;\r\n}\r\n\r\n.svg_sd_size {\r\n    @extend %svg-shared;\r\n}\r\n\r\n.svg-large {\r\n    @extend %svg-shared;\r\n    stroke-width: 20px;\r\n}\r\n\r\n\r\n.svg-ligther {\r\n    stroke: $svg-color-lighter;\r\n    stroke-width: 0.4px;\r\n}\r\n\r\n.svg-fill {\r\n    fill: $svg-fill-color;\r\n}\r\n","\r\n\r\n$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color:rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);\r\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/svg/svg.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AAGA;EAEI,cAAA;EACA,UAAA;EACA,cAAA;EACA,6BCCQ;ADJZ;AAYA;EACI,kBAAA;EAEA,aAAA;EACA,WAAA;AAXJ;;AAeA;EACI,iBAAA;AAZJ;;AAkBA;EAEI,kBAAA;AAhBJ;;AAoBA;EACI,6BC7BgB;ADYpB;;AAqBA;EACI,2BC9BqB;ADYzB;;AAqBA;EACI,qBCpCa;ADkBjB","sourcesContent":["@import '../assets/sass/main';\r\n\r\n\r\n%svg-shared {\r\n\r\n    display: block;\r\n    fill: none;\r\n    flex-shrink: 0;\r\n    stroke: $svg-color;\r\n\r\n\r\n    &:hover {\r\n        //background-color: $hover-background-color; /* Darker red on hover */\r\n    }\r\n}\r\n\r\n\r\n.svg-popup {\r\n    stroke-width: 20px;\r\n    //background-image: linear-gradient(to right, #4FD1C5, #3B82F6);\r\n    stroke: white;\r\n    fill: white;\r\n}\r\n\r\n\r\n.svg-small {\r\n    stroke-width: 1px;\r\n    @extend %svg-shared;\r\n\r\n}\r\n\r\n\r\n.svg-large {\r\n    @extend %svg-shared;\r\n    stroke-width: 20px;\r\n}\r\n\r\n\r\n.svg-ligther {\r\n    stroke: $svg-color-lighter;\r\n}\r\n\r\n\r\n.svg-fill-lighter {\r\n    fill: $svg-fill-color-lighter;\r\n}\r\n\r\n.svg-fill-darker {\r\n    fill: $svg-fill-color;\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(25, 25, 29, 0.5);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -38463,6 +38776,60 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
+/***/ "./src/content/Block/setting-block.module.scss":
+/*!*****************************************************!*\
+  !*** ./src/content/Block/setting-block.module.scss ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/styleDomAPI.js */ "./node_modules/style-loader/dist/runtime/styleDomAPI.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/insertBySelector.js */ "./node_modules/style-loader/dist/runtime/insertBySelector.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/insertStyleElement.js */ "./node_modules/style-loader/dist/runtime/insertStyleElement.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_setting_block_module_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./setting-block.module.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/content/Block/setting-block.module.scss");
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var options = {};
+
+options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
+options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
+
+      options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
+    
+options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
+options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_setting_block_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"], options);
+
+
+
+
+       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_setting_block_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_setting_block_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_setting_block_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
+
+
+/***/ }),
+
 /***/ "./src/content/Notes/NoteIcon/note-icon.module.scss":
 /*!**********************************************************!*\
   !*** ./src/content/Notes/NoteIcon/note-icon.module.scss ***!
@@ -39720,6 +40087,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_module_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.module.scss */ "./src/content/app.module.scss");
 /* harmony import */ var _Overlay_NewNote_NewNoteOverlay__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Overlay/NewNote/NewNoteOverlay */ "./src/content/Overlay/NewNote/NewNoteOverlay.tsx");
 /* harmony import */ var _Overlay_Menu_MenuOverlay__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Overlay/Menu/MenuOverlay */ "./src/content/Overlay/Menu/MenuOverlay.tsx");
+/* harmony import */ var _Block_SettingBlock__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Block/SettingBlock */ "./src/content/Block/SettingBlock.tsx");
+
 
 
 
@@ -39728,12 +40097,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function App() {
+    const appState = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)((state) => state.app);
     const allNotesData = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)((state) => state.notes);
     const promptRootNotes = (0,_redux_reducers_notesReducer__WEBPACK_IMPORTED_MODULE_2__.findNotesByRootName)(allNotesData, "note_prompt");
     //console.log(promptRootNotes.length + "  promptRootNotes length");
     const noteRootNotes = (0,_redux_reducers_notesReducer__WEBPACK_IMPORTED_MODULE_2__.findNotesByRootName)(allNotesData, "note_notion");
     const chatHistoryRootNotes = (0,_redux_reducers_notesReducer__WEBPACK_IMPORTED_MODULE_2__.findNotesByRootName)(allNotesData, "note_chat");
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _app_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].leftBar },
+        appState && appState.userInfo && react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
+            "Welcome, ",
+            appState.userInfo.displayName,
+            "!"),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Block_SettingBlock__WEBPACK_IMPORTED_MODULE_7__["default"], null),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Block_LeftBarBlock2__WEBPACK_IMPORTED_MODULE_3__["default"], { rootNotes: promptRootNotes, allNotesData: allNotesData, title: "prompt" }),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Block_LeftBarBlock2__WEBPACK_IMPORTED_MODULE_3__["default"], { rootNotes: noteRootNotes, allNotesData: allNotesData, title: "notion" }),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Block_LeftBarBlock2__WEBPACK_IMPORTED_MODULE_3__["default"], { rootNotes: chatHistoryRootNotes, allNotesData: allNotesData, title: "chat" }),
@@ -39808,6 +40183,41 @@ function LeftBarBlock({ rootNotes, allNotesData, title }) {
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _leftbar_block_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].leftBarBlock },
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_BlockHeader__WEBPACK_IMPORTED_MODULE_3__["default"], { rootNotes: rootNotes, title: title }),
         rootNotes.map((note) => (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Notes_Note__WEBPACK_IMPORTED_MODULE_1__["default"], { key: note.id, noteData: note, allNotesData: allNotesData })))));
+}
+
+
+/***/ }),
+
+/***/ "./src/content/Block/SettingBlock.tsx":
+/*!********************************************!*\
+  !*** ./src/content/Block/SettingBlock.tsx ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ SettingBlock)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _setting_block_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./setting-block.module.scss */ "./src/content/Block/setting-block.module.scss");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _redux_actions_userActions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../redux/actions/userActions */ "./src/content/redux/actions/userActions.tsx");
+/* harmony import */ var _svg_UserSVG__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../svg/UserSVG */ "./src/svg/UserSVG.tsx");
+
+
+
+
+
+function SettingBlock() {
+    const dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useDispatch)();
+    const handUserClick = () => {
+        console.log(" ==========setting click ==============");
+        dispatch((0,_redux_actions_userActions__WEBPACK_IMPORTED_MODULE_3__.showAuth)());
+    };
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _setting_block_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].leftBarBlock },
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _setting_block_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].userContainer, onClick: handUserClick },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_svg_UserSVG__WEBPACK_IMPORTED_MODULE_4__["default"], null))));
 }
 
 
@@ -40303,22 +40713,20 @@ function NewNote({ parentNoteID, noteData }) {
         dispatch((0,_redux_actions_overlayNewNoteActions__WEBPACK_IMPORTED_MODULE_3__.hideNewEditNoteOverlay)());
     };
     //newNoteContainer set to full screen to contain the dialogContainer and make it in the center 
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _new_note_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].newNoteContainer },
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _new_note_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].dialogContainer },
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _new_note_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].newNote },
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _new_note_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].titleContainer },
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", { className: _new_note_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].titleInput, placeholder: "Enter title here...", value: title, onChange: (e) => setTitle(e.target.value), autoFocus: true }),
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("select", { className: _new_note_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].documentTypeSelect, value: noteType, onChange: (e) => setNoteType(e.target.value) },
-                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", { value: "prompt" }, "prompt"),
-                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", { value: "notion" }, "notion"),
-                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", { value: "chat" }, "chat"))),
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _new_note_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].contentContainer },
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("textarea", { className: _new_note_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].content, placeholder: "Type your content here...", value: content, onChange: (e) => setContent(e.target.value) })),
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _new_note_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].buttons },
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _new_note_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].buttonConatinerLeft },
-                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { className: _new_note_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].button, onClick: handleCanceButtonClick }, " Cancel ")),
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _new_note_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].buttonConatinerRight },
-                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { className: _new_note_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].button, onClick: handleOKButtonClick }, " OK ")))))));
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _new_note_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].newNote },
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _new_note_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].titleContainer },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", { className: _new_note_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].titleInput, placeholder: "Enter title here...", value: title, onChange: (e) => setTitle(e.target.value), autoFocus: true }),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("select", { className: _new_note_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].documentTypeSelect, value: noteType, onChange: (e) => setNoteType(e.target.value) },
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", { value: "prompt" }, "prompt"),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", { value: "notion" }, "notion"),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", { value: "chat" }, "chat"))),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _new_note_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].contentContainer },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("textarea", { className: _new_note_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].content, placeholder: "Type your content here...", value: content, onChange: (e) => setContent(e.target.value) })),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _new_note_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].buttons },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _new_note_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].buttonConatinerLeft },
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { className: _new_note_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].button, onClick: handleCanceButtonClick }, " Cancel ")),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _new_note_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].buttonConatinerRight },
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { className: _new_note_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].button, onClick: handleOKButtonClick }, " OK ")))));
 }
 
 
@@ -40357,8 +40765,9 @@ function NewNoteOverlay() {
         return null;
     }
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { id: "overlay", className: _overlay_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].overlay },
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _overlay_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].innerContainer },
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_NewNote__WEBPACK_IMPORTED_MODULE_3__["default"], { noteData: overlayData.noteData, parentNoteID: overlayData.parentNoteID }))));
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _overlay_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].innerCenterContainer },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _overlay_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].dialogContainer },
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_NewNote__WEBPACK_IMPORTED_MODULE_3__["default"], { noteData: overlayData.noteData, parentNoteID: overlayData.parentNoteID })))));
 }
 
 
@@ -40401,21 +40810,51 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _reducers_notesReducer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./reducers/notesReducer */ "./src/content/redux/reducers/notesReducer.tsx");
 /* harmony import */ var _reducers_overlayMenuReducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./reducers/overlayMenuReducer */ "./src/content/redux/reducers/overlayMenuReducer.tsx");
 /* harmony import */ var _reducers_overlayNewNoteReducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./reducers/overlayNewNoteReducer */ "./src/content/redux/reducers/overlayNewNoteReducer.tsx");
+/* harmony import */ var _reducers_userReducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./reducers/userReducer */ "./src/content/redux/reducers/userReducer.tsx");
+/* harmony import */ var _reducers_appReducer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./reducers/appReducer */ "./src/content/redux/reducers/appReducer.tsx");
 
 
 
 
-const rootReducer = (0,redux__WEBPACK_IMPORTED_MODULE_3__.combineReducers)({
+
+
+const rootReducer = (0,redux__WEBPACK_IMPORTED_MODULE_5__.combineReducers)({
     overlayMenu: _reducers_overlayMenuReducer__WEBPACK_IMPORTED_MODULE_1__["default"],
     overlayNewNote: _reducers_overlayNewNoteReducer__WEBPACK_IMPORTED_MODULE_2__["default"],
     notes: _reducers_notesReducer__WEBPACK_IMPORTED_MODULE_0__["default"],
+    user: _reducers_userReducer__WEBPACK_IMPORTED_MODULE_3__["default"],
+    app: _reducers_appReducer__WEBPACK_IMPORTED_MODULE_4__["default"],
 });
-const store = (0,redux__WEBPACK_IMPORTED_MODULE_3__.createStore)(rootReducer);
+const store = (0,redux__WEBPACK_IMPORTED_MODULE_5__.createStore)(rootReducer);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (store);
+
+
+/***/ }),
+
+/***/ "./src/content/redux/actions/appActions.tsx":
+/*!**************************************************!*\
+  !*** ./src/content/redux/actions/appActions.tsx ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   clearUserInfo: () => (/* binding */ clearUserInfo),
+/* harmony export */   setUserInfo: () => (/* binding */ setUserInfo)
+/* harmony export */ });
+/* harmony import */ var _types_appTypes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../types/appTypes */ "./src/content/redux/types/appTypes.tsx");
+
+const setUserInfo = userInfo => ({
+    type: _types_appTypes__WEBPACK_IMPORTED_MODULE_0__.SET_USER_INFO,
+    payload: userInfo
+});
+const clearUserInfo = () => ({
+    type: _types_appTypes__WEBPACK_IMPORTED_MODULE_0__.CLEAR_USER_INFO
+});
 
 
 /***/ }),
@@ -40529,6 +40968,63 @@ const hideNewEditNoteOverlay = () => {
         type: _types_overlayNewNoteTypes__WEBPACK_IMPORTED_MODULE_0__.HIDE_NEW_EDIT_NOTE_OVERLAY
     };
 };
+
+
+/***/ }),
+
+/***/ "./src/content/redux/actions/userActions.tsx":
+/*!***************************************************!*\
+  !*** ./src/content/redux/actions/userActions.tsx ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   hideOverlay: () => (/* binding */ hideOverlay),
+/* harmony export */   showAuth: () => (/* binding */ showAuth)
+/* harmony export */ });
+/* harmony import */ var _types_userTypes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../types/userTypes */ "./src/content/redux/types/userTypes.tsx");
+
+const showAuth = () => {
+    return {
+        type: _types_userTypes__WEBPACK_IMPORTED_MODULE_0__.SHOW_AUTH_OVERLAY
+    };
+};
+const hideOverlay = () => {
+    return {
+        type: _types_userTypes__WEBPACK_IMPORTED_MODULE_0__.HIDE_AUTH_OVERLAY
+    };
+};
+
+
+/***/ }),
+
+/***/ "./src/content/redux/reducers/appReducer.tsx":
+/*!***************************************************!*\
+  !*** ./src/content/redux/reducers/appReducer.tsx ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _types_appTypes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../types/appTypes */ "./src/content/redux/types/appTypes.tsx");
+
+const initialState = {
+    userInfo: null
+};
+const appReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case _types_appTypes__WEBPACK_IMPORTED_MODULE_0__.SET_USER_INFO:
+            return Object.assign(Object.assign({}, state), { userInfo: action.payload });
+        case _types_appTypes__WEBPACK_IMPORTED_MODULE_0__.CLEAR_USER_INFO:
+            return Object.assign(Object.assign({}, state), { userInfo: null });
+        default:
+            return state;
+    }
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (appReducer);
 
 
 /***/ }),
@@ -40780,6 +41276,54 @@ const overlayNewNoteReducer = (state = initialState, action) => {
 
 /***/ }),
 
+/***/ "./src/content/redux/reducers/userReducer.tsx":
+/*!****************************************************!*\
+  !*** ./src/content/redux/reducers/userReducer.tsx ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _types_userTypes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../types/userTypes */ "./src/content/redux/types/userTypes.tsx");
+
+const initialState = {
+    showOverlay: false,
+};
+const overlayMenuReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case _types_userTypes__WEBPACK_IMPORTED_MODULE_0__.SHOW_AUTH_OVERLAY:
+            console.log("  SHOW_AUTH_OVERLAY!!!!!!!!!!!!!!!!!!!");
+            return Object.assign(Object.assign({}, state), { showOverlay: true });
+        case _types_userTypes__WEBPACK_IMPORTED_MODULE_0__.HIDE_AUTH_OVERLAY:
+            return Object.assign(Object.assign({}, state), { showOverlay: false });
+        default:
+            return state;
+    }
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (overlayMenuReducer);
+
+
+/***/ }),
+
+/***/ "./src/content/redux/types/appTypes.tsx":
+/*!**********************************************!*\
+  !*** ./src/content/redux/types/appTypes.tsx ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   CLEAR_USER_INFO: () => (/* binding */ CLEAR_USER_INFO),
+/* harmony export */   SET_USER_INFO: () => (/* binding */ SET_USER_INFO)
+/* harmony export */ });
+const SET_USER_INFO = 'SET_USER_INFO';
+const CLEAR_USER_INFO = 'CLEAR_USER_INFO';
+
+
+/***/ }),
+
 /***/ "./src/content/redux/types/noteTypes.tsx":
 /*!***********************************************!*\
   !*** ./src/content/redux/types/noteTypes.tsx ***!
@@ -40832,6 +41376,23 @@ __webpack_require__.r(__webpack_exports__);
 const SHOW_NEW_NOTE_OVERLAY = "SHOW_NEW_NOTE_OVERLAY";
 const SHOW_EDIT_NOTE_OVERLAY = "SHOW_EDIT_NOTE_OVERLAY";
 const HIDE_NEW_EDIT_NOTE_OVERLAY = 'HIDE_NEW_NOTE_OVERLAY';
+
+
+/***/ }),
+
+/***/ "./src/content/redux/types/userTypes.tsx":
+/*!***********************************************!*\
+  !*** ./src/content/redux/types/userTypes.tsx ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   HIDE_AUTH_OVERLAY: () => (/* binding */ HIDE_AUTH_OVERLAY),
+/* harmony export */   SHOW_AUTH_OVERLAY: () => (/* binding */ SHOW_AUTH_OVERLAY)
+/* harmony export */ });
+const SHOW_AUTH_OVERLAY = "SHOW_AUTH_OVERLAY";
+const HIDE_AUTH_OVERLAY = 'HIDE_AUTH_OVERLAY';
 
 
 /***/ }),
@@ -41018,6 +41579,23 @@ function createStorage(type) {
 
 /***/ }),
 
+/***/ "./src/content/storage/storageInstance.ts":
+/*!************************************************!*\
+  !*** ./src/content/storage/storageInstance.ts ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   storageInstance: () => (/* binding */ storageInstance)
+/* harmony export */ });
+/* harmony import */ var _storageFactory__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./storageFactory */ "./src/content/storage/storageFactory.tsx");
+
+const storageInstance = (0,_storageFactory__WEBPACK_IMPORTED_MODULE_0__.createStorage)(_storageFactory__WEBPACK_IMPORTED_MODULE_0__.StorageType.LocalStorage);
+
+
+/***/ }),
+
 /***/ "./src/svg/AddSVG.tsx":
 /*!****************************!*\
   !*** ./src/svg/AddSVG.tsx ***!
@@ -41083,7 +41661,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function DeleteSVG() {
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", { viewBox: "0 0 16 20", className: 'svg_sd_size' },
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", { viewBox: "0 0 16 20", className: 'svg-small' },
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", { d: "M4.4623 19.4287H11.7445C12.7904 19.4287 13.4672 18.793 13.515 17.7402L13.9799 3.88965H14.7318C15.0736 3.88965 15.3402 3.62988 15.3402 3.28809C15.3402 2.95312 15.0736 2.69336 14.7318 2.69336H11.6898V0.667969C11.6898 0.12207 11.3268 0 10.1919 0H5.79434C4.66641 0 4.29648 0.12207 4.29648 0.667969V2.69336H1.26133C0.9332 2.69336 0.65977 2.95312 0.65977 3.28809C0.65977 3.62988 0.9332 3.88965 1.26133 3.88965H2.02012L2.48496 17.7471C2.53281 18.7998 3.20273 19.4287 4.4623 19.4287ZM5.7543 0.72949C5.7543 0.37402 6.00039 0.14844 6.3832 0.14844H9.60312C9.98594 0.14844 10.23203 0.37402 10.23203 0.72949V2.69336H5.7543V0.72949ZM4.59219 18.2188C4.21621 18.2188 3.94277 17.9453 3.92227 17.542L3.46426 3.88965H12.7152L12.2709 17.542C12.2572 17.9453 11.9838 18.2188 11.5941 18.2188H4.59219Z" }),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("line", { x1: "7", y1: "6.05176", x2: "7", y2: "16.667", className: 'svg-ligther' }),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("line", { x1: "9.0166", y1: "6.05176", x2: "9.0166", y2: "16.667", className: 'svg-ligther' })));
@@ -41108,7 +41686,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function DuplicateSVG() {
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", { viewBox: "0 0 16 16", className: "svg" },
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", { viewBox: "0 0 16 16", className: "svg-fill-lighter" },
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", { d: "M1.636644 13.87424H6.878424C7.931712 13.87424 8.478048 13.25624 8.478048 12.08048V5.528904L5.377267 2.608592C4.963829 2.14375 4.624219 2.034375 4.008986 2.034375H1.636644C0.583357 2.034375 0.037021 2.652375 0.037021 3.828125V12.08048C0.037021 13.26168 0.583357 13.87424 1.636644 13.87424Z" }),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", { className: 'svg-fill', d: "M4.636644 10.87424H9.878424C10.93171 10.87424 11.47805 10.25624 11.47805 9.08048V2.528904L8.377267 -0.391408C7.963829 -0.85625 7.624219 -0.965625 7.008986 -0.965625H4.636644C3.583357 -0.965625 3.037021 -0.347625 3.037021 0.828125V9.08048C3.037021 10.26168 3.583357 10.87424 4.636644 10.87424Z" })));
 }
@@ -41132,7 +41710,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function EditSVG() {
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", { viewBox: "0 0 16 16", className: 'svg_sd_size', xmlns: "http://www.w3.org/2000/svg" },
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", { viewBox: "0 0 16 16", className: 'svg-small', xmlns: "http://www.w3.org/2000/svg" },
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", { d: "M13.4 3.05L14.1 2.45C14.4 2.15 14.4 1.85 14.1 1.65L13.9 1.65C13.7 1.65 13.4 1.65 13.2 1.95L12.6 2.55L13.4 3.05ZM6.6 10.95L8.2 10.35L12.5 4.85L11.4 3.75L6.1 9.25L5.5 10.75C5.4 10.95 5.6 11.15 5.8 11.15Z", fill: "currentColor" }),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", { d: "M3.9 14.35H12C13.4 14.35 14 13.65 14 12.05V5.55L12.5 7.05V11.75C12.5 12.45 12.1 12.85 11.7 12.85H4.5C3.9 12.85 3.5 12.45 3.5 11.75V5.15C3.5 4.65 3.9 4.25 4.5 4.25H9.7L11.1 2.85H3.9C3.3 2.85 2.8 3.3 2.8 3.9V12C2.8 13.4 3.3 14.35 3.9 14.35Z" })));
 }
@@ -41322,6 +41900,29 @@ function ToggleSVG({ rotateDegree }) {
     // console.log(rotateDegree + "   rotateDegree=================");
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", { viewBox: "0 0 12 12", xmlns: "http://www.w3.org/2000/svg", className: "ToggleSVG", style: { transform: `rotate(${rotateDegree})` } },
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", { d: "M6.02734 8.80274C6.27148 8.80274 6.47168 8.71484 6.66211 8.51465L10.2803 4.82324C10.4268 4.67676 10.5 4.49609 10.5 4.28125C10.5 3.85156 10.1484 3.5 9.72363 3.5C9.50879 3.5 9.30859 3.58789 9.15234 3.74902L6.03223 6.9668L2.90722 3.74902C2.74609 3.58789 2.55078 3.5 2.33105 3.5C1.90137 3.5 1.55469 3.85156 1.55469 4.28125C1.55469 4.49609 1.62793 4.67676 1.77441 4.82324L5.39258 8.51465C5.58789 8.71973 5.78808 8.80274 6.02734 8.80274Z" })));
+}
+
+
+/***/ }),
+
+/***/ "./src/svg/UserSVG.tsx":
+/*!*****************************!*\
+  !*** ./src/svg/UserSVG.tsx ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ UserSVG)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _svg_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./svg.scss */ "./src/svg/svg.scss");
+
+
+function UserSVG() {
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", { xmlns: "http://www.w3.org/2000/svg", height: "1em", viewBox: "0 0 512 512", className: 'svg-popup' },
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", { d: "M406.5 399.6C387.4 352.9 341.5 320 288 320H224c-53.5 0-99.4 32.9-118.5 79.6C69.9 362.2 48 311.7 48 256C48 141.1 141.1 48 256 48s208 93.1 208 208c0 55.7-21.9 106.2-57.5 143.6zm-40.1 32.7C334.4 452.4 296.6 464 256 464s-78.4-11.6-110.5-31.7c7.3-36.7 39.7-64.3 78.5-64.3h64c38.8 0 71.2 27.6 78.5 64.3zM256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-272a40 40 0 1 1 0-80 40 40 0 1 1 0 80zm-88-40a88 88 0 1 0 176 0 88 88 0 1 0 -176 0z" })));
 }
 
 
@@ -41781,24 +42382,6 @@ if (false) {} else {
 
 /***/ }),
 
-/***/ "./src/content/storage/storageInstance.ts":
-/*!************************************************!*\
-  !*** ./src/content/storage/storageInstance.ts ***!
-  \************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   storageInstance: () => (/* binding */ storageInstance)
-/* harmony export */ });
-/* harmony import */ var _storageFactory__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./storageFactory */ "./src/content/storage/storageFactory.tsx");
-
-
-
-const storageInstance = (0,_storageFactory__WEBPACK_IMPORTED_MODULE_0__.createStorage)(_storageFactory__WEBPACK_IMPORTED_MODULE_0__.StorageType.LocalStorage);
-
-/***/ }),
-
 /***/ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js":
 /*!*******************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/esm/defineProperty.js ***!
@@ -42094,6 +42677,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _redux_actions_noteActions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./redux/actions/noteActions */ "./src/content/redux/actions/noteActions.tsx");
 /* harmony import */ var _redux_types_noteTypes__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./redux/types/noteTypes */ "./src/content/redux/types/noteTypes.tsx");
 /* harmony import */ var _redux_Store__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./redux/Store */ "./src/content/redux/Store.tsx");
+/* harmony import */ var _redux_actions_appActions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./redux/actions/appActions */ "./src/content/redux/actions/appActions.tsx");
 
 
 
@@ -42101,6 +42685,26 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+    // 检查消息类型
+    if (request.type === "user_info") {
+        // 处理用户信息
+        const userInfo = request.data;
+        console.log("Received user info:", userInfo);
+        _redux_Store__WEBPACK_IMPORTED_MODULE_6__["default"].dispatch((0,_redux_actions_appActions__WEBPACK_IMPORTED_MODULE_7__.setUserInfo)(userInfo));
+        // 可选：返回响应到发送消息的脚本
+        sendResponse({ status: "User info received successfully" });
+    }
+    else if (request.type === "user_logout") {
+        // 处理用户登出
+        console.log("Received user logout message");
+        // 你可以在这里进行一些清理工作，例如清除用户信息、更新UI等
+        _redux_Store__WEBPACK_IMPORTED_MODULE_6__["default"].dispatch((0,_redux_actions_appActions__WEBPACK_IMPORTED_MODULE_7__.clearUserInfo)()); // 假设你有一个clearUserInfo的action来清除用户信息
+        // 可选：返回响应到发送消息的脚本
+        sendResponse({ status: "User logout processed successfully" });
+    }
+});
 function init() {
     // mount Content to the ChatGPTside bar, new Chat div
     const appContainer = document.createElement('div');
@@ -42148,7 +42752,7 @@ var observer = new MutationObserver(function (mutations) {
         observer.disconnect();
         //elements.forEach(function (element) {
         const childCount = element.childElementCount;
-        console.log(childCount);
+        //console.log(childCount);
         //防止不停添加，默认只有两个按钮一个删除一个编辑
         if (childCount < 3) {
             let button = getAddButton();
@@ -42156,10 +42760,10 @@ var observer = new MutationObserver(function (mutations) {
             let projectionID = getDataProjectionIDFromLi(element);
             let firstDiv = element.previousElementSibling;
             let textContent = firstDiv.textContent;
-            console.log(textContent.trim());
+            //console.log(textContent.trim());
             let fullURL = window.location.href;
             button.addEventListener('click', () => addNewChat(textContent.trim(), fullURL, projectionID));
-            console.log(fullURL);
+            // console.log(fullURL);
         }
         //});
         // 重新连接

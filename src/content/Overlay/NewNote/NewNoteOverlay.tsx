@@ -30,9 +30,14 @@ export default function NewNoteOverlay() {
 
     return (
         <div id="overlay" className={style.overlay} >
-            <div className={style.innerContainer}>
-                <NewNote noteData={overlayData.noteData} parentNoteID={overlayData.parentNoteID} />
+
+            <div className={style.innerCenterContainer} >
+                <div className={style.dialogContainer} >
+
+                    <NewNote noteData={overlayData.noteData} parentNoteID={overlayData.parentNoteID} />
+                </div>
             </div>
+
         </div>
     )
 }

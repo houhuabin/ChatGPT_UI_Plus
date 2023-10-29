@@ -45,47 +45,44 @@ export default function NewNote({ parentNoteID, noteData }: { parentNoteID: stri
 
     //newNoteContainer set to full screen to contain the dialogContainer and make it in the center 
     return (
-        <div className={styles.newNoteContainer} >
-            <div className={styles.dialogContainer} >
 
-                <div className={styles.newNote}>
+        <div className={styles.newNote}>
 
-                    <div className={styles.titleContainer}>
-                        <input
-                            className={styles.titleInput}
-                            placeholder="Enter title here..."
-                            value={title}
-                            onChange={(e) => setTitle(e.target.value)}
-                            autoFocus
-                        />
-                        <select
-                            className={styles.documentTypeSelect}
-                            value={noteType}
-                            onChange={(e) => setNoteType(e.target.value)}
-                        >
-                            <option value="prompt">prompt</option>
-                            <option value="notion">notion</option>
-                            <option value="chat">chat</option>
-                        </select>
-                    </div>
-                    <div className={styles.contentContainer}>
-                        <textarea
-                            className={styles.content}
-                            placeholder="Type your content here..."
-                            value={content}
-                            onChange={(e) => setContent(e.target.value)}
-                        />
-                    </div>
-                    <div className={styles.buttons}>
-                        <div className={styles.buttonConatinerLeft}>
-                            <button className={styles.button} onClick={handleCanceButtonClick}> Cancel </button>
-                        </div>
-                        <div className={styles.buttonConatinerRight}>
-                            <button className={styles.button} onClick={handleOKButtonClick}> OK </button>
-                        </div>
-                    </div>
+            <div className={styles.titleContainer}>
+                <input
+                    className={styles.titleInput}
+                    placeholder="Enter title here..."
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                    autoFocus
+                />
+                <select
+                    className={styles.documentTypeSelect}
+                    value={noteType}
+                    onChange={(e) => setNoteType(e.target.value)}
+                >
+                    <option value="prompt">prompt</option>
+                    <option value="notion">notion</option>
+                    <option value="chat">chat</option>
+                </select>
+            </div>
+            <div className={styles.contentContainer}>
+                <textarea
+                    className={styles.content}
+                    placeholder="Type your content here..."
+                    value={content}
+                    onChange={(e) => setContent(e.target.value)}
+                />
+            </div>
+            <div className={styles.buttons}>
+                <div className={styles.buttonConatinerLeft}>
+                    <button className={styles.button} onClick={handleCanceButtonClick}> Cancel </button>
+                </div>
+                <div className={styles.buttonConatinerRight}>
+                    <button className={styles.button} onClick={handleOKButtonClick}> OK </button>
                 </div>
             </div>
         </div>
+
     )
 }

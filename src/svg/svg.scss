@@ -2,27 +2,33 @@
 
 
 %svg-shared {
-    
+
     display: block;
     fill: none;
     flex-shrink: 0;
     stroke: $svg-color;
-    stroke-width: 1px;
+
+
     &:hover {
         //background-color: $hover-background-color; /* Darker red on hover */
     }
 }
 
 
-.svg{
-    @extend %svg-shared;
-    width: 1.125rem;
-    height: 1.125rem;
+.svg-popup {
+    stroke-width: 20px;
+    //background-image: linear-gradient(to right, #4FD1C5, #3B82F6);
+    stroke: white;
+    fill: white;
 }
 
-.svg_sd_size {
+
+.svg-small {
+    stroke-width: 1px;
     @extend %svg-shared;
+
 }
+
 
 .svg-large {
     @extend %svg-shared;
@@ -32,9 +38,13 @@
 
 .svg-ligther {
     stroke: $svg-color-lighter;
-    stroke-width: 0.4px;
 }
 
-.svg-fill {
+
+.svg-fill-lighter {
+    fill: $svg-fill-color-lighter;
+}
+
+.svg-fill-darker {
     fill: $svg-fill-color;
 }

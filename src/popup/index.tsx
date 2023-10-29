@@ -2,7 +2,9 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import '../assets/css/tailwind.css'
-import Popup from "./popup";
+import Popup from "./AuthContainer";
+
+import Menu from "./Menu/Menu";
 
 function init() {
     const appContainer = document.createElement('div')
@@ -12,7 +14,7 @@ function init() {
     }
     const root = createRoot(appContainer)
     console.log(appContainer)
-    root.render(<Popup />);
+    root.render(<Menu />);
 }
 
 init();

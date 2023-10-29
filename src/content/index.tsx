@@ -7,10 +7,32 @@ import { useDispatch } from 'react-redux';
 import { addChat, addNote } from "./redux/actions/noteActions";
 import { NoteType } from "./redux/types/noteTypes";
 import store from "./redux/Store";
+import { clearUserInfo, setUserInfo } from "./redux/actions/appActions";
+
+chrome.runtime.onMessage.addListener(
+    function (request, sender, sendResponse) {
+        // 检查消息类型
+        if (request.type === "user_info") {
+            // 处理用户信息
+            const userInfo = request.data;
+            console.log("Received user info:", userInfo);
+            store.dispatch(setUserInfo(userInfo));
+            // 可选：返回响应到发送消息的脚本
+            sendResponse({ status: "User info received successfully" });
+        } else if (request.type === "user_logout") {
+            // 处理用户登出
+            console.log("Received user logout message");
+            // 你可以在这里进行一些清理工作，例如清除用户信息、更新UI等
+            store.dispatch(clearUserInfo());  // 假设你有一个clearUserInfo的action来清除用户信息
+            // 可选：返回响应到发送消息的脚本
+            sendResponse({ status: "User logout processed successfully" });
+        }
+    }
+);
+
+
 
 function init() {
-
-
 
 
     // mount Content to the ChatGPTside bar, new Chat div
@@ -36,6 +58,8 @@ function init() {
 }
 
 init();
+
+
 
 //const dispatch = useDispatch();
 function addNewChat(title, url, projectionID) {
@@ -70,7 +94,7 @@ var observer = new MutationObserver(function (mutations) {
         observer.disconnect();
         //elements.forEach(function (element) {
         const childCount = element.childElementCount;
-        console.log(childCount);
+        //console.log(childCount);
 
         //防止不停添加，默认只有两个按钮一个删除一个编辑
         if (childCount < 3) {
@@ -81,12 +105,12 @@ var observer = new MutationObserver(function (mutations) {
 
             let firstDiv = element.previousElementSibling;
             let textContent = firstDiv.textContent;
-            console.log(textContent.trim());
+            //console.log(textContent.trim());
             let fullURL = window.location.href;
 
             button.addEventListener('click', () => addNewChat(textContent.trim(), fullURL, projectionID));
 
-            console.log(fullURL);
+            // console.log(fullURL);
 
         }
         //});

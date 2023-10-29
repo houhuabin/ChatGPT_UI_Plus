@@ -1,15 +1,12 @@
 @import '../../assets/sass/main';
 
-
-
-
 .overlay {
     pointer-events: auto;
     position: relative;
     z-index: 10000;
-    display:block;
-    background-color:$ovelay-color-darker;
-    
+    display: block;
+    background-color: $ovelay-color-darker;
+
 }
 
 .innerContainer {
@@ -17,6 +14,35 @@
     top: 0px;
     left: 0px;
     width: 100vw;
-    height: 100vh;   
-      
+    height: 100vh;
+
+}
+
+.innerCenterContainer {
+
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: $ovelay-color;
+    display: flex;
+    justify-content: center;
+    /* 水平居中 */
+    align-items: center;
+    /* 垂直居中 */
+
+}
+
+.dialogContainer {
+    border-radius: 4px;
+
+    background: $background-color;
+    position: relative;
+    max-width: calc(100vw - 24px);
+    box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px,
+        rgba(15, 15, 15, 0.1) 0px 3px 6px,
+        rgba(15, 15, 15, 0.2) 0px 9px 24px;
+    overflow: hidden;
+
 }

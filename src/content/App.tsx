@@ -9,9 +9,15 @@ import style from './app.module.scss'
 
 import NewNoteOverlay from './Overlay/NewNote/NewNoteOverlay'
 import MenuOverlay from './Overlay/Menu/MenuOverlay'
+import SettingBlock from './Block/SettingBlock'
+import AuthOverlay from './Auth/D_AuthOverlay'
+
+
 
 export default function App() {
 
+
+    const appState = useSelector((state: any) => state.app);
     const allNotesData = useSelector((state: any) => state.notes);
     const promptRootNotes = findNotesByRootName(allNotesData, "note_prompt");
     //console.log(promptRootNotes.length + "  promptRootNotes length");
@@ -20,8 +26,11 @@ export default function App() {
 
     const chatHistoryRootNotes = findNotesByRootName(allNotesData, "note_chat");
 
+
     return (
         <div className={style.leftBar}>
+            {appState && appState.userInfo && <div>Welcome, {appState.userInfo.displayName}!</div>}
+            <SettingBlock />
             <LeftBarBlock rootNotes={promptRootNotes} allNotesData={allNotesData} title="prompt" />
 
             <LeftBarBlock rootNotes={noteRootNotes} allNotesData={allNotesData} title="notion" />
@@ -30,6 +39,7 @@ export default function App() {
 
             <NewNoteOverlay />
             <MenuOverlay />
+
         </div>
     )
 }
