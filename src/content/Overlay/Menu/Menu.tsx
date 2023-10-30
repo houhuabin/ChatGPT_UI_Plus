@@ -52,8 +52,10 @@ export default function Menu({ pointX, pointY, noteID }: MenuProps) {
 
         <div className={`${style.dialogContainer} ${style.menu}`} style={menuPosition}>
             <MenuBlock noteID={noteID} menuBlockDatas={menuBlockDatas} />
-            <div className={style.menuSeparator} ></div>
-            <MenuBlock noteID={noteID} menuBlockDatas={menuBlockDatas2} />
+            {/* 
+    <div className={style.menuSeparator} ></div>
+    <MenuBlock noteID={noteID} menuBlockDatas={menuBlockDatas2} />
+    */}
         </div>
 
     )

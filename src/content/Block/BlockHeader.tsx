@@ -24,11 +24,12 @@ export default function BlockHead({ title, rootNotes }: { title: string, rootNot
         <div className={style.container} >
             <div className={style.title}>{title}</div>
             {/* 判断 rootNotes 是否为空 并且 title 不是 "chat" */}
-            {(!rootNotes || rootNotes.length === 0) && title !== "chat" && (
+            {//(!rootNotes || rootNotes.length === 0) && title !== "chat" && (
                 <div className={style.iconContainer} onClick={handleClick}>
                     <AddSVG />
                 </div>
-            )}
+                // )
+            }
         </div>
     )
 }

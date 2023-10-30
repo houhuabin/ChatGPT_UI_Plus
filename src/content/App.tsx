@@ -29,8 +29,9 @@ export default function App() {
 
     return (
         <div className={style.leftBar}>
-            {appState && appState.userInfo && <div>Welcome, {appState.userInfo.displayName}!</div>}
-            <SettingBlock />
+
+            {appState && appState.userInfo && <div >Welcome, {appState.userInfo.displayName}!</div>}
+
             <LeftBarBlock rootNotes={promptRootNotes} allNotesData={allNotesData} title="prompt" />
 
             <LeftBarBlock rootNotes={noteRootNotes} allNotesData={allNotesData} title="notion" />

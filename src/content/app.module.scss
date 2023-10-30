@@ -1,9 +1,13 @@
-
 @import '../assets/sass/main';
 
-.leftBar{
+.leftBar {
     background-color: $background-color;
     border-radius: 4px;
     padding: 2px;
-     // 您可以根据需要调整这个值
+    // 您可以根据需要调整这个值
+}
+
+.user_name {
+    color: $text-color-daker;
+    font-size: 1rem;
 }

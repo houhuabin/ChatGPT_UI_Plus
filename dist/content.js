@@ -1061,47 +1061,6 @@ ___CSS_LOADER_EXPORT___.locals = {
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/content/Block/setting-block.module.scss":
-/*!**********************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/content/Block/setting-block.module.scss ***!
-  \**********************************************************************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/css-loader/dist/runtime/sourceMaps.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-// Imports
-
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, `.DifmtXjgXY5gUrcyF4Yh {
-  background-color: white;
-  border-radius: 2px;
-  padding-bottom: 5px;
-  border: 0.5px solid rgba(47, 53, 55, 0.3);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 0.8px 0;
-}
-
-.zRUoUvylXeR9z6NPj50t {
-  margin: 4px 4px 0px 4px;
-}`, "",{"version":3,"sources":["webpack://./src/content/Block/leftbar-block.module.scss","webpack://./src/assets/sass/_colors.scss","webpack://./src/content/Block/setting-block.module.scss"],"names":[],"mappings":"AACA;EACI,uBCFe;EDIf,kBAAA;EACA,mBAAA;EAGA,yCAAA;EAGA,wCAAA;EACA,eAAA;AELJ;;AAJA;EACI,uBAAA;AAOJ","sourcesContent":["@import '../../assets/sass/main';\r\n.leftBarBlock{\r\n    background-color: $background-color;\r\n    // 圆角\r\n    border-radius: 2px; // 您可以根据需要调整这个值\r\n    padding-bottom: 5px;\r\n\r\n    // 边框\r\n    border: 0.5px solid $svg-color-lighter; // 假设您在SASS变量中有一个名为$border-color的颜色\r\n\r\n    // 阴影\r\n    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  // 这会产生一个向下偏移的轻微阴影\r\n    margin: 0.8px 0;\r\n  \r\n}\r\n\r\n","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(25, 25, 29, 0.5);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);","@import '../../assets/sass/main';\r\n@import './leftbar-block.module.scss';\r\n\r\n.userContainer {\r\n    margin: 4px 4px 0px 4px;\r\n\r\n}"],"sourceRoot":""}]);
-// Exports
-___CSS_LOADER_EXPORT___.locals = {
-	"leftBarBlock": `DifmtXjgXY5gUrcyF4Yh`,
-	"userContainer": `zRUoUvylXeR9z6NPj50t`
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/content/Notes/NoteIcon/note-icon.module.scss":
 /*!***************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/content/Notes/NoteIcon/note-icon.module.scss ***!
@@ -1905,10 +1864,16 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.dy25DFmHxrdVmTmuGBBs {
   background-color: white;
   border-radius: 4px;
   padding: 2px;
-}`, "",{"version":3,"sources":["webpack://./src/content/app.module.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AAGA;EACI,uBCJe;EDKf,kBAAA;EACA,YAAA;AAFJ","sourcesContent":["\r\n@import '../assets/sass/main';\r\n\r\n.leftBar{\r\n    background-color: $background-color;\r\n    border-radius: 4px;\r\n    padding: 2px;\r\n     // 您可以根据需要调整这个值\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(25, 25, 29, 0.5);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
+}
+
+.th1nTLsXK66EI1E0aTzD {
+  color: rgba(47, 53, 55, 0.8);
+  font-size: 1rem;
+}`, "",{"version":3,"sources":["webpack://./src/content/app.module.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AAEA;EACI,uBCHe;EDIf,kBAAA;EACA,YAAA;AADJ;;AAKA;EACI,4BCMe;EDLf,eAAA;AAFJ","sourcesContent":["@import '../assets/sass/main';\r\n\r\n.leftBar {\r\n    background-color: $background-color;\r\n    border-radius: 4px;\r\n    padding: 2px;\r\n    // 您可以根据需要调整这个值\r\n}\r\n\r\n.user_name {\r\n    color: $text-color-daker;\r\n    font-size: 1rem;\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(25, 25, 29, 0.5);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
-	"leftBar": `dy25DFmHxrdVmTmuGBBs`
+	"leftBar": `dy25DFmHxrdVmTmuGBBs`,
+	"user_name": `th1nTLsXK66EI1E0aTzD`
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -38776,60 +38741,6 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
-/***/ "./src/content/Block/setting-block.module.scss":
-/*!*****************************************************!*\
-  !*** ./src/content/Block/setting-block.module.scss ***!
-  \*****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/styleDomAPI.js */ "./node_modules/style-loader/dist/runtime/styleDomAPI.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/insertBySelector.js */ "./node_modules/style-loader/dist/runtime/insertBySelector.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/insertStyleElement.js */ "./node_modules/style-loader/dist/runtime/insertStyleElement.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_setting_block_module_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./setting-block.module.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/content/Block/setting-block.module.scss");
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-
-var options = {};
-
-options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
-options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
-
-      options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
-    
-options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
-options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
-
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_setting_block_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"], options);
-
-
-
-
-       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_setting_block_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_setting_block_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_setting_block_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
-
-
-/***/ }),
-
 /***/ "./src/content/Notes/NoteIcon/note-icon.module.scss":
 /*!**********************************************************!*\
   !*** ./src/content/Notes/NoteIcon/note-icon.module.scss ***!
@@ -40087,8 +39998,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_module_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.module.scss */ "./src/content/app.module.scss");
 /* harmony import */ var _Overlay_NewNote_NewNoteOverlay__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Overlay/NewNote/NewNoteOverlay */ "./src/content/Overlay/NewNote/NewNoteOverlay.tsx");
 /* harmony import */ var _Overlay_Menu_MenuOverlay__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Overlay/Menu/MenuOverlay */ "./src/content/Overlay/Menu/MenuOverlay.tsx");
-/* harmony import */ var _Block_SettingBlock__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Block/SettingBlock */ "./src/content/Block/SettingBlock.tsx");
-
 
 
 
@@ -40108,7 +40017,6 @@ function App() {
             "Welcome, ",
             appState.userInfo.displayName,
             "!"),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Block_SettingBlock__WEBPACK_IMPORTED_MODULE_7__["default"], null),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Block_LeftBarBlock2__WEBPACK_IMPORTED_MODULE_3__["default"], { rootNotes: promptRootNotes, allNotesData: allNotesData, title: "prompt" }),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Block_LeftBarBlock2__WEBPACK_IMPORTED_MODULE_3__["default"], { rootNotes: noteRootNotes, allNotesData: allNotesData, title: "notion" }),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Block_LeftBarBlock2__WEBPACK_IMPORTED_MODULE_3__["default"], { rootNotes: chatHistoryRootNotes, allNotesData: allNotesData, title: "chat" }),
@@ -40153,8 +40061,10 @@ function BlockHead({ title, rootNotes }) {
     };
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _block_header_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].container },
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _block_header_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].title }, title),
-        (!rootNotes || rootNotes.length === 0) && title !== "chat" && (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _block_header_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].iconContainer, onClick: handleClick },
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_svg_AddSVG__WEBPACK_IMPORTED_MODULE_1__["default"], null)))));
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _block_header_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].iconContainer, onClick: handleClick },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_svg_AddSVG__WEBPACK_IMPORTED_MODULE_1__["default"], null))
+    // )
+    ));
 }
 
 
@@ -40183,41 +40093,6 @@ function LeftBarBlock({ rootNotes, allNotesData, title }) {
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _leftbar_block_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].leftBarBlock },
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_BlockHeader__WEBPACK_IMPORTED_MODULE_3__["default"], { rootNotes: rootNotes, title: title }),
         rootNotes.map((note) => (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Notes_Note__WEBPACK_IMPORTED_MODULE_1__["default"], { key: note.id, noteData: note, allNotesData: allNotesData })))));
-}
-
-
-/***/ }),
-
-/***/ "./src/content/Block/SettingBlock.tsx":
-/*!********************************************!*\
-  !*** ./src/content/Block/SettingBlock.tsx ***!
-  \********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ SettingBlock)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _setting_block_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./setting-block.module.scss */ "./src/content/Block/setting-block.module.scss");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _redux_actions_userActions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../redux/actions/userActions */ "./src/content/redux/actions/userActions.tsx");
-/* harmony import */ var _svg_UserSVG__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../svg/UserSVG */ "./src/svg/UserSVG.tsx");
-
-
-
-
-
-function SettingBlock() {
-    const dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useDispatch)();
-    const handUserClick = () => {
-        console.log(" ==========setting click ==============");
-        dispatch((0,_redux_actions_userActions__WEBPACK_IMPORTED_MODULE_3__.showAuth)());
-    };
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _setting_block_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].leftBarBlock },
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _setting_block_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].userContainer, onClick: handUserClick },
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_svg_UserSVG__WEBPACK_IMPORTED_MODULE_4__["default"], null))));
 }
 
 
@@ -40450,9 +40325,7 @@ function Menu({ pointX, pointY, noteID }) {
         top: `${adjustedPointY}px`
     };
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: `${_menu_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].dialogContainer} ${_menu_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].menu}`, style: menuPosition },
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_MenuBlock_MenuBlock__WEBPACK_IMPORTED_MODULE_2__["default"], { noteID: noteID, menuBlockDatas: menuBlockDatas }),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _menu_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].menuSeparator }),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_MenuBlock_MenuBlock__WEBPACK_IMPORTED_MODULE_2__["default"], { noteID: noteID, menuBlockDatas: menuBlockDatas2 })));
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_MenuBlock_MenuBlock__WEBPACK_IMPORTED_MODULE_2__["default"], { noteID: noteID, menuBlockDatas: menuBlockDatas })));
 }
 
 
@@ -40966,33 +40839,6 @@ const showEditNoteOverlay = (parentNoteID, noteData) => {
 const hideNewEditNoteOverlay = () => {
     return {
         type: _types_overlayNewNoteTypes__WEBPACK_IMPORTED_MODULE_0__.HIDE_NEW_EDIT_NOTE_OVERLAY
-    };
-};
-
-
-/***/ }),
-
-/***/ "./src/content/redux/actions/userActions.tsx":
-/*!***************************************************!*\
-  !*** ./src/content/redux/actions/userActions.tsx ***!
-  \***************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   hideOverlay: () => (/* binding */ hideOverlay),
-/* harmony export */   showAuth: () => (/* binding */ showAuth)
-/* harmony export */ });
-/* harmony import */ var _types_userTypes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../types/userTypes */ "./src/content/redux/types/userTypes.tsx");
-
-const showAuth = () => {
-    return {
-        type: _types_userTypes__WEBPACK_IMPORTED_MODULE_0__.SHOW_AUTH_OVERLAY
-    };
-};
-const hideOverlay = () => {
-    return {
-        type: _types_userTypes__WEBPACK_IMPORTED_MODULE_0__.HIDE_AUTH_OVERLAY
     };
 };
 
@@ -41900,29 +41746,6 @@ function ToggleSVG({ rotateDegree }) {
     // console.log(rotateDegree + "   rotateDegree=================");
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", { viewBox: "0 0 12 12", xmlns: "http://www.w3.org/2000/svg", className: "ToggleSVG", style: { transform: `rotate(${rotateDegree})` } },
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", { d: "M6.02734 8.80274C6.27148 8.80274 6.47168 8.71484 6.66211 8.51465L10.2803 4.82324C10.4268 4.67676 10.5 4.49609 10.5 4.28125C10.5 3.85156 10.1484 3.5 9.72363 3.5C9.50879 3.5 9.30859 3.58789 9.15234 3.74902L6.03223 6.9668L2.90722 3.74902C2.74609 3.58789 2.55078 3.5 2.33105 3.5C1.90137 3.5 1.55469 3.85156 1.55469 4.28125C1.55469 4.49609 1.62793 4.67676 1.77441 4.82324L5.39258 8.51465C5.58789 8.71973 5.78808 8.80274 6.02734 8.80274Z" })));
-}
-
-
-/***/ }),
-
-/***/ "./src/svg/UserSVG.tsx":
-/*!*****************************!*\
-  !*** ./src/svg/UserSVG.tsx ***!
-  \*****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ UserSVG)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _svg_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./svg.scss */ "./src/svg/svg.scss");
-
-
-function UserSVG() {
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", { xmlns: "http://www.w3.org/2000/svg", height: "1em", viewBox: "0 0 512 512", className: 'svg-popup' },
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", { d: "M406.5 399.6C387.4 352.9 341.5 320 288 320H224c-53.5 0-99.4 32.9-118.5 79.6C69.9 362.2 48 311.7 48 256C48 141.1 141.1 48 256 48s208 93.1 208 208c0 55.7-21.9 106.2-57.5 143.6zm-40.1 32.7C334.4 452.4 296.6 464 256 464s-78.4-11.6-110.5-31.7c7.3-36.7 39.7-64.3 78.5-64.3h64c38.8 0 71.2 27.6 78.5 64.3zM256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-272a40 40 0 1 1 0-80 40 40 0 1 1 0 80zm-88-40a88 88 0 1 0 176 0 88 88 0 1 0 -176 0z" })));
 }
 
 
