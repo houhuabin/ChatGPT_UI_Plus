@@ -11,6 +11,7 @@ import NewNoteOverlay from './Overlay/NewNote/NewNoteOverlay'
 import MenuOverlay from './Overlay/Menu/MenuOverlay'
 import SettingBlock from './Block/SettingBlock'
 import AuthOverlay from './Auth/D_AuthOverlay'
+import AccountBlock from './Block/AccountBlock'
 
 
 
@@ -29,8 +30,9 @@ export default function App() {
 
     return (
         <div className={style.leftBar}>
+            <AccountBlock userInfo={appState?.userInfo} />
 
-            {appState && appState.userInfo && <div >Welcome, {appState.userInfo.displayName}!</div>}
+
 
             <LeftBarBlock rootNotes={promptRootNotes} allNotesData={allNotesData} title="prompt" />
 

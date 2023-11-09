@@ -19,7 +19,7 @@ module.exports = {
         auth: path.resolve("./src/popup/authIndex.tsx"),
         plan: path.resolve("./src/popup/planIndex.tsx"),
         options: path.resolve("./src/options/options.tsx"),
-        // background: path.resolve("./src/background/background.ts"),
+        background: path.resolve("./src/background/background.tsx"),
         content: path.resolve("./src/content/index.tsx"),
 
 

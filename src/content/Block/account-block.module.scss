@@ -1,0 +1,34 @@
+@import '../../assets/sass/main';
+@import './leftbar-block.module.scss';
+
+.container {
+    display: flex;
+    align-items: center;
+    color: gray; // 设置字体颜色为灰色
+    user-select: none;
+    justify-content: flex-start;
+    @include activeContainerLeftAligned;
+}
+
+.avatar {
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    object-fit: cover;
+}
+
+.welcomeMessage {
+    font-size: 0.7rem; // 设置字体大小为1rem
+    color: gray;
+}
+
+
+
+.accountContainer {
+    width: 1.3rem;
+    height: 1.3rem;
+    margin: 2px;
+
+
+}

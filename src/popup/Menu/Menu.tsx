@@ -21,14 +21,14 @@ export default function Menu() {
  */
     const menuBlockDatas: MenuBlockData[] = [
         { title: "Sign In", id: 1 },
-        { title: "Sign Out", id: 2, hotKey: "Ctrl+Shift+R" },
-        { title: "Premium Plan", id: 3, hotKey: "Ctrl+E" }
+        { title: "Sign Out", id: 2, hotKey: "" },
+        { title: "Premium Plan", id: 3, hotKey: "" }
     ];
 
     const menuBlockDatas2: MenuBlockData[] = [
-        { title: "Duplicate", id: 4 },
-        { title: "Move to", id: 5, hotKey: "Ctrl+Shift+R" },
-        { title: "Add to favorites", id: 6, hotKey: "Ctrl+E" }
+        { title: "Sign In with Google Account", id: 4 },
+        { title: "Move to", id: 5, hotKey: "" },
+        { title: "Add to favorites", id: 6, hotKey: "" }
     ];
 
 

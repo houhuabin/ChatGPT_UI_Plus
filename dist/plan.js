@@ -154,12 +154,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _PremiumPanel2__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PremiumPanel2 */ "./src/popup/Plan/PremiumPanel2.tsx");
-/* harmony import */ var _StandardPanel2__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./StandardPanel2 */ "./src/popup/Plan/StandardPanel2.tsx");
-/* harmony import */ var _app_firebase__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../app/firebase */ "./src/app/firebase.tsx");
-/* harmony import */ var _stripePayment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./stripePayment */ "./src/popup/Plan/stripePayment.ts");
-/* harmony import */ var _getPremiumStatus__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./getPremiumStatus */ "./src/popup/Plan/getPremiumStatus.ts");
-/* harmony import */ var _popup_module_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../popup.module.scss */ "./src/popup/popup.module.scss");
-/* harmony import */ var _PlanDetail__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./PlanDetail */ "./src/popup/Plan/PlanDetail.tsx");
+/* harmony import */ var _app_firebase__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../app/firebase */ "./src/app/firebase.tsx");
+/* harmony import */ var _stripePayment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./stripePayment */ "./src/popup/Plan/stripePayment.ts");
+/* harmony import */ var _getPremiumStatus__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./getPremiumStatus */ "./src/popup/Plan/getPremiumStatus.ts");
+/* harmony import */ var _popup_module_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../popup.module.scss */ "./src/popup/popup.module.scss");
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -176,12 +174,10 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
 
 
 
-
-
 function Plan() {
     var _a;
-    const app = (0,_app_firebase__WEBPACK_IMPORTED_MODULE_3__.initFirebase)();
-    const auth = _app_firebase__WEBPACK_IMPORTED_MODULE_3__.authInstance;
+    const app = (0,_app_firebase__WEBPACK_IMPORTED_MODULE_2__.initFirebase)();
+    const auth = _app_firebase__WEBPACK_IMPORTED_MODULE_2__.authInstance;
     //console.log(auth, "==auth==");
     auth.onAuthStateChanged(user => {
         if (user) {
@@ -203,24 +199,15 @@ function Plan() {
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
         const checkPremium = () => __awaiter(this, void 0, void 0, function* () {
             const newPremiumStatus = auth.currentUser
-                ? yield (0,_getPremiumStatus__WEBPACK_IMPORTED_MODULE_5__.getPremiumStatus)(app)
+                ? yield (0,_getPremiumStatus__WEBPACK_IMPORTED_MODULE_4__.getPremiumStatus)(app)
                 : false;
             setIsPremium(newPremiumStatus);
         });
         checkPremium();
     }, [app, (_a = auth.currentUser) === null || _a === void 0 ? void 0 : _a.uid]);
-    const upgradeToPremium = () => __awaiter(this, void 0, void 0, function* () {
-        const priceId = "price_1O5F66DEhRzVc2TQiU5X8MUU";
-        console.log(priceId, "==priceId==");
-        const checkoutUrl = yield (0,_stripePayment__WEBPACK_IMPORTED_MODULE_4__.getCheckoutUrl)(app, priceId);
-        // router.push(checkoutUrl);
-        console.log(checkoutUrl, "==checkoutUrl==");
-        chrome.tabs.update({ url: checkoutUrl });
-        console.log("Upgrade to Premium");
-    });
     const manageSubscription = () => __awaiter(this, void 0, void 0, function* () {
         console.log("==manageSubscription==");
-        const portalUrl = yield (0,_stripePayment__WEBPACK_IMPORTED_MODULE_4__.getPortalUrl)(app);
+        const portalUrl = yield (0,_stripePayment__WEBPACK_IMPORTED_MODULE_3__.getPortalUrl)(app);
         chrome.tabs.update({ url: portalUrl });
         console.log(portalUrl, "==portalUrl==");
         //router.push(portalUrl);
@@ -230,8 +217,47 @@ function Plan() {
         auth.signOut();
         //router.push("/");
     };
-    const upgradeToPremiumButton = (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { onClick: upgradeToPremium, className: "bg-blue-600 p-4 px-6 text-lg rounded-lg hover:bg-blue-700 shadow-lg" },
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "flex gap-2 items-center align-middle justify-center" }, "Upgrade To Premium")));
+    const UpgradeToPremiumButton = ({ amount, period }) => {
+        // 假设你有一个映射，它根据金额和周期来确定 priceId
+        const priceMap = {
+            'monthly': {
+                '10': "price_1O5F66DEhRzVc2TQiU5X8MUU",
+                '20': "price_monthly_20",
+                // ...其他月付金额
+            },
+            'yearly': {
+                '90': "price_yearly_100",
+                '200': "price_yearly_200",
+                // ...其他年付金额
+            }
+        };
+        const upgradeToPremium = () => __awaiter(this, void 0, void 0, function* () {
+            const periodMap = priceMap[period.toLowerCase()];
+            if (!periodMap) {
+                console.log("Invalid period");
+                return;
+            }
+            const priceId = periodMap[amount];
+            if (!priceId) {
+                console.log("Invalid amount");
+                return;
+            }
+            console.log(priceId, "==priceId==");
+            const checkoutUrl = yield (0,_stripePayment__WEBPACK_IMPORTED_MODULE_3__.getCheckoutUrl)(app, priceId);
+            // router.push(checkoutUrl);
+            console.log(checkoutUrl, "==checkoutUrl==");
+            chrome.tabs.update({ url: checkoutUrl });
+            console.log("Upgrade to Premium");
+        });
+        // 格式化周期显示
+        const formattedPeriod = period.toLowerCase() === 'yearly' ? 'Per Year' : 'Per Month';
+        return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { onClick: upgradeToPremium, className: "bg-blue-600 p-4 px-6 text-lg rounded-lg hover:bg-blue-700 shadow-lg" },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "flex text-white gap-2 items-center align-middle justify-center" },
+                "NZ$",
+                amount,
+                " ",
+                formattedPeriod)));
+    };
     const managePortalButton = (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { onClick: manageSubscription, className: "bg-blue-600 p-4 px-6 text-lg rounded-lg hover:bg-blue-700 shadow-lg" },
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "flex gap-2 items-center align-middle justify-center" }, "Manage Subscription")));
     const signOutButton = (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { onClick: signOut, className: "hover:underline text-slate-500 hover:text-slate-300 text-lg text-center" },
@@ -241,71 +267,17 @@ function Plan() {
             "Signed in as ",
             userName),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "text-slate-300 text-xl" }, email)));
-    const statusPanel = isPremium ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_PremiumPanel2__WEBPACK_IMPORTED_MODULE_1__.PremiumPanel, null) : react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StandardPanel2__WEBPACK_IMPORTED_MODULE_2__.StandardPanel, null);
-    const memberButton = isPremium ? managePortalButton : upgradeToPremiumButton;
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _popup_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"].popupContainer },
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "flex flex-col gap-8" },
-            accountSummary,
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StandardPanel2__WEBPACK_IMPORTED_MODULE_2__.StandardPanel, null),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_PremiumPanel2__WEBPACK_IMPORTED_MODULE_1__.PremiumPanel, null),
-            memberButton,
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_PlanDetail__WEBPACK_IMPORTED_MODULE_7__["default"], null))));
-}
-
-
-/***/ }),
-
-/***/ "./src/popup/Plan/PlanDetail.tsx":
-/*!***************************************!*\
-  !*** ./src/popup/Plan/PlanDetail.tsx ***!
-  \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Plan)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-function Plan() {
-    const products = [
-        {
-            id: '1',
-            name: 'Freelancer',
-            description: 'All the basics for starting a new business',
-            prices: {
-                currency: 'usd',
-                unit_amount: 2400
-            }
-        },
-        {
-            id: '2',
-            name: 'Startup',
-            description: 'All the basics for starting a new business!',
-            prices: {
-                currency: 'usd',
-                unit_amount: 3200 // 代表 $32.00
-            }
-        }
-        // 你可以在这里继续添加其他产品
-    ];
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "mt-12 space-y-4 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-6 lg:max-w-4xl lg:mx-auto xl:max-w-none xl:mx-0 xl:grid-cols-3" }, products.map((product) => {
-        const price = product.prices;
-        if (!price)
-            return null;
-        const priceString = new Intl.NumberFormat('en-US', {
-            style: 'currency',
-            currency: price.currency,
-            minimumFractionDigits: 0
-        }).format(((price === null || price === void 0 ? void 0 : price.unit_amount) || 0) / 100);
-        return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { key: product.id, className: " 'rounded-lg shadow-sm divide-y divide-zinc-600 bg-zinc-900 border border-pink-500" },
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "p-6" },
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", { className: "text-2xl font-semibold leading-6 text-white" }, product.name),
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", { className: "mt-4 text-zinc-300" }, product.description),
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", { className: "mt-8" },
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", { className: "text-5xl font-extrabold white" }, priceString)))));
-    })));
+    //const memberButton = isPremium ? managePortalButton : upgradeToPremiumButton;
+    const premiumPage = (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "flex flex-col gap-8" },
+        accountSummary,
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_PremiumPanel2__WEBPACK_IMPORTED_MODULE_1__.PremiumPanel, null),
+        managePortalButton));
+    const planPage = (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "flex flex-col gap-8" },
+        accountSummary,
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(UpgradeToPremiumButton, { amount: "10", period: "Monthly" }),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(UpgradeToPremiumButton, { amount: "90", period: "Yearly" })));
+    const displayPage = isPremium ? premiumPage : planPage;
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _popup_module_scss__WEBPACK_IMPORTED_MODULE_5__["default"].popupContainer }, displayPage));
 }
 
 
@@ -331,27 +303,6 @@ const PremiumPanel = () => {
         premiumStatusIcon,
         "Premium Member"));
     return premiumStatusPanel;
-};
-
-
-/***/ }),
-
-/***/ "./src/popup/Plan/StandardPanel2.tsx":
-/*!*******************************************!*\
-  !*** ./src/popup/Plan/StandardPanel2.tsx ***!
-  \*******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   StandardPanel: () => (/* binding */ StandardPanel)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-const StandardPanel = () => {
-    const standardStatusPanel = (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "text-slate-300 text-xl bg-slate-600 p-4 py-12 rounded-lg w-72 bg-opacity-30 flex gap-2 justify-center" }, "Standard Member"));
-    return standardStatusPanel;
 };
 
 

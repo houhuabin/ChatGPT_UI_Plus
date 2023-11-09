@@ -27,7 +27,7 @@ export default function MenuIcon({ menuBlockData }: { menuBlockData: MenuBlockDa
             SVGComponent = StripeSVG;
             break;
         case 4:
-            SVGComponent = DuplicateSVG;
+            SVGComponent = UserSVG;
             break;
         case 5:
             SVGComponent = LikeSVG;

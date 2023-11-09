@@ -10,7 +10,8 @@
     margin-top: 6px;
     margin-bottom: 2px;
 }
-.title{
+
+.title {
     flex: 1 1 auto;
     white-space: nowrap;
     min-width: 0px;
@@ -18,14 +19,14 @@
     text-overflow: clip;
     display: flex;
     align-items: center;
-     
-    color:$text-color-lighter;
+
+    color: $text-color-lighter;
 }
 
 
 .iconContainer {
-   
-   // background-color: aquamarine;
+
+    // background-color: aquamarine;
     height: 1.2rem;
     width: 1.2rem;
     margin-right: 10px;
@@ -39,4 +40,10 @@
     opacity: 0;
     pointer-events: none;
     transition: opacity 200ms ease-in 0s;
+}
+
+
+.userContainer {
+    margin: 4px 4px 0px 4px;
+
 }

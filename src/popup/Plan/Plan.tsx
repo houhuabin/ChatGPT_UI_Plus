@@ -46,15 +46,7 @@ export default function Plan() {
         checkPremium();
     }, [app, auth.currentUser?.uid]);
 
-    const upgradeToPremium = async () => {
-        const priceId = "price_1O5F66DEhRzVc2TQiU5X8MUU";
-        console.log(priceId, "==priceId==");
-        const checkoutUrl = await getCheckoutUrl(app, priceId);
-        // router.push(checkoutUrl);
-        console.log(checkoutUrl, "==checkoutUrl==");
-        chrome.tabs.update({ url: checkoutUrl });
-        console.log("Upgrade to Premium");
-    };
+
 
     const manageSubscription = async () => {
         console.log("==manageSubscription==");
@@ -70,16 +62,58 @@ export default function Plan() {
         //router.push("/");
     };
 
-    const upgradeToPremiumButton = (
-        <button
-            onClick={upgradeToPremium}
-            className="bg-blue-600 p-4 px-6 text-lg rounded-lg hover:bg-blue-700 shadow-lg"
-        >
-            <div className="flex gap-2 items-center align-middle justify-center">
-                Upgrade To Premium
-            </div>
-        </button>
-    );
+    const UpgradeToPremiumButton = ({ amount, period }) => {
+        // 假设你有一个映射，它根据金额和周期来确定 priceId
+        const priceMap = {
+            'monthly': {
+                '10': "price_1O5F66DEhRzVc2TQiU5X8MUU",
+                '20': "price_monthly_20",
+                // ...其他月付金额
+            },
+            'yearly': {
+                '90': "price_yearly_100",
+                '200': "price_yearly_200",
+                // ...其他年付金额
+            }
+        };
+
+        const upgradeToPremium = async () => {
+            const periodMap = priceMap[period.toLowerCase()];
+            if (!periodMap) {
+                console.log("Invalid period");
+                return;
+            }
+
+            const priceId = periodMap[amount];
+            if (!priceId) {
+                console.log("Invalid amount");
+                return;
+            }
+
+            console.log(priceId, "==priceId==");
+            const checkoutUrl = await getCheckoutUrl(app, priceId);
+            // router.push(checkoutUrl);
+            console.log(checkoutUrl, "==checkoutUrl==");
+            chrome.tabs.update({ url: checkoutUrl });
+            console.log("Upgrade to Premium");
+        };
+
+        // 格式化周期显示
+        const formattedPeriod = period.toLowerCase() === 'yearly' ? 'Per Year' : 'Per Month';
+
+        return (
+            <button
+                onClick={upgradeToPremium}
+                className="bg-blue-600 p-4 px-6 text-lg rounded-lg hover:bg-blue-700 shadow-lg"
+            >
+                <div className="flex text-white gap-2 items-center align-middle justify-center">
+                    NZ${amount} {formattedPeriod}
+                </div>
+            </button>
+        );
+    };
+
+
 
     const managePortalButton = (
         <button
@@ -110,21 +144,38 @@ export default function Plan() {
         </div>
     );
 
-    const statusPanel = isPremium ? <PremiumPanel /> : <StandardPanel />;
-    const memberButton = isPremium ? managePortalButton : upgradeToPremiumButton;
+
+    //const memberButton = isPremium ? managePortalButton : upgradeToPremiumButton;
+
+
+    const premiumPage = (
+
+        <div className="flex flex-col gap-8">
+            {accountSummary}
+
+            <PremiumPanel />
+            {managePortalButton}
+        </div>
+    );
+
+    const planPage = (
+
+        <div className="flex flex-col gap-8">
+            {accountSummary}
+            <UpgradeToPremiumButton amount="10" period="Monthly" />
+            <UpgradeToPremiumButton amount="90" period="Yearly" />
+
+            {/* ...可以继续添加更多的按钮 */}
+        </div>
+    );
+
+    const displayPage = isPremium ? premiumPage : planPage;
+
 
     return (
         <div className={style.popupContainer} >
-
-            <div className="flex flex-col gap-8">
-                {accountSummary}
-                <StandardPanel />
-                <PremiumPanel />
-                {memberButton}
-
-                <PlanDetail />
-            </div>
-
+            {displayPage}
         </div>
+
     );
 }

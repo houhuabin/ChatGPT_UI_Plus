@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
 
 import Content from "./content";
-import '../assets/css/tailwind.css'
-import { useDispatch } from 'react-redux';
+
+
 import { addChat, addNote } from "./redux/actions/noteActions";
 import { NoteType } from "./redux/types/noteTypes";
 import store from "./redux/Store";
 import { clearUserInfo, setUserInfo } from "./redux/actions/appActions";
-
+/*
 chrome.runtime.onMessage.addListener(
     function (request, sender, sendResponse) {
         // 检查消息类型
@@ -28,33 +28,39 @@ chrome.runtime.onMessage.addListener(
             sendResponse({ status: "User logout processed successfully" });
         }
     }
-);
-
+);*/
 
 
 function init() {
+    let appMounted = false;
+    const appContainer = document.createElement('div');
 
+    const callback = function (mutationsList, observer) {
+        for (let mutation of mutationsList) {
+            if (mutation.type === 'childList') {
+                // const targetDiv = document.querySelector('.mb-1.flex.flex-row.gap-2');
+                const targetDiv = document.querySelector('.flex.flex-col.gap-2.pb-2.dark\\:text-gray-100.text-gray-800.text-sm');
 
-    // mount Content to the ChatGPTside bar, new Chat div
-    const appContainer = document.createElement('div')
+                if (targetDiv && !appMounted) {
+                    targetDiv.insertAdjacentElement('afterbegin', appContainer);
+                    const contentRoot = createRoot(appContainer);
+                    contentRoot.render(<Content />);
+                    appMounted = true;
+                } else if (!targetDiv && appMounted) {
+                    // 检查appContainer是否还在DOM中
+                    if (!document.body.contains(appContainer)) {
+                        appMounted = false;
+                    }
+                }
+            }
+        }
+    };
 
-    const targetDiv = document.querySelector('.mb-1.flex.flex-row.gap-2');
-    if (!targetDiv) {
-        throw new Error("Can not find New Chat element in chatgpt");
-    }
-    targetDiv.insertAdjacentElement('afterend', appContainer);
-    const contentRoot = createRoot(appContainer);
-    contentRoot.render(<Content />);
+    const observer = new MutationObserver(callback);
+    const config = { childList: true, subtree: true };
+    const targetNode = document.body;
 
-
-
-    // mount Overlay to body
-    // const overlayContainer = document.createElement('div');
-    // document.body.appendChild(overlayContainer);
-    //const overlayRoot = createRoot(overlayContainer);
-    //overlayRoot.render(<Overlay />);
-    //console.log("mount overlay=================")
-
+    observer.observe(targetNode, config);
 }
 
 init();

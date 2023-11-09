@@ -13,7 +13,7 @@ export default function LeftBarBlock({ rootNotes, allNotesData, title }: { rootN
 
     return (
 
-        <div className={style.leftBarBlock}>
+        <div className={style.leftBarBlockBody}>
 
             <BlockHead rootNotes={rootNotes} title={title} />
 

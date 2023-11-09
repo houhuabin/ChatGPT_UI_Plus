@@ -2,8 +2,8 @@
   "name": "ChatGPT UI",
   "version": "1.0.0",
   "description": "ChatGPT UI'",
-  "manifest_version": 2,
-  "browser_action": {
+  "manifest_version": 3,
+  "action": {
     "default_popup": "popup.html",
     "default_icon": {
       "16": "assets/images/icon16.png",
@@ -18,9 +18,12 @@
   },
   "permissions": [
     "storage",
-    "tabs",
+    "scripting",
     "identity"
   ],
+  "background": {
+    "service_worker": "background.js"
+  },
   "content_scripts": [
     {
       "matches": [
@@ -35,8 +38,11 @@
       "run_at": "document_idle"
     }
   ],
-  "web_accessible_resources": [
-    "auth.html"
-  ],
-  "content_security_policy": "script-src 'self' https://apis.google.com/; object-src 'self'"
+  "oauth2": {
+    "client_id": "587815761354-ckidqud0fhnq0ctr8ia3hvmsbj31b7lv.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email",
+      "https://www.googleapis.com/auth/userinfo.profile"
+    ]
+  }
 }

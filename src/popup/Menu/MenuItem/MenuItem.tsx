@@ -6,7 +6,7 @@ import MenuIcon from './MenuIcon'
 
 import { authInstance, initFirebase } from "../../../app/firebase";
 
-import { getAuth, getRedirectResult, GoogleAuthProvider, signInWithPopup, signInWithRedirect } from "firebase/auth";
+import { getAuth, getRedirectResult, signInWithCredential, GoogleAuthProvider, signInWithPopup, signInWithRedirect } from "firebase/auth";
 
 
 export default function MenuItem({ menuBlockData }: { menuBlockData: MenuBlockData }) {
@@ -49,7 +49,7 @@ export default function MenuItem({ menuBlockData }: { menuBlockData: MenuBlockDa
                 });
                 console.log("==sendMessage==");
             });
-            window.close();
+            // window.close();
         } else {
             // 用户未登录
         }
@@ -79,8 +79,50 @@ export default function MenuItem({ menuBlockData }: { menuBlockData: MenuBlockDa
         } else if (menuBlockData.id === 3) {
             window.location.href = 'plan.html';
             // chrome.tabs.create({ url: 'plan.html' });
+        } else if (menuBlockData.id === 4) {
+            signInWithGoogle(true);
         }
     };
+
+
+    function signInWithGoogle(interactive) {
+        console.log("Auth trying==============");
+        chrome.identity.getAuthToken({ interactive: true }, function (token) {
+            // Token: This requests an OAuth token from the Chrome Identity API.
+            try {
+                if (chrome.runtime.lastError) {
+                    // 打印出可能的错误信息
+                    console.error('Chrome Runtime Error:', chrome.runtime.lastError.message);
+                } else if (token) {
+                    // Follows: https://firebase.google.com/docs/auth/web/google-signin
+                    // Authorize Firebase with the OAuth Access Token.
+                    const credential = GoogleAuthProvider.credential(null, token);
+                    signInWithCredential(auth, credential).then((result) => {
+                        console.log("Success!!!");
+                        console.log(result);
+                        const user = result.user;
+
+                        if (user) {
+                            // console.log(JSON.stringify(user, null, 2));
+                            goToAccount({ user });
+                        } else {
+                            // 可选: 处理用户未登录的情况
+                            console.log("==User not signed in==");
+                        }
+                    }).catch((error) => {
+
+                        // 打印出signInWithCredential中捕获的错误
+                        console.error('signInWithCredential Error:', error);
+                    });
+                } else {
+                    console.error('The OAuth token was null');
+                }
+            } catch (e) {
+                // 打印出任何其他可能的错误
+                console.error('Unexpected Error:', e);
+            }
+        });
+    }
 
     return (
         <div className={style.menuItem} onClick={handleClick}>
