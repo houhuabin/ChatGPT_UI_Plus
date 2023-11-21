@@ -1,18 +1,28 @@
 import Storage from './storage';
-import InMemoryStorage from './inMemoryStorage';
-import GoogleLocalStorage from './googleLocalStorage';
+//import InMemoryStorage from './inMemoryStorage';
+import ChromeStorage from './noteDataStorageUtils';
+import LocalStorage from './LocalStorage';
 
 export enum StorageType {
     InMemory,
-    LocalStorage
+    ChromeStorage
 }
 
-export function createStorage(type: StorageType): Storage {
+export function getStorage<T>(): Storage<T> {
+    return createStorageByType(StorageType.ChromeStorage);
+}
+
+
+function createStorageByType<T>(type: StorageType): Storage<T> {
+
     switch (type) {
         case StorageType.InMemory:
-            return new InMemoryStorage();
-        case StorageType.LocalStorage:
-            return new GoogleLocalStorage();
+            // 假设 InMemoryStorage 实现了 Storage<T>
+            //return new InMemoryStorage<T>();
+            break;
+        case StorageType.ChromeStorage:
+            // 假设 ChromeStorage 实现了 Storage<T>
+            return new LocalStorage<T>();
         default:
             throw new Error("Invalid storage type");
     }

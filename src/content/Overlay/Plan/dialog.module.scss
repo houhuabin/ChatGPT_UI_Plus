@@ -1,0 +1,16 @@
+@import '../../../assets/sass/main';
+@import '../overlay.module.scss';
+
+.dialog {
+    ///width: 15rem;
+    // padding: 8px 12px 8px 8px;
+    //margin-right: 10px;
+    display: flex;
+    align-items: center;
+    /* 垂直居中 */
+    justify-content: center;
+    /* 水平居中 */
+
+    width: 304px; // 可以根据你的需求设置这个值
+    height: 384px; // 同样，可以根据你的需求设置这个值
+}

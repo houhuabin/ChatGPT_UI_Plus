@@ -16,4 +16,28 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     }
 });
 
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    if (message.action === "updateTab") {
+        // 使用 chrome.tabs.update 来更新标签页
+        chrome.tabs.update(sender.tab.id, { url: message.url }, (tab) => {
+            // 可以选择发送回复给 content script
+            sendResponse({ status: "Tab updated", tabId: tab.id });
+        });
+        return true; // 如果您想异步响应消息，返回 true
+    }
+});
+
+
+chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
+    if (message.action === "openNewTab") {
+        try {
+            chrome.tabs.create({ url: message.url });
+        } catch (error) {
+            console.error("Error opening new tab:", error.message);
+            // 这里可以添加额外的错误处理逻辑
+        }
+    }
+});
+
+
 

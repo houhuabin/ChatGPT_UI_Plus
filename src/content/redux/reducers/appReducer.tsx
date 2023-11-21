@@ -1,23 +1,71 @@
-import { SET_USER_INFO, CLEAR_USER_INFO } from '../types/appTypes';
+import { SET_USER_INFO, CLEAR_USER_INFO, SET_PREMIUM_STATUS as SET_PREMIUM_STATUS } from '../types/appTypes'
+import { appStorageInstance } from '../../storage/storageInstance'
+import { User } from 'firebase/auth'
 
-const initialState = {
-    userInfo: null
+
+export interface AppState {
+    userInfo: User | null;
+    isPremium: boolean;
+}
+
+
+
+const defaultState = {
+    userInfo: null,
+    isPremium: false
 };
+
+// Use type assertion here if you are sure about the returned type
+const initialState: AppState = appStorageInstance.get("app") as AppState || defaultState;
+//const initialState: AppState = defaultState;
+console.log("===appStorageInstance.get app ===", appStorageInstance.get("app"));
+console.log("===app ==== user ===", initialState.userInfo);
 
 const appReducer = (state = initialState, action) => {
     switch (action.type) {
 
-        case SET_USER_INFO:
+        case SET_USER_INFO: {
+            // 更新 state 之前先定义一个新的 state
+            const newState = {
+                ...state,
+                userInfo: action.payload.userInfo
+            };
 
-            return {
+            // 现在 newState 包含了更新的信息，将它存储起来
+            appStorageInstance.update("app", newState);
+
+            // 输出信息以便调试
+            console.log("SET_USER_INFO ==action.payload.userInfo== ", action.payload);
+
+            // 返回更新后的 state
+            return newState;
+        }
+        case SET_PREMIUM_STATUS: {
+            // 更新 state 之前先定义一个新的 state
+            const newState = {
                 ...state,
-                userInfo: action.payload
+                isPremium: action.payload.isPremium
             };
+
+            // 现在 newState 包含了更新的信息，将它存储起来
+            appStorageInstance.update("app", newState);
+            console.log("----- new is premium------", action.payload.isPremium);
+            // 输出信息以便调试
+            console.log("SET_USER_INFO ==action.payload.userInfo== ", action.payload);
+
+            // 返回更新后的 state
+            return newState;
+        }
         case CLEAR_USER_INFO:
-            return {
+            const newState = {
                 ...state,
-                userInfo: null
+                userInfo: null,
+                isPremium: null
             };
+            appStorageInstance.update("app", newState);
+
+            return newState;
+
         default:
             return state;
     }

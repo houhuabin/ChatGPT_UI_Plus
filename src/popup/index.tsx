@@ -2,7 +2,7 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import '../assets/css/tailwind.css'
-import Popup from "./AuthContainer";
+
 
 import Menu from "./Menu/Menu";
 

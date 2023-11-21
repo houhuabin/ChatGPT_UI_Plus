@@ -1,21 +1,31 @@
 @import '../../assets/sass/main';
 @import './leftbar-block.module.scss';
 
-.container {
+%container {
     display: flex;
+    justify-content: space-between; // 使子元素两端对齐
     align-items: center;
     color: gray; // 设置字体颜色为灰色
     user-select: none;
+}
+
+.container {
+    justify-content: space-around;
+    @extend %container;
+}
+
+.activeContainer {
+    @extend %container;
     justify-content: flex-start;
     @include activeContainerLeftAligned;
 }
 
+
 .avatar {
-    width: 1.3rem;
-    height: 1.3rem;
+
     border-radius: 50%;
-    margin-right: 0.5rem;
-    object-fit: cover;
+
+
 }
 
 .welcomeMessage {
@@ -25,10 +35,28 @@
 
 
 
-.accountContainer {
-    width: 1.3rem;
-    height: 1.3rem;
+%iconContainer {
+    display: flex;
+    width: 1.4rem;
+    height: 1.4rem;
     margin: 2px;
+    padding: 2px;
+    align-items: center;
+    justify-content: center;
 
+}
 
+.avataIconContainer {
+    @extend %iconContainer;
+    padding: 0px;
+}
+
+.iconContainer {
+    @extend %iconContainer;
+
+}
+
+.activeIconContainer {
+    @extend %iconContainer;
+    @include activeContainerLeftAligned;
 }

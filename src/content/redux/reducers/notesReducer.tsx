@@ -3,18 +3,22 @@
 import { NoteData } from '../types/noteTypes'
 import { DELETE_NOTE, TOOGLE_NOTE, ADD_NOTE, EDIT_NOTE, ADD_CHAT } from '../actions/noteActions'
 import { NoteType } from '../types/noteTypes'
-import { storageInstance } from '../../storage/storageInstance'
+import { noteDataStorageInstance } from '../../storage/storageInstance'
 import initialData from './initialNotes.json'
+import NoteDataStorageUtils from '../../storage/noteDataStorageUtils'
 
-const notesFromStorage: NoteData[] = storageInstance.getNotesFromLocalStorage();
+const notesFromStorage: NoteData[] = noteDataStorageInstance.getAll("note_");
+
 const initialState: NoteData[] = notesFromStorage ? notesFromStorage : initialData.map(note => ({
     //const initialState: NoteData[] = initialData.map(note => ({
     ...note,
     noteType: note.noteType as NoteType
 }));
-storageInstance.addAllNotes(initialState);
+
+//storageInstance.addAllNotes(initialState);
 
 const notesReducer = (state: NoteData[] = initialState, action: any): NoteData[] => {
+    const noteDataStorageUtils = new NoteDataStorageUtils(noteDataStorageInstance);
     let newState;
     switch (action.type) {
         case TOOGLE_NOTE:
@@ -22,7 +26,7 @@ const notesReducer = (state: NoteData[] = initialState, action: any): NoteData[]
             break;
         case DELETE_NOTE:
             newState = removeNoteById(state, action.payload.id);
-            storageInstance.delete(action.payload.id, state);
+            noteDataStorageUtils.delete(action.payload.id);
 
             //storageInstance.clear();
             break;
@@ -39,7 +43,7 @@ const notesReducer = (state: NoteData[] = initialState, action: any): NoteData[]
 
             newState = addChildNoteToState(state, newAddNote);
 
-            storageInstance.add(newAddNote, action.payload.parentID);
+            noteDataStorageUtils.addNoteData(newAddNote);
             break;
 
         case ADD_CHAT:
@@ -55,7 +59,7 @@ const notesReducer = (state: NoteData[] = initialState, action: any): NoteData[]
             newChat.liID = action.payload.liID;
             newState = addChildNoteToState(state, newChat);
 
-            storageInstance.add(newChat, action.payload.parentID);
+            noteDataStorageUtils.addNoteData(newChat);
             break;
         case EDIT_NOTE:
 
@@ -68,7 +72,7 @@ const notesReducer = (state: NoteData[] = initialState, action: any): NoteData[]
                 return note;
             });
 
-            storageInstance.update(action.payload.noteData);
+            noteDataStorageInstance.update(action.payload.noteData.id, action.payload.noteData);
             break;
         default:
             newState = state;

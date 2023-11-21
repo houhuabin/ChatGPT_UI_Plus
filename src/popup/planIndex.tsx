@@ -3,7 +3,7 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import '../assets/css/tailwind.css'
 
-import Plan from "./Plan/Plan";
+import PlanDialog from "../content/Overlay/Plan/Plan";
 
 function init() {
     const appContainer = document.createElement('div')
@@ -13,7 +13,7 @@ function init() {
     }
     const root = createRoot(appContainer)
     console.log(appContainer)
-    root.render(<Plan />);
+    root.render(<PlanDialog />);
 }
 
 init();

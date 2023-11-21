@@ -9,9 +9,10 @@ import style from './app.module.scss'
 
 import NewNoteOverlay from './Overlay/NewNote/NewNoteOverlay'
 import MenuOverlay from './Overlay/Menu/MenuOverlay'
-import SettingBlock from './Block/SettingBlock'
-import AuthOverlay from './Auth/D_AuthOverlay'
+
 import AccountBlock from './Block/AccountBlock'
+import PlanOverlay from './Overlay/Plan/PlanOverlay'
+import { AppState } from './redux/reducers/appReducer'
 
 
 
@@ -30,7 +31,7 @@ export default function App() {
 
     return (
         <div className={style.leftBar}>
-            <AccountBlock userInfo={appState?.userInfo} />
+            <AccountBlock  {...appState} />
 
 
 
@@ -42,6 +43,7 @@ export default function App() {
 
             <NewNoteOverlay />
             <MenuOverlay />
+            <PlanOverlay />
 
         </div>
     )

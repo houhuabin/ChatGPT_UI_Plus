@@ -1,6 +1,6 @@
 import Storage from './storage';
 import { NoteData } from '../redux/types/noteTypes';
-
+/*
 class InMemoryStorage implements Storage {
     clear(): void {
         throw new Error('Method not implemented.');
@@ -33,3 +33,4 @@ class InMemoryStorage implements Storage {
 }
 
 export default InMemoryStorage;
+*/

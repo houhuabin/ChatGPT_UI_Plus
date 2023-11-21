@@ -1,17 +1,17 @@
-import { NoteData } from '../redux/types/noteTypes';
 
-// Define Storage Interface
-interface Storage {
-    get(id: string): NoteData | null;
-    add(data: NoteData, parentID: string): void;
-    addAllNotes(notesDatas: NoteData[]);
-    // delete(id: string): void;
-    delete(id: string, notes: NoteData[]): void;
+export interface Identifiable {
+    id: string;
+}
+
+
+interface Storage<T> {
+    get(id: string): T | null;
+    add(id: string, data: T): void;
+    delete(id: string): void;
+    update(id: string, data: T): void;
+    addAll<U extends T & Identifiable>(data: U[]): void;
     clear(): void;
-
-    update(data: NoteData): void;
-    getNotesFromLocalStorage(): NoteData[];
-    //getAllItemsWithPrefix(prefix: string): any[];
+    getAll(prefix: string): T[];
 }
 
 export default Storage;

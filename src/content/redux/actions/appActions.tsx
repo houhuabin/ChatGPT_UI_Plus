@@ -1,9 +1,17 @@
 
-import { SET_USER_INFO, CLEAR_USER_INFO } from '../types/appTypes';
+import { SET_USER_INFO, CLEAR_USER_INFO, SET_PREMIUM_STATUS } from '../types/appTypes';
 
-export const setUserInfo = userInfo => ({
+
+
+
+
+export const setUserInfo = (userInfo) => ({
     type: SET_USER_INFO,
-    payload: userInfo
+    payload: { userInfo }
+});
+export const setPremiumStatus = (isPremium) => ({
+    type: SET_PREMIUM_STATUS,
+    payload: { isPremium }
 });
 
 export const clearUserInfo = () => ({

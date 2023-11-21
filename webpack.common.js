@@ -15,9 +15,9 @@ module.exports = {
 
 
     entry: {
-        popup: path.resolve("./src/popup/index.tsx"),
-        auth: path.resolve("./src/popup/authIndex.tsx"),
-        plan: path.resolve("./src/popup/planIndex.tsx"),
+        // popup: path.resolve("./src/popup/index.tsx"),
+        //  auth: path.resolve("./src/popup/authIndex.tsx"),
+        // plan: path.resolve("./src/popup/planIndex.tsx"),
         options: path.resolve("./src/options/options.tsx"),
         background: path.resolve("./src/background/background.tsx"),
         content: path.resolve("./src/content/index.tsx"),
@@ -70,7 +70,7 @@ module.exports = {
             'process.env': JSON.stringify(dotenv.config().parsed)
         }),
         ...getHtmlPlugins([
-            'popup',
+            //'popup',
             'auth',
             'plan',
             'options',
