@@ -1,16 +1,8 @@
 {
-  "name": "ChatGPT UI",
+  "name": "ChatGPT UI Plus",
   "version": "1.0.0",
-  "description": "ChatGPT UI'",
+  "description": "ChatGPT UI Plus",
   "manifest_version": 3,
-  "action": {
-    "default_popup": "popup.html",
-    "default_icon": {
-      "16": "assets/images/icon16.png",
-      "48": "assets/images/icon48.png",
-      "128": "assets/images/icon128.png"
-    }
-  },
   "icons": {
     "16": "assets/images/icon16.png",
     "48": "assets/images/icon48.png",

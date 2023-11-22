@@ -36482,6 +36482,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
   border-radius: 5px;
   padding: 2px;
   border: 1px solid rgba(47, 53, 55, 0.6);
+  color: rgba(47, 53, 55, 0.8);
   /* 设置正常状态的边框颜色为蓝色 */
 }
 
@@ -36522,7 +36523,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
 
 .uyXAc9XIIrOrmlEtAX8x {
   padding-right: 1rem;
-}`, "",{"version":3,"sources":["webpack://./src/content/Overlay/NewNote/new-note.module.scss","webpack://./src/assets/sass/_colors.scss","webpack://./src/assets/sass/_button.scss"],"names":[],"mappings":"AAAA,gBAAgB;AAEhB;EACI,YAAA;EACA,iBAAA;EACA,cAAA;EACA,aAAA;EACA,sBAAA;EACA,aAAA;EACA,mBAAA;EACA,SAAA;EACA,uBAAA;EACA,SAAA;EACA,uBCbe;ADanB;;AAGA;EACI,YAAA;EACA,kBAAA;EACA,mBAAA;EACA,iBAAA;EACA,uCAAA;EACA,mBAAA;EACA,aAAA;EACA,kBAAA;EACA,YAAA;AAAJ;;AAGA;EACI,YAAA;EACA,4BCde;EDef,YAAA;EACA,gBAAA;EACA,aAAA;EACA,gBAAA;EAEA,qBAAA;AADJ;;AAIA;EACI,yBAAA;EACA,eAAA;EACA,YAAA;EACA,6CAAA;EACA,4BC5Be;AD2BnB;;AAIA;EACI,aAAA;EACA,YAAA;EACA,mCCzCQ;ADwCZ;;AAQA;EACI,mCCpCiB;EDqCjB,qBAAA;EACA,aAAA;EACA,iBAAA;AALJ;;AAUA;EAEI,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,cAAA;EACA,YAAA;EACA,iBAAA;EACA,kBAAA;EAEA,kBAAA;EAIA,4CAAA;AAZJ;;AAeA;EACI,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,YAAA;EACA,kBAAA;EACA,YAAA;EACA,uCAAA;EACA,mBAAA;AAZJ;;AAgBA;EAEI,iBAAA;EACA,WAAA;EACA,YAAA;EACA,YAAA;AAdJ;;AAmBA;EACI,gBAAA;EACA,kBAAA;EACA,eAAA;EEzGA,uCAAA;EACA,kBAAA;EACA,4BDaiB;ECZjB,6CAAA;AF0FJ;AExFI;EACI,qCDPiB;ECQjB,6BDLW;AD+FnB;AEvFI;EACI,oCDXkB;ECYlB,sBDXY;ECYZ,0CAAA;EACA,sBAAA;AFyFR;;AAOA;EACI,aAAA;EACA,WAAA;EACA,mBAAA;EACA,yBAAA;EACA,mBAAA;AAJJ;;AAOA;EACI,mBAAA;AAJJ","sourcesContent":["@import '../../../assets/sass/main';\r\n\r\n.newNote {\r\n    width: 40rem;\r\n    min-height: 30rem;\r\n    padding: 8px 0;\r\n    display: flex;\r\n    flex-direction: column;\r\n    /* 使子元素竖直排列 */\r\n    align-items: center;\r\n    /* 水平居中 */\r\n    justify-content: center;\r\n    /* 垂直居中 */\r\n    background-color: $background-color\r\n}\r\n\r\n.titleContainer {\r\n    width: 30rem;\r\n    min-height: 1.5rem;\r\n    margin-bottom: 10px;\r\n    font-size: 1.5rem;\r\n    border: 1px solid $input-border-color;\r\n    /* 设置正常状态的边框颜色为蓝色 */\r\n    display: flex;\r\n    border-radius: 5px;\r\n    padding: 3px;\r\n}\r\n\r\n.titleInput {\r\n    flex-grow: 1;\r\n    color: $text-color-daker;\r\n    border: none;\r\n    box-shadow: none;\r\n    outline: none;\r\n    /* 允许元素占用剩余的空间 */\r\n    // border: 1px solid $input-border-color; \r\n    /* 添加一些与select元素的间距 */\r\n}\r\n\r\n.documentTypeSelect {\r\n    padding: 0px 30px 0px 5px;\r\n    font-size: 1rem;\r\n    border: none;\r\n    border-left: 1px dashed $input-border-color;\r\n    color: $text-color-daker;\r\n}\r\n\r\n.documentTypeSelect:focus {\r\n    outline: none;\r\n    border: none;\r\n    border-color: $svg-color;\r\n    // border-color: initial; /* 根据需要，可以移除或设置为特定的颜色 */\r\n    //box-shadow: none; /* 有些浏览器可能为聚焦状态添加了阴影，也可以将其移除 */\r\n\r\n\r\n}\r\n\r\n.title:focus {\r\n    border-color: $input-border-color;\r\n    /* 设置获得焦点时的边框颜色也为蓝色 */\r\n    outline: none;\r\n    /* 移除浏览器默认的焦点轮廓 */\r\n\r\n\r\n}\r\n\r\n.title-icon {\r\n\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    flex-shrink: 0;\r\n    flex-grow: 0;\r\n    min-width: 1.7rem;\r\n    min-height: 1.5rem;\r\n\r\n    position: relative;\r\n\r\n\r\n\r\n    border-left: 1px solid $input-border-color;\r\n}\r\n\r\n.contentContainer {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    width: 30rem;\r\n    border-radius: 5px;\r\n    padding: 2px;\r\n    border: 1px solid $input-border-color;\r\n    /* 设置正常状态的边框颜色为蓝色 */\r\n\r\n}\r\n\r\n.content {\r\n\r\n    min-height: 20rem;\r\n    width: 100%;\r\n    height: 100%;\r\n    border: none;\r\n    //border: 1px solid  $input-border-color; /* 设置正常状态的边框颜色为蓝色 */\r\n}\r\n\r\n\r\n.button {\r\n    margin-top: 10px;\r\n    min-height: 1.7rem;\r\n    min-width: 5rem;\r\n    @include buttonStyles;\r\n}\r\n\r\n\r\n.buttons {\r\n    display: flex;\r\n    width: 100%;\r\n    flex-direction: row;\r\n    justify-content: flex-end;\r\n    padding-right: 5rem;\r\n}\r\n\r\n.buttonConatinerLeft {\r\n    padding-right: 1rem;\r\n\r\n}\r\n\r\n.buttonConatinerRight {\r\n    //margin-right: 20px;\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(75, 75, 82, 0.9);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);","\r\n@mixin buttonStyles {\r\n   \r\n    border: 2px solid $input-border-color;\r\n    border-radius: 3px;\r\n    color: $text-color-lighter;\r\n    transition: background-color 0.3s, color 0.3s;\r\n\r\n    &:hover {\r\n        background-color: $hover-background-color;  \r\n        color: $text-color-hover;  \r\n    }\r\n\r\n    &:active {\r\n        background-color: $active-background-color;  \r\n        color: $text-color-active;  \r\n        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);\r\n        transform: scale(0.97);\r\n    }\r\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/content/Overlay/NewNote/new-note.module.scss","webpack://./src/assets/sass/_colors.scss","webpack://./src/assets/sass/_button.scss"],"names":[],"mappings":"AAAA,gBAAgB;AAEhB;EACI,YAAA;EACA,iBAAA;EACA,cAAA;EACA,aAAA;EACA,sBAAA;EACA,aAAA;EACA,mBAAA;EACA,SAAA;EACA,uBAAA;EACA,SAAA;EACA,uBCbe;ADanB;;AAGA;EACI,YAAA;EACA,kBAAA;EACA,mBAAA;EACA,iBAAA;EACA,uCAAA;EACA,mBAAA;EACA,aAAA;EACA,kBAAA;EACA,YAAA;AAAJ;;AAGA;EACI,YAAA;EACA,4BCde;EDef,YAAA;EACA,gBAAA;EACA,aAAA;EACA,gBAAA;EAEA,qBAAA;AADJ;;AAIA;EACI,yBAAA;EACA,eAAA;EACA,YAAA;EACA,6CAAA;EACA,4BC5Be;AD2BnB;;AAIA;EACI,aAAA;EACA,YAAA;EACA,mCCzCQ;ADwCZ;;AAQA;EACI,mCCpCiB;EDqCjB,qBAAA;EACA,aAAA;EACA,iBAAA;AALJ;;AAUA;EAEI,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,cAAA;EACA,YAAA;EACA,iBAAA;EACA,kBAAA;EAEA,kBAAA;EAIA,4CAAA;AAZJ;;AAeA;EACI,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,YAAA;EACA,kBAAA;EACA,YAAA;EACA,uCAAA;EACA,4BC3Ee;ED4Ef,mBAAA;AAZJ;;AAgBA;EAEI,iBAAA;EACA,WAAA;EACA,YAAA;EACA,YAAA;AAdJ;;AAmBA;EACI,gBAAA;EACA,kBAAA;EACA,eAAA;EE1GA,uCAAA;EACA,kBAAA;EACA,4BDaiB;ECZjB,6CAAA;AF2FJ;AEzFI;EACI,qCDPiB;ECQjB,6BDLW;ADgGnB;AExFI;EACI,oCDXkB;ECYlB,sBDXY;ECYZ,0CAAA;EACA,sBAAA;AF0FR;;AAOA;EACI,aAAA;EACA,WAAA;EACA,mBAAA;EACA,yBAAA;EACA,mBAAA;AAJJ;;AAOA;EACI,mBAAA;AAJJ","sourcesContent":["@import '../../../assets/sass/main';\r\n\r\n.newNote {\r\n    width: 40rem;\r\n    min-height: 30rem;\r\n    padding: 8px 0;\r\n    display: flex;\r\n    flex-direction: column;\r\n    /* 使子元素竖直排列 */\r\n    align-items: center;\r\n    /* 水平居中 */\r\n    justify-content: center;\r\n    /* 垂直居中 */\r\n    background-color: $background-color\r\n}\r\n\r\n.titleContainer {\r\n    width: 30rem;\r\n    min-height: 1.5rem;\r\n    margin-bottom: 10px;\r\n    font-size: 1.5rem;\r\n    border: 1px solid $input-border-color;\r\n    /* 设置正常状态的边框颜色为蓝色 */\r\n    display: flex;\r\n    border-radius: 5px;\r\n    padding: 3px;\r\n}\r\n\r\n.titleInput {\r\n    flex-grow: 1;\r\n    color: $text-color-daker;\r\n    border: none;\r\n    box-shadow: none;\r\n    outline: none;\r\n    /* 允许元素占用剩余的空间 */\r\n    // border: 1px solid $input-border-color; \r\n    /* 添加一些与select元素的间距 */\r\n}\r\n\r\n.documentTypeSelect {\r\n    padding: 0px 30px 0px 5px;\r\n    font-size: 1rem;\r\n    border: none;\r\n    border-left: 1px dashed $input-border-color;\r\n    color: $text-color-daker;\r\n}\r\n\r\n.documentTypeSelect:focus {\r\n    outline: none;\r\n    border: none;\r\n    border-color: $svg-color;\r\n    // border-color: initial; /* 根据需要，可以移除或设置为特定的颜色 */\r\n    //box-shadow: none; /* 有些浏览器可能为聚焦状态添加了阴影，也可以将其移除 */\r\n\r\n\r\n}\r\n\r\n.title:focus {\r\n    border-color: $input-border-color;\r\n    /* 设置获得焦点时的边框颜色也为蓝色 */\r\n    outline: none;\r\n    /* 移除浏览器默认的焦点轮廓 */\r\n\r\n\r\n}\r\n\r\n.title-icon {\r\n\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    flex-shrink: 0;\r\n    flex-grow: 0;\r\n    min-width: 1.7rem;\r\n    min-height: 1.5rem;\r\n\r\n    position: relative;\r\n\r\n\r\n\r\n    border-left: 1px solid $input-border-color;\r\n}\r\n\r\n.contentContainer {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    width: 30rem;\r\n    border-radius: 5px;\r\n    padding: 2px;\r\n    border: 1px solid $input-border-color;\r\n    color: $text-color-daker;\r\n    /* 设置正常状态的边框颜色为蓝色 */\r\n\r\n}\r\n\r\n.content {\r\n\r\n    min-height: 20rem;\r\n    width: 100%;\r\n    height: 100%;\r\n    border: none;\r\n    //border: 1px solid  $input-border-color; /* 设置正常状态的边框颜色为蓝色 */\r\n}\r\n\r\n\r\n.button {\r\n    margin-top: 10px;\r\n    min-height: 1.7rem;\r\n    min-width: 5rem;\r\n    @include buttonStyles;\r\n}\r\n\r\n\r\n.buttons {\r\n    display: flex;\r\n    width: 100%;\r\n    flex-direction: row;\r\n    justify-content: flex-end;\r\n    padding-right: 5rem;\r\n}\r\n\r\n.buttonConatinerLeft {\r\n    padding-right: 1rem;\r\n\r\n}\r\n\r\n.buttonConatinerRight {\r\n    //margin-right: 20px;\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(75, 75, 82, 0.9);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);","\r\n@mixin buttonStyles {\r\n   \r\n    border: 2px solid $input-border-color;\r\n    border-radius: 3px;\r\n    color: $text-color-lighter;\r\n    transition: background-color 0.3s, color 0.3s;\r\n\r\n    &:hover {\r\n        background-color: $hover-background-color;  \r\n        color: $text-color-hover;  \r\n    }\r\n\r\n    &:active {\r\n        background-color: $active-background-color;  \r\n        color: $text-color-active;  \r\n        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);\r\n        transform: scale(0.97);\r\n    }\r\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"newNote": `RmYQYqpapt8cfkLZrSJh`,
@@ -75205,13 +75206,13 @@ function AccountBlock(appState) {
         // 这里应该是你的登录逻辑
         console.log("longin start===", isSaved);
         chrome.runtime.sendMessage({ action: "getAuthToken" }, function (response) {
-            console.log('Token from background:', response.token);
+            //console.log('Token from background:', response.token);
             const token = response.token;
             if (token) {
                 const credential = firebase_auth__WEBPACK_IMPORTED_MODULE_4__.GoogleAuthProvider.credential(null, token);
                 (0,firebase_auth__WEBPACK_IMPORTED_MODULE_4__.signInWithCredential)(auth, credential).then((result) => {
                     // 身份验证成功
-                    console.log('Firebase sign-in success', result);
+                    //console.log('Firebase sign-in success', result);
                     if (!isSaved) {
                         updateAccountInfo({ user: result.user });
                     }
@@ -75432,15 +75433,18 @@ __webpack_require__.r(__webpack_exports__);
 function NoteTitle({ noteData }) {
     const handleNoteClick = () => {
         if (noteData.noteType === _redux_types_noteTypes__WEBPACK_IMPORTED_MODULE_1__.NoteType.CHAT) {
-            console.log(noteData.liID + "  =====liID========");
-            const liElement = document.querySelector(`li[data-projection-id="${noteData.liID}"]`);
+            // console.log(noteData.liID + "  =====liID========");
+            let liElement = document.querySelector(`a[href="${noteData.liID}"]`);
+            // console.log("==a== ", `a[href="${noteData.liID}"]`)
+            // const liElement = document.querySelector(`li[data-projection-id="${noteData.liID}"]`) as HTMLTextAreaElement;
             if (liElement) {
-                let aElement = liElement.querySelector('a');
-                console.log("li clicked=============");
+                //  let aElement = liElement.querySelector('a');
+                // console.log("li clicked=============");
+                let aElement = liElement;
                 aElement.click();
             }
             else {
-                window.location.href = noteData.content;
+                // window.location.href = noteData.content;
             }
             //
         }
@@ -75555,13 +75559,13 @@ function Menu({ pointX, pointY, noteID }) {
  */
     const menuBlockDatas = [
         { title: "Delete", id: 1 },
-        { title: "New", id: 2, hotKey: "Ctrl+Shift+R" },
-        { title: "Edit", id: 3, hotKey: "Ctrl+E" }
+        { title: "New", id: 2, hotKey: "" },
+        { title: "Edit", id: 3, hotKey: "" }
     ];
     const menuBlockDatas2 = [
         { title: "Duplicate", id: 4 },
-        { title: "Move to", id: 5, hotKey: "Ctrl+Shift+R" },
-        { title: "Add to favorites", id: 6, hotKey: "Ctrl+E" }
+        { title: "Move to", id: 5, hotKey: "" },
+        { title: "Add to favorites", id: 6, hotKey: "" }
     ];
     const menuHeight = 200; // 这里你可以估算菜单的高度或者动态获取
     let adjustedPointY = pointY;
@@ -76404,8 +76408,8 @@ const defaultState = {
 // Use type assertion here if you are sure about the returned type
 const initialState = _storage_storageInstance__WEBPACK_IMPORTED_MODULE_1__.appStorageInstance.get("app") || defaultState;
 //const initialState: AppState = defaultState;
-console.log("===appStorageInstance.get app ===", _storage_storageInstance__WEBPACK_IMPORTED_MODULE_1__.appStorageInstance.get("app"));
-console.log("===app ==== user ===", initialState.userInfo);
+//console.log("===appStorageInstance.get app ===", appStorageInstance.get("app"));
+//console.log("===app ==== user ===", initialState.userInfo);
 const appReducer = (state = initialState, action) => {
     switch (action.type) {
         case _types_appTypes__WEBPACK_IMPORTED_MODULE_0__.SET_USER_INFO: {
@@ -76492,16 +76496,25 @@ const notesReducer = (state = initialState, action) => {
             break;
         case _actions_noteActions__WEBPACK_IMPORTED_MODULE_0__.ADD_CHAT:
             //noteID means parent id passed from the menu
-            const newChat = createNewNoteData({
-                state: state,
-                parentNoteID: action.payload.parentID,
-                title: action.payload.title,
-                content: action.payload.URL,
-                noteType: action.payload.noteType
-            });
-            newChat.liID = action.payload.liID;
-            newState = addChildNoteToState(state, newChat);
-            noteDataStorageUtils.addNoteData(newChat);
+            // 假设 state 和 action 已经被定义
+            let liIDExists = state.some(note => note.liID === action.payload.liID);
+            if (!liIDExists) {
+                // 如果没有找到匹配的liID，则执行以下代码
+                const newChat = createNewNoteData({
+                    state: state,
+                    parentNoteID: action.payload.parentID,
+                    title: action.payload.title,
+                    content: action.payload.URL,
+                    noteType: action.payload.noteType
+                });
+                newChat.liID = action.payload.liID;
+                newState = addChildNoteToState(state, newChat);
+                noteDataStorageUtils.addNoteData(newChat);
+            }
+            else {
+                newState = state;
+            }
+            // 如果找到了匹配的liID，这里的代码将被跳过
             break;
         case _actions_noteActions__WEBPACK_IMPORTED_MODULE_0__.EDIT_NOTE:
             // console.log(state.length + "   ====state.length+===========   ");
@@ -76569,7 +76582,11 @@ const toggleNodeExpand = (allNotes, noteId) => {
     return allNotes.map(note => {
         // 如果当前节点是目标节点，切换其expand状态
         if (note.id === noteId) {
-            return Object.assign(Object.assign({}, note), { expand: !note.expand });
+            const updatedNote = Object.assign(Object.assign({}, note), { expand: !note.expand });
+            // 然后使用更新后的 note 对象调用 update 方法
+            _storage_storageInstance__WEBPACK_IMPORTED_MODULE_1__.noteDataStorageInstance.update(note.id, updatedNote);
+            // 返回更新后的 note 对象
+            return updatedNote;
         }
         return note;
     });
@@ -76881,7 +76898,7 @@ class NoteDataStorageUtils {
         this.storage = storage;
     }
     delete(id) {
-        const noteToDelete = this.storage.get(`note_${id}`);
+        const noteToDelete = this.storage.get(`${id}`);
         if (!noteToDelete)
             return;
         // 如果存在父对象，更新父对象的 subNoteIDs 数组
@@ -77190,7 +77207,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function DeleteSVG() {
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", { viewBox: "0 0 16 20", className: 'svg-small' },
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", { viewBox: "0 0 16 20", className: 'svg-small', transform: "scale(0.85)" },
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", { d: "M4.4623 19.4287H11.7445C12.7904 19.4287 13.4672 18.793 13.515 17.7402L13.9799 3.88965H14.7318C15.0736 3.88965 15.3402 3.62988 15.3402 3.28809C15.3402 2.95312 15.0736 2.69336 14.7318 2.69336H11.6898V0.667969C11.6898 0.12207 11.3268 0 10.1919 0H5.79434C4.66641 0 4.29648 0.12207 4.29648 0.667969V2.69336H1.26133C0.9332 2.69336 0.65977 2.95312 0.65977 3.28809C0.65977 3.62988 0.9332 3.88965 1.26133 3.88965H2.02012L2.48496 17.7471C2.53281 18.7998 3.20273 19.4287 4.4623 19.4287ZM5.7543 0.72949C5.7543 0.37402 6.00039 0.14844 6.3832 0.14844H9.60312C9.98594 0.14844 10.23203 0.37402 10.23203 0.72949V2.69336H5.7543V0.72949ZM4.59219 18.2188C4.21621 18.2188 3.94277 17.9453 3.92227 17.542L3.46426 3.88965H12.7152L12.2709 17.542C12.2572 17.9453 11.9838 18.2188 11.5941 18.2188H4.59219Z" }),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("line", { x1: "7", y1: "6.05176", x2: "7", y2: "16.667", className: 'svg-ligther' }),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("line", { x1: "9.0166", y1: "6.05176", x2: "9.0166", y2: "16.667", className: 'svg-ligther' })));
@@ -77239,7 +77256,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function EditSVG() {
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", { viewBox: "0 0 16 16", className: 'svg-small', xmlns: "http://www.w3.org/2000/svg" },
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", { viewBox: "0 0 16 16", className: 'svg-small', transform: "scale(1.1)", xmlns: "http://www.w3.org/2000/svg" },
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", { d: "M13.4 3.05L14.1 2.45C14.4 2.15 14.4 1.85 14.1 1.65L13.9 1.65C13.7 1.65 13.4 1.65 13.2 1.95L12.6 2.55L13.4 3.05ZM6.6 10.95L8.2 10.35L12.5 4.85L11.4 3.75L6.1 9.25L5.5 10.75C5.4 10.95 5.6 11.15 5.8 11.15Z", fill: "currentColor" }),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", { d: "M3.9 14.35H12C13.4 14.35 14 13.65 14 12.05V5.55L12.5 7.05V11.75C12.5 12.45 12.1 12.85 11.7 12.85H4.5C3.9 12.85 3.5 12.45 3.5 11.75V5.15C3.5 4.65 3.9 4.25 4.5 4.25H9.7L11.1 2.85H3.9C3.3 2.85 2.8 3.3 2.8 3.9V12C2.8 13.4 3.3 14.35 3.9 14.35Z" })));
 }
@@ -81117,15 +81134,16 @@ function init() {
 }
 init();
 //const dispatch = useDispatch();
-function addNewChat(title, url, projectionID) {
-    _redux_Store__WEBPACK_IMPORTED_MODULE_5__["default"].dispatch((0,_redux_actions_noteActions__WEBPACK_IMPORTED_MODULE_3__.addChat)("note_chat", title, url, projectionID, _redux_types_noteTypes__WEBPACK_IMPORTED_MODULE_4__.NoteType.CHAT));
+function addNewChat(title, url, liID) {
+    _redux_Store__WEBPACK_IMPORTED_MODULE_5__["default"].dispatch((0,_redux_actions_noteActions__WEBPACK_IMPORTED_MODULE_3__.addChat)("note_chat", title, url, liID, _redux_types_noteTypes__WEBPACK_IMPORTED_MODULE_4__.NoteType.CHAT));
 }
 function getDataProjectionIDFromLi(elem) {
-    if (elem && elem.parentElement && elem.parentElement.parentElement) {
-        let grandParent = elem.parentElement.parentElement;
-        let dataProjectionId = grandParent.getAttribute("data-projection-id");
+    //if (elem && elem.parentElement && elem.parentElement.parentElement) {
+    if (elem) {
+        //let grandParent = elem.parentElement.parentElement;
+        let dataProjectionId = elem.getAttribute("data-projection-id");
         if (dataProjectionId) {
-            // console.log(dataProjectionId);
+            console.log("==dataProjectionId==", dataProjectionId);
             return dataProjectionId;
         }
         else {
@@ -81137,25 +81155,38 @@ function getDataProjectionIDFromLi(elem) {
     }
     return null;
 }
+//add button at the chat history
 var observer = new MutationObserver(function (mutations) {
     // button 的父元素 container
-    var element = document.querySelector('div[class="absolute flex right-1 z-10 dark:text-gray-300 text-gray-800 visible"]');
-    if (element) {
+    //var rightButton = document.querySelector('button.absolute.bottom-0.right-0.top-0.flex.w-9.items-center.justify-center.rounded-lg.text-token-text-tertiary.transition.hover\\:text-token-text-secondary.radix-state-open\\:text-token-text-secondary');
+    let menuElement = document.querySelector('.mt-2.min-w-\\[200px\\].max-w-xs.rounded-lg.border.border-gray-100.bg-token-surface-primary.shadow-lg.dark\\:border-gray-700');
+    // if (rightButton) {
+    //  var element = rightButton.parentElement
+    if (menuElement) {
+        let linkElement = document.querySelector('a.flex.items-center.gap-2.rounded-lg.p-2.bg-token-surface-primary');
+        let liID = linkElement.getAttribute('href');
+        // console.log("==liID==  ", liID);
+        let textDiv = linkElement.children[0];
+        let textContent = textDiv.textContent;
         // 断开连接
         observer.disconnect();
         //elements.forEach(function (element) {
-        const childCount = element.childElementCount;
+        const childCount = menuElement.childElementCount;
         //console.log(childCount);
-        //防止不停添加，默认只有两个按钮一个删除一个编辑
-        if (childCount < 3) {
-            let button = getAddButton();
-            element.appendChild(button);
-            let projectionID = getDataProjectionIDFromLi(element);
-            let firstDiv = element.previousElementSibling;
-            let textContent = firstDiv.textContent;
+        //防止不停添加，默认只有两个按钮一个删除一个编辑、*
+        if (childCount < 4) {
+            let menuItem = getAddChatMenuItem();
+            menuElement.appendChild(menuItem);
+            //let projectionID = getDataProjectionIDFromLi(element);
+            //let firstDiv = element.previousElementSibling;
+            //let textContent = firstDiv.textContent;
             //console.log(textContent.trim());
             let fullURL = window.location.href;
-            button.addEventListener('click', () => addNewChat(textContent.trim(), fullURL, projectionID));
+            menuItem.addEventListener('click', () => {
+                // 添加新的聊天
+                addNewChat(textContent.trim(), fullURL, liID);
+                menuElement.remove();
+            });
             // console.log(fullURL);
         }
         //});
@@ -81166,7 +81197,46 @@ var observer = new MutationObserver(function (mutations) {
             attributes: false
         });
     }
+    //}
 });
+function getAddChatMenuItem() {
+    // 创建div元素
+    let div = document.createElement("div");
+    div.setAttribute("role", "menuitem");
+    div.setAttribute("tabindex", "-1");
+    div.setAttribute("data-orientation", "vertical");
+    div.setAttribute("data-radix-collection-item", "");
+    div.className = "flex gap-2 m-1.5 rounded px-5 py-2.5 text-sm cursor-pointer focus:ring-0 hover:bg-black/5 dark:hover:bg-white/5 radix-disabled:pointer-events-none radix-disabled:opacity-50 group";
+    // 创建svg元素
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttributeNS(null, "stroke", "currentColor");
+    svg.setAttributeNS(null, "fill", "none");
+    svg.setAttributeNS(null, "stroke-width", "2");
+    svg.setAttributeNS(null, "viewBox", "0 0 24 24");
+    svg.setAttributeNS(null, "stroke-linecap", "round");
+    svg.setAttributeNS(null, "stroke-linejoin", "round");
+    svg.classList.add("h-4", "w-4", "height-1em", "width-1em");
+    // 创建第一个line元素
+    const line1 = document.createElementNS("http://www.w3.org/2000/svg", "line");
+    line1.setAttributeNS(null, "x1", "12");
+    line1.setAttributeNS(null, "y1", "5");
+    line1.setAttributeNS(null, "x2", "12");
+    line1.setAttributeNS(null, "y2", "19");
+    // 创建第二个line元素
+    const line2 = document.createElementNS("http://www.w3.org/2000/svg", "line");
+    line2.setAttributeNS(null, "x1", "5");
+    line2.setAttributeNS(null, "y1", "12");
+    line2.setAttributeNS(null, "x2", "19");
+    line2.setAttributeNS(null, "y2", "12");
+    // 将line元素添加到svg元素
+    svg.appendChild(line1);
+    svg.appendChild(line2);
+    // 将svg和文本添加到div中
+    div.appendChild(svg);
+    div.appendChild(document.createTextNode("Add to chat Block"));
+    // 将div添加到文档的body或者其他特定的元素中
+    return div;
+}
 function getAddButton() {
     // 创建button元素
     const button = document.createElement('button');

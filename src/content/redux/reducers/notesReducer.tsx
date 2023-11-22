@@ -23,6 +23,8 @@ const notesReducer = (state: NoteData[] = initialState, action: any): NoteData[]
     switch (action.type) {
         case TOOGLE_NOTE:
             newState = toggleNodeExpand(state, action.payload.id);
+
+
             break;
         case DELETE_NOTE:
             newState = removeNoteById(state, action.payload.id);
@@ -49,17 +51,27 @@ const notesReducer = (state: NoteData[] = initialState, action: any): NoteData[]
         case ADD_CHAT:
             //noteID means parent id passed from the menu
 
-            const newChat = createNewNoteData({
-                state: state,
-                parentNoteID: action.payload.parentID,
-                title: action.payload.title,
-                content: action.payload.URL,
-                noteType: action.payload.noteType
-            });
-            newChat.liID = action.payload.liID;
-            newState = addChildNoteToState(state, newChat);
+            // 假设 state 和 action 已经被定义
+            let liIDExists = state.some(note => note.liID === action.payload.liID);
 
-            noteDataStorageUtils.addNoteData(newChat);
+            if (!liIDExists) {
+                // 如果没有找到匹配的liID，则执行以下代码
+                const newChat = createNewNoteData({
+                    state: state,
+                    parentNoteID: action.payload.parentID,
+                    title: action.payload.title,
+                    content: action.payload.URL,
+                    noteType: action.payload.noteType
+                });
+                newChat.liID = action.payload.liID;
+                newState = addChildNoteToState(state, newChat);
+
+                noteDataStorageUtils.addNoteData(newChat);
+            } else {
+                newState = state;
+            }
+            // 如果找到了匹配的liID，这里的代码将被跳过
+
             break;
         case EDIT_NOTE:
 
@@ -149,7 +161,13 @@ const toggleNodeExpand = (allNotes: NoteData[], noteId: string): NoteData[] => {
     return allNotes.map(note => {
         // 如果当前节点是目标节点，切换其expand状态
         if (note.id === noteId) {
-            return { ...note, expand: !note.expand };
+            const updatedNote = { ...note, expand: !note.expand };
+
+            // 然后使用更新后的 note 对象调用 update 方法
+            noteDataStorageInstance.update(note.id, updatedNote);
+
+            // 返回更新后的 note 对象
+            return updatedNote;
         }
 
         return note;

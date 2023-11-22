@@ -18,8 +18,8 @@ const defaultState = {
 // Use type assertion here if you are sure about the returned type
 const initialState: AppState = appStorageInstance.get("app") as AppState || defaultState;
 //const initialState: AppState = defaultState;
-console.log("===appStorageInstance.get app ===", appStorageInstance.get("app"));
-console.log("===app ==== user ===", initialState.userInfo);
+//console.log("===appStorageInstance.get app ===", appStorageInstance.get("app"));
+//console.log("===app ==== user ===", initialState.userInfo);
 
 const appReducer = (state = initialState, action) => {
     switch (action.type) {

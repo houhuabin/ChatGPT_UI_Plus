@@ -6,16 +6,19 @@ import style from './note-title.module.scss'
 export default function NoteTitle({ noteData }: { noteData: NoteData }) {
     const handleNoteClick = () => {
         if (noteData.noteType === NoteType.CHAT) {
-            console.log(noteData.liID + "  =====liID========");
+            // console.log(noteData.liID + "  =====liID========");
 
-            const liElement = document.querySelector(`li[data-projection-id="${noteData.liID}"]`) as HTMLTextAreaElement;
+            let liElement = document.querySelector(`a[href="${noteData.liID}"]`);
+            // console.log("==a== ", `a[href="${noteData.liID}"]`)
+            // const liElement = document.querySelector(`li[data-projection-id="${noteData.liID}"]`) as HTMLTextAreaElement;
 
             if (liElement) {
-                let aElement = liElement.querySelector('a');
-                console.log("li clicked=============");
+                //  let aElement = liElement.querySelector('a');
+                // console.log("li clicked=============");
+                let aElement = liElement as HTMLAnchorElement;
                 aElement.click();
             } else {
-                window.location.href = noteData.content;
+                // window.location.href = noteData.content;
             }
             //
         } else if (noteData.noteType === NoteType.PROMPT) {

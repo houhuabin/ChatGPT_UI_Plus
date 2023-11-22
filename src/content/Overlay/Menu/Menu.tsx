@@ -25,14 +25,14 @@ export default function Menu({ pointX, pointY, noteID }: MenuProps) {
  */
     const menuBlockDatas: MenuBlockData[] = [
         { title: "Delete", id: 1 },
-        { title: "New", id: 2, hotKey: "Ctrl+Shift+R" },
-        { title: "Edit", id: 3, hotKey: "Ctrl+E" }
+        { title: "New", id: 2, hotKey: "" },
+        { title: "Edit", id: 3, hotKey: "" }
     ];
 
     const menuBlockDatas2: MenuBlockData[] = [
         { title: "Duplicate", id: 4 },
-        { title: "Move to", id: 5, hotKey: "Ctrl+Shift+R" },
-        { title: "Add to favorites", id: 6, hotKey: "Ctrl+E" }
+        { title: "Move to", id: 5, hotKey: "" },
+        { title: "Add to favorites", id: 6, hotKey: "" }
     ];
 
 

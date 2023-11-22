@@ -10,7 +10,7 @@ class NoteDataStorageUtils {
     }
     delete(id: string): void {
 
-        const noteToDelete = this.storage.get(`note_${id}`);
+        const noteToDelete = this.storage.get(`${id}`);
         if (!noteToDelete) return;
 
         // 如果存在父对象，更新父对象的 subNoteIDs 数组

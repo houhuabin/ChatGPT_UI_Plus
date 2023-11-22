@@ -60,13 +60,13 @@ export default function AccountBlock(appState: AppState) {
         // 这里应该是你的登录逻辑
         console.log("longin start===", isSaved);
         chrome.runtime.sendMessage({ action: "getAuthToken" }, function (response) {
-            console.log('Token from background:', response.token);
+            //console.log('Token from background:', response.token);
             const token = response.token;
             if (token) {
                 const credential = GoogleAuthProvider.credential(null, token);
                 signInWithCredential(auth, credential).then((result) => {
                     // 身份验证成功
-                    console.log('Firebase sign-in success', result);
+                    //console.log('Firebase sign-in success', result);
                     if (!isSaved) {
                         updateAccountInfo({ user: result.user });
                     }
