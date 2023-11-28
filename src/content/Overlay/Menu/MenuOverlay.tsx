@@ -34,7 +34,7 @@ export default function MenuOverlay() {
         <div id="overlay" className={style.overlay} onClick={handleOverlayClick}>
             <div className={style.innerContainer}>
 
-                <Menu pointX={overlayData.pointX} pointY={overlayData.pointY} noteID={overlayData.noteID} />
+                <Menu pointX={overlayData.pointX} pointY={overlayData.pointY} noteID={overlayData.noteID} noteType={overlayData.noteType as string} />
 
             </div>
         </div>

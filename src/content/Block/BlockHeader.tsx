@@ -16,7 +16,7 @@ export default function BlockHead({ title, rootNotes }: { title: string, rootNot
         };
 
         let parentNoteID = parentNoteIDs[title];
-        dispatch(showNewNoteOverlay(parentNoteID));
+        dispatch(showNewNoteOverlay(parentNoteID, title));
     };
 
 

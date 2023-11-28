@@ -13,7 +13,7 @@ import { getAuth, getRedirectResult, signInWithCredential, GoogleAuthProvider, s
 
 import store from "../redux/Store";
 import { clearUserInfo, setUserInfo, setPremiumStatus } from "../redux/actions/appActions";
-import { getCheckoutUrl, getPortalUrl } from "../../popup/Plan/stripePayment";
+import { getCheckoutUrl, getPortalUrl } from "../../app/account/stripePayment";
 import CardSVG from '../../svg/CardSVG';
 import LoginOutSVG from '../../svg/LoginOutSVG';
 import { useDispatch } from 'react-redux';

@@ -3,7 +3,7 @@ import React from 'react';
 
 import { useState } from "react";
 import { authInstance, initFirebase } from "../../../app/firebase";
-import { getCheckoutUrl, getPortalUrl } from "../../../popup/Plan/stripePayment";
+import { getCheckoutUrl, getPortalUrl } from "../../../app/account/stripePayment"
 
 import style from './plan.module.scss';
 import { useDispatch, useSelector } from 'react-redux'

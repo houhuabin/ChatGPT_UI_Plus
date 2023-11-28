@@ -1,21 +1,20 @@
 @import '../../../assets/sass/_main.scss';
-.icon {
 
-    width: 1.2rem;
-    height: 1.2rem;
-    
-    margin-left: -4px;
-    margin-right: -1px;
-}
-.conatiner {
-   
+.icon {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
     flex-grow: 0;
 
-   
+
     position: relative;
+
+    width: 1.2rem;
+    height: 1.2rem;
+
+    margin-left: -4px;
+    margin-right: -1px;
 }
 
+.container {}

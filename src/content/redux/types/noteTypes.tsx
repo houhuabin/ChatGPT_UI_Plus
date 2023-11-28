@@ -13,5 +13,6 @@ export interface NoteData {
     subNoteIDs: string[];
     noteType: NoteType;
     parentID: string;
+    selected: boolean;
     liID?: string | null;  // 注意这里的 ?  projectionID, chat id
 }

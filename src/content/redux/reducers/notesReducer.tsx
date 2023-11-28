@@ -86,6 +86,23 @@ const notesReducer = (state: NoteData[] = initialState, action: any): NoteData[]
 
             noteDataStorageInstance.update(action.payload.noteData.id, action.payload.noteData);
             break;
+        /*case SET_SELECTED_CHAT:
+
+            // console.log(state.length + "   ====state.length+===========   ");
+            console.log(action.payload.url, "action.payload.url");
+            newState = state.map(note => {
+                if (note.content === action.payload.url) {
+                    // console.log(note.id + "   ====note.id +===========   " + action.payload.noteData.title);
+                    //return action.payload.noteData; // 直接使用传入的NoteData替换旧的NoteData
+                    note.selected = true;
+                } else {
+                    note.selected = false;
+                }
+                return note;
+            });
+
+            noteDataStorageInstance.update(action.payload.noteData.id, action.payload.noteData);
+            break;*/
         default:
             newState = state;
             break;
@@ -219,7 +236,8 @@ const createNewNoteData = ({
         subNoteIDs: [],
         noteType,
         parentID: parentNoteID,
-        liID: null
+        liID: null,
+        selected: false
     };
 };
 

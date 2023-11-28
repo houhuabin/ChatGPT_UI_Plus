@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Overlay from './Overlay/Menu/MenuOverlay'
 import { useSelector } from 'react-redux'
 
@@ -15,9 +15,28 @@ import PlanOverlay from './Overlay/Plan/PlanOverlay'
 import { AppState } from './redux/reducers/appReducer'
 import { useDispatch } from 'react-redux';
 import { showPlanOverlay } from './redux/actions/planActions'
+import { NoteData } from './redux/types/noteTypes'
+//import { setSelectedChatByURL } from './redux/actions/noteActions'
+/*
+function setSelectedChat() {
+    const dispatch = useDispatch();
+    dispatch(setSelectedChatByURL(window.location.href));
+}
 
+function observeDOMChanges(chatHistoryRootNotes) {
+    const observer = new MutationObserver(mutations => {
+        mutations.forEach(mutation => {
+            if (mutation.addedNodes.length > 0) {
+                setSelectedChat();
+            }
+        });
+    });
 
+    const config = { childList: true, subtree: true };
+    observer.observe(document.body, config);
 
+    return observer; // 返回 observer 以便于清理
+}*/
 export default function App() {
 
 
@@ -35,7 +54,12 @@ export default function App() {
         const dispatch = useDispatch();
         dispatch(showPlanOverlay(window.innerWidth / 2 - 200, window.innerHeight / 2 - 200));
 
-    }
+    }/*
+    useEffect(() => {
+        const observer = observeDOMChanges(chatHistoryRootNotes); // 接收 observer
+        return () => observer.disconnect(); // 组件卸载时断开观察器
+    }, [chatHistoryRootNotes]); // 依赖项数组
+*/
 
 
     return (

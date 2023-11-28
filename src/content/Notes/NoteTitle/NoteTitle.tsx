@@ -30,8 +30,15 @@ export default function NoteTitle({ noteData }: { noteData: NoteData }) {
             }
         }
     }
+
+    // 根据 noteData.selected 来选择适当的样式类
+    const containerClass = noteData.selected
+        ? `${style.container} ${style.selected}`
+        : style.container;
     return (
-        <div className={style.container} onClick={handleNoteClick}>
+
+
+        <div className={containerClass} onClick={handleNoteClick}>
             <div className={style.title}> {noteData.title}</div>
 
         </ div>

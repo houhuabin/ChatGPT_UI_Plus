@@ -9,14 +9,14 @@ import { showEditNoteOverlay, showNewNoteOverlay } from '../../../redux/actions/
 import store from '../../../redux/Store'
 import { findNoteById } from '../../../redux/reducers/notesReducer'
 
-export default function MenuItem({ menuBlockData, noteID }: { menuBlockData: MenuBlockData, noteID: string }) {
+export default function MenuItem({ menuBlockData, noteID, noteType }: { menuBlockData: MenuBlockData, noteID: string, noteType: string }) {
     const dispatch = useDispatch();
 
     const handleClick = () => {
         if (menuBlockData.id === 1) {
             dispatch(deleteNote(noteID));
         } else if (menuBlockData.id === 2) {
-            dispatch(showNewNoteOverlay(noteID));
+            dispatch(showNewNoteOverlay(noteID, noteType));
         } else if (menuBlockData.id === 3) {
 
             const currentState = store.getState();

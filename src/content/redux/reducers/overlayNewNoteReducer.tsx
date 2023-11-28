@@ -9,17 +9,21 @@ import { findNoteById } from './notesReducer';
 const initialState: OverlayNewNoteData = {
     showOverlay: false,
     noteData: null,
+    parentNoteID: null,
+    parentNoteType: null,
+
 };
 
 const overlayNewNoteReducer = (state: OverlayNewNoteData = initialState, action: any) => {
     switch (action.type) {
         case SHOW_NEW_NOTE_OVERLAY:
-            // console.log(" SHOW_NEW_NOTE_OVERLAY new note ovelayXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+            console.log(" SHOW_NEW_NOT", action.payload.parentNoteType, " id ", action.payload.parentNoteID);
             return {
                 ...state,
                 showOverlay: true,
 
-                parentNoteID: action.payload.parentNoteID
+                parentNoteID: action.payload.parentNoteID,
+                parentNoteType: action.payload.parentNoteType
             }
         case SHOW_EDIT_NOTE_OVERLAY:
             // console.log(" SHOW_NEW_NOTE_OVERLAY new note ovelayXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");

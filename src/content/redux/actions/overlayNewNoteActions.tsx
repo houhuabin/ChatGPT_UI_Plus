@@ -1,10 +1,10 @@
 import { NoteData } from '../types/noteTypes';
 import { SHOW_NEW_NOTE_OVERLAY, HIDE_NEW_EDIT_NOTE_OVERLAY, SHOW_EDIT_NOTE_OVERLAY } from '../types/overlayNewNoteTypes';
 
-export const showNewNoteOverlay = (parentNoteID: string) => {
+export const showNewNoteOverlay = (parentNoteID: string, parentNoteType: string) => {
     return {
         type: SHOW_NEW_NOTE_OVERLAY,
-        payload: { parentNoteID }
+        payload: { parentNoteID, parentNoteType }
     }
 };
 

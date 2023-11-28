@@ -17,7 +17,8 @@ const overlayMenuReducer = (state: OverlayMenuData = initialState, action: any) 
                 showOverlay: !state.showOverlay,
                 pointX: action.payload.pointX,
                 pointY: action.payload.pointY,
-                noteID: action.payload.noteID
+                noteID: action.payload.noteID,
+                noteType: action.payload.noteType,
             }
         case HIDE_MENU_OVERLAY:
             return {

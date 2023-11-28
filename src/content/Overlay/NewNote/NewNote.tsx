@@ -8,7 +8,7 @@ import styles from './new-note.module.scss';
 import NewNoteHead from './NewNoteHead';
 
 //noteID means parent noteData id
-export default function NewNote({ parentNoteID, noteData }: { parentNoteID: string, noteData: NoteData }) {
+export default function NewNote({ parentNoteID, parentNoteType, noteData }: { parentNoteID: string, parentNoteType: string, noteData: NoteData }) {
 
     const dispatch = useDispatch();
 
@@ -16,9 +16,10 @@ export default function NewNote({ parentNoteID, noteData }: { parentNoteID: stri
 
     const [title, setTitle] = useState(noteData?.title || '');
     const [content, setContent] = useState(noteData?.content || '');
-    const [noteType, setNoteType] = useState(noteData?.noteType || 'prompt');
+    const [noteType, setNoteType] = useState(noteData?.noteType || parentNoteType);
     //const parentNoteID = noteID;
     //
+    console.log("parentNoteID", parentNoteID, "parentNoteType", parentNoteType, "  noteType", noteData?.noteType);
 
     const handleOKButtonClick = () => {
 

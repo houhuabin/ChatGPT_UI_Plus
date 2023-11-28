@@ -13,7 +13,7 @@ export default function RightKebab({ noteData }: { noteData: NoteData }) {
     const dispatch = useDispatch();
     const handleClick = (event) => {
 
-        dispatch(showMenus(event.clientX, event.clientY, noteData.id));
+        dispatch(showMenus(event.clientX, event.clientY, noteData.id, noteData.noteType));
     };
 
 

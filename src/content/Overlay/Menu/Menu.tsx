@@ -14,9 +14,10 @@ interface MenuProps {
     pointX: number;
     pointY: number;
     noteID: string;
+    noteType: string
 }
 
-export default function Menu({ pointX, pointY, noteID }: MenuProps) {
+export default function Menu({ pointX, pointY, noteID, noteType }: MenuProps) {
 
     /* const menuPosition = {
          left: `${pointX}px`,
@@ -51,7 +52,7 @@ export default function Menu({ pointX, pointY, noteID }: MenuProps) {
     return (
 
         <div className={`${style.dialogContainer} ${style.menu}`} style={menuPosition}>
-            <MenuBlock noteID={noteID} menuBlockDatas={menuBlockDatas} />
+            <MenuBlock noteID={noteID} noteType={noteType} menuBlockDatas={menuBlockDatas} />
             {/* 
     <div className={style.menuSeparator} ></div>
     <MenuBlock noteID={noteID} menuBlockDatas={menuBlockDatas2} />

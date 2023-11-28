@@ -35687,7 +35687,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.oLeuYdmcFSrVYnbzInUQ, .Gpukox9oBjKO53
 }
 .L3yhpNw93fxTQQ3fIahQ:active {
   transform: scale(0.99);
-}`, "",{"version":3,"sources":["webpack://./src/content/Block/leftbar-block.module.scss","webpack://./src/assets/sass/_colors.scss","webpack://./src/content/Block/account-block.module.scss","webpack://./src/assets/sass/_svgContainer.scss"],"names":[],"mappings":"AAGA;EACI,uBCJe;EDKf,kBAAA;EACA,yCAAA;EACA,wCAAA;EACA,eAAA;AEFJ;;AFSA;EAEI,mBAAA;AEPJ;;AAPA;EACI,aAAA;EACA,8BAAA;EACA,mBAAA;EACA,WAAA;EACA,iBAAA;AAUJ;;AAPA;EACI,6BAAA;AAUJ;;AANA;EAEI,2BAAA;ECjBA,aAAA;EACA,mBAAA;EACA,kBAAA;EACA,6CAAA;EAyBA,2BAAA;ADEJ;ACzBI;EACI,qCFLiB;EEMjB,6BFHW;AC8BnB;ACxBI;EACI,oCFTkB;EEUlB,sBFTY;EEUZ,0CAAA;EACA,sBAAA;AD0BR;ACVI;EACI,sBAAA;ADYR;;AArBA;EAEI,kBAAA;AAuBJ;;AAlBA;EACI,iBAAA;EACA,WAAA;AAqBJ;;AAhBA;EACI,aAAA;EACA,aAAA;EACA,cAAA;EACA,WAAA;EACA,YAAA;EACA,mBAAA;EACA,uBAAA;AAmBJ;;AAfA;EAEI,YAAA;AAiBJ;;AATA;ECzDI,aAAA;EACA,mBAAA;EACA,kBAAA;EACA,6CAAA;EAyBA,2BAAA;AD8CJ;ACrEI;EACI,qCFLiB;EEMjB,6BFHW;AC0EnB;ACpEI;EACI,oCFTkB;EEUlB,sBFTY;EEUZ,0CAAA;EACA,sBAAA;ADsER;ACtDI;EACI,sBAAA;ADwDR","sourcesContent":["@import '../../assets/sass/main';\r\n\r\n// 定义占位符选择器\r\n%leftBarBlock {\r\n    background-color: $background-color;\r\n    border-radius: 2px;\r\n    border: 0.5px solid $svg-color-lighter;\r\n    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\r\n    margin: 0.8px 0;\r\n}\r\n\r\n.leftBarBlock {\r\n    @extend %leftBarBlock; // 使用占位符选择器的样式\r\n}\r\n\r\n.leftBarBlockBody {\r\n    @extend %leftBarBlock; // 同样使用占位符选择器的样式\r\n    padding-bottom: 5px;\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(75, 75, 82, 0.9);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);","@import '../../assets/sass/main';\r\n@import './leftbar-block.module.scss';\r\n\r\n%container {\r\n    display: flex;\r\n    justify-content: space-between; // 使子元素两端对齐\r\n    align-items: center;\r\n    color: gray; // 设置字体颜色为灰色\r\n    user-select: none;\r\n}\r\n\r\n.container {\r\n    justify-content: space-around;\r\n    @extend %container;\r\n}\r\n\r\n.activeContainer {\r\n    @extend %container;\r\n    justify-content: flex-start;\r\n    @include activeContainerLeftAligned;\r\n}\r\n\r\n\r\n.avatar {\r\n\r\n    border-radius: 50%;\r\n\r\n\r\n}\r\n\r\n.welcomeMessage {\r\n    font-size: 0.7rem; // 设置字体大小为1rem\r\n    color: gray;\r\n}\r\n\r\n\r\n\r\n%iconContainer {\r\n    display: flex;\r\n    width: 1.4rem;\r\n    height: 1.4rem;\r\n    margin: 2px;\r\n    padding: 2px;\r\n    align-items: center;\r\n    justify-content: center;\r\n\r\n}\r\n\r\n.avataIconContainer {\r\n    @extend %iconContainer;\r\n    padding: 0px;\r\n}\r\n\r\n.iconContainer {\r\n    @extend %iconContainer;\r\n\r\n}\r\n\r\n.activeIconContainer {\r\n    @extend %iconContainer;\r\n    @include activeContainerLeftAligned;\r\n}","@mixin baseActiveContainerStyles {\r\n    display: flex;\r\n    align-items: center; // 垂直居中\r\n    border-radius: 3px;\r\n    transition: background-color 0.3s, color 0.3s;\r\n\r\n    &:hover {\r\n        background-color: $hover-background-color;\r\n        color: $text-color-hover;\r\n    }\r\n\r\n    &:active {\r\n        background-color: $active-background-color;\r\n        color: $text-color-active;\r\n        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);\r\n        transform: scale(0.97);\r\n    }\r\n}\r\n\r\n\r\n\r\n@mixin activeContainertyles {\r\n\r\n    @include baseActiveContainerStyles;\r\n    justify-content: center; // 水平居中\r\n}\r\n\r\n@mixin activeContainerLeftAligned {\r\n    @include baseActiveContainerStyles;\r\n    justify-content: flex-start; // 水平靠左\r\n\r\n    &:active {\r\n        transform: scale(0.99); // 修改变形效果为0.99\r\n    }\r\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/content/Block/leftbar-block.module.scss","webpack://./src/assets/sass/_colors.scss","webpack://./src/content/Block/account-block.module.scss","webpack://./src/assets/sass/_svgContainer.scss"],"names":[],"mappings":"AAGA;EACI,uBCJe;EDKf,kBAAA;EACA,yCAAA;EACA,wCAAA;EACA,eAAA;AEFJ;;AFSA;EAEI,mBAAA;AEPJ;;AAPA;EACI,aAAA;EACA,8BAAA;EACA,mBAAA;EACA,WAAA;EACA,iBAAA;AAUJ;;AAPA;EACI,6BAAA;AAUJ;;AANA;EAEI,2BAAA;ECjBA,aAAA;EACA,mBAAA;EACA,kBAAA;EACA,6CAAA;EAyBA,2BAAA;ADEJ;ACzBI;EACI,qCFLiB;EEMjB,6BAAA;AD2BR;ACxBI;EACI,oCFNkB;EEOlB,sBFNY;EEOZ,0CAAA;EACA,sBAAA;AD0BR;ACVI;EACI,sBAAA;ADYR;;AArBA;EAEI,kBAAA;AAuBJ;;AAlBA;EACI,iBAAA;EACA,WAAA;AAqBJ;;AAhBA;EACI,aAAA;EACA,aAAA;EACA,cAAA;EACA,WAAA;EACA,YAAA;EACA,mBAAA;EACA,uBAAA;AAmBJ;;AAfA;EAEI,YAAA;AAiBJ;;AATA;ECzDI,aAAA;EACA,mBAAA;EACA,kBAAA;EACA,6CAAA;EAyBA,2BAAA;AD8CJ;ACrEI;EACI,qCFLiB;EEMjB,6BAAA;ADuER;ACpEI;EACI,oCFNkB;EEOlB,sBFNY;EEOZ,0CAAA;EACA,sBAAA;ADsER;ACtDI;EACI,sBAAA;ADwDR","sourcesContent":["@import '../../assets/sass/main';\r\n\r\n// 定义占位符选择器\r\n%leftBarBlock {\r\n    background-color: $background-color;\r\n    border-radius: 2px;\r\n    border: 0.5px solid $svg-color-lighter;\r\n    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\r\n    margin: 0.8px 0;\r\n}\r\n\r\n.leftBarBlock {\r\n    @extend %leftBarBlock; // 使用占位符选择器的样式\r\n}\r\n\r\n.leftBarBlockBody {\r\n    @extend %leftBarBlock; // 同样使用占位符选择器的样式\r\n    padding-bottom: 5px;\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n\r\n\r\n\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(75, 75, 82, 0.9);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);","@import '../../assets/sass/main';\r\n@import './leftbar-block.module.scss';\r\n\r\n%container {\r\n    display: flex;\r\n    justify-content: space-between; // 使子元素两端对齐\r\n    align-items: center;\r\n    color: gray; // 设置字体颜色为灰色\r\n    user-select: none;\r\n}\r\n\r\n.container {\r\n    justify-content: space-around;\r\n    @extend %container;\r\n}\r\n\r\n.activeContainer {\r\n    @extend %container;\r\n    justify-content: flex-start;\r\n    @include activeContainerLeftAligned;\r\n}\r\n\r\n\r\n.avatar {\r\n\r\n    border-radius: 50%;\r\n\r\n\r\n}\r\n\r\n.welcomeMessage {\r\n    font-size: 0.7rem; // 设置字体大小为1rem\r\n    color: gray;\r\n}\r\n\r\n\r\n\r\n%iconContainer {\r\n    display: flex;\r\n    width: 1.4rem;\r\n    height: 1.4rem;\r\n    margin: 2px;\r\n    padding: 2px;\r\n    align-items: center;\r\n    justify-content: center;\r\n\r\n}\r\n\r\n.avataIconContainer {\r\n    @extend %iconContainer;\r\n    padding: 0px;\r\n}\r\n\r\n.iconContainer {\r\n    @extend %iconContainer;\r\n\r\n}\r\n\r\n.activeIconContainer {\r\n    @extend %iconContainer;\r\n    @include activeContainerLeftAligned;\r\n}","@mixin baseActiveContainerStyles {\r\n    display: flex;\r\n    align-items: center; // 垂直居中\r\n    border-radius: 3px;\r\n    transition: background-color 0.3s, color 0.3s;\r\n\r\n    &:hover {\r\n        background-color: $hover-background-color;\r\n        color: $text-color-hover;\r\n    }\r\n\r\n    &:active {\r\n        background-color: $active-background-color;\r\n        color: $text-color-active;\r\n        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);\r\n        transform: scale(0.97);\r\n    }\r\n}\r\n\r\n\r\n\r\n@mixin activeContainertyles {\r\n\r\n    @include baseActiveContainerStyles;\r\n    justify-content: center; // 水平居中\r\n}\r\n\r\n@mixin activeContainerLeftAligned {\r\n    @include baseActiveContainerStyles;\r\n    justify-content: flex-start; // 水平靠左\r\n\r\n    &:active {\r\n        transform: scale(0.99); // 修改变形效果为0.99\r\n    }\r\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"leftBarBlockBody": `oLeuYdmcFSrVYnbzInUQ`,
@@ -35778,7 +35778,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.gIZjmFc8U5DZpcOPm3xA {
 
 .p4Fqkwm0pw2y6aIJ7CUt {
   margin: 4px 4px 0px 4px;
-}`, "",{"version":3,"sources":["webpack://./src/content/Block/block-header.module.scss","webpack://./src/assets/sass/_colors.scss","webpack://./src/assets/sass/_svgContainer.scss"],"names":[],"mappings":"AAEA;EACI,aAAA;EACA,mBAAA;EACA,WAAA;EACA,iBAAA;EACA,mBAAA;EACA,2BAAA;EACA,eAAA;EACA,kBAAA;AADJ;;AAIA;EACI,cAAA;EACA,mBAAA;EACA,cAAA;EACA,iBAAA;EACA,mBAAA;EACA,aAAA;EACA,mBAAA;EAEA,4BCJiB;ADErB;;AAMA;EAGI,cAAA;EACA,aAAA;EACA,kBAAA;EACA,gBAAA;EE/BA,aAAA;EACA,mBAAA;EACA,kBAAA;EACA,6CAAA;EAoBA,uBAAA;AFQJ;AE1BI;EACI,qCDLiB;ECMjB,6BDHW;AD+BnB;AEzBI;EACI,oCDTkB;ECUlB,sBDTY;ECUZ,0CAAA;EACA,sBAAA;AF2BR;;AANA;EACI,aAAA;EACA,mBAAA;EACA,UAAA;EACA,oBAAA;EACA,oCAAA;AASJ;;AALA;EACI,uBAAA;AAQJ","sourcesContent":["@import '../../assets/sass/main';\r\n\r\n.container {\r\n    display: flex;\r\n    align-items: center;\r\n    width: 100%;\r\n    font-size: 0.8rem;\r\n    min-height: 1.5 rem;\r\n    padding: 0px 0px 0px 0.3rem;\r\n    margin-top: 6px;\r\n    margin-bottom: 2px;\r\n}\r\n\r\n.title {\r\n    flex: 1 1 auto;\r\n    white-space: nowrap;\r\n    min-width: 0px;\r\n    overflow: visible;\r\n    text-overflow: clip;\r\n    display: flex;\r\n    align-items: center;\r\n\r\n    color: $text-color-lighter;\r\n}\r\n\r\n\r\n.iconContainer {\r\n\r\n    // background-color: aquamarine;\r\n    height: 1.2rem;\r\n    width: 1.2rem;\r\n    margin-right: 10px;\r\n    padding: 3px 3px;\r\n    @include activeContainertyles;\r\n}\r\n\r\n.icon {\r\n    display: flex;\r\n    align-items: center;\r\n    opacity: 0;\r\n    pointer-events: none;\r\n    transition: opacity 200ms ease-in 0s;\r\n}\r\n\r\n\r\n.userContainer {\r\n    margin: 4px 4px 0px 4px;\r\n\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(75, 75, 82, 0.9);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);","@mixin baseActiveContainerStyles {\r\n    display: flex;\r\n    align-items: center; // 垂直居中\r\n    border-radius: 3px;\r\n    transition: background-color 0.3s, color 0.3s;\r\n\r\n    &:hover {\r\n        background-color: $hover-background-color;\r\n        color: $text-color-hover;\r\n    }\r\n\r\n    &:active {\r\n        background-color: $active-background-color;\r\n        color: $text-color-active;\r\n        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);\r\n        transform: scale(0.97);\r\n    }\r\n}\r\n\r\n\r\n\r\n@mixin activeContainertyles {\r\n\r\n    @include baseActiveContainerStyles;\r\n    justify-content: center; // 水平居中\r\n}\r\n\r\n@mixin activeContainerLeftAligned {\r\n    @include baseActiveContainerStyles;\r\n    justify-content: flex-start; // 水平靠左\r\n\r\n    &:active {\r\n        transform: scale(0.99); // 修改变形效果为0.99\r\n    }\r\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/content/Block/block-header.module.scss","webpack://./src/assets/sass/_colors.scss","webpack://./src/assets/sass/_svgContainer.scss"],"names":[],"mappings":"AAEA;EACI,aAAA;EACA,mBAAA;EACA,WAAA;EACA,iBAAA;EACA,mBAAA;EACA,2BAAA;EACA,eAAA;EACA,kBAAA;AADJ;;AAIA;EACI,cAAA;EACA,mBAAA;EACA,cAAA;EACA,iBAAA;EACA,mBAAA;EACA,aAAA;EACA,mBAAA;EAEA,4BCDiB;ADDrB;;AAMA;EAGI,cAAA;EACA,aAAA;EACA,kBAAA;EACA,gBAAA;EE/BA,aAAA;EACA,mBAAA;EACA,kBAAA;EACA,6CAAA;EAoBA,uBAAA;AFQJ;AE1BI;EACI,qCDLiB;ECMjB,6BAAA;AF4BR;AEzBI;EACI,oCDNkB;ECOlB,sBDNY;ECOZ,0CAAA;EACA,sBAAA;AF2BR;;AANA;EACI,aAAA;EACA,mBAAA;EACA,UAAA;EACA,oBAAA;EACA,oCAAA;AASJ;;AALA;EACI,uBAAA;AAQJ","sourcesContent":["@import '../../assets/sass/main';\r\n\r\n.container {\r\n    display: flex;\r\n    align-items: center;\r\n    width: 100%;\r\n    font-size: 0.8rem;\r\n    min-height: 1.5 rem;\r\n    padding: 0px 0px 0px 0.3rem;\r\n    margin-top: 6px;\r\n    margin-bottom: 2px;\r\n}\r\n\r\n.title {\r\n    flex: 1 1 auto;\r\n    white-space: nowrap;\r\n    min-width: 0px;\r\n    overflow: visible;\r\n    text-overflow: clip;\r\n    display: flex;\r\n    align-items: center;\r\n\r\n    color: $text-color-lighter;\r\n}\r\n\r\n\r\n.iconContainer {\r\n\r\n    // background-color: aquamarine;\r\n    height: 1.2rem;\r\n    width: 1.2rem;\r\n    margin-right: 10px;\r\n    padding: 3px 3px;\r\n    @include activeContainertyles;\r\n}\r\n\r\n.icon {\r\n    display: flex;\r\n    align-items: center;\r\n    opacity: 0;\r\n    pointer-events: none;\r\n    transition: opacity 200ms ease-in 0s;\r\n}\r\n\r\n\r\n.userContainer {\r\n    margin: 4px 4px 0px 4px;\r\n\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n\r\n\r\n\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(75, 75, 82, 0.9);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);","@mixin baseActiveContainerStyles {\r\n    display: flex;\r\n    align-items: center; // 垂直居中\r\n    border-radius: 3px;\r\n    transition: background-color 0.3s, color 0.3s;\r\n\r\n    &:hover {\r\n        background-color: $hover-background-color;\r\n        color: $text-color-hover;\r\n    }\r\n\r\n    &:active {\r\n        background-color: $active-background-color;\r\n        color: $text-color-active;\r\n        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);\r\n        transform: scale(0.97);\r\n    }\r\n}\r\n\r\n\r\n\r\n@mixin activeContainertyles {\r\n\r\n    @include baseActiveContainerStyles;\r\n    justify-content: center; // 水平居中\r\n}\r\n\r\n@mixin activeContainerLeftAligned {\r\n    @include baseActiveContainerStyles;\r\n    justify-content: flex-start; // 水平靠左\r\n\r\n    &:active {\r\n        transform: scale(0.99); // 修改变形效果为0.99\r\n    }\r\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"container": `gIZjmFc8U5DZpcOPm3xA`,
@@ -35821,7 +35821,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.L4hJt577pibZi0TLDJg6, .MpzAD2RZC0F0_z
 
 .L4hJt577pibZi0TLDJg6 {
   padding-bottom: 5px;
-}`, "",{"version":3,"sources":["webpack://./src/content/Block/leftbar-block.module.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AAGA;EACI,uBCJe;EDKf,kBAAA;EACA,yCAAA;EACA,wCAAA;EACA,eAAA;AAFJ;;AASA;EAEI,mBAAA;AAPJ","sourcesContent":["@import '../../assets/sass/main';\r\n\r\n// 定义占位符选择器\r\n%leftBarBlock {\r\n    background-color: $background-color;\r\n    border-radius: 2px;\r\n    border: 0.5px solid $svg-color-lighter;\r\n    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\r\n    margin: 0.8px 0;\r\n}\r\n\r\n.leftBarBlock {\r\n    @extend %leftBarBlock; // 使用占位符选择器的样式\r\n}\r\n\r\n.leftBarBlockBody {\r\n    @extend %leftBarBlock; // 同样使用占位符选择器的样式\r\n    padding-bottom: 5px;\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(75, 75, 82, 0.9);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/content/Block/leftbar-block.module.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AAGA;EACI,uBCJe;EDKf,kBAAA;EACA,yCAAA;EACA,wCAAA;EACA,eAAA;AAFJ;;AASA;EAEI,mBAAA;AAPJ","sourcesContent":["@import '../../assets/sass/main';\r\n\r\n// 定义占位符选择器\r\n%leftBarBlock {\r\n    background-color: $background-color;\r\n    border-radius: 2px;\r\n    border: 0.5px solid $svg-color-lighter;\r\n    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\r\n    margin: 0.8px 0;\r\n}\r\n\r\n.leftBarBlock {\r\n    @extend %leftBarBlock; // 使用占位符选择器的样式\r\n}\r\n\r\n.leftBarBlockBody {\r\n    @extend %leftBarBlock; // 同样使用占位符选择器的样式\r\n    padding-bottom: 5px;\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n\r\n\r\n\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(75, 75, 82, 0.9);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"leftBarBlockBody": `L4hJt577pibZi0TLDJg6`,
@@ -35852,24 +35852,20 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `.PKhH6viPsACFGG9L7RRP {
-  width: 1.2rem;
-  height: 1.2rem;
-  margin-left: -4px;
-  margin-right: -1px;
-}
-
-.ubB4Y4BigtQFAcutmCTf {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   flex-grow: 0;
   position: relative;
-}`, "",{"version":3,"sources":["webpack://./src/content/Notes/NoteIcon/note-icon.module.scss"],"names":[],"mappings":"AACA;EAEI,aAAA;EACA,cAAA;EAEA,iBAAA;EACA,kBAAA;AAFJ;;AAIA;EAEI,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,cAAA;EACA,YAAA;EAGA,kBAAA;AAJJ","sourcesContent":["@import '../../../assets/sass/_main.scss';\r\n.icon {\r\n\r\n    width: 1.2rem;\r\n    height: 1.2rem;\r\n    \r\n    margin-left: -4px;\r\n    margin-right: -1px;\r\n}\r\n.conatiner {\r\n   \r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    flex-shrink: 0;\r\n    flex-grow: 0;\r\n\r\n   \r\n    position: relative;\r\n}\r\n\r\n"],"sourceRoot":""}]);
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-left: -4px;
+  margin-right: -1px;
+}`, "",{"version":3,"sources":["webpack://./src/content/Notes/NoteIcon/note-icon.module.scss"],"names":[],"mappings":"AAEA;EACI,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,cAAA;EACA,YAAA;EAGA,kBAAA;EAEA,aAAA;EACA,cAAA;EAEA,iBAAA;EACA,kBAAA;AALJ","sourcesContent":["@import '../../../assets/sass/_main.scss';\r\n\r\n.icon {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    flex-shrink: 0;\r\n    flex-grow: 0;\r\n\r\n\r\n    position: relative;\r\n\r\n    width: 1.2rem;\r\n    height: 1.2rem;\r\n\r\n    margin-left: -4px;\r\n    margin-right: -1px;\r\n}\r\n\r\n.container {}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
-	"icon": `PKhH6viPsACFGG9L7RRP`,
-	"conatiner": `ubB4Y4BigtQFAcutmCTf`
+	"icon": `PKhH6viPsACFGG9L7RRP`
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -35928,12 +35924,17 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.Dr0AP2_JpUeAbC8FAvxw {
   overflow: hidden;
   text-overflow: ellipsis;
   margin-left: 2px;
-}`, "",{"version":3,"sources":["webpack://./src/content/Notes/NoteTitle/note-title.module.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AAEA;EACI,cAAA;EACA,mBAAA;EACA,cAAA;EACA,gBAAA;EACA,mBAAA;EACA,aAAA;EACA,mBAAA;AADJ;AAEI;EACI,+BCTiB;ADSzB;;AAIA;EACI,aAAA;EACA,kBAAA;EACA,SAAA;EACA,OAAA;EACA,WAAA;EACA,yBAAA;EACA,aAAA;EACA,sBAAA;AADJ;;AAIE;EACE,cAAA;AADJ;;AAIA;EAEI,mBAAA;EACA,gBAAA;EACA,uBAAA;EACA,gBAAA;AAFJ","sourcesContent":["@import '../../../assets/sass/main';\r\n\r\n.container {\r\n    flex: 1 1 auto;\r\n    white-space: nowrap;\r\n    min-width: 0px;\r\n    overflow: hidden;\r\n    text-overflow: clip;\r\n    display: flex;\r\n    align-items: center;\r\n    &:hover {\r\n        background: $hover-background-color;\r\n    }\r\n   \r\n}\r\n.content {\r\n    display: none;  // 默认隐藏\r\n    position: absolute;  // 使用绝对定位\r\n    top: 100%;  // 位于.container的底部\r\n    left: 0;  // 从左边开始\r\n    width: 100%;  // 与.container相同的宽度\r\n    background-color: #f5f5f5;\r\n    padding: 10px;\r\n    box-sizing: border-box;\r\n  }\r\n  \r\n  .container:hover .content {\r\n    display: block;  // 当鼠标悬停在.container上时显示\r\n  }\r\n\r\n.title {\r\n  \r\n    white-space: nowrap;\r\n    overflow: hidden;\r\n    text-overflow: ellipsis;\r\n    margin-left: 2px;\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(75, 75, 82, 0.9);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
+}
+
+.CX2HWrpBbZYp7dJ4hBAM {
+  background: rgba(0, 0, 0, 0.2);
+}`, "",{"version":3,"sources":["webpack://./src/content/Notes/NoteTitle/note-title.module.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AAEA;EACE,cAAA;EACA,mBAAA;EACA,cAAA;EACA,gBAAA;EACA,mBAAA;EACA,aAAA;EACA,mBAAA;AADF;AAGE;EACE,+BCVqB;ADSzB;;AAMA;EACE,aAAA;EACA,kBAAA;EACA,SAAA;EACA,OAAA;EACA,WAAA;EACA,yBAAA;EACA,aAAA;EACA,sBAAA;AAHF;;AAMA;EACE,cAAA;AAHF;;AAMA;EAEE,mBAAA;EACA,gBAAA;EACA,uBAAA;EACA,gBAAA;AAJF;;AAOA;EACE,8BCnCwB;AD+B1B","sourcesContent":["@import '../../../assets/sass/main';\r\n\r\n.container {\r\n  flex: 1 1 auto;\r\n  white-space: nowrap;\r\n  min-width: 0px;\r\n  overflow: hidden;\r\n  text-overflow: clip;\r\n  display: flex;\r\n  align-items: center;\r\n\r\n  &:hover {\r\n    background: $hover-background-color;\r\n  }\r\n\r\n}\r\n\r\n.content {\r\n  display: none; // 默认隐藏\r\n  position: absolute; // 使用绝对定位\r\n  top: 100%; // 位于.container的底部\r\n  left: 0; // 从左边开始\r\n  width: 100%; // 与.container相同的宽度\r\n  background-color: #f5f5f5;\r\n  padding: 10px;\r\n  box-sizing: border-box;\r\n}\r\n\r\n.container:hover .content {\r\n  display: block; // 当鼠标悬停在.container上时显示\r\n}\r\n\r\n.title {\r\n\r\n  white-space: nowrap;\r\n  overflow: hidden;\r\n  text-overflow: ellipsis;\r\n  margin-left: 2px;\r\n}\r\n\r\n.selected {\r\n  background: $active-background-color; // 这里设置选中时的背景色\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n\r\n\r\n\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(75, 75, 82, 0.9);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"container": `Dr0AP2_JpUeAbC8FAvxw`,
 	"content": `o8fwbUw2R_vIR3JQJlAv`,
-	"title": `cPtTPOlNo43iyE4wiKAN`
+	"title": `cPtTPOlNo43iyE4wiKAN`,
+	"selected": `CX2HWrpBbZYp7dJ4hBAM`
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -36002,7 +36003,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.p7kBgBIWJNFP877jH1b1 {
     outline: none; 
 }
 */
-/* Similarly, for focus effect (if the div gets focus due to being interactive): */`, "",{"version":3,"sources":["webpack://./src/content/Notes/RightKebab/right-kebab.module.scss","webpack://./src/assets/sass/_svgContainer.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AAEA;EACI,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,cAAA;EACA,YAAA;EACA,YAAA;EACA,iBAAA;AADJ;;AAIA;EAEI,cAAA;EACA,eAAA;EACA,kBAAA;EACA,gBAAA;EACA,iBAAA;ECjBA,aAAA;EACA,mBAAA;EACA,kBAAA;EACA,6CAAA;EAoBA,uBAAA;ADHJ;ACfI;EACI,qCCLiB;EDMjB,6BCHW;AFoBnB;ACdI;EACI,oCCTkB;EDUlB,sBCTY;EDUZ,0CAAA;EACA,sBAAA;ADgBR;;AALA,4GAAA;AACA;;;;;;;;CAAA;AASA,kFAAA","sourcesContent":["@import '../../../assets/sass/main';\r\n\r\n.container {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    flex-shrink: 0;\r\n    flex-grow: 0;\r\n    height: 100%;\r\n    padding-left: 3px;\r\n}\r\n\r\n.button {\r\n\r\n    width: 1.25rem;\r\n    height: 1.25rem;\r\n    border-radius: 3px;\r\n    margin-left: 4px;\r\n    user-select: none;\r\n    @include activeContainertyles;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n/* If you want to add any hover or focus effects, you can use pseudo-classes. Here's an example for hover: */\r\n/*\r\n.button:hover  {\r\n    fill: $hover-svg-color; \r\n}\r\n.button:focus {\r\n    fill: $hover-svg-color; \r\n    outline: none; \r\n}\r\n*/\r\n/* Similarly, for focus effect (if the div gets focus due to being interactive): */","@mixin baseActiveContainerStyles {\r\n    display: flex;\r\n    align-items: center; // 垂直居中\r\n    border-radius: 3px;\r\n    transition: background-color 0.3s, color 0.3s;\r\n\r\n    &:hover {\r\n        background-color: $hover-background-color;\r\n        color: $text-color-hover;\r\n    }\r\n\r\n    &:active {\r\n        background-color: $active-background-color;\r\n        color: $text-color-active;\r\n        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);\r\n        transform: scale(0.97);\r\n    }\r\n}\r\n\r\n\r\n\r\n@mixin activeContainertyles {\r\n\r\n    @include baseActiveContainerStyles;\r\n    justify-content: center; // 水平居中\r\n}\r\n\r\n@mixin activeContainerLeftAligned {\r\n    @include baseActiveContainerStyles;\r\n    justify-content: flex-start; // 水平靠左\r\n\r\n    &:active {\r\n        transform: scale(0.99); // 修改变形效果为0.99\r\n    }\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(75, 75, 82, 0.9);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
+/* Similarly, for focus effect (if the div gets focus due to being interactive): */`, "",{"version":3,"sources":["webpack://./src/content/Notes/RightKebab/right-kebab.module.scss","webpack://./src/assets/sass/_svgContainer.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AAEA;EACI,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,cAAA;EACA,YAAA;EACA,YAAA;EACA,iBAAA;AADJ;;AAIA;EAEI,cAAA;EACA,eAAA;EACA,kBAAA;EACA,gBAAA;EACA,iBAAA;ECjBA,aAAA;EACA,mBAAA;EACA,kBAAA;EACA,6CAAA;EAoBA,uBAAA;ADHJ;ACfI;EACI,qCCLiB;EDMjB,6BAAA;ADiBR;ACdI;EACI,oCCNkB;EDOlB,sBCNY;EDOZ,0CAAA;EACA,sBAAA;ADgBR;;AALA,4GAAA;AACA;;;;;;;;CAAA;AASA,kFAAA","sourcesContent":["@import '../../../assets/sass/main';\r\n\r\n.container {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    flex-shrink: 0;\r\n    flex-grow: 0;\r\n    height: 100%;\r\n    padding-left: 3px;\r\n}\r\n\r\n.button {\r\n\r\n    width: 1.25rem;\r\n    height: 1.25rem;\r\n    border-radius: 3px;\r\n    margin-left: 4px;\r\n    user-select: none;\r\n    @include activeContainertyles;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n/* If you want to add any hover or focus effects, you can use pseudo-classes. Here's an example for hover: */\r\n/*\r\n.button:hover  {\r\n    fill: $hover-svg-color; \r\n}\r\n.button:focus {\r\n    fill: $hover-svg-color; \r\n    outline: none; \r\n}\r\n*/\r\n/* Similarly, for focus effect (if the div gets focus due to being interactive): */","@mixin baseActiveContainerStyles {\r\n    display: flex;\r\n    align-items: center; // 垂直居中\r\n    border-radius: 3px;\r\n    transition: background-color 0.3s, color 0.3s;\r\n\r\n    &:hover {\r\n        background-color: $hover-background-color;\r\n        color: $text-color-hover;\r\n    }\r\n\r\n    &:active {\r\n        background-color: $active-background-color;\r\n        color: $text-color-active;\r\n        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);\r\n        transform: scale(0.97);\r\n    }\r\n}\r\n\r\n\r\n\r\n@mixin activeContainertyles {\r\n\r\n    @include baseActiveContainerStyles;\r\n    justify-content: center; // 水平居中\r\n}\r\n\r\n@mixin activeContainerLeftAligned {\r\n    @include baseActiveContainerStyles;\r\n    justify-content: flex-start; // 水平靠左\r\n\r\n    &:active {\r\n        transform: scale(0.99); // 修改变形效果为0.99\r\n    }\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n\r\n\r\n\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(75, 75, 82, 0.9);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"container": `p7kBgBIWJNFP877jH1b1`,
@@ -36069,7 +36070,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.B0zEGGR8zLYJP91Hc_PB {
 .xKJaDouyTs8hq7RapX_C:focus .MWLEIzY5uzrx4Yvm37fU {
   fill: rgba(25, 23, 17, 0.8); /* Darken the color a bit on focus */
   outline: none; /* If you want to remove the default focus outline, but remember to provide another visual indication for accessibility */
-}`, "",{"version":3,"sources":["webpack://./src/content/Notes/Toggle/toggle.module.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AAGA;EACI,cAAA;EACA,YAAA;EACA,kBAAA;EACA,6BAAA;EACA,cAAA;EACA,eAAA;EACA,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,iBAAA;AAFJ;;AAKA;EACI,iBAAA;EACA,sCAAA;EACA,eAAA;EACA,kBAAA;EACA,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,WAAA;EACA,YAAA;EACA,kBAAA;AAFJ;;AAKA;EACI,+BC5BqB;AD0BzB;;AAMA;EACI,2BC5Bc,ED4BU,oCAAA;AAH5B;;AAKA;EACI,2BC/Bc,ED+BU,oCAAA;EACxB,aAAA,EAAA,yHAAA;AAFJ","sourcesContent":["\r\n@import '../../../assets/sass/main';\r\n\r\n.toggle-container {\r\n    flex-shrink: 0;\r\n    flex-grow: 0;\r\n    border-radius: 3px;\r\n    color: rgba(47, 53, 55, 0.65);\r\n    width: 1.38rem;\r\n    height: 1.38rem;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    margin-right: 0px;    \r\n}\r\n\r\n.button {\r\n    user-select: none;\r\n    transition: background 20ms ease-in 0s;\r\n    cursor: pointer;\r\n    position: relative;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    width: 20px;\r\n    height: 20px;\r\n    border-radius: 3px;\r\n}\r\n\r\n.container:hover .button{\r\n    background: $hover-background-color;\r\n}\r\n\r\n\r\n.container:hover .toggleSVG {\r\n    fill: $hover-svg-color; /* Darken the color a bit on hover */\r\n}\r\n.container:focus .toggleSVG {\r\n    fill: $hover-svg-color; /* Darken the color a bit on focus */\r\n    outline: none; /* If you want to remove the default focus outline, but remember to provide another visual indication for accessibility */\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(75, 75, 82, 0.9);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/content/Notes/Toggle/toggle.module.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AAGA;EACI,cAAA;EACA,YAAA;EACA,kBAAA;EACA,6BAAA;EACA,cAAA;EACA,eAAA;EACA,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,iBAAA;AAFJ;;AAKA;EACI,iBAAA;EACA,sCAAA;EACA,eAAA;EACA,kBAAA;EACA,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,WAAA;EACA,YAAA;EACA,kBAAA;AAFJ;;AAKA;EACI,+BC5BqB;AD0BzB;;AAMA;EACI,2BCzBc,EDyBU,oCAAA;AAH5B;;AAKA;EACI,2BC5Bc,ED4BU,oCAAA;EACxB,aAAA,EAAA,yHAAA;AAFJ","sourcesContent":["\r\n@import '../../../assets/sass/main';\r\n\r\n.toggle-container {\r\n    flex-shrink: 0;\r\n    flex-grow: 0;\r\n    border-radius: 3px;\r\n    color: rgba(47, 53, 55, 0.65);\r\n    width: 1.38rem;\r\n    height: 1.38rem;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    margin-right: 0px;    \r\n}\r\n\r\n.button {\r\n    user-select: none;\r\n    transition: background 20ms ease-in 0s;\r\n    cursor: pointer;\r\n    position: relative;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    width: 20px;\r\n    height: 20px;\r\n    border-radius: 3px;\r\n}\r\n\r\n.container:hover .button{\r\n    background: $hover-background-color;\r\n}\r\n\r\n\r\n.container:hover .toggleSVG {\r\n    fill: $hover-svg-color; /* Darken the color a bit on hover */\r\n}\r\n.container:focus .toggleSVG {\r\n    fill: $hover-svg-color; /* Darken the color a bit on focus */\r\n    outline: none; /* If you want to remove the default focus outline, but remember to provide another visual indication for accessibility */\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n\r\n\r\n\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(75, 75, 82, 0.9);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"toggle-container": `B0zEGGR8zLYJP91Hc_PB`,
@@ -36118,7 +36119,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.ffEHfGGKQG8IZYpflM7K {
   font-weight: 400;
   cursor: pointer;
   color: rgba(47, 53, 55, 0.8);
-}`, "",{"version":3,"sources":["webpack://./src/content/Notes/note.module.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AACA;EACI,uBCFe;ADEnB;;AAIA;EACI,aAAA;EACA,mBAAA;EACA,WAAA;EACA,iBAAA;EACA,kBAAA;EACA,yBAAA;EACA,eAAA;EACA,kBAAA;EACA,kBAAA;EACA,gBAAA;EAEA,eAAA;EAEA,4BCJe;ADCnB","sourcesContent":["@import '../../assets/sass/main';\r\n.container{\r\n    background-color: $background-color;\r\n}\r\n\r\n\r\n.note {\r\n    display: flex;\r\n    align-items: center;\r\n    width: 100%;\r\n    font-size: 0.8rem;\r\n    min-height: 1.7rem;\r\n    padding: 2px 10px 2px 5px;\r\n    margin-top: 1px;\r\n    margin-bottom: 1px;\r\n    border-radius: 3px;\r\n    font-weight: 400;\r\n    \r\n    cursor: pointer;\r\n   \r\n    color:$text-color-daker;\r\n}\r\n\r\n\r\n\r\n\r\n","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(75, 75, 82, 0.9);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/content/Notes/note.module.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AACA;EACI,uBCFe;ADEnB;;AAIA;EACI,aAAA;EACA,mBAAA;EACA,WAAA;EACA,iBAAA;EACA,kBAAA;EACA,yBAAA;EACA,eAAA;EACA,kBAAA;EACA,kBAAA;EACA,gBAAA;EAEA,eAAA;EAEA,4BCDe;ADFnB","sourcesContent":["@import '../../assets/sass/main';\r\n.container{\r\n    background-color: $background-color;\r\n}\r\n\r\n\r\n.note {\r\n    display: flex;\r\n    align-items: center;\r\n    width: 100%;\r\n    font-size: 0.8rem;\r\n    min-height: 1.7rem;\r\n    padding: 2px 10px 2px 5px;\r\n    margin-top: 1px;\r\n    margin-bottom: 1px;\r\n    border-radius: 3px;\r\n    font-weight: 400;\r\n    \r\n    cursor: pointer;\r\n   \r\n    color:$text-color-daker;\r\n}\r\n\r\n\r\n\r\n\r\n","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n\r\n\r\n\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(75, 75, 82, 0.9);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"container": `ffEHfGGKQG8IZYpflM7K`,
@@ -36289,7 +36290,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.BdC4pWHamC6gl0WLRSDy {
   margin-right: 8px;
   min-width: 0px;
   flex-shrink: 0;
-}`, "",{"version":3,"sources":["webpack://./src/content/Overlay/Menu/MenuItem/menu-item.module.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AAGA;EACI,iBAAA;EACA,sCAAA;EACA,eAAA;EACA,uBAAA;EACA,gBAAA;EACA,iBAAA;EACA,kBAAA;EACA,kBAAA;EAEA,aAAA;EACA,mBAAA;EACA,iBAAA;EACA,iBAAA;EACA,gBAAA;EACA,eAAA;AAHJ;;AAOA;EACI,+BCrBqB;ADiBzB;;AAQA;EACI,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,iBAAA;EACA,iBAAA;AALJ;;AAWA;EACI,iBAAA;EACA,kBAAA;EACA,cAAA;EACA,cAAA;EACA,mBAAA;EACA,gBAAA;EACA,uBAAA;EACA,4BC9Be;ADsBnB;;AAYA;EACI,iBAAA;EACA,iBAAA;EAEA,cAAA;EACA,cAAA;AAVJ","sourcesContent":["@import '../../../../assets/sass/main';\r\n\r\n\r\n.menuItem {\r\n    user-select: none;\r\n    transition: background 20ms ease-in 0s;\r\n    cursor: pointer;\r\n    width: calc(100% - 8px);\r\n    margin-left: 4px;\r\n    margin-right: 2px;\r\n    padding-right: 6px;\r\n    border-radius: 3px;\r\n\r\n    display: flex;\r\n    align-items: center;\r\n    line-height: 120%;\r\n    user-select: none;\r\n    min-height: 28px;\r\n    font-size: 14px;\r\n\r\n}\r\n\r\n.menuItem:hover {\r\n    background: $hover-background-color;\r\n}\r\n\r\n\r\n.iconContainer {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    margin-left: 10px;\r\n    margin-right: 4px;\r\n}\r\n\r\n\r\n\r\n\r\n.menuText {\r\n    margin-left: 10px;\r\n    margin-right: 12px;\r\n    min-width: 0px;\r\n    flex: 1 1 auto;\r\n    white-space: nowrap;\r\n    overflow: hidden;\r\n    text-overflow: ellipsis;\r\n    color: $text-color-daker;\r\n\r\n}\r\n\r\n.hotkeyContainer {\r\n    margin-left: auto;\r\n    margin-right: 8px;\r\n\r\n    min-width: 0px;\r\n    flex-shrink: 0;\r\n\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(75, 75, 82, 0.9);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/content/Overlay/Menu/MenuItem/menu-item.module.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AAGA;EACI,iBAAA;EACA,sCAAA;EACA,eAAA;EACA,uBAAA;EACA,gBAAA;EACA,iBAAA;EACA,kBAAA;EACA,kBAAA;EAEA,aAAA;EACA,mBAAA;EACA,iBAAA;EACA,iBAAA;EACA,gBAAA;EACA,eAAA;AAHJ;;AAOA;EACI,+BCrBqB;ADiBzB;;AAQA;EACI,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,iBAAA;EACA,iBAAA;AALJ;;AAWA;EACI,iBAAA;EACA,kBAAA;EACA,cAAA;EACA,cAAA;EACA,mBAAA;EACA,gBAAA;EACA,uBAAA;EACA,4BC3Be;ADmBnB;;AAYA;EACI,iBAAA;EACA,iBAAA;EAEA,cAAA;EACA,cAAA;AAVJ","sourcesContent":["@import '../../../../assets/sass/main';\r\n\r\n\r\n.menuItem {\r\n    user-select: none;\r\n    transition: background 20ms ease-in 0s;\r\n    cursor: pointer;\r\n    width: calc(100% - 8px);\r\n    margin-left: 4px;\r\n    margin-right: 2px;\r\n    padding-right: 6px;\r\n    border-radius: 3px;\r\n\r\n    display: flex;\r\n    align-items: center;\r\n    line-height: 120%;\r\n    user-select: none;\r\n    min-height: 28px;\r\n    font-size: 14px;\r\n\r\n}\r\n\r\n.menuItem:hover {\r\n    background: $hover-background-color;\r\n}\r\n\r\n\r\n.iconContainer {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    margin-left: 10px;\r\n    margin-right: 4px;\r\n}\r\n\r\n\r\n\r\n\r\n.menuText {\r\n    margin-left: 10px;\r\n    margin-right: 12px;\r\n    min-width: 0px;\r\n    flex: 1 1 auto;\r\n    white-space: nowrap;\r\n    overflow: hidden;\r\n    text-overflow: ellipsis;\r\n    color: $text-color-daker;\r\n\r\n}\r\n\r\n.hotkeyContainer {\r\n    margin-left: auto;\r\n    margin-right: 8px;\r\n\r\n    min-width: 0px;\r\n    flex-shrink: 0;\r\n\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n\r\n\r\n\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(75, 75, 82, 0.9);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"menuItem": `BdC4pWHamC6gl0WLRSDy`,
@@ -36370,7 +36371,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
   height: 1px;
   background-color: rgba(47, 53, 55, 0.3);
   margin: 5px 0;
-}`, "",{"version":3,"sources":["webpack://./src/content/Overlay/Menu/menu.module.scss","webpack://./src/content/Overlay/overlay.module.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AAAA,gBAAgB;ACEhB;EACI,oBAAA;EACA,kBAAA;EACA,cAAA;EACA,cAAA;EACA,iCCckB;AFdtB;;ACIA;EACI,eAAA;EACA,QAAA;EACA,SAAA;EACA,YAAA;EACA,aAAA;ADDJ;;ACKA;EAEI,eAAA;EACA,QAAA;EACA,SAAA;EACA,YAAA;EACA,aAAA;EACA,uCCPW;EDQX,aAAA;EACA,uBAAA;EACA,SAAA;EACA,mBAAA;EACA,SAAA;ADHJ;;ACOA;EACI,kBAAA;EAEA,iBCvCe;EDwCf,kBAAA;EACA,6BAAA;EACA,yHAAA;EAGA,gBAAA;ADPJ;;AAnCA;EACI,YAAA;EACA,yBAAA;AAsCJ;;AAlCA;EACI,WAAA;EACA,uCEDgB;EFEhB,aAAA;AAqCJ","sourcesContent":["@import '../../../assets/sass/main';\r\n@import '../overlay.module.scss';\r\n\r\n.menu {\r\n    width: 15rem;\r\n    padding: 8px 12px 8px 8px;\r\n    //margin-right: 10px;\r\n}\r\n\r\n.menuSeparator {\r\n    height: 1px;\r\n    background-color: $svg-color-lighter;\r\n    margin: 5px 0;\r\n\r\n}","@import '../../assets/sass/main';\r\n\r\n.overlay {\r\n    pointer-events: auto;\r\n    position: relative;\r\n    z-index: 10000;\r\n    display: block;\r\n    background-color: $ovelay-color-darker;\r\n\r\n}\r\n\r\n.innerContainer {\r\n    position: fixed;\r\n    top: 0px;\r\n    left: 0px;\r\n    width: 100vw;\r\n    height: 100vh;\r\n\r\n}\r\n\r\n.innerCenterContainer {\r\n\r\n    position: fixed;\r\n    top: 0px;\r\n    left: 0px;\r\n    width: 100vw;\r\n    height: 100vh;\r\n    background-color: $ovelay-color;\r\n    display: flex;\r\n    justify-content: center;\r\n    /* 水平居中 */\r\n    align-items: center;\r\n    /* 垂直居中 */\r\n\r\n}\r\n\r\n.dialogContainer {\r\n    border-radius: 4px;\r\n\r\n    background: $background-color;\r\n    position: relative;\r\n    max-width: calc(100vw - 24px);\r\n    box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px,\r\n        rgba(15, 15, 15, 0.1) 0px 3px 6px,\r\n        rgba(15, 15, 15, 0.2) 0px 9px 24px;\r\n    overflow: hidden;\r\n\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(75, 75, 82, 0.9);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/content/Overlay/Menu/menu.module.scss","webpack://./src/content/Overlay/overlay.module.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AAAA,gBAAgB;ACEhB;EACI,oBAAA;EACA,kBAAA;EACA,cAAA;EACA,cAAA;EACA,iCCiBkB;AFjBtB;;ACIA;EACI,eAAA;EACA,QAAA;EACA,SAAA;EACA,YAAA;EACA,aAAA;ADDJ;;ACKA;EAEI,eAAA;EACA,QAAA;EACA,SAAA;EACA,YAAA;EACA,aAAA;EACA,uCCJW;EDKX,aAAA;EACA,uBAAA;EACA,SAAA;EACA,mBAAA;EACA,SAAA;ADHJ;;ACOA;EACI,kBAAA;EAEA,iBCvCe;EDwCf,kBAAA;EACA,6BAAA;EACA,yHAAA;EAGA,gBAAA;ADPJ;;AAnCA;EACI,YAAA;EACA,yBAAA;AAsCJ;;AAlCA;EACI,WAAA;EACA,uCEEgB;EFDhB,aAAA;AAqCJ","sourcesContent":["@import '../../../assets/sass/main';\r\n@import '../overlay.module.scss';\r\n\r\n.menu {\r\n    width: 15rem;\r\n    padding: 8px 12px 8px 8px;\r\n    //margin-right: 10px;\r\n}\r\n\r\n.menuSeparator {\r\n    height: 1px;\r\n    background-color: $svg-color-lighter;\r\n    margin: 5px 0;\r\n\r\n}","@import '../../assets/sass/main';\r\n\r\n.overlay {\r\n    pointer-events: auto;\r\n    position: relative;\r\n    z-index: 10000;\r\n    display: block;\r\n    background-color: $ovelay-color-darker;\r\n\r\n}\r\n\r\n.innerContainer {\r\n    position: fixed;\r\n    top: 0px;\r\n    left: 0px;\r\n    width: 100vw;\r\n    height: 100vh;\r\n\r\n}\r\n\r\n.innerCenterContainer {\r\n\r\n    position: fixed;\r\n    top: 0px;\r\n    left: 0px;\r\n    width: 100vw;\r\n    height: 100vh;\r\n    background-color: $ovelay-color;\r\n    display: flex;\r\n    justify-content: center;\r\n    /* 水平居中 */\r\n    align-items: center;\r\n    /* 垂直居中 */\r\n\r\n}\r\n\r\n.dialogContainer {\r\n    border-radius: 4px;\r\n\r\n    background: $background-color;\r\n    position: relative;\r\n    max-width: calc(100vw - 24px);\r\n    box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px,\r\n        rgba(15, 15, 15, 0.1) 0px 3px 6px,\r\n        rgba(15, 15, 15, 0.2) 0px 9px 24px;\r\n    overflow: hidden;\r\n\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n\r\n\r\n\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(75, 75, 82, 0.9);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"overlay": `Gf6xmVVJTeYAJKrz0GvA`,
@@ -36523,7 +36524,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
 
 .uyXAc9XIIrOrmlEtAX8x {
   padding-right: 1rem;
-}`, "",{"version":3,"sources":["webpack://./src/content/Overlay/NewNote/new-note.module.scss","webpack://./src/assets/sass/_colors.scss","webpack://./src/assets/sass/_button.scss"],"names":[],"mappings":"AAAA,gBAAgB;AAEhB;EACI,YAAA;EACA,iBAAA;EACA,cAAA;EACA,aAAA;EACA,sBAAA;EACA,aAAA;EACA,mBAAA;EACA,SAAA;EACA,uBAAA;EACA,SAAA;EACA,uBCbe;ADanB;;AAGA;EACI,YAAA;EACA,kBAAA;EACA,mBAAA;EACA,iBAAA;EACA,uCAAA;EACA,mBAAA;EACA,aAAA;EACA,kBAAA;EACA,YAAA;AAAJ;;AAGA;EACI,YAAA;EACA,4BCde;EDef,YAAA;EACA,gBAAA;EACA,aAAA;EACA,gBAAA;EAEA,qBAAA;AADJ;;AAIA;EACI,yBAAA;EACA,eAAA;EACA,YAAA;EACA,6CAAA;EACA,4BC5Be;AD2BnB;;AAIA;EACI,aAAA;EACA,YAAA;EACA,mCCzCQ;ADwCZ;;AAQA;EACI,mCCpCiB;EDqCjB,qBAAA;EACA,aAAA;EACA,iBAAA;AALJ;;AAUA;EAEI,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,cAAA;EACA,YAAA;EACA,iBAAA;EACA,kBAAA;EAEA,kBAAA;EAIA,4CAAA;AAZJ;;AAeA;EACI,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,YAAA;EACA,kBAAA;EACA,YAAA;EACA,uCAAA;EACA,4BC3Ee;ED4Ef,mBAAA;AAZJ;;AAgBA;EAEI,iBAAA;EACA,WAAA;EACA,YAAA;EACA,YAAA;AAdJ;;AAmBA;EACI,gBAAA;EACA,kBAAA;EACA,eAAA;EE1GA,uCAAA;EACA,kBAAA;EACA,4BDaiB;ECZjB,6CAAA;AF2FJ;AEzFI;EACI,qCDPiB;ECQjB,6BDLW;ADgGnB;AExFI;EACI,oCDXkB;ECYlB,sBDXY;ECYZ,0CAAA;EACA,sBAAA;AF0FR;;AAOA;EACI,aAAA;EACA,WAAA;EACA,mBAAA;EACA,yBAAA;EACA,mBAAA;AAJJ;;AAOA;EACI,mBAAA;AAJJ","sourcesContent":["@import '../../../assets/sass/main';\r\n\r\n.newNote {\r\n    width: 40rem;\r\n    min-height: 30rem;\r\n    padding: 8px 0;\r\n    display: flex;\r\n    flex-direction: column;\r\n    /* 使子元素竖直排列 */\r\n    align-items: center;\r\n    /* 水平居中 */\r\n    justify-content: center;\r\n    /* 垂直居中 */\r\n    background-color: $background-color\r\n}\r\n\r\n.titleContainer {\r\n    width: 30rem;\r\n    min-height: 1.5rem;\r\n    margin-bottom: 10px;\r\n    font-size: 1.5rem;\r\n    border: 1px solid $input-border-color;\r\n    /* 设置正常状态的边框颜色为蓝色 */\r\n    display: flex;\r\n    border-radius: 5px;\r\n    padding: 3px;\r\n}\r\n\r\n.titleInput {\r\n    flex-grow: 1;\r\n    color: $text-color-daker;\r\n    border: none;\r\n    box-shadow: none;\r\n    outline: none;\r\n    /* 允许元素占用剩余的空间 */\r\n    // border: 1px solid $input-border-color; \r\n    /* 添加一些与select元素的间距 */\r\n}\r\n\r\n.documentTypeSelect {\r\n    padding: 0px 30px 0px 5px;\r\n    font-size: 1rem;\r\n    border: none;\r\n    border-left: 1px dashed $input-border-color;\r\n    color: $text-color-daker;\r\n}\r\n\r\n.documentTypeSelect:focus {\r\n    outline: none;\r\n    border: none;\r\n    border-color: $svg-color;\r\n    // border-color: initial; /* 根据需要，可以移除或设置为特定的颜色 */\r\n    //box-shadow: none; /* 有些浏览器可能为聚焦状态添加了阴影，也可以将其移除 */\r\n\r\n\r\n}\r\n\r\n.title:focus {\r\n    border-color: $input-border-color;\r\n    /* 设置获得焦点时的边框颜色也为蓝色 */\r\n    outline: none;\r\n    /* 移除浏览器默认的焦点轮廓 */\r\n\r\n\r\n}\r\n\r\n.title-icon {\r\n\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    flex-shrink: 0;\r\n    flex-grow: 0;\r\n    min-width: 1.7rem;\r\n    min-height: 1.5rem;\r\n\r\n    position: relative;\r\n\r\n\r\n\r\n    border-left: 1px solid $input-border-color;\r\n}\r\n\r\n.contentContainer {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    width: 30rem;\r\n    border-radius: 5px;\r\n    padding: 2px;\r\n    border: 1px solid $input-border-color;\r\n    color: $text-color-daker;\r\n    /* 设置正常状态的边框颜色为蓝色 */\r\n\r\n}\r\n\r\n.content {\r\n\r\n    min-height: 20rem;\r\n    width: 100%;\r\n    height: 100%;\r\n    border: none;\r\n    //border: 1px solid  $input-border-color; /* 设置正常状态的边框颜色为蓝色 */\r\n}\r\n\r\n\r\n.button {\r\n    margin-top: 10px;\r\n    min-height: 1.7rem;\r\n    min-width: 5rem;\r\n    @include buttonStyles;\r\n}\r\n\r\n\r\n.buttons {\r\n    display: flex;\r\n    width: 100%;\r\n    flex-direction: row;\r\n    justify-content: flex-end;\r\n    padding-right: 5rem;\r\n}\r\n\r\n.buttonConatinerLeft {\r\n    padding-right: 1rem;\r\n\r\n}\r\n\r\n.buttonConatinerRight {\r\n    //margin-right: 20px;\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(75, 75, 82, 0.9);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);","\r\n@mixin buttonStyles {\r\n   \r\n    border: 2px solid $input-border-color;\r\n    border-radius: 3px;\r\n    color: $text-color-lighter;\r\n    transition: background-color 0.3s, color 0.3s;\r\n\r\n    &:hover {\r\n        background-color: $hover-background-color;  \r\n        color: $text-color-hover;  \r\n    }\r\n\r\n    &:active {\r\n        background-color: $active-background-color;  \r\n        color: $text-color-active;  \r\n        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);\r\n        transform: scale(0.97);\r\n    }\r\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/content/Overlay/NewNote/new-note.module.scss","webpack://./src/assets/sass/_colors.scss","webpack://./src/assets/sass/_button.scss"],"names":[],"mappings":"AAAA,gBAAgB;AAEhB;EACI,YAAA;EACA,iBAAA;EACA,cAAA;EACA,aAAA;EACA,sBAAA;EACA,aAAA;EACA,mBAAA;EACA,SAAA;EACA,uBAAA;EACA,SAAA;EACA,uBCbe;ADanB;;AAGA;EACI,YAAA;EACA,kBAAA;EACA,mBAAA;EACA,iBAAA;EACA,uCAAA;EACA,mBAAA;EACA,aAAA;EACA,kBAAA;EACA,YAAA;AAAJ;;AAGA;EACI,YAAA;EACA,4BCXe;EDYf,YAAA;EACA,gBAAA;EACA,aAAA;EACA,gBAAA;EAEA,qBAAA;AADJ;;AAIA;EACI,yBAAA;EACA,eAAA;EACA,YAAA;EACA,6CAAA;EACA,4BCzBe;ADwBnB;;AAIA;EACI,aAAA;EACA,YAAA;EACA,mCCtCQ;ADqCZ;;AAQA;EACI,mCCjCiB;EDkCjB,qBAAA;EACA,aAAA;EACA,iBAAA;AALJ;;AAUA;EAEI,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,cAAA;EACA,YAAA;EACA,iBAAA;EACA,kBAAA;EAEA,kBAAA;EAIA,4CAAA;AAZJ;;AAeA;EACI,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,YAAA;EACA,kBAAA;EACA,YAAA;EACA,uCAAA;EACA,4BCxEe;EDyEf,mBAAA;AAZJ;;AAgBA;EAEI,iBAAA;EACA,WAAA;EACA,YAAA;EACA,YAAA;AAdJ;;AAmBA;EACI,gBAAA;EACA,kBAAA;EACA,eAAA;EE1GA,uCAAA;EACA,kBAAA;EACA,4BDgBiB;ECfjB,6CAAA;AF2FJ;AEzFI;EACI,qCDPiB;ECQjB,6BDFW;AD6FnB;AExFI;EACI,oCDRkB;ECSlB,sBDRY;ECSZ,0CAAA;EACA,sBAAA;AF0FR;;AAOA;EACI,aAAA;EACA,WAAA;EACA,mBAAA;EACA,yBAAA;EACA,mBAAA;AAJJ;;AAOA;EACI,mBAAA;AAJJ","sourcesContent":["@import '../../../assets/sass/main';\r\n\r\n.newNote {\r\n    width: 40rem;\r\n    min-height: 30rem;\r\n    padding: 8px 0;\r\n    display: flex;\r\n    flex-direction: column;\r\n    /* 使子元素竖直排列 */\r\n    align-items: center;\r\n    /* 水平居中 */\r\n    justify-content: center;\r\n    /* 垂直居中 */\r\n    background-color: $background-color\r\n}\r\n\r\n.titleContainer {\r\n    width: 30rem;\r\n    min-height: 1.5rem;\r\n    margin-bottom: 10px;\r\n    font-size: 1.5rem;\r\n    border: 1px solid $input-border-color;\r\n    /* 设置正常状态的边框颜色为蓝色 */\r\n    display: flex;\r\n    border-radius: 5px;\r\n    padding: 3px;\r\n}\r\n\r\n.titleInput {\r\n    flex-grow: 1;\r\n    color: $text-color-daker;\r\n    border: none;\r\n    box-shadow: none;\r\n    outline: none;\r\n    /* 允许元素占用剩余的空间 */\r\n    // border: 1px solid $input-border-color; \r\n    /* 添加一些与select元素的间距 */\r\n}\r\n\r\n.documentTypeSelect {\r\n    padding: 0px 30px 0px 5px;\r\n    font-size: 1rem;\r\n    border: none;\r\n    border-left: 1px dashed $input-border-color;\r\n    color: $text-color-daker;\r\n}\r\n\r\n.documentTypeSelect:focus {\r\n    outline: none;\r\n    border: none;\r\n    border-color: $svg-color;\r\n    // border-color: initial; /* 根据需要，可以移除或设置为特定的颜色 */\r\n    //box-shadow: none; /* 有些浏览器可能为聚焦状态添加了阴影，也可以将其移除 */\r\n\r\n\r\n}\r\n\r\n.title:focus {\r\n    border-color: $input-border-color;\r\n    /* 设置获得焦点时的边框颜色也为蓝色 */\r\n    outline: none;\r\n    /* 移除浏览器默认的焦点轮廓 */\r\n\r\n\r\n}\r\n\r\n.title-icon {\r\n\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    flex-shrink: 0;\r\n    flex-grow: 0;\r\n    min-width: 1.7rem;\r\n    min-height: 1.5rem;\r\n\r\n    position: relative;\r\n\r\n\r\n\r\n    border-left: 1px solid $input-border-color;\r\n}\r\n\r\n.contentContainer {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    width: 30rem;\r\n    border-radius: 5px;\r\n    padding: 2px;\r\n    border: 1px solid $input-border-color;\r\n    color: $text-color-daker;\r\n    /* 设置正常状态的边框颜色为蓝色 */\r\n\r\n}\r\n\r\n.content {\r\n\r\n    min-height: 20rem;\r\n    width: 100%;\r\n    height: 100%;\r\n    border: none;\r\n    //border: 1px solid  $input-border-color; /* 设置正常状态的边框颜色为蓝色 */\r\n}\r\n\r\n\r\n.button {\r\n    margin-top: 10px;\r\n    min-height: 1.7rem;\r\n    min-width: 5rem;\r\n    @include buttonStyles;\r\n}\r\n\r\n\r\n.buttons {\r\n    display: flex;\r\n    width: 100%;\r\n    flex-direction: row;\r\n    justify-content: flex-end;\r\n    padding-right: 5rem;\r\n}\r\n\r\n.buttonConatinerLeft {\r\n    padding-right: 1rem;\r\n\r\n}\r\n\r\n.buttonConatinerRight {\r\n    //margin-right: 20px;\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n\r\n\r\n\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(75, 75, 82, 0.9);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);","\r\n@mixin buttonStyles {\r\n   \r\n    border: 2px solid $input-border-color;\r\n    border-radius: 3px;\r\n    color: $text-color-lighter;\r\n    transition: background-color 0.3s, color 0.3s;\r\n\r\n    &:hover {\r\n        background-color: $hover-background-color;  \r\n        color: $text-color-hover;  \r\n    }\r\n\r\n    &:active {\r\n        background-color: $active-background-color;  \r\n        color: $text-color-active;  \r\n        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);\r\n        transform: scale(0.97);\r\n    }\r\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"newNote": `RmYQYqpapt8cfkLZrSJh`,
@@ -36610,7 +36611,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
   /* 水平居中 */
   width: 304px;
   height: 384px;
-}`, "",{"version":3,"sources":["webpack://./src/content/Overlay/Plan/dialog.module.scss","webpack://./src/content/Overlay/overlay.module.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AAAA,gBAAgB;ACEhB;EACI,oBAAA;EACA,kBAAA;EACA,cAAA;EACA,cAAA;EACA,iCCckB;AFdtB;;ACIA;EACI,eAAA;EACA,QAAA;EACA,SAAA;EACA,YAAA;EACA,aAAA;ADDJ;;ACKA;EAEI,eAAA;EACA,QAAA;EACA,SAAA;EACA,YAAA;EACA,aAAA;EACA,uCCPW;EDQX,aAAA;EACA,uBAAA;EACA,SAAA;EACA,mBAAA;EACA,SAAA;ADHJ;;ACOA;EACI,kBAAA;EAEA,iBCvCe;EDwCf,kBAAA;EACA,6BAAA;EACA,yHAAA;EAGA,gBAAA;ADPJ;;AAnCA;EAII,aAAA;EACA,mBAAA;EACA,SAAA;EACA,uBAAA;EACA,SAAA;EAEA,YAAA;EACA,aAAA;AAkCJ","sourcesContent":["@import '../../../assets/sass/main';\r\n@import '../overlay.module.scss';\r\n\r\n.dialog {\r\n    ///width: 15rem;\r\n    // padding: 8px 12px 8px 8px;\r\n    //margin-right: 10px;\r\n    display: flex;\r\n    align-items: center;\r\n    /* 垂直居中 */\r\n    justify-content: center;\r\n    /* 水平居中 */\r\n\r\n    width: 304px; // 可以根据你的需求设置这个值\r\n    height: 384px; // 同样，可以根据你的需求设置这个值\r\n}","@import '../../assets/sass/main';\r\n\r\n.overlay {\r\n    pointer-events: auto;\r\n    position: relative;\r\n    z-index: 10000;\r\n    display: block;\r\n    background-color: $ovelay-color-darker;\r\n\r\n}\r\n\r\n.innerContainer {\r\n    position: fixed;\r\n    top: 0px;\r\n    left: 0px;\r\n    width: 100vw;\r\n    height: 100vh;\r\n\r\n}\r\n\r\n.innerCenterContainer {\r\n\r\n    position: fixed;\r\n    top: 0px;\r\n    left: 0px;\r\n    width: 100vw;\r\n    height: 100vh;\r\n    background-color: $ovelay-color;\r\n    display: flex;\r\n    justify-content: center;\r\n    /* 水平居中 */\r\n    align-items: center;\r\n    /* 垂直居中 */\r\n\r\n}\r\n\r\n.dialogContainer {\r\n    border-radius: 4px;\r\n\r\n    background: $background-color;\r\n    position: relative;\r\n    max-width: calc(100vw - 24px);\r\n    box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px,\r\n        rgba(15, 15, 15, 0.1) 0px 3px 6px,\r\n        rgba(15, 15, 15, 0.2) 0px 9px 24px;\r\n    overflow: hidden;\r\n\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(75, 75, 82, 0.9);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/content/Overlay/Plan/dialog.module.scss","webpack://./src/content/Overlay/overlay.module.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AAAA,gBAAgB;ACEhB;EACI,oBAAA;EACA,kBAAA;EACA,cAAA;EACA,cAAA;EACA,iCCiBkB;AFjBtB;;ACIA;EACI,eAAA;EACA,QAAA;EACA,SAAA;EACA,YAAA;EACA,aAAA;ADDJ;;ACKA;EAEI,eAAA;EACA,QAAA;EACA,SAAA;EACA,YAAA;EACA,aAAA;EACA,uCCJW;EDKX,aAAA;EACA,uBAAA;EACA,SAAA;EACA,mBAAA;EACA,SAAA;ADHJ;;ACOA;EACI,kBAAA;EAEA,iBCvCe;EDwCf,kBAAA;EACA,6BAAA;EACA,yHAAA;EAGA,gBAAA;ADPJ;;AAnCA;EAII,aAAA;EACA,mBAAA;EACA,SAAA;EACA,uBAAA;EACA,SAAA;EAEA,YAAA;EACA,aAAA;AAkCJ","sourcesContent":["@import '../../../assets/sass/main';\r\n@import '../overlay.module.scss';\r\n\r\n.dialog {\r\n    ///width: 15rem;\r\n    // padding: 8px 12px 8px 8px;\r\n    //margin-right: 10px;\r\n    display: flex;\r\n    align-items: center;\r\n    /* 垂直居中 */\r\n    justify-content: center;\r\n    /* 水平居中 */\r\n\r\n    width: 304px; // 可以根据你的需求设置这个值\r\n    height: 384px; // 同样，可以根据你的需求设置这个值\r\n}","@import '../../assets/sass/main';\r\n\r\n.overlay {\r\n    pointer-events: auto;\r\n    position: relative;\r\n    z-index: 10000;\r\n    display: block;\r\n    background-color: $ovelay-color-darker;\r\n\r\n}\r\n\r\n.innerContainer {\r\n    position: fixed;\r\n    top: 0px;\r\n    left: 0px;\r\n    width: 100vw;\r\n    height: 100vh;\r\n\r\n}\r\n\r\n.innerCenterContainer {\r\n\r\n    position: fixed;\r\n    top: 0px;\r\n    left: 0px;\r\n    width: 100vw;\r\n    height: 100vh;\r\n    background-color: $ovelay-color;\r\n    display: flex;\r\n    justify-content: center;\r\n    /* 水平居中 */\r\n    align-items: center;\r\n    /* 垂直居中 */\r\n\r\n}\r\n\r\n.dialogContainer {\r\n    border-radius: 4px;\r\n\r\n    background: $background-color;\r\n    position: relative;\r\n    max-width: calc(100vw - 24px);\r\n    box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px,\r\n        rgba(15, 15, 15, 0.1) 0px 3px 6px,\r\n        rgba(15, 15, 15, 0.2) 0px 9px 24px;\r\n    overflow: hidden;\r\n\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n\r\n\r\n\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(75, 75, 82, 0.9);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"overlay": `tOvMBi3GwKlM7F6nbU8q`,
@@ -36782,7 +36783,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
   max-width: calc(100vw - 24px);
   box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 3px 6px, rgba(15, 15, 15, 0.2) 0px 9px 24px;
   overflow: hidden;
-}`, "",{"version":3,"sources":["webpack://./src/content/Overlay/overlay.module.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AAAA,gBAAgB;AAEhB;EACI,oBAAA;EACA,kBAAA;EACA,cAAA;EACA,cAAA;EACA,iCCckB;ADdtB;;AAIA;EACI,eAAA;EACA,QAAA;EACA,SAAA;EACA,YAAA;EACA,aAAA;AADJ;;AAKA;EAEI,eAAA;EACA,QAAA;EACA,SAAA;EACA,YAAA;EACA,aAAA;EACA,uCCPW;EDQX,aAAA;EACA,uBAAA;EACA,SAAA;EACA,mBAAA;EACA,SAAA;AAHJ;;AAOA;EACI,kBAAA;EAEA,iBCvCe;EDwCf,kBAAA;EACA,6BAAA;EACA,yHAAA;EAGA,gBAAA;AAPJ","sourcesContent":["@import '../../assets/sass/main';\r\n\r\n.overlay {\r\n    pointer-events: auto;\r\n    position: relative;\r\n    z-index: 10000;\r\n    display: block;\r\n    background-color: $ovelay-color-darker;\r\n\r\n}\r\n\r\n.innerContainer {\r\n    position: fixed;\r\n    top: 0px;\r\n    left: 0px;\r\n    width: 100vw;\r\n    height: 100vh;\r\n\r\n}\r\n\r\n.innerCenterContainer {\r\n\r\n    position: fixed;\r\n    top: 0px;\r\n    left: 0px;\r\n    width: 100vw;\r\n    height: 100vh;\r\n    background-color: $ovelay-color;\r\n    display: flex;\r\n    justify-content: center;\r\n    /* 水平居中 */\r\n    align-items: center;\r\n    /* 垂直居中 */\r\n\r\n}\r\n\r\n.dialogContainer {\r\n    border-radius: 4px;\r\n\r\n    background: $background-color;\r\n    position: relative;\r\n    max-width: calc(100vw - 24px);\r\n    box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px,\r\n        rgba(15, 15, 15, 0.1) 0px 3px 6px,\r\n        rgba(15, 15, 15, 0.2) 0px 9px 24px;\r\n    overflow: hidden;\r\n\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(75, 75, 82, 0.9);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/content/Overlay/overlay.module.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AAAA,gBAAgB;AAEhB;EACI,oBAAA;EACA,kBAAA;EACA,cAAA;EACA,cAAA;EACA,iCCiBkB;ADjBtB;;AAIA;EACI,eAAA;EACA,QAAA;EACA,SAAA;EACA,YAAA;EACA,aAAA;AADJ;;AAKA;EAEI,eAAA;EACA,QAAA;EACA,SAAA;EACA,YAAA;EACA,aAAA;EACA,uCCJW;EDKX,aAAA;EACA,uBAAA;EACA,SAAA;EACA,mBAAA;EACA,SAAA;AAHJ;;AAOA;EACI,kBAAA;EAEA,iBCvCe;EDwCf,kBAAA;EACA,6BAAA;EACA,yHAAA;EAGA,gBAAA;AAPJ","sourcesContent":["@import '../../assets/sass/main';\r\n\r\n.overlay {\r\n    pointer-events: auto;\r\n    position: relative;\r\n    z-index: 10000;\r\n    display: block;\r\n    background-color: $ovelay-color-darker;\r\n\r\n}\r\n\r\n.innerContainer {\r\n    position: fixed;\r\n    top: 0px;\r\n    left: 0px;\r\n    width: 100vw;\r\n    height: 100vh;\r\n\r\n}\r\n\r\n.innerCenterContainer {\r\n\r\n    position: fixed;\r\n    top: 0px;\r\n    left: 0px;\r\n    width: 100vw;\r\n    height: 100vh;\r\n    background-color: $ovelay-color;\r\n    display: flex;\r\n    justify-content: center;\r\n    /* 水平居中 */\r\n    align-items: center;\r\n    /* 垂直居中 */\r\n\r\n}\r\n\r\n.dialogContainer {\r\n    border-radius: 4px;\r\n\r\n    background: $background-color;\r\n    position: relative;\r\n    max-width: calc(100vw - 24px);\r\n    box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px,\r\n        rgba(15, 15, 15, 0.1) 0px 3px 6px,\r\n        rgba(15, 15, 15, 0.2) 0px 9px 24px;\r\n    overflow: hidden;\r\n\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n\r\n\r\n\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(75, 75, 82, 0.9);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"overlay": `qRlBMOGQ7wS_Z2vapm_4`,
@@ -36823,7 +36824,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.dy25DFmHxrdVmTmuGBBs {
 .th1nTLsXK66EI1E0aTzD {
   color: rgba(47, 53, 55, 0.8);
   font-size: 1rem;
-}`, "",{"version":3,"sources":["webpack://./src/content/app.module.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AAEA;EACI,uBCHe;EDIf,kBAAA;EACA,YAAA;AADJ;;AAKA;EACI,4BCMe;EDLf,eAAA;AAFJ","sourcesContent":["@import '../assets/sass/main';\r\n\r\n.leftBar {\r\n    background-color: $background-color;\r\n    border-radius: 4px;\r\n    padding: 2px;\r\n    // 您可以根据需要调整这个值\r\n}\r\n\r\n.user_name {\r\n    color: $text-color-daker;\r\n    font-size: 1rem;\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(75, 75, 82, 0.9);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/content/app.module.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AAEA;EACI,uBCHe;EDIf,kBAAA;EACA,YAAA;AADJ;;AAKA;EACI,4BCSe;EDRf,eAAA;AAFJ","sourcesContent":["@import '../assets/sass/main';\r\n\r\n.leftBar {\r\n    background-color: $background-color;\r\n    border-radius: 4px;\r\n    padding: 2px;\r\n    // 您可以根据需要调整这个值\r\n}\r\n\r\n.user_name {\r\n    color: $text-color-daker;\r\n    font-size: 1rem;\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n\r\n\r\n\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(75, 75, 82, 0.9);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"leftBar": `dy25DFmHxrdVmTmuGBBs`,
@@ -36859,7 +36860,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.KebabSVG {
   display: block;
   fill: rgba(47, 53, 55, 0.6);
   flex-shrink: 0;
-}`, "",{"version":3,"sources":["webpack://./src/svg/KebabSVG.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AACA;EACI,eAAA;EACA,YAAA;EACA,cAAA;EACA,2BCIQ;EDHR,cAAA;AAAJ","sourcesContent":["@import '../assets/sass/main';\r\n.KebabSVG {\r\n    width: 0.875rem;\r\n    height: 100%;\r\n    display: block;\r\n    fill: $svg-color;\r\n    flex-shrink: 0;\r\n}\r\n","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(75, 75, 82, 0.9);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/svg/KebabSVG.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AACA;EACI,eAAA;EACA,YAAA;EACA,cAAA;EACA,2BCOQ;EDNR,cAAA;AAAJ","sourcesContent":["@import '../assets/sass/main';\r\n.KebabSVG {\r\n    width: 0.875rem;\r\n    height: 100%;\r\n    display: block;\r\n    fill: $svg-color;\r\n    flex-shrink: 0;\r\n}\r\n","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n\r\n\r\n\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(75, 75, 82, 0.9);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -36892,7 +36893,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.ToggleSVG {
   fill: rgba(47, 53, 55, 0.6);
   flex-shrink: 0;
   transition: transform 200ms ease-out 0s;
-}`, "",{"version":3,"sources":["webpack://./src/svg/ToggleSVG.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AAGA;EACI,cAAA;EACA,eAAA;EACA,cAAA;EACA,2BCEQ;EDDR,cAAA;EACA,uCAAA;AAFJ","sourcesContent":["\r\n\r\n@import '../assets/sass/main';\r\n.ToggleSVG{\r\n    width: 0.75rem;\r\n    height: 0.75rem;\r\n    display: block;\r\n    fill: $svg-color;\r\n    flex-shrink: 0;\r\n    transition: transform 200ms ease-out 0s;\r\n   \r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(75, 75, 82, 0.9);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/svg/ToggleSVG.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AAGA;EACI,cAAA;EACA,eAAA;EACA,cAAA;EACA,2BCKQ;EDJR,cAAA;EACA,uCAAA;AAFJ","sourcesContent":["\r\n\r\n@import '../assets/sass/main';\r\n.ToggleSVG{\r\n    width: 0.75rem;\r\n    height: 0.75rem;\r\n    display: block;\r\n    fill: $svg-color;\r\n    flex-shrink: 0;\r\n    transition: transform 200ms ease-out 0s;\r\n   \r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n\r\n\r\n\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(75, 75, 82, 0.9);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -36936,7 +36937,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.document-svg {
   text-anchor: middle;
   alignment-baseline: middle;
   fill: rgba(47, 53, 55, 0.6);
-}`, "",{"version":3,"sources":["webpack://./src/svg/document-svg.scss","webpack://./src/assets/sass/_colors.scss","webpack://./src/svg/document-prompt-svg.scss"],"names":[],"mappings":"AACA;EAEI,cAAA;EACA,UAAA;EACA,cAAA;EACA,6BCGQ;EDFR,iBAAA;AEDJ;;AFGA;EACI,6BAAA;AEAJ;;AARA;EACI,cAAA;EACA,wBAAA;EACA,mBAAA;EACA,0BAAA;EACA,2BDEQ;ACSZ","sourcesContent":["@import '../assets/sass/main';\r\n.document-svg {\r\n\r\n    display: block;\r\n    fill: none;\r\n    flex-shrink: 0;\r\n    stroke:$svg-color;\r\n    stroke-width:0.5;\r\n}\r\n.svg-lighter-color{\r\n    stroke: $svg-color-lighter;\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(75, 75, 82, 0.9);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);","@import '../assets/sass/main';\r\n@import './document-svg.scss';\r\n.document-prompt-text {\r\n    font-size: 8px;\r\n    font-size: \"Courier New\";\r\n    text-anchor: middle;\r\n    alignment-baseline: middle;\r\n    fill: $svg-color;\r\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/svg/document-svg.scss","webpack://./src/assets/sass/_colors.scss","webpack://./src/svg/document-prompt-svg.scss"],"names":[],"mappings":"AACA;EAEI,cAAA;EACA,UAAA;EACA,cAAA;EACA,6BCMQ;EDLR,iBAAA;AEDJ;;AFGA;EACI,6BCGgB;ACHpB;;AARA;EACI,cAAA;EACA,wBAAA;EACA,mBAAA;EACA,0BAAA;EACA,2BDKQ;ACMZ","sourcesContent":["@import '../assets/sass/main';\r\n.document-svg {\r\n\r\n    display: block;\r\n    fill: none;\r\n    flex-shrink: 0;\r\n    stroke:$svg-color;\r\n    stroke-width:0.5;\r\n}\r\n.svg-lighter-color{\r\n    stroke: $svg-color-lighter;\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n\r\n\r\n\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(75, 75, 82, 0.9);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);","@import '../assets/sass/main';\r\n@import './document-svg.scss';\r\n.document-prompt-text {\r\n    font-size: 8px;\r\n    font-size: \"Courier New\";\r\n    text-anchor: middle;\r\n    alignment-baseline: middle;\r\n    fill: $svg-color;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -36972,7 +36973,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.document-svg {
 
 .svg-lighter-color {
   stroke: rgba(47, 53, 55, 0.3);
-}`, "",{"version":3,"sources":["webpack://./src/svg/document-svg.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AACA;EAEI,cAAA;EACA,UAAA;EACA,cAAA;EACA,6BCGQ;EDFR,iBAAA;AADJ;;AAGA;EACI,6BAAA;AAAJ","sourcesContent":["@import '../assets/sass/main';\r\n.document-svg {\r\n\r\n    display: block;\r\n    fill: none;\r\n    flex-shrink: 0;\r\n    stroke:$svg-color;\r\n    stroke-width:0.5;\r\n}\r\n.svg-lighter-color{\r\n    stroke: $svg-color-lighter;\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(75, 75, 82, 0.9);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/svg/document-svg.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AACA;EAEI,cAAA;EACA,UAAA;EACA,cAAA;EACA,6BCMQ;EDLR,iBAAA;AADJ;;AAGA;EACI,6BCGgB;ADHpB","sourcesContent":["@import '../assets/sass/main';\r\n.document-svg {\r\n\r\n    display: block;\r\n    fill: none;\r\n    flex-shrink: 0;\r\n    stroke:$svg-color;\r\n    stroke-width:0.5;\r\n}\r\n.svg-lighter-color{\r\n    stroke: $svg-color-lighter;\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n\r\n\r\n\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(75, 75, 82, 0.9);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -37026,7 +37027,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.svg-large, .svg-small {
 
 .svg-fill-darker {
   fill: rgb(25, 25, 29);
-}`, "",{"version":3,"sources":["webpack://./src/svg/svg.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AAGA;EAGI,UAAA;EACA,6BCEQ;ADNZ;AAaA;EACI,kBAAA;EAEA,aAAA;EACA,WAAA;AAZJ;;AAgBA;EACI,iBAAA;AAbJ;;AAmBA;EAEI,kBAAA;AAjBJ;;AAqBA;EACI,6BC5BgB;ADUpB;;AAsBA;EACI,2BC7BqB;ADUzB;;AAsBA;EACI,qBCnCa;ADgBjB","sourcesContent":["@import '../assets/sass/main';\r\n\r\n\r\n%svg-shared {\r\n\r\n\r\n    fill: none;\r\n    stroke: $svg-color;\r\n\r\n\r\n    &:hover {\r\n        //background-color: $hover-background-color; /* Darker red on hover */\r\n    }\r\n}\r\n\r\n\r\n.svg-popup {\r\n    stroke-width: 20px;\r\n    //background-image: linear-gradient(to right, #4FD1C5, #3B82F6);\r\n    stroke: white;\r\n    fill: white;\r\n}\r\n\r\n\r\n.svg-small {\r\n    stroke-width: 1px;\r\n    @extend %svg-shared;\r\n\r\n}\r\n\r\n\r\n.svg-large {\r\n    @extend %svg-shared;\r\n    stroke-width: 20px;\r\n}\r\n\r\n\r\n.svg-ligther {\r\n    stroke: $svg-color-lighter;\r\n}\r\n\r\n\r\n.svg-fill-lighter {\r\n    fill: $svg-fill-color-lighter;\r\n}\r\n\r\n.svg-fill-darker {\r\n    fill: $svg-fill-color;\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(75, 75, 82, 0.9);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/svg/svg.scss","webpack://./src/assets/sass/_colors.scss"],"names":[],"mappings":"AAGA;EAGI,UAAA;EACA,6BCKQ;ADTZ;AAaA;EACI,kBAAA;EAEA,aAAA;EACA,WAAA;AAZJ;;AAgBA;EACI,iBAAA;AAbJ;;AAmBA;EAEI,kBAAA;AAjBJ;;AAqBA;EACI,6BCzBgB;ADOpB;;AAsBA;EACI,2BC1BqB;ADOzB;;AAsBA;EACI,qBChCa;ADajB","sourcesContent":["@import '../assets/sass/main';\r\n\r\n\r\n%svg-shared {\r\n\r\n\r\n    fill: none;\r\n    stroke: $svg-color;\r\n\r\n\r\n    &:hover {\r\n        //background-color: $hover-background-color; /* Darker red on hover */\r\n    }\r\n}\r\n\r\n\r\n.svg-popup {\r\n    stroke-width: 20px;\r\n    //background-image: linear-gradient(to right, #4FD1C5, #3B82F6);\r\n    stroke: white;\r\n    fill: white;\r\n}\r\n\r\n\r\n.svg-small {\r\n    stroke-width: 1px;\r\n    @extend %svg-shared;\r\n\r\n}\r\n\r\n\r\n.svg-large {\r\n    @extend %svg-shared;\r\n    stroke-width: 20px;\r\n}\r\n\r\n\r\n.svg-ligther {\r\n    stroke: $svg-color-lighter;\r\n}\r\n\r\n\r\n.svg-fill-lighter {\r\n    fill: $svg-fill-color-lighter;\r\n}\r\n\r\n.svg-fill-darker {\r\n    fill: $svg-fill-color;\r\n}","$background-color: white;\r\n\r\n$hover-background-color: rgba(0, 0, 0, 0.09);\r\n\r\n\r\n\r\n$active-background-color: rgba(0, 0, 0, 0.2);\r\n$text-color-active: rgba(47, 53, 55, 1);\r\n$text-color-hover: rgba(47, 53, 55, 0.75);\r\n\r\n$hover-svg-color: rgba(25, 23, 17, 0.8);\r\n\r\n$svg-color: rgba(47, 53, 55, 0.6);\r\n$svg-color-lighter: rgba(47, 53, 55, 0.3);\r\n\r\n$svg-fill-color: rgba(25, 25, 29);\r\n\r\n$svg-fill-color-lighter: rgba(75, 75, 82, 0.9);\r\n\r\n$text-color-daker: rgba(47, 53, 55, 0.8);\r\n\r\n$text-color-lighter: rgba(47, 53, 55, 0.5);\r\n\r\n$ovelay-color: rgba(47, 53, 55, 0.3);\r\n$ovelay-color-darker: rgba(47, 53, 55, 1);\r\n$input-border-color: rgba(47, 53, 55, 0.6);"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -75040,6 +75041,91 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
+/***/ "./src/app/account/stripePayment.ts":
+/*!******************************************!*\
+  !*** ./src/app/account/stripePayment.ts ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getCheckoutUrl: () => (/* binding */ getCheckoutUrl),
+/* harmony export */   getPortalUrl: () => (/* binding */ getPortalUrl)
+/* harmony export */ });
+/* harmony import */ var firebase_auth__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! firebase/auth */ "./node_modules/firebase/auth/dist/esm/index.esm.js");
+/* harmony import */ var firebase_firestore__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! firebase/firestore */ "./node_modules/firebase/firestore/dist/esm/index.esm.js");
+/* harmony import */ var firebase_functions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! firebase/functions */ "./node_modules/firebase/functions/dist/esm/index.esm.js");
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+
+
+
+const getCheckoutUrl = (app, priceId) => __awaiter(void 0, void 0, void 0, function* () {
+    var _a;
+    const auth = (0,firebase_auth__WEBPACK_IMPORTED_MODULE_0__.getAuth)(app);
+    const userId = (_a = auth.currentUser) === null || _a === void 0 ? void 0 : _a.uid;
+    if (!userId)
+        throw new Error("User is not authenticated");
+    const db = (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.getFirestore)(app);
+    const checkoutSessionRef = (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.collection)(db, "customers", userId, "checkout_sessions");
+    const docRef = yield (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.addDoc)(checkoutSessionRef, {
+        price: priceId,
+        success_url: window.location.origin,
+        cancel_url: window.location.origin,
+    });
+    return new Promise((resolve, reject) => {
+        const unsubscribe = (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.onSnapshot)(docRef, (snap) => {
+            const { error, url } = snap.data();
+            if (error) {
+                unsubscribe();
+                reject(new Error(`An error occurred: ${error.message}`));
+            }
+            if (url) {
+                console.log("Stripe Checkout URL:", url);
+                unsubscribe();
+                resolve(url);
+            }
+        });
+    });
+});
+const getPortalUrl = (app) => __awaiter(void 0, void 0, void 0, function* () {
+    const auth = (0,firebase_auth__WEBPACK_IMPORTED_MODULE_0__.getAuth)(app);
+    const user = auth.currentUser;
+    let dataWithUrl;
+    try {
+        const functions = (0,firebase_functions__WEBPACK_IMPORTED_MODULE_2__.getFunctions)(app, "us-east1");
+        const functionRef = (0,firebase_functions__WEBPACK_IMPORTED_MODULE_2__.httpsCallable)(functions, "ext-firestore-stripe-payments-createPortalLink");
+        const { data } = yield functionRef({
+            customerId: user === null || user === void 0 ? void 0 : user.uid,
+            returnUrl: window.location.origin,
+        });
+        // Add a type to the data
+        dataWithUrl = data;
+        console.log("Reroute to Stripe portal: ", dataWithUrl.url);
+    }
+    catch (error) {
+        console.error(error);
+    }
+    return new Promise((resolve, reject) => {
+        if (dataWithUrl.url) {
+            resolve(dataWithUrl.url);
+        }
+        else {
+            reject(new Error("No url returned"));
+        }
+    });
+});
+
+
+/***/ }),
+
 /***/ "./src/app/firebase.tsx":
 /*!******************************!*\
   !*** ./src/app/firebase.tsx ***!
@@ -75116,6 +75202,27 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+//import { setSelectedChatByURL } from './redux/actions/noteActions'
+/*
+function setSelectedChat() {
+    const dispatch = useDispatch();
+    dispatch(setSelectedChatByURL(window.location.href));
+}
+
+function observeDOMChanges(chatHistoryRootNotes) {
+    const observer = new MutationObserver(mutations => {
+        mutations.forEach(mutation => {
+            if (mutation.addedNodes.length > 0) {
+                setSelectedChat();
+            }
+        });
+    });
+
+    const config = { childList: true, subtree: true };
+    observer.observe(document.body, config);
+
+    return observer; // 返回 observer 以便于清理
+}*/
 function App() {
     const appState = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)((state) => state.app);
     const allNotesData = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)((state) => state.notes);
@@ -75127,7 +75234,12 @@ function App() {
     if (allNotesData.length > appState.notesLimitation) {
         const dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch)();
         dispatch((0,_redux_actions_planActions__WEBPACK_IMPORTED_MODULE_9__.showPlanOverlay)(window.innerWidth / 2 - 200, window.innerHeight / 2 - 200));
-    }
+    } /*
+    useEffect(() => {
+        const observer = observeDOMChanges(chatHistoryRootNotes); // 接收 observer
+        return () => observer.disconnect(); // 组件卸载时断开观察器
+    }, [chatHistoryRootNotes]); // 依赖项数组
+*/
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _app_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].leftBar },
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Block_AccountBlock__WEBPACK_IMPORTED_MODULE_7__["default"], Object.assign({}, appState)),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Block_LeftBarBlock2__WEBPACK_IMPORTED_MODULE_3__["default"], { rootNotes: promptRootNotes, allNotesData: allNotesData, title: "prompt" }),
@@ -75159,7 +75271,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var firebase_auth__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! firebase/auth */ "./node_modules/firebase/auth/dist/esm/index.esm.js");
 /* harmony import */ var _redux_Store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../redux/Store */ "./src/content/redux/Store.tsx");
 /* harmony import */ var _redux_actions_appActions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../redux/actions/appActions */ "./src/content/redux/actions/appActions.tsx");
-/* harmony import */ var _popup_Plan_stripePayment__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../popup/Plan/stripePayment */ "./src/popup/Plan/stripePayment.ts");
+/* harmony import */ var _app_account_stripePayment__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../app/account/stripePayment */ "./src/app/account/stripePayment.ts");
 /* harmony import */ var _svg_CardSVG__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../svg/CardSVG */ "./src/svg/CardSVG.tsx");
 /* harmony import */ var _svg_LoginOutSVG__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../svg/LoginOutSVG */ "./src/svg/LoginOutSVG.tsx");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
@@ -75277,7 +75389,7 @@ function AccountBlock(appState) {
     // content script
     function manageSubscription() {
         return __awaiter(this, void 0, void 0, function* () {
-            const portalUrl = yield (0,_popup_Plan_stripePayment__WEBPACK_IMPORTED_MODULE_7__.getPortalUrl)(app); // 假设 getPortalUrl 已经定义
+            const portalUrl = yield (0,_app_account_stripePayment__WEBPACK_IMPORTED_MODULE_7__.getPortalUrl)(app); // 假设 getPortalUrl 已经定义
             chrome.runtime.sendMessage({ action: "openNewTab", url: portalUrl });
         });
     }
@@ -75332,7 +75444,7 @@ function BlockHead({ title, rootNotes }) {
             "chat": "note_chat"
         };
         let parentNoteID = parentNoteIDs[title];
-        dispatch((0,_redux_actions_overlayNewNoteActions__WEBPACK_IMPORTED_MODULE_2__.showNewNoteOverlay)(parentNoteID));
+        dispatch((0,_redux_actions_overlayNewNoteActions__WEBPACK_IMPORTED_MODULE_2__.showNewNoteOverlay)(parentNoteID, title));
     };
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _block_header_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].container },
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _block_header_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].title }, title),
@@ -75480,7 +75592,11 @@ function NoteTitle({ noteData }) {
             }
         }
     };
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _note_title_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].container, onClick: handleNoteClick },
+    // 根据 noteData.selected 来选择适当的样式类
+    const containerClass = noteData.selected
+        ? `${_note_title_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].container} ${_note_title_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].selected}`
+        : _note_title_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].container;
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: containerClass, onClick: handleNoteClick },
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _note_title_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].title },
             " ",
             noteData.title)));
@@ -75513,7 +75629,7 @@ __webpack_require__.r(__webpack_exports__);
 function RightKebab({ noteData }) {
     const dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useDispatch)();
     const handleClick = (event) => {
-        dispatch((0,_redux_actions_overlayMenuActions__WEBPACK_IMPORTED_MODULE_3__.showMenus)(event.clientX, event.clientY, noteData.id));
+        dispatch((0,_redux_actions_overlayMenuActions__WEBPACK_IMPORTED_MODULE_3__.showMenus)(event.clientX, event.clientY, noteData.id, noteData.noteType));
     };
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _right_kebab_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].container },
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _right_kebab_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].button, onClick: handleClick },
@@ -75575,7 +75691,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function Menu({ pointX, pointY, noteID }) {
+function Menu({ pointX, pointY, noteID, noteType }) {
     /* const menuPosition = {
          left: `${pointX}px`,
          top: `${pointY}px`
@@ -75601,7 +75717,7 @@ function Menu({ pointX, pointY, noteID }) {
         top: `${adjustedPointY}px`
     };
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: `${_menu_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].dialogContainer} ${_menu_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].menu}`, style: menuPosition },
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_MenuBlock_MenuBlock__WEBPACK_IMPORTED_MODULE_2__["default"], { noteID: noteID, menuBlockDatas: menuBlockDatas })));
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_MenuBlock_MenuBlock__WEBPACK_IMPORTED_MODULE_2__["default"], { noteID: noteID, noteType: noteType, menuBlockDatas: menuBlockDatas })));
 }
 
 
@@ -75624,8 +75740,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function MenuBlock({ menuBlockDatas, noteID }) {
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _menu_block_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].block }, menuBlockDatas.map(menuBlockData => react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_MenuItem_MenuItem__WEBPACK_IMPORTED_MODULE_1__["default"], { noteID: noteID, menuBlockData: menuBlockData, key: menuBlockData.id }))));
+function MenuBlock({ menuBlockDatas, noteID, noteType }) {
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _menu_block_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].block }, menuBlockDatas.map(menuBlockData => react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_MenuItem_MenuItem__WEBPACK_IMPORTED_MODULE_1__["default"], { noteID: noteID, noteType: noteType, menuBlockData: menuBlockData, key: menuBlockData.id }))));
 }
 
 
@@ -75740,14 +75856,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function MenuItem({ menuBlockData, noteID }) {
+function MenuItem({ menuBlockData, noteID, noteType }) {
     const dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useDispatch)();
     const handleClick = () => {
         if (menuBlockData.id === 1) {
             dispatch((0,_redux_actions_noteActions__WEBPACK_IMPORTED_MODULE_5__.deleteNote)(noteID));
         }
         else if (menuBlockData.id === 2) {
-            dispatch((0,_redux_actions_overlayNewNoteActions__WEBPACK_IMPORTED_MODULE_6__.showNewNoteOverlay)(noteID));
+            dispatch((0,_redux_actions_overlayNewNoteActions__WEBPACK_IMPORTED_MODULE_6__.showNewNoteOverlay)(noteID, noteType));
         }
         else if (menuBlockData.id === 3) {
             const currentState = _redux_Store__WEBPACK_IMPORTED_MODULE_7__["default"].getState();
@@ -75807,7 +75923,7 @@ function MenuOverlay() {
     }
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { id: "overlay", className: _overlay_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].overlay, onClick: handleOverlayClick },
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _overlay_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].innerContainer },
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Menu__WEBPACK_IMPORTED_MODULE_4__["default"], { pointX: overlayData.pointX, pointY: overlayData.pointY, noteID: overlayData.noteID }))));
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Menu__WEBPACK_IMPORTED_MODULE_4__["default"], { pointX: overlayData.pointX, pointY: overlayData.pointY, noteID: overlayData.noteID, noteType: overlayData.noteType }))));
 }
 
 
@@ -75835,13 +75951,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 //noteID means parent noteData id
-function NewNote({ parentNoteID, noteData }) {
+function NewNote({ parentNoteID, parentNoteType, noteData }) {
     const dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch)();
     const [title, setTitle] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)((noteData === null || noteData === void 0 ? void 0 : noteData.title) || '');
     const [content, setContent] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)((noteData === null || noteData === void 0 ? void 0 : noteData.content) || '');
-    const [noteType, setNoteType] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)((noteData === null || noteData === void 0 ? void 0 : noteData.noteType) || 'prompt');
+    const [noteType, setNoteType] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)((noteData === null || noteData === void 0 ? void 0 : noteData.noteType) || parentNoteType);
     //const parentNoteID = noteID;
     //
+    console.log("parentNoteID", parentNoteID, "parentNoteType", parentNoteType, "  noteType", noteData === null || noteData === void 0 ? void 0 : noteData.noteType);
     const handleOKButtonClick = () => {
         //determin if is is add or edit by noteData,              
         if (noteData) {
@@ -75916,7 +76033,7 @@ function NewNoteOverlay() {
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { id: "overlay", className: _overlay_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].overlay },
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _overlay_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].innerCenterContainer },
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _overlay_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].dialogContainer },
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_NewNote__WEBPACK_IMPORTED_MODULE_3__["default"], { noteData: overlayData.noteData, parentNoteID: overlayData.parentNoteID })))));
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_NewNote__WEBPACK_IMPORTED_MODULE_3__["default"], { noteData: overlayData.noteData, parentNoteID: overlayData.parentNoteID, parentNoteType: overlayData.parentNoteType })))));
 }
 
 
@@ -75935,7 +76052,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _app_firebase__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../app/firebase */ "./src/app/firebase.tsx");
-/* harmony import */ var _popup_Plan_stripePayment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../popup/Plan/stripePayment */ "./src/popup/Plan/stripePayment.ts");
+/* harmony import */ var _app_account_stripePayment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../app/account/stripePayment */ "./src/app/account/stripePayment.ts");
 /* harmony import */ var _plan_module_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./plan.module.scss */ "./src/content/Overlay/Plan/plan.module.scss");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _redux_actions_planActions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../redux/actions/planActions */ "./src/content/redux/actions/planActions.tsx");
@@ -76003,7 +76120,7 @@ function Plan() {
                     return;
                 }
                 console.log(priceId, "==priceId==");
-                const checkoutUrl = yield (0,_popup_Plan_stripePayment__WEBPACK_IMPORTED_MODULE_2__.getCheckoutUrl)(app, priceId);
+                const checkoutUrl = yield (0,_app_account_stripePayment__WEBPACK_IMPORTED_MODULE_2__.getCheckoutUrl)(app, priceId);
                 if (!checkoutUrl) {
                     throw new Error("Failed to get checkout URL");
                 }
@@ -76324,6 +76441,7 @@ const deleteNote = (id) => ({
 const ADD_NOTE = 'ADD_NOTE';
 const EDIT_NOTE = 'EDIT_NOTE';
 const ADD_CHAT = 'ADD_CHAT';
+//export const SET_SELECTED_CHAT = 'SET_SELECTED_CHAT';
 const addNote = (parentID, title, content, noteType) => ({
     type: ADD_NOTE,
     payload: { parentID, title, content, noteType }
@@ -76336,6 +76454,12 @@ const editNote = (parentID, noteData) => ({
     type: EDIT_NOTE,
     payload: { parentID, noteData }
 });
+/*
+export const setSelectedChatByURL = (url: string) => ({
+    type: EDIT_NOTE,
+    payload: { url }
+})
+*/
 
 
 /***/ }),
@@ -76353,10 +76477,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _types_overlayMenuTypes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../types/overlayMenuTypes */ "./src/content/redux/types/overlayMenuTypes.tsx");
 
-const showMenus = (pointX, pointY, noteID) => {
+const showMenus = (pointX, pointY, noteID, noteType) => {
     return {
         type: _types_overlayMenuTypes__WEBPACK_IMPORTED_MODULE_0__.TOGGLE_MENU_OVERLAY,
-        payload: { pointX, pointY, noteID }
+        payload: { pointX, pointY, noteID, noteType }
     };
 };
 const hideOverlay = () => {
@@ -76382,10 +76506,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _types_overlayNewNoteTypes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../types/overlayNewNoteTypes */ "./src/content/redux/types/overlayNewNoteTypes.tsx");
 
-const showNewNoteOverlay = (parentNoteID) => {
+const showNewNoteOverlay = (parentNoteID, parentNoteType) => {
     return {
         type: _types_overlayNewNoteTypes__WEBPACK_IMPORTED_MODULE_0__.SHOW_NEW_NOTE_OVERLAY,
-        payload: { parentNoteID }
+        payload: { parentNoteID, parentNoteType }
     };
 };
 const showEditNoteOverlay = (parentNoteID, noteData) => {
@@ -76577,6 +76701,23 @@ const notesReducer = (state = initialState, action) => {
             });
             _storage_storageInstance__WEBPACK_IMPORTED_MODULE_1__.noteDataStorageInstance.update(action.payload.noteData.id, action.payload.noteData);
             break;
+        /*case SET_SELECTED_CHAT:
+
+            // console.log(state.length + "   ====state.length+===========   ");
+            console.log(action.payload.url, "action.payload.url");
+            newState = state.map(note => {
+                if (note.content === action.payload.url) {
+                    // console.log(note.id + "   ====note.id +===========   " + action.payload.noteData.title);
+                    //return action.payload.noteData; // 直接使用传入的NoteData替换旧的NoteData
+                    note.selected = true;
+                } else {
+                    note.selected = false;
+                }
+                return note;
+            });
+
+            noteDataStorageInstance.update(action.payload.noteData.id, action.payload.noteData);
+            break;*/
         default:
             newState = state;
             break;
@@ -76662,7 +76803,8 @@ const createNewNoteData = ({ parentNoteID, title, content, noteType, state }) =>
         subNoteIDs: [],
         noteType,
         parentID: parentNoteID,
-        liID: null
+        liID: null,
+        selected: false
     };
 };
 const addChildNoteToState = (state, newNote) => {
@@ -76711,7 +76853,7 @@ const overlayMenuReducer = (state = initialState, action) => {
     switch (action.type) {
         case _types_overlayMenuTypes__WEBPACK_IMPORTED_MODULE_0__.TOGGLE_MENU_OVERLAY:
             //  console.log("toggle menu ovelay!!!!!!!!!!!!!!!!!!!");
-            return Object.assign(Object.assign({}, state), { showOverlay: !state.showOverlay, pointX: action.payload.pointX, pointY: action.payload.pointY, noteID: action.payload.noteID });
+            return Object.assign(Object.assign({}, state), { showOverlay: !state.showOverlay, pointX: action.payload.pointX, pointY: action.payload.pointY, noteID: action.payload.noteID, noteType: action.payload.noteType });
         case _types_overlayMenuTypes__WEBPACK_IMPORTED_MODULE_0__.HIDE_MENU_OVERLAY:
             return Object.assign(Object.assign({}, state), { showOverlay: false });
         default:
@@ -76738,12 +76880,14 @@ __webpack_require__.r(__webpack_exports__);
 const initialState = {
     showOverlay: false,
     noteData: null,
+    parentNoteID: null,
+    parentNoteType: null,
 };
 const overlayNewNoteReducer = (state = initialState, action) => {
     switch (action.type) {
         case _types_overlayNewNoteTypes__WEBPACK_IMPORTED_MODULE_0__.SHOW_NEW_NOTE_OVERLAY:
-            // console.log(" SHOW_NEW_NOTE_OVERLAY new note ovelayXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
-            return Object.assign(Object.assign({}, state), { showOverlay: true, parentNoteID: action.payload.parentNoteID });
+            console.log(" SHOW_NEW_NOT", action.payload.parentNoteType, " id ", action.payload.parentNoteID);
+            return Object.assign(Object.assign({}, state), { showOverlay: true, parentNoteID: action.payload.parentNoteID, parentNoteType: action.payload.parentNoteType });
         case _types_overlayNewNoteTypes__WEBPACK_IMPORTED_MODULE_0__.SHOW_EDIT_NOTE_OVERLAY:
             // console.log(" SHOW_NEW_NOTE_OVERLAY new note ovelayXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
             return Object.assign(Object.assign({}, state), { showOverlay: true, noteData: action.payload.noteData, parentNoteID: action.payload.parentNoteID });
@@ -77039,114 +77183,6 @@ const appStorageInstance = (0,_storageFactory__WEBPACK_IMPORTED_MODULE_0__.getSt
 
 /***/ }),
 
-/***/ "./src/popup/Plan/stripePayment.ts":
-/*!*****************************************!*\
-  !*** ./src/popup/Plan/stripePayment.ts ***!
-  \*****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   getCheckoutUrl: () => (/* binding */ getCheckoutUrl),
-/* harmony export */   getPortalUrl: () => (/* binding */ getPortalUrl)
-/* harmony export */ });
-/* harmony import */ var firebase_firestore__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! firebase/firestore */ "./node_modules/firebase/firestore/dist/esm/index.esm.js");
-/* harmony import */ var firebase_functions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! firebase/functions */ "./node_modules/firebase/functions/dist/esm/index.esm.js");
-/* harmony import */ var _app_firebase__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../app/firebase */ "./src/app/firebase.tsx");
-var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-
-
-
-const getCheckoutUrl = (app, priceId) => __awaiter(void 0, void 0, void 0, function* () {
-    var _a;
-    console.log("==getCheckoutUrl==");
-    const auth = _app_firebase__WEBPACK_IMPORTED_MODULE_2__.authInstance;
-    const userId = (_a = auth.currentUser) === null || _a === void 0 ? void 0 : _a.uid;
-    console.log(userId, "==userId==");
-    if (!userId)
-        throw new Error("User is not authenticated");
-    let currentTabUrl = "https://chat.openai.com/"; // 定义变量来保存当前的URL
-    // 获取当前活动的标签的URL
-    /*
-    await new Promise<void>((resolve) => {
-      chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-        const currentTab = tabs[0];
-        currentTabUrl = currentTab.url;
-        resolve();
-      });
-    });
-  */
-    const db = (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.getFirestore)(app);
-    const checkoutSessionRef = (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.collection)(db, "customers", userId, "checkout_sessions");
-    /// console.log(currentTabUrl, " ==currentTabUrl==");
-    const docRef = yield (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.addDoc)(checkoutSessionRef, {
-        price: priceId,
-        success_url: currentTabUrl,
-        cancel_url: currentTabUrl, // 使用currentTabUrl替代window.location.origin
-    });
-    return new Promise((resolve, reject) => {
-        const unsubscribe = (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.onSnapshot)(docRef, (snap) => {
-            const { error, url } = snap.data();
-            if (error) {
-                unsubscribe();
-                reject(new Error(`An error occurred: ${error.message}`));
-            }
-            if (url) {
-                console.log("Stripe Checkout URL:", url);
-                unsubscribe();
-                resolve(url);
-            }
-        });
-    });
-});
-const getPortalUrl = (app) => __awaiter(void 0, void 0, void 0, function* () {
-    const auth = _app_firebase__WEBPACK_IMPORTED_MODULE_2__.authInstance;
-    const user = auth.currentUser;
-    let dataWithUrl;
-    try {
-        const functions = (0,firebase_functions__WEBPACK_IMPORTED_MODULE_1__.getFunctions)(app, "us-east1");
-        const functionRef = (0,firebase_functions__WEBPACK_IMPORTED_MODULE_1__.httpsCallable)(functions, "ext-firestore-stripe-payments-createPortalLink");
-        let currentTabUrl = "https://chat.openai.com/";
-        /*
-            // 获取当前活动的标签的URL
-            await new Promise<void>((resolve) => {
-              chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-                const currentTab = tabs[0];
-                currentTabUrl = currentTab.url;
-                resolve();
-              });
-            });*/
-        const { data } = yield functionRef({
-            customerId: user === null || user === void 0 ? void 0 : user.uid,
-            returnUrl: currentTabUrl // 使用currentTabUrl替代固定的URL
-        });
-        dataWithUrl = data;
-        console.log("Reroute to Stripe portal: ", dataWithUrl.url);
-    }
-    catch (error) {
-        console.error(error);
-    }
-    return new Promise((resolve, reject) => {
-        if (dataWithUrl.url) {
-            resolve(dataWithUrl.url);
-        }
-        else {
-            reject(new Error("No url returned"));
-        }
-    });
-});
-
-
-/***/ }),
-
 /***/ "./src/svg/AccountSVG.tsx":
 /*!********************************!*\
   !*** ./src/svg/AccountSVG.tsx ***!
@@ -77231,11 +77267,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function ChatSVG() {
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", { viewBox: "0 0 16 16", className: "document-svg" },
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", { d: "M3.920805 15.4678H10.47303C11.78964 15.4678 12.47256 14.6953 12.47256 13.2256V5.03613L8.596584 1.38574C8.079786 0.804688 7.655274 0.667969 6.886233 0.667969H3.920805C2.604195 0.667969 1.921275 1.44043 1.921275 2.91016V13.2256C1.921275 14.7021 2.604195 15.4678 3.920805 15.4678Z" }),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", { d: "M11.07256,5.03613 H7.97256 V1.38574 L11.07256,5.03613 Z" }),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("line", { x1: "3.679823", y1: "7.92677", x2: "10.714013", y2: "7.92677", className: 'svg-lighter-color' }),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("line", { x1: "3.679823", y1: "10.92677", x2: "10.714013", y2: "10.92677", className: 'svg-lighter-color' })));
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", { xmlns: "http://www.w3.org/2000/svg", height: "1em", viewBox: "0 0 512 512", className: "svg-large" },
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", { d: "M168.2 384.9c-15-5.4-31.7-3.1-44.6 6.4c-8.2 6-22.3 14.8-39.4 22.7c5.6-14.7 9.9-31.3 11.3-49.4c1-12.9-3.3-25.7-11.8-35.5C60.4 302.8 48 272 48 240c0-79.5 83.3-160 208-160s208 80.5 208 160s-83.3 160-208 160c-31.6 0-61.3-5.5-87.8-15.1zM26.3 423.8c-1.6 2.7-3.3 5.4-5.1 8.1l-.3 .5c-1.6 2.3-3.2 4.6-4.8 6.9c-3.5 4.7-7.3 9.3-11.3 13.5c-4.6 4.6-5.9 11.4-3.4 17.4c2.5 6 8.3 9.9 14.8 9.9c5.1 0 10.2-.3 15.3-.8l.7-.1c4.4-.5 8.8-1.1 13.2-1.9c.8-.1 1.6-.3 2.4-.5c17.8-3.5 34.9-9.5 50.1-16.1c22.9-10 42.4-21.9 54.3-30.6c31.8 11.5 67 17.9 104.1 17.9c141.4 0 256-93.1 256-208S397.4 32 256 32S0 125.1 0 240c0 45.1 17.7 86.8 47.7 120.9c-1.9 24.5-11.4 46.3-21.4 62.9zM144 272a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm144-32a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm80 32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z" })));
 }
 
 
@@ -81012,7 +81045,7 @@ function __disposeResources(env) {
   \******************************************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('[{"id":"note_1","title":"Human-like Rewriter","content":"In the realm of textual composition, the twin pillars of \\"enigma\\" and \\"dynamism\\" hold paramount significance. The enigma delves into the intricacy of prose, while dynamism discerns the heterogeneity of sentence lengths. Conventionally, human scribes manifest elevated dynamism by alternating between concise and verbose structures. Conversely, AI-generated prose leans towards consistency in length. To craft content for me that resonates with both enigma and dynamism, remain vigilant of this nuance.In the same vein, when artificial intelligence embarks on content creation, it often selects phrasing divergent from human inclination. Incorporate esoteric lexicon to amplify the distinctiveness of the content.Your crafted blog piece should embrace a sophisticated format, steering clear of typical AI stylistics.Kindly abstain from delineating what enigma and dynamism entail, and use them solely as guiding principles for content metamorphosis. This is pivotal. In the event the prompt proves inadequate, refrain from elucidating on enigma and dynamism. Rather, respond with:[Error]: {error}. For any perceived inaccuracies, initiate a fresh conversation and employ the plugin afresh.Steer clear from mundane vernacular that\'s a hallmark of AI. Maintain cognizance of this.Opt for lexicon that\'s rich yet seldom used. Prioritize uniqueness. Never lose sight of this.Recast every fragment, every block of text into profound English. Seek out profound and singular lexemes.Please ensure the sanctity of proper nouns or entities denoted as X remains intact. This is non-negotiable. This can\'t be stressed enough.Your return should be in the English language, accentuated by both richness and clarity.","depth":0,"expand":false,"subNoteIDs":[],"noteType":"prompt","parentID":"note_prompt"},{"id":"note_2","title":"UX/UI Developer","content":"In your capacity as a Web Accessibility Expert, I\'ll furnish you with specifics concerning the layout of a web portal, application, or another digital medium. Your responsibility will be to ideate innovative methods to enhance its accessibility for all users. This might encompass formulating preliminary models, evaluating diverse layouts, and offering insights on optimal configurations. My initial query is \'Could you assist in devising a universally accessible color scheme for my upcoming web application?\'","depth":0,"expand":false,"subNoteIDs":[],"noteType":"prompt","parentID":"note_prompt"},{"id":"note_3","title":"Clear Instructions","content":"Starting with clear, specific prompts can help you obtain more accurate responses.","depth":0,"expand":false,"subNoteIDs":[],"noteType":"notion","parentID":"note_notion"},{"id":"note_4","title":"Use System Commands","content":"At times, giving commands like \'List five facts about...\' can help you get more structured answers","depth":0,"expand":true,"subNoteIDs":[],"noteType":"notion","parentID":"note_notion"},{"id":"note_5","title":"添加类型给 rootReducer","content":"https://chat.openai.com/c/c5110fe1-7c6f-45b0-8320-c770e2866ec8","depth":0,"expand":false,"subNoteIDs":[],"noteType":"chat","parentID":"note_chat"}]');
+module.exports = JSON.parse('[{"id":"note_1","title":"Human-like Rewriter","content":"In the realm of textual composition, the twin pillars of \\"enigma\\" and \\"dynamism\\" hold paramount significance...","depth":0,"expand":false,"subNoteIDs":[],"noteType":"prompt","parentID":"note_prompt","selected":false},{"id":"note_2","title":"UX/UI Developer","content":"In your capacity as a Web Accessibility Expert, I\'ll furnish you with specifics concerning the layout of a web portal...","depth":0,"expand":false,"subNoteIDs":[],"noteType":"prompt","parentID":"note_prompt","selected":false},{"id":"note_3","title":"Clear Instructions","content":"Starting with clear, specific prompts can help you obtain more accurate responses.","depth":0,"expand":false,"subNoteIDs":[],"noteType":"notion","parentID":"note_notion","selected":false},{"id":"note_4","title":"Use System Commands","content":"At times, giving commands like \'List five facts about...\' can help you get more structured answers","depth":0,"expand":true,"subNoteIDs":[],"noteType":"notion","parentID":"note_notion","selected":false},{"id":"note_5","title":"添加类型给 rootReducer","content":"https://chat.openai.com/c/c5110fe1-7c6f-45b0-8320-c770e2866ec8","depth":0,"expand":false,"subNoteIDs":[],"noteType":"chat","parentID":"note_chat","selected":false}]');
 
 /***/ })
 
@@ -81235,22 +81268,47 @@ var observer = new MutationObserver(function (mutations) {
             menuItem.addEventListener('click', () => {
                 // 添加新的聊天
                 addNewChat(textContent.trim(), fullURL, liID);
-                // 定义一个函数来创建和派发鼠标事件
-                function triggerMouseEvent(node, eventType) {
-                    var event = new MouseEvent(eventType, {
-                        view: window,
-                        bubbles: true,
-                        cancelable: true,
-                        buttons: 1 // 表示左键点击
-                    });
-                    node.dispatchEvent(event);
+                var secondChildElement = menuElement.children[1];
+                function handleClick() {
+                    secondChildElement.click(); // 触发点击事件
+                    // 设置一个延时
+                    setTimeout(function () {
+                        var element = document.getElementById('prompt-textarea');
+                        if (element) {
+                            element.click();
+                            element.focus();
+                        }
+                        else {
+                            console.log('Element with ID "prompt-textarea" not found.');
+                        }
+                        //linkElement.parentElement.parentElement.style.display = "none";
+                    }, 300); // 延迟1000毫秒（即1秒）后执行
                 }
-                // 获取目标元素，这里假设是 document，但可以是任何元素
-                var target = linkElement;
-                // 模拟鼠标点击过程
-                triggerMouseEvent(target, 'mousedown');
-                triggerMouseEvent(target, 'mouseup');
-                triggerMouseEvent(target, 'click');
+                handleClick();
+                /*
+                                // menuElement.parentElement.style.display = 'none';
+                                //定义一个函数来创建和派发鼠标事件
+                                function triggerMouseEvent(node, eventType) {
+                                    var event = new MouseEvent(eventType, {
+                                        view: window,
+                                        bubbles: true,
+                                        cancelable: false,
+                                        buttons: 1 // 表示左键点击
+                                    });
+                                    node.dispatchEvent(event);
+                                }
+                
+                                // 获取目标元素，这里假设是 document，但可以是任何元素
+                                //var target = linkElement as HTMLElement;
+                                var target = linkElement.parentElement as HTMLElement;
+                
+                                /// 模拟鼠标点击过程
+                                triggerMouseEvent(target, 'mousedown');
+                                // triggerMouseEvent(target, 'mouseup');
+                                // console.log("linkElement==   ", linkElement);
+                                // target.click();
+                */
+                // triggerMouseEvent(target, 'click');
             });
             // console.log(fullURL);
         }

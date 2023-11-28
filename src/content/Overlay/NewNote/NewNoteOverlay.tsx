@@ -34,7 +34,7 @@ export default function NewNoteOverlay() {
             <div className={style.innerCenterContainer} >
                 <div className={style.dialogContainer} >
 
-                    <NewNote noteData={overlayData.noteData} parentNoteID={overlayData.parentNoteID} />
+                    <NewNote noteData={overlayData.noteData} parentNoteID={overlayData.parentNoteID} parentNoteType={overlayData.parentNoteType} />
                 </div>
             </div>
 

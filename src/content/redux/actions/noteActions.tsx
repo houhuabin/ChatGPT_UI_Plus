@@ -20,6 +20,7 @@ export const deleteNote = (id) => ({
 export const ADD_NOTE = 'ADD_NOTE';
 export const EDIT_NOTE = 'EDIT_NOTE';
 export const ADD_CHAT = 'ADD_CHAT';
+//export const SET_SELECTED_CHAT = 'SET_SELECTED_CHAT';
 
 export const addNote = (parentID: string, title: string, content: string, noteType: NoteType) => ({
     type: ADD_NOTE,
@@ -36,4 +37,10 @@ export const editNote = (parentID: string, noteData: NoteData) => ({
     type: EDIT_NOTE,
     payload: { parentID, noteData }
 })
+/*
+export const setSelectedChatByURL = (url: string) => ({
+    type: EDIT_NOTE,
+    payload: { url }
+})
+*/
 

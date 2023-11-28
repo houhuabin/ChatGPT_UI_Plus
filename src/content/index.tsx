@@ -135,24 +135,53 @@ var observer = new MutationObserver(function (mutations) {
             menuItem.addEventListener('click', () => {
                 // 添加新的聊天
                 addNewChat(textContent.trim(), fullURL, liID);
-                // 定义一个函数来创建和派发鼠标事件
-                function triggerMouseEvent(node, eventType) {
-                    var event = new MouseEvent(eventType, {
-                        view: window,
-                        bubbles: true,
-                        cancelable: true,
-                        buttons: 1 // 表示左键点击
-                    });
-                    node.dispatchEvent(event);
+
+                var secondChildElement = menuElement.children[1] as HTMLElement;
+                function handleClick() {
+                    secondChildElement.click(); // 触发点击事件
+
+                    // 设置一个延时
+                    setTimeout(function () {
+                        var element = document.getElementById('prompt-textarea');
+                        if (element) {
+                            element.click();
+                            element.focus();
+                        } else {
+                            console.log('Element with ID "prompt-textarea" not found.');
+                        }
+                        //linkElement.parentElement.parentElement.style.display = "none";
+                    }, 300); // 延迟1000毫秒（即1秒）后执行
                 }
 
-                // 获取目标元素，这里假设是 document，但可以是任何元素
-                var target = linkElement;
 
-                // 模拟鼠标点击过程
-                // triggerMouseEvent(target, 'mousedown');
-                // triggerMouseEvent(target, 'mouseup');
-                //  triggerMouseEvent(target, 'click');
+                handleClick();
+                /*
+                                // menuElement.parentElement.style.display = 'none';
+                                //定义一个函数来创建和派发鼠标事件
+                                function triggerMouseEvent(node, eventType) {
+                                    var event = new MouseEvent(eventType, {
+                                        view: window,
+                                        bubbles: true,
+                                        cancelable: false,
+                                        buttons: 1 // 表示左键点击
+                                    });
+                                    node.dispatchEvent(event);
+                                }
+                
+                                // 获取目标元素，这里假设是 document，但可以是任何元素
+                                //var target = linkElement as HTMLElement;
+                                var target = linkElement.parentElement as HTMLElement;
+                
+                                /// 模拟鼠标点击过程
+                                triggerMouseEvent(target, 'mousedown');
+                                // triggerMouseEvent(target, 'mouseup');
+                                // console.log("linkElement==   ", linkElement);
+                                // target.click();
+                */
+
+                // triggerMouseEvent(target, 'click');
+
+
 
 
             });
@@ -171,13 +200,6 @@ var observer = new MutationObserver(function (mutations) {
     }
     //}
 });
-
-// 如果你想停止监听，可以使用以下代码
-// window.removeEventListener('click', handleClickEvent);
-
-// 如果你想停止监听，可以使用以下代码
-// unmonitorEvents(window, 'click');
-// window.removeEventListener('click', handleClickEvent);
 
 
 function getAddChatMenuItem() {
