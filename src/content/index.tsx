@@ -69,6 +69,7 @@ init();
 
 //const dispatch = useDispatch();
 function addNewChat(title, url, liID) {
+
     store.dispatch(addChat("note_chat", title, url, liID, NoteType.CHAT));
 }
 
@@ -108,6 +109,7 @@ var observer = new MutationObserver(function (mutations) {
     if (menuElement) {
         let linkElement = document.querySelector('a.flex.items-center.gap-2.rounded-lg.p-2.bg-token-surface-primary');
         let liID = linkElement.getAttribute('href');
+
         // console.log("==liID==  ", liID);
         let textDiv = linkElement.children[0];
         let textContent = textDiv.textContent;
@@ -133,8 +135,25 @@ var observer = new MutationObserver(function (mutations) {
             menuItem.addEventListener('click', () => {
                 // 添加新的聊天
                 addNewChat(textContent.trim(), fullURL, liID);
+                // 定义一个函数来创建和派发鼠标事件
+                function triggerMouseEvent(node, eventType) {
+                    var event = new MouseEvent(eventType, {
+                        view: window,
+                        bubbles: true,
+                        cancelable: true,
+                        buttons: 1 // 表示左键点击
+                    });
+                    node.dispatchEvent(event);
+                }
 
-                menuElement.remove();
+                // 获取目标元素，这里假设是 document，但可以是任何元素
+                var target = linkElement;
+
+                // 模拟鼠标点击过程
+                // triggerMouseEvent(target, 'mousedown');
+                // triggerMouseEvent(target, 'mouseup');
+                //  triggerMouseEvent(target, 'click');
+
 
             });
 
@@ -152,6 +171,13 @@ var observer = new MutationObserver(function (mutations) {
     }
     //}
 });
+
+// 如果你想停止监听，可以使用以下代码
+// window.removeEventListener('click', handleClickEvent);
+
+// 如果你想停止监听，可以使用以下代码
+// unmonitorEvents(window, 'click');
+// window.removeEventListener('click', handleClickEvent);
 
 
 function getAddChatMenuItem() {

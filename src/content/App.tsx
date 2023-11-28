@@ -13,6 +13,8 @@ import MenuOverlay from './Overlay/Menu/MenuOverlay'
 import AccountBlock from './Block/AccountBlock'
 import PlanOverlay from './Overlay/Plan/PlanOverlay'
 import { AppState } from './redux/reducers/appReducer'
+import { useDispatch } from 'react-redux';
+import { showPlanOverlay } from './redux/actions/planActions'
 
 
 
@@ -27,6 +29,13 @@ export default function App() {
     const noteRootNotes = findNotesByRootName(allNotesData, "note_notion");
 
     const chatHistoryRootNotes = findNotesByRootName(allNotesData, "note_chat");
+    // console.log("allNotesData.length", allNotesData.length, "==appState.notesLimitation==", appState.notesLimitation);
+    if (allNotesData.length > appState.notesLimitation) {
+
+        const dispatch = useDispatch();
+        dispatch(showPlanOverlay(window.innerWidth / 2 - 200, window.innerHeight / 2 - 200));
+
+    }
 
 
     return (

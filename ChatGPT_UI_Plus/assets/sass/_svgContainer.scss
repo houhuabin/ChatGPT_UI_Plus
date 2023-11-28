@@ -1,0 +1,35 @@
+@mixin baseActiveContainerStyles {
+    display: flex;
+    align-items: center; // 垂直居中
+    border-radius: 3px;
+    transition: background-color 0.3s, color 0.3s;
+
+    &:hover {
+        background-color: $hover-background-color;
+        color: $text-color-hover;
+    }
+
+    &:active {
+        background-color: $active-background-color;
+        color: $text-color-active;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+        transform: scale(0.97);
+    }
+}
+
+
+
+@mixin activeContainertyles {
+
+    @include baseActiveContainerStyles;
+    justify-content: center; // 水平居中
+}
+
+@mixin activeContainerLeftAligned {
+    @include baseActiveContainerStyles;
+    justify-content: flex-start; // 水平靠左
+
+    &:active {
+        transform: scale(0.99); // 修改变形效果为0.99
+    }
+}

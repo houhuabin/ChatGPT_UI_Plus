@@ -1,0 +1,20 @@
+
+@mixin buttonStyles {
+   
+    border: 2px solid $input-border-color;
+    border-radius: 3px;
+    color: $text-color-lighter;
+    transition: background-color 0.3s, color 0.3s;
+
+    &:hover {
+        background-color: $hover-background-color;  
+        color: $text-color-hover;  
+    }
+
+    &:active {
+        background-color: $active-background-color;  
+        color: $text-color-active;  
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+        transform: scale(0.97);
+    }
+}

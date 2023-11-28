@@ -15,6 +15,7 @@ interface PlanMenuProps {
     pointX: number;
     pointY: number;
 
+
 }
 
 export default function PlanDialog({ pointX, pointY }: PlanMenuProps) {

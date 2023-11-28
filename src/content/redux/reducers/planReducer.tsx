@@ -10,7 +10,7 @@ const initialState: PlanData = {
 const overlayMenuReducer = (state: PlanData = initialState, action: any) => {
     switch (action.type) {
         case SHOW_PLAN_OVERLAY:
-            console.log("  SHOW_AUTH_OVERLAY!!!!!!!!!!!!!!!!!!!");
+            // console.log("  SHOW_AUTH_OVERLAY!!!!!!!!!!!!!!!!!!!");
             return {
                 ...state,
                 pointX: action.payload.pointX,

@@ -75104,9 +75104,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Overlay_Menu_MenuOverlay__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Overlay/Menu/MenuOverlay */ "./src/content/Overlay/Menu/MenuOverlay.tsx");
 /* harmony import */ var _Block_AccountBlock__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Block/AccountBlock */ "./src/content/Block/AccountBlock.tsx");
 /* harmony import */ var _Overlay_Plan_PlanOverlay__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Overlay/Plan/PlanOverlay */ "./src/content/Overlay/Plan/PlanOverlay.tsx");
-/* harmony import */ var _redux_actions_planActions__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./redux/actions/planActions */ "./src/content/redux/actions/planActions.tsx");
-
-
 
 
 
@@ -75123,11 +75120,6 @@ function App() {
     //console.log(promptRootNotes.length + "  promptRootNotes length");
     const noteRootNotes = (0,_redux_reducers_notesReducer__WEBPACK_IMPORTED_MODULE_2__.findNotesByRootName)(allNotesData, "note_notion");
     const chatHistoryRootNotes = (0,_redux_reducers_notesReducer__WEBPACK_IMPORTED_MODULE_2__.findNotesByRootName)(allNotesData, "note_chat");
-    // console.log("allNotesData.length", allNotesData.length, "==appState.notesLimitation==", appState.notesLimitation);
-    if (allNotesData.length > appState.notesLimitation) {
-        const dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch)();
-        dispatch((0,_redux_actions_planActions__WEBPACK_IMPORTED_MODULE_9__.showPlanOverlay)(window.innerWidth / 2 - 200, window.innerHeight / 2 - 200));
-    }
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _app_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].leftBar },
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Block_AccountBlock__WEBPACK_IMPORTED_MODULE_7__["default"], Object.assign({}, appState)),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Block_LeftBarBlock2__WEBPACK_IMPORTED_MODULE_3__["default"], { rootNotes: promptRootNotes, allNotesData: allNotesData, title: "prompt" }),
@@ -75159,13 +75151,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var firebase_auth__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! firebase/auth */ "./node_modules/firebase/auth/dist/esm/index.esm.js");
 /* harmony import */ var _redux_Store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../redux/Store */ "./src/content/redux/Store.tsx");
 /* harmony import */ var _redux_actions_appActions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../redux/actions/appActions */ "./src/content/redux/actions/appActions.tsx");
-/* harmony import */ var _popup_Plan_stripePayment__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../popup/Plan/stripePayment */ "./src/popup/Plan/stripePayment.ts");
-/* harmony import */ var _svg_CardSVG__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../svg/CardSVG */ "./src/svg/CardSVG.tsx");
-/* harmony import */ var _svg_LoginOutSVG__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../svg/LoginOutSVG */ "./src/svg/LoginOutSVG.tsx");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _redux_actions_planActions__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../redux/actions/planActions */ "./src/content/redux/actions/planActions.tsx");
-/* harmony import */ var _Overlay_Plan_getPremiumStatus__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../Overlay/Plan/getPremiumStatus */ "./src/content/Overlay/Plan/getPremiumStatus.ts");
-/* harmony import */ var _svg_LoadingSVG__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../svg/LoadingSVG */ "./src/svg/LoadingSVG.tsx");
+/* harmony import */ var _svg_CardSVG__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../svg/CardSVG */ "./src/svg/CardSVG.tsx");
+/* harmony import */ var _svg_LoginOutSVG__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../svg/LoginOutSVG */ "./src/svg/LoginOutSVG.tsx");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _redux_actions_planActions__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../redux/actions/planActions */ "./src/content/redux/actions/planActions.tsx");
+/* harmony import */ var _Overlay_Plan_getPremiumStatus__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../Overlay/Plan/getPremiumStatus */ "./src/content/Overlay/Plan/getPremiumStatus.ts");
+/* harmony import */ var _svg_LoadingSVG__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../svg/LoadingSVG */ "./src/svg/LoadingSVG.tsx");
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -75191,7 +75182,6 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
 
 
 
-
 function AccountBlock(appState) {
     // 当userInfo存在时，解构displayName和photoURL
     const userInfo = appState ? appState.userInfo : null;
@@ -75205,7 +75195,7 @@ function AccountBlock(appState) {
     //useEffect(() => {
     const checkPremium = () => __awaiter(this, void 0, void 0, function* () {
         setIsLoading(true); // Set loading to true when check starts
-        const newPremiumStatus = yield (0,_Overlay_Plan_getPremiumStatus__WEBPACK_IMPORTED_MODULE_12__.getPremiumStatus)(app);
+        const newPremiumStatus = yield (0,_Overlay_Plan_getPremiumStatus__WEBPACK_IMPORTED_MODULE_11__.getPremiumStatus)(app);
         setIsPremium(newPremiumStatus);
         _redux_Store__WEBPACK_IMPORTED_MODULE_5__["default"].dispatch((0,_redux_actions_appActions__WEBPACK_IMPORTED_MODULE_6__.setPremiumStatus)(newPremiumStatus));
         setIsLoading(false); // Set loading to false after check is complete
@@ -75214,7 +75204,7 @@ function AccountBlock(appState) {
     //isSaved代表是否是已经登录过，存储起来的user，如果之前登录过，不需要dispatch setUserInfo
     const login = ({ isSaved }) => {
         // 这里应该是你的登录逻辑
-        // console.log("longin start===", isSaved);
+        console.log("longin start===", isSaved);
         chrome.runtime.sendMessage({ action: "getAuthToken" }, function (response) {
             //console.log('Token from background:', response.token);
             const token = response.token;
@@ -75237,9 +75227,6 @@ function AccountBlock(appState) {
         if (userInfo != null) {
             //setIsLoading(false);
             login({ isSaved: true });
-        }
-        else {
-            login({ isSaved: false });
         }
     }, []); // 空依赖数组，仅在组件挂载时执行
     const updateAccountInfo = ({ user }) => {
@@ -75266,21 +75253,10 @@ function AccountBlock(appState) {
             console.error("Error signing out:", error);
         });
     };
-    const dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_10__.useDispatch)();
+    const dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_9__.useDispatch)();
     const showPlan = (event) => {
-        if (!isPremium)
-            dispatch((0,_redux_actions_planActions__WEBPACK_IMPORTED_MODULE_11__.showPlanOverlay)(event.clientX, event.clientY));
-        else {
-            manageSubscription();
-        }
+        dispatch((0,_redux_actions_planActions__WEBPACK_IMPORTED_MODULE_10__.showPlanOverlay)(event.clientX, event.clientY));
     };
-    // content script
-    function manageSubscription() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const portalUrl = yield (0,_popup_Plan_stripePayment__WEBPACK_IMPORTED_MODULE_7__.getPortalUrl)(app); // 假设 getPortalUrl 已经定义
-            chrome.runtime.sendMessage({ action: "openNewTab", url: portalUrl });
-        });
-    }
     // 如果userInfo不存在，显示登录图标
     if (!userInfo) {
         return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _account_block_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].leftBarBlock },
@@ -75294,9 +75270,9 @@ function AccountBlock(appState) {
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _account_block_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].container },
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _account_block_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].avataIconContainer },
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: photoURL, alt: `${firstName}'s avatar`, className: _account_block_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].avatar })),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _account_block_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].activeIconContainer, onClick: showPlan }, isLoading ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_svg_LoadingSVG__WEBPACK_IMPORTED_MODULE_13__["default"], null) : (isPremium ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_svg_CardSVG__WEBPACK_IMPORTED_MODULE_8__["default"], { className: "svg-large" }) : react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_svg_CardSVG__WEBPACK_IMPORTED_MODULE_8__["default"], null))),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _account_block_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].activeIconContainer, onClick: showPlan }, isLoading ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_svg_LoadingSVG__WEBPACK_IMPORTED_MODULE_12__["default"], null) : (isPremium ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_svg_CardSVG__WEBPACK_IMPORTED_MODULE_7__["default"], { className: "svg-large" }) : react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_svg_CardSVG__WEBPACK_IMPORTED_MODULE_7__["default"], null))),
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _account_block_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].activeIconContainer, onClick: signOut },
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_svg_LoginOutSVG__WEBPACK_IMPORTED_MODULE_9__["default"], null)))));
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_svg_LoginOutSVG__WEBPACK_IMPORTED_MODULE_8__["default"], null)))));
 }
 
 
@@ -75937,8 +75913,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_firebase__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../app/firebase */ "./src/app/firebase.tsx");
 /* harmony import */ var _popup_Plan_stripePayment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../popup/Plan/stripePayment */ "./src/popup/Plan/stripePayment.ts");
 /* harmony import */ var _plan_module_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./plan.module.scss */ "./src/content/Overlay/Plan/plan.module.scss");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _redux_actions_planActions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../redux/actions/planActions */ "./src/content/redux/actions/planActions.tsx");
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -75953,14 +75927,10 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
 
 
 
-
-
 function Plan() {
     const app = (0,_app_firebase__WEBPACK_IMPORTED_MODULE_1__.initFirebase)();
     const auth = _app_firebase__WEBPACK_IMPORTED_MODULE_1__.authInstance;
     //console.log(auth, "==auth==");
-    const appState = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)((state) => state.app);
-    const allNotesData = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)((state) => state.notes);
     auth.onAuthStateChanged(user => {
         if (user) {
             // console.log(user.displayName, "------------==auth.currentUser==");
@@ -76033,25 +76003,11 @@ function Plan() {
     const accountSummary = (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _plan_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].summaryText },
         "Signed in as ",
         email));
-    const isLimitExceeded = allNotesData.length > appState.notesLimitation;
-    if (appState.notesLimitation == 10000000) {
-        const dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useDispatch)();
-        dispatch((0,_redux_actions_planActions__WEBPACK_IMPORTED_MODULE_5__.hidePlanOverlay)());
-    }
-    const recordsInfo = (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { style: { color: 'white' } },
-        "Limit: ",
-        appState.notesLimitation,
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null),
-        "Current record count: ",
-        allNotesData.length,
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null),
-        ' Subscribe to Premium to unlock limits.'));
     const planPage = (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _plan_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].planContatiner },
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _plan_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].subscriptionPlanText }, "Subscription Plan"),
-        accountSummary,
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(UpgradeToPremiumButton, { amount: "6", period: "monthly" }),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(UpgradeToPremiumButton, { amount: "60", period: "yearly" }),
-        recordsInfo));
+        accountSummary));
     const displayPage = planPage;
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _plan_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].popupContainer }, displayPage));
 }
@@ -76133,7 +76089,7 @@ function PlanOverlay() {
     });
     const dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useDispatch)();
     const handleOverlayClick = () => {
-        // console.log("hide overlay!!!!!!!!!!!!!!!!");
+        console.log("hide overlay!!!!!!!!!!!!!!!!");
         dispatch((0,_redux_actions_planActions__WEBPACK_IMPORTED_MODULE_3__.hidePlanOverlay)());
     };
     if (!planData.showOverlay) {
@@ -76447,16 +76403,10 @@ __webpack_require__.r(__webpack_exports__);
 
 const defaultState = {
     userInfo: null,
-    isPremium: false,
-    isDarkMode: false,
-    notesLimitation: 5,
-    showPrompt: true,
-    showChat: true,
-    showNote: true,
+    isPremium: false
 };
 // Use type assertion here if you are sure about the returned type
 const initialState = _storage_storageInstance__WEBPACK_IMPORTED_MODULE_1__.appStorageInstance.get("app") || defaultState;
-initialState.notesLimitation = initialState.notesLimitation || 5;
 //const initialState: AppState = defaultState;
 //console.log("===appStorageInstance.get app ===", appStorageInstance.get("app"));
 //console.log("===app ==== user ===", initialState.userInfo);
@@ -76474,12 +76424,12 @@ const appReducer = (state = initialState, action) => {
         }
         case _types_appTypes__WEBPACK_IMPORTED_MODULE_0__.SET_PREMIUM_STATUS: {
             // 更新 state 之前先定义一个新的 state
-            const newState = Object.assign(Object.assign({}, state), { isPremium: action.payload.isPremium, notesLimitation: action.payload.isPremium ? 10000000 : state.notesLimitation });
+            const newState = Object.assign(Object.assign({}, state), { isPremium: action.payload.isPremium });
             // 现在 newState 包含了更新的信息，将它存储起来
             _storage_storageInstance__WEBPACK_IMPORTED_MODULE_1__.appStorageInstance.update("app", newState);
-            console.log("-==== new is premium--====", action.payload.isPremium, " limitation ", newState.notesLimitation);
+            console.log("----- new is premium------", action.payload.isPremium);
             // 输出信息以便调试
-            // console.log("SET_USER_INFO ==action.payload.userInfo== ", action.payload);
+            console.log("SET_USER_INFO ==action.payload.userInfo== ", action.payload);
             // 返回更新后的 state
             return newState;
         }
@@ -76680,9 +76630,9 @@ const addChildNoteToState = (state, newNote) => {
         // Update parent note and add the new note to the state
         newState[parentNoteIndex] = parentNote;
     }
-    // console.log(newState.length + "   newState.length before push ====================");
+    console.log(newState.length + "   newState.length before push ====================");
     newState.push(newNote);
-    // console.log(newState.length + "   newState.length after push ====================  parentid:  " + newNote.parentID);
+    console.log(newState.length + "   newState.length after push ====================  parentid:  " + newNote.parentID);
     return newState;
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (notesReducer);
@@ -76779,7 +76729,7 @@ const initialState = {
 const overlayMenuReducer = (state = initialState, action) => {
     switch (action.type) {
         case _types_planTypes__WEBPACK_IMPORTED_MODULE_0__.SHOW_PLAN_OVERLAY:
-            // console.log("  SHOW_AUTH_OVERLAY!!!!!!!!!!!!!!!!!!!");
+            console.log("  SHOW_AUTH_OVERLAY!!!!!!!!!!!!!!!!!!!");
             return Object.assign(Object.assign({}, state), { pointX: action.payload.pointX, pointY: action.payload.pointY, showOverlay: true });
         case _types_planTypes__WEBPACK_IMPORTED_MODULE_0__.HIDE_PLAN_OVERLAY:
             return Object.assign(Object.assign({}, state), { showOverlay: false });
@@ -81235,22 +81185,7 @@ var observer = new MutationObserver(function (mutations) {
             menuItem.addEventListener('click', () => {
                 // 添加新的聊天
                 addNewChat(textContent.trim(), fullURL, liID);
-                // 定义一个函数来创建和派发鼠标事件
-                function triggerMouseEvent(node, eventType) {
-                    var event = new MouseEvent(eventType, {
-                        view: window,
-                        bubbles: true,
-                        cancelable: true,
-                        buttons: 1 // 表示左键点击
-                    });
-                    node.dispatchEvent(event);
-                }
-                // 获取目标元素，这里假设是 document，但可以是任何元素
-                var target = linkElement;
-                // 模拟鼠标点击过程
-                triggerMouseEvent(target, 'mousedown');
-                triggerMouseEvent(target, 'mouseup');
-                triggerMouseEvent(target, 'click');
+                menuElement.remove();
             });
             // console.log(fullURL);
         }

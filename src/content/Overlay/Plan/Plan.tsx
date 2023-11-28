@@ -6,13 +6,16 @@ import { authInstance, initFirebase } from "../../../app/firebase";
 import { getCheckoutUrl, getPortalUrl } from "../../../popup/Plan/stripePayment";
 
 import style from './plan.module.scss';
-
+import { useDispatch, useSelector } from 'react-redux'
+import { hidePlanOverlay } from '../../redux/actions/planActions';
 
 export default function Plan() {
     const app = initFirebase();
     const auth = authInstance;
     //console.log(auth, "==auth==");
 
+    const appState = useSelector((state: any) => state.app);
+    const allNotesData = useSelector((state: any) => state.notes);
 
     auth.onAuthStateChanged(user => {
         if (user) {
@@ -87,7 +90,9 @@ export default function Plan() {
         // 格式化周期显示
         const formattedPeriod = period.toLowerCase() === 'yearly' ? 'Per Year' : 'Per Month';
 
+
         return (
+
             <button
                 onClick={upgradeToPremium}
                 className={style.planButton}
@@ -111,15 +116,32 @@ export default function Plan() {
 
     );
 
+    const isLimitExceeded = allNotesData.length > appState.notesLimitation;
 
+    if (appState.notesLimitation == 10000000) {
+        const dispatch = useDispatch();
+        dispatch(hidePlanOverlay());
+
+    }
+
+
+    const recordsInfo = (
+        <div style={{ color: 'white' }}>
+            Limit: {appState.notesLimitation}<br />
+            Current record count: {allNotesData.length}<br />
+
+            {' Subscribe to Premium to unlock limits.'}
+        </div>
+    );
     const planPage = (
 
         <div className={style.planContatiner} >
 
             <div className={style.subscriptionPlanText}>Subscription Plan</div>
+            {accountSummary}
             <UpgradeToPremiumButton amount="6" period="monthly" />
             <UpgradeToPremiumButton amount="60" period="yearly" />
-            {accountSummary}
+            {recordsInfo}
             {/*  <UpgradeToPremiumButton amount="120" period="lifetime" />*/}
 
             {/* ...可以继续添加更多的按钮 */}

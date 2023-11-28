@@ -247,9 +247,9 @@ const addChildNoteToState = (
         // Update parent note and add the new note to the state
         newState[parentNoteIndex] = parentNote;
     }
-    console.log(newState.length + "   newState.length before push ====================");
+    // console.log(newState.length + "   newState.length before push ====================");
     newState.push(newNote);
-    console.log(newState.length + "   newState.length after push ====================  parentid:  " + newNote.parentID);
+    // console.log(newState.length + "   newState.length after push ====================  parentid:  " + newNote.parentID);
 
     return newState;
 };

@@ -58,7 +58,7 @@ export default function AccountBlock(appState: AppState) {
     //isSaved代表是否是已经登录过，存储起来的user，如果之前登录过，不需要dispatch setUserInfo
     const login = ({ isSaved }) => {
         // 这里应该是你的登录逻辑
-        console.log("longin start===", isSaved);
+        // console.log("longin start===", isSaved);
         chrome.runtime.sendMessage({ action: "getAuthToken" }, function (response) {
             //console.log('Token from background:', response.token);
             const token = response.token;
@@ -83,6 +83,8 @@ export default function AccountBlock(appState: AppState) {
         if (userInfo != null) {
             //setIsLoading(false);
             login({ isSaved: true });
+        } else {
+            login({ isSaved: false });
         }
 
     }, []); // 空依赖数组，仅在组件挂载时执行
@@ -118,9 +120,19 @@ export default function AccountBlock(appState: AppState) {
     };
     const dispatch = useDispatch();
     const showPlan = (event) => {
-
-        dispatch(showPlanOverlay(event.clientX, event.clientY));
+        if (!isPremium)
+            dispatch(showPlanOverlay(event.clientX, event.clientY));
+        else {
+            manageSubscription();
+        }
     };
+
+    // content script
+
+    async function manageSubscription() {
+        const portalUrl = await getPortalUrl(app); // 假设 getPortalUrl 已经定义
+        chrome.runtime.sendMessage({ action: "openNewTab", url: portalUrl });
+    }
 
 
 

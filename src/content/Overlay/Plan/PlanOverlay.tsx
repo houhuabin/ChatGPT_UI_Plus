@@ -21,14 +21,13 @@ export default function PlanOverlay() {
     const dispatch = useDispatch();
 
     const handleOverlayClick = () => {
-        console.log("hide overlay!!!!!!!!!!!!!!!!");
+        // console.log("hide overlay!!!!!!!!!!!!!!!!");
         dispatch(hidePlanOverlay());
     };
 
     if (!planData.showOverlay) {
         return null;
     }
-
 
     return (
         <div id="overlay" className={style.overlay} onClick={handleOverlayClick}>
@@ -40,3 +39,4 @@ export default function PlanOverlay() {
         </div>
     )
 }
+
