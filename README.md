@@ -10,3 +10,9 @@ Jot down notes, ideas, or prompts directly within the extension. Our integrated 
 
 Prompt Management: 
 This feature allows you to manage and organize prompts to enhance the quality of your interactions and explore a wide range of conversation topics with ChatGPT.
+
+
+[Watch the Basic Usage Tutorial Video](https://youtu.be/KnBmpVvCx2c)
+
+
+
