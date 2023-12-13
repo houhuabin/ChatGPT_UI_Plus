@@ -9,4 +9,4 @@ Seamless Note-Taking:
 Jot down notes, ideas, or prompts directly within the extension. Our integrated note-taking feature means your thoughts and AI interactions stay connected, organized, and easily accessible.
 
 Prompt Management: 
-This feature allows you to manage and organize prompts to enhance the quality of your interactions and explore a wide range of conversation topics with ChatGPT."
+This feature allows you to manage and organize prompts to enhance the quality of your interactions and explore a wide range of conversation topics with ChatGPT.
